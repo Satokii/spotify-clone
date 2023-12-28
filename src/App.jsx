@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 
 import './app.css'
 import './shared-styles/root.css'
+import './shared-styles/scrollbars.css'
 
 function App() {
   const [token, setToken] = useState("");
