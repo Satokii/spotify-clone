@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
+import Navigation from "./components/navigation";
 import Main from "./components/main";
 
 import './app.css'
@@ -27,6 +28,7 @@ function App() {
     <>
       <div className="container grid">
         <Header token={token} setToken={setToken} />
+        <Navigation />
         {token ? <Main token={token} /> : <WelcomePage />}
       </div>
     </>

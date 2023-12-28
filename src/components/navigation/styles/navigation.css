@@ -1,0 +1,4 @@
+.navigation-container {
+    grid-area: Navigation;
+    background-color: orange;
+}
