@@ -6,6 +6,7 @@ import Main from "./components/main";
 import Footer from "./components/footer";
 
 import './app.css'
+import './shared-styles/root.css'
 
 function App() {
   const [token, setToken] = useState("");

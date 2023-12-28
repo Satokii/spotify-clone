@@ -14,7 +14,7 @@ function TopTracksPreview({ token }) {
           },
           params: {
             time_range: "long_term",
-            limit: 10,
+            limit: 20,
           },
         }
       );

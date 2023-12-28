@@ -1,7 +1,7 @@
 .main {
     grid-area: Main;
     grid-auto-rows: 300px;
-    background-color: green;
+    background-color: var(--almost-black);
     padding: 50px;
 }
 
