@@ -1,11 +1,14 @@
 import Authorisation from "../../Authorisation"
+import './styles/welcome-page.css'
 
 function WelcomePage() {
 
     return (
-        <section>
-            <h2>Welcome to My Spotify Stats</h2>
-            <p>Please <Authorisation /> to continue</p>
+        <section className="welcome-page-container grid">
+            <div className="grid">
+                <h2>Welcome to My Spotify Stats</h2>
+                <p>Please <Authorisation /> to continue</p>
+            </div>
         </section>
     )
 }

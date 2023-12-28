@@ -1,0 +1,12 @@
+.welcome-page-container {
+    grid-area: Main;
+    justify-items: center;
+    background-color: blue;
+    height: 100vh;
+}
+
+.welcome-page-container > div {
+    justify-items: center;
+    height: fit-content;
+    padding-top: 100px;
+}
