@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function TopTracksPview6Mths({ token }) {
-    const [topTracksPview6Mths, setTopTracksPview6Mths] = useState([]);
+function TopTracksPview4Wks({ token }) {
+    const [topTracksPview4Wks, setTopTracksPview4Wks] = useState([]);
 
   useEffect(() => {
     const getTopTracksPview = async () => {
@@ -13,21 +13,21 @@ function TopTracksPview6Mths({ token }) {
             Authorization: `Bearer ${token}`,
           },
           params: {
-            time_range: "medium_term",
+            time_range: "short_term",
             limit: 20,
           },
         }
       );
-      setTopTracksPview6Mths(data.items);
+      setTopTracksPview4Wks(data.items);
     };
     getTopTracksPview();
   }, [token]);
 
   return (
     <section className="preview--container grid">
-      <h3 className="preview--header">Top Tracks Preview (Last 6 Months)</h3>
+      <h3 className="preview--header">Top Tracks Preview (Last 4 Weeks)</h3>
       <ul className="preview--list grid">
-        {topTracksPview6Mths.map((track, index) => 
+        {topTracksPview4Wks.map((track, index) => 
             <li className="preview--item grid" key={track.id}>
                 <p className="preview--item-rank">{`${index + 1}.`}</p>
                 <img src={track.album.images[0].url} alt={`${track.name} image`}/>
@@ -42,4 +42,4 @@ function TopTracksPview6Mths({ token }) {
   );
 }
 
-export default TopTracksPview6Mths
+export default TopTracksPview4Wks
