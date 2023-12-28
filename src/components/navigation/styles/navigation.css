@@ -2,3 +2,7 @@
     grid-area: Navigation;
     background-color: orange;
 }
+
+.nav-list {
+    list-style: none;
+}

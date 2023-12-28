@@ -1,9 +1,12 @@
+import NavList from './components/NavList'
 import './styles/navigation.css'
 
-function Navigation() {
+function Navigation({ token }) {
 
     return (
-        <section className="navigation-container"></section>
+        <section className="navigation-container">
+            {token ? <NavList /> : null}
+        </section>
     )
 }
 

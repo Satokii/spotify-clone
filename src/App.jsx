@@ -28,7 +28,7 @@ function App() {
     <>
       <div className="container grid">
         <Header token={token} setToken={setToken} />
-        <Navigation />
+        <Navigation token={token} />
         {token ? <Main token={token} /> : <WelcomePage />}
       </div>
     </>
