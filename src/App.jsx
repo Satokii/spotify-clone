@@ -7,13 +7,6 @@ import Header from "./components/header";
 import './app.css'
 
 function App() {
-  const CLIENT_ID = "04e1410dfac14d27968c7ef88c68d41c";
-  const REDIRECT_URI = "http://localhost:5173/";
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-  const SCOPE = "user-top-read user-read-recently-played";
-  const RESPONSE_TYPE = "token";
-  const SHOW_DIALOG = true;
-
   const [token, setToken] = useState("");
 
   const [artists, setArtists] = useState([]);
@@ -35,11 +28,6 @@ function App() {
     }
     setToken(token);
   }, []);
-
-  const logout = () => {
-    setToken("");
-    window.localStorage.removeItem("token");
-  };
 
   const getTopTracks = async (e) => {
     e.preventDefault();
@@ -128,20 +116,7 @@ function App() {
   return (
     <>
       <div className="container grid">
-        <Header />
-        <header>
-          <h1>Spotify Stats</h1>
-          {!token ? (
-            <a
-              href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=${SHOW_DIALOG}`}
-            >
-              Login to Spotify
-            </a>
-          ) : (
-            <button onClick={logout}>Logout</button>
-          )}
-        </header>
-        <hr />
+        <Header token={token} setToken={setToken} />
         <main>
           <div>
             <button onClick={getTopTracks}>Get Top Tracks</button>
