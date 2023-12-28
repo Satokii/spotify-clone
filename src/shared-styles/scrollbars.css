@@ -19,5 +19,6 @@
   }
   
   ::-webkit-scrollbar-track:horizontal:active {
-    background-color: var(--const-blue)
+    background-color: var(--const-blue);
+    border-radius: 10px;
   }
