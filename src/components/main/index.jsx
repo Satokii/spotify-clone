@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import TopTracksPreview from "./components/TopTracksPreview";
 import './styles/main.css'
 
 function Main({ token }) {
@@ -95,17 +95,18 @@ function Main({ token }) {
 
     return (
         <main className="main grid">
+            <TopTracksPreview token={token} />
           <div>
             <button onClick={getTopTracks}>Get Top Tracks</button>
-            {renderTopTracks()}
+            {/* {renderTopTracks()} */}
           </div>
           <div>
             <button onClick={getRecentlyPlayed}>Get Recently Played</button>
-            {renderRecentlyPlayed()}
+            {/* {renderRecentlyPlayed()} */}
           </div>
           <div>
             <button onClick={calcTimesPlayed}>Times played</button>
-            {renderPlayCount()}
+            {/* {renderPlayCount()} */}
           </div>
         </main>
     )

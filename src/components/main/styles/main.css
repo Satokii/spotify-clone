@@ -1,5 +1,18 @@
 .main {
     grid-area: Main;
+    grid-auto-rows: 300px;
     background-color: green;
     padding: 50px;
+}
+
+/* TOP TRACKS PREVIEW */
+.top-track-pview--container {
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+}
+
+.top-track-pview--list {
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    list-style: none;
 }
