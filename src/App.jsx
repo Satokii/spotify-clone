@@ -3,6 +3,7 @@ import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Main from "./components/main";
+import Footer from "./components/footer";
 
 import './app.css'
 
@@ -30,6 +31,7 @@ function App() {
         <Header token={token} setToken={setToken} />
         <Navigation token={token} />
         {token ? <Main token={token} /> : <WelcomePage />}
+        <Footer />
       </div>
     </>
   );

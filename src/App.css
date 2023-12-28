@@ -2,7 +2,7 @@
     grid-template-areas: 
         "Header Header"
         "Navigation Main"
-        "footer footer";
+        "Footer Footer";
     grid-template-rows: 80px 1fr 100px;
     grid-template-columns: 150px 1fr;
     height: 100%;
