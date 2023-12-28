@@ -42,7 +42,21 @@ function RecentlyPlayed({ token }) {
       calcTimesPlayed()
   }, [recentlyPlayed])
 
-  console.log(recentlyPlayedPlayCount)
+  const timeNow = new Date()
+//   console.log(new Date())
+
+  const msToTime = (ms) => {
+    let seconds = (ms / 1000).toFixed(1);
+    let minutes = (ms / (1000 * 60)).toFixed(1);
+    let hours = (ms / (1000 * 60 * 60)).toFixed(1);
+    let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
+    if (seconds < 60) return seconds + " Sec";
+    else if (minutes < 60) return minutes + " Min";
+    else if (hours < 24) return hours + " Hrs";
+    else return days + " Days"
+  }
+
+//   console.log(recentlyPlayedPlayCount)
 
   return (
     <section className="recently-played--container grid">
@@ -50,7 +64,7 @@ function RecentlyPlayed({ token }) {
         <ul className="recently-played--list grid">
             {recentlyPlayedPlayCount.map((track, index) => 
                 <li className="recently-played--item grid" key={track.id}>
-                    <p className="recently-played--time-played">{track.played_at}</p>
+                    <p className="recently-played--time-played">{`Played ${msToTime(timeNow - new Date(track.played_at))} ago`}</p>
                     <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} />
                     <p className="recently-played--text">
                         Song: {track.track.name}, times played: {track.timesPlayed}, time
