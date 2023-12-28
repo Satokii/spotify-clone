@@ -45,14 +45,14 @@ function RecentlyPlayed({ token }) {
   console.log(recentlyPlayedPlayCount)
 
   return (
-    <section className="recently-played--container">
+    <section className="recently-played--container grid">
         <h3 className="recently-played--header">Recently Played</h3>
-        <ul className="recently-played--list">
+        <ul className="recently-played--list grid">
             {recentlyPlayedPlayCount.map((track, index) => 
-                <li key={track.id}>
-                    <p className="recently-played--rank">{`${index + 1}.`}</p>
+                <li className="recently-played--item grid" key={track.id}>
+                    <p className="recently-played--time-played">{track.played_at}</p>
                     <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} />
-                    <p>
+                    <p className="recently-played--text">
                         Song: {track.track.name}, times played: {track.timesPlayed}, time
                         spent listening:{" "}
                         {new Date(track.timesPlayed * track.track.duration_ms)
