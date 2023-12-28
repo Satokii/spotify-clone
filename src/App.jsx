@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./components/header";
+import WelcomePage from "./components/welcome-page";
 import Main from "./components/main";
 
 import './app.css'
@@ -26,7 +27,7 @@ function App() {
     <>
       <div className="container grid">
         <Header token={token} setToken={setToken} />
-        {token ? <Main token={token} /> : null}
+        {token ? <Main token={token} /> : <WelcomePage />}
       </div>
     </>
   );

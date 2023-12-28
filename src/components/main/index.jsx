@@ -99,12 +99,10 @@ function Main({ token }) {
             <button onClick={getTopTracks}>Get Top Tracks</button>
             {renderTopTracks()}
           </div>
-          <hr />
           <div>
             <button onClick={getRecentlyPlayed}>Get Recently Played</button>
             {renderRecentlyPlayed()}
           </div>
-          <hr />
           <div>
             <button onClick={calcTimesPlayed}>Times played</button>
             {renderPlayCount()}

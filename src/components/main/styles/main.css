@@ -1,3 +1,5 @@
 .main {
+    grid-area: Main;
     background-color: green;
+    padding: 50px;
 }
