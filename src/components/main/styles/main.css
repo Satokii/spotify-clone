@@ -1,6 +1,6 @@
 .main {
     grid-area: Main;
-    grid-auto-rows: 280px;
+    grid-auto-rows: 300px;
     background-color: var(--almost-black);
     padding: 50px;
 }
@@ -9,49 +9,63 @@
     margin: 20px 0;
 }
 
-/* TOP TRACKS PREVIEW */
-.top-track-pview--container {
+/* PREVIEW GENERIC STYLING */
+.preview--container {
     grid-template-rows: 30px auto;
     grid-auto-flow: row;
     gap: 10px;
 }
 
-.top-track-pview--header {
+.preview--header {
     color: var(--const-green);
+    font-size: 24px;
 }
 
-.top-track-pview--list {
+.preview--list {
     grid-auto-columns: 150px;
     grid-auto-flow: column;
     justify-items: center;
     align-items: start;
     gap: 5px;
-    overflow-y: hidden;
+    overflow: hidden;
+    /* overflow-x: scroll; */
+    /* overflow-y: hidden; */
+}
+
+.preview--list:hover {
     overflow-x: scroll;
 }
 
-.top-track-pview--item {
+.preview--item {
     justify-items: center;
 }
 
-.top-track-pview--item-rank {
+.preview--item-rank {
     /* color: var(--const-green); */
     font-weight: bold;
 }
 
-.top-track-pview--item > img {
+.preview--item > img {
     margin: 5px 0;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
 }
 
-.top-track-pview--item-text {
+.preview--item-text {
     text-align: center;
     font-size: 14px;
 }
 
-.top-track-pview--item-name {
+.preview--item-name {
     font-weight: bold;
 }
 
-.top-track-pview--item-artist {
+.preview--item-artist {
     text-decoration: underline;
+}
+
+/* TOP ARTISTS PREVIEW SPECIFIC */
+.preview-top-artists {
+    padding-top: 10px;
 }

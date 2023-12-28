@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import TopTracksPreview from "./components/TopTracksPreview";
+import TopArtistsPreview from "./components/TopArtistsPreview";
 import './styles/main.css'
 
 function Main({ token }) {
@@ -23,7 +24,6 @@ function Main({ token }) {
             },
           }
         );
-        // console.log(data)
         setTopTracks(data.items);
       };
     
@@ -50,7 +50,6 @@ function Main({ token }) {
             },
           }
         );
-        console.log(data.items);
         setRecentlyPlayed(data.items);
       };
     
@@ -75,7 +74,6 @@ function Main({ token }) {
             newArr.push(updated);
           }
         });
-        console.log(newArr);
         setPlayCount(newArr);
       };
     
@@ -96,6 +94,7 @@ function Main({ token }) {
     return (
         <main className="main grid">
             <TopTracksPreview token={token} />
+            <TopArtistsPreview token={token} />
           <div>
             <button onClick={getTopTracks}>Get Top Tracks</button>
             {/* {renderTopTracks()} */}
