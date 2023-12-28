@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import TopTracksPreview from "./components/TopTracksPreview";
+import TopTracksPview6Mths from "./components/TopTracksPview6Mths";
 import TopArtistsPreview from "./components/TopArtistsPreview";
 import './styles/main.css'
 
@@ -94,6 +95,7 @@ function Main({ token }) {
     return (
         <main className="main grid">
             <TopTracksPreview token={token} />
+            <TopTracksPview6Mths token={token} />
             <TopArtistsPreview token={token} />
           <div>
             <button onClick={getTopTracks}>Get Top Tracks</button>

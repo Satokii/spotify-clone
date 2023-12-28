@@ -28,8 +28,6 @@
     align-items: start;
     gap: 5px;
     overflow: hidden;
-    /* overflow-x: scroll; */
-    /* overflow-y: hidden; */
 }
 
 .preview--list:hover {
