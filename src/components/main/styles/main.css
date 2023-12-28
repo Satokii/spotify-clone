@@ -5,14 +5,32 @@
     padding: 50px;
 }
 
+.main > * {
+    margin: 20px 0;
+}
+
 /* TOP TRACKS PREVIEW */
 .top-track-pview--container {
-    grid-template-rows: auto;
+    grid-template-rows: 50px auto;
     grid-auto-flow: row;
+    gap: 10px;
 }
 
 .top-track-pview--list {
-    grid-auto-columns: 100px;
+    grid-auto-columns: 150px;
     grid-auto-flow: column;
-    list-style: none;
+    justify-items: center;
+    align-items: start;
+    gap: 5px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.top-track-pview--items {
+    justify-items: center;
+}
+
+.top-track-pview--text {
+    text-align: center;
+    font-size: 14px;
 }

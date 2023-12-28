@@ -28,11 +28,13 @@ function TopTracksPreview({ token }) {
       <h3>Top Tracks Preview</h3>
       <ul className="top-track-pview--list grid">
         {topTracksPview.map((track, index) => 
-            <li key={track.id}>
+            <li className="top-track-pview--items grid" key={track.id}>
                 {`${index + 1}.`}
-                <img src={track.album.images[0].url} alt={`${track.name} image`} width={50} />
-                <p>{track.name}</p>
-                <p>{track.artists[0].name}</p>
+                <img src={track.album.images[0].url} alt={`${track.name} image`} width={80} />
+                <div className="top-track-pview--text">
+                    <p>{track.name}</p>
+                    <p>{track.artists[0].name}</p>
+                </div>
             </li>    
         )}
       </ul>
