@@ -1,6 +1,6 @@
 .main {
     grid-area: Main;
-    grid-auto-rows: 300px;
+    grid-auto-rows: 280px;
     background-color: var(--almost-black);
     padding: 50px;
 }
@@ -11,9 +11,13 @@
 
 /* TOP TRACKS PREVIEW */
 .top-track-pview--container {
-    grid-template-rows: 50px auto;
+    grid-template-rows: 30px auto;
     grid-auto-flow: row;
     gap: 10px;
+}
+
+.top-track-pview--header {
+    color: var(--const-green);
 }
 
 .top-track-pview--list {
@@ -26,11 +30,28 @@
     overflow-x: scroll;
 }
 
-.top-track-pview--items {
+.top-track-pview--item {
     justify-items: center;
 }
 
-.top-track-pview--text {
+.top-track-pview--item-rank {
+    /* color: var(--const-green); */
+    font-weight: bold;
+}
+
+.top-track-pview--item > img {
+    margin: 5px 0;
+}
+
+.top-track-pview--item-text {
     text-align: center;
     font-size: 14px;
+}
+
+.top-track-pview--item-name {
+    font-weight: bold;
+}
+
+.top-track-pview--item-artist {
+    text-decoration: underline;
 }

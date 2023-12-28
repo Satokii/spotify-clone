@@ -25,15 +25,15 @@ function TopTracksPreview({ token }) {
 
   return (
     <section className="top-track-pview--container grid">
-      <h3>Top Tracks Preview</h3>
+      <h3 className="top-track-pview--header">All Time Top Tracks Preview</h3>
       <ul className="top-track-pview--list grid">
         {topTracksPview.map((track, index) => 
-            <li className="top-track-pview--items grid" key={track.id}>
-                {`${index + 1}.`}
+            <li className="top-track-pview--item grid" key={track.id}>
+                <p className="top-track-pview--item-rank">{`${index + 1}.`}</p>
                 <img src={track.album.images[0].url} alt={`${track.name} image`} width={80} />
-                <div className="top-track-pview--text">
-                    <p>{track.name}</p>
-                    <p>{track.artists[0].name}</p>
+                <div className="top-track-pview--item-text">
+                    <p className="top-track-pview--item-name">{track.name}</p>
+                    <p className="top-track-pview--item-artist">{track.artists[0].name}</p>
                 </div>
             </li>    
         )}
