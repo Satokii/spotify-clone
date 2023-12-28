@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Buffer } from "buffer";
+import Header from "./components/header";
+
+import './app.css'
 
 function App() {
   const CLIENT_ID = "04e1410dfac14d27968c7ef88c68d41c";
@@ -124,7 +127,8 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="container grid">
+        <Header />
         <header>
           <h1>Spotify Stats</h1>
           {!token ? (

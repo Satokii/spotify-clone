@@ -1,0 +1,7 @@
+.header {
+    grid-area: Header;
+    grid-template-columns: 1fr repeat(2, 100px);
+    align-items: center;
+    padding: 0 20px;
+    background-color: red;
+}
