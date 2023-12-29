@@ -1,10 +1,11 @@
 import Authorisation from "../../Authorisation";
+import Logout from "../../Logout";
 import "./styles/header.css";
 
 function Header({ token, setToken }) {
 
   const logout = () => {
-    setToken("");
+    Logout(setToken)
     window.localStorage.removeItem("token");
   };
 

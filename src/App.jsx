@@ -4,6 +4,8 @@ import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Main from "./components/main";
 import Footer from "./components/footer";
+import Logout from "./Logout";
+import axios from "axios";
 
 import './app.css'
 import './shared-styles/root.css'
@@ -11,6 +13,26 @@ import './shared-styles/scrollbars.css'
 
 function App() {
   const [token, setToken] = useState("");
+
+  useEffect(() => {
+    setInterval(() => {
+      const checkStatus = async () => {
+        const { status } = await axios.get(
+          "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+        );
+        if(status !== 200) {
+          Logout(setToken)
+        }
+      }
+      checkStatus()
+    }, 120000);
+  }, [token])
+
 
   useEffect(() => {
     const hash = window.location.hash;

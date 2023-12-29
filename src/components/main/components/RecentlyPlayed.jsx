@@ -46,13 +46,13 @@ function RecentlyPlayed({ token }) {
 //   console.log(new Date())
 
   const msToTime = (ms) => {
-    let seconds = (ms / 1000).toFixed(1);
-    let minutes = (ms / (1000 * 60)).toFixed(1);
-    let hours = (ms / (1000 * 60 * 60)).toFixed(1);
-    let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
-    if (seconds < 60) return seconds + " Sec";
-    else if (minutes < 60) return minutes + " Min";
-    else if (hours < 24) return hours + " Hrs";
+    let seconds = (ms / 1000).toFixed(0);
+    let minutes = (ms / (1000 * 60)).toFixed(0);
+    let hours = (ms / (1000 * 60 * 60)).toFixed(0);
+    let days = (ms / (1000 * 60 * 60 * 24)).toFixed(0);
+    if (seconds < 60) return seconds + " secs";
+    else if (minutes < 60) return minutes + " mins";
+    else if (hours < 24) return hours + " hrs";
     else return days + " Days"
   }
 
@@ -61,7 +61,7 @@ function RecentlyPlayed({ token }) {
   return (
     <section className="recently-played--container grid">
         <h3 className="recently-played--header">Recently Played</h3>
-        <ul className="recently-played--list grid">
+        {/* <ul className="recently-played--list grid">
             {recentlyPlayedPlayCount.map((track, index) => 
                 <li className="recently-played--item grid" key={track.id}>
                     <p className="recently-played--time-played">{`Played ${msToTime(timeNow - new Date(track.played_at))} ago`}</p>
@@ -72,6 +72,17 @@ function RecentlyPlayed({ token }) {
                         {new Date(track.timesPlayed * track.track.duration_ms)
                             .toISOString()
                             .substring(11, 19)}
+                    </p>
+                </li>
+            )}
+        </ul> */}
+        <ul className="recently-played--list grid">
+            {recentlyPlayed.map((track, index) => 
+                <li className="recently-played--item grid" key={track.id}>
+                    <p className="recently-played--time-played">{`Played ${msToTime(timeNow - new Date(track.played_at))} ago`}</p>
+                    <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} />
+                    <p className="recently-played--text">
+                        {track.track.name}
                     </p>
                 </li>
             )}

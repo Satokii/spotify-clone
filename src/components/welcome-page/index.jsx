@@ -7,6 +7,7 @@ function WelcomePage() {
         <section className="welcome-page-container grid">
             <div className="grid">
                 <h2>Welcome to My Spotify Stats</h2>
+                <p>You are currently logged out</p>
                 <p>Please <Authorisation /> to continue</p>
             </div>
         </section>
