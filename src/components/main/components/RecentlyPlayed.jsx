@@ -61,8 +61,10 @@ function RecentlyPlayed({ token }) {
 
   return (
     <section className="recently-played--container grid">
-      <h3 className="recently-played--header">Recently Played</h3>
-      <button onClick={getRecentlyPlayed}>Refresh Recently Played</button>
+      <div className="recently-played--header-container grid">
+        <h3 className="recently-played--header">Recently Played</h3>
+        <button className="recently-played--refresh-btn btn" onClick={getRecentlyPlayed}>Refresh Recently Played</button>
+      </div>
       {/* <ul className="recently-played--list grid">
             {recentlyPlayedPlayCount.map((track, index) => 
                 <li className="recently-played--item grid" key={track.id}>
@@ -79,9 +81,9 @@ function RecentlyPlayed({ token }) {
             )}
         </ul> */}
       <ul className="recently-played--list grid">
-        {recentlyPlayed.map((track, index) => (
+        {recentlyPlayed.map((track) => (
           <li className="recently-played--item grid" key={track.id}>
-            <p className="recently-played--time-played">{`Played ${msToTime(
+            <p className="recently-played--time-since-played">{`Played ${msToTime(
               timeNow - new Date(track.played_at)
             )} ago`}</p>
             <img

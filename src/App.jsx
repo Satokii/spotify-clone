@@ -10,6 +10,7 @@ import axios from "axios";
 import './app.css'
 import './shared-styles/root.css'
 import './shared-styles/scrollbars.css'
+import './shared-styles/buttons.css'
 
 function App() {
   const [token, setToken] = useState("");
