@@ -18,7 +18,8 @@ function Main({ token }) {
   // TOGGLE TRACKS DROPDOWN
   const toggleTopTracks = () => {
     if (topTracks === "long") return <TopTracksPreview token={token} />;
-    else if (topTracks === "medium") return <TopTracksPview6Mths token={token} />;
+    else if (topTracks === "medium")
+      return <TopTracksPview6Mths token={token} />;
     else if (topTracks === "short") return <TopTracksPview4Wks token={token} />;
   };
 
@@ -28,7 +29,7 @@ function Main({ token }) {
 
   const toggleTopTracksDropdown = () => {
     setShowTopTracksDropdown(!showTopTracksDropdown);
-  }
+  };
 
   const handleOutsideClickTracksDropdown = (e) => {
     if (
@@ -38,20 +39,25 @@ function Main({ token }) {
     ) {
       setShowTopTracksDropdown(false);
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClickTracksDropdown);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClickTracksDropdown);
+      document.removeEventListener(
+        "mousedown",
+        handleOutsideClickTracksDropdown
+      );
     };
   }, []);
 
   // TOGGLE ARTISTS DROPDOWN
   const toggleTopArtists = () => {
     if (topArtists === "long") return <TopArtistsPreview token={token} />;
-    else if (topArtists === "medium") return <TopArtistsPview6mths token={token} />;
-    else if (topArtists === "short") return <TopArtistsPview4Wks token={token} />;
+    else if (topArtists === "medium")
+      return <TopArtistsPview6mths token={token} />;
+    else if (topArtists === "short")
+      return <TopArtistsPview4Wks token={token} />;
   };
 
   const [showTopArtistsDropdown, setShowTopArtistsDropdown] = useState(false);
@@ -60,7 +66,7 @@ function Main({ token }) {
 
   const toggleTopArtistsDropdown = () => {
     setShowTopArtistsDropdown(!showTopArtistsDropdown);
-  }
+  };
 
   const handleOutsideClickArtistsDropdown = (e) => {
     if (
@@ -70,28 +76,31 @@ function Main({ token }) {
     ) {
       setShowTopArtistsDropdown(false);
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClickArtistsDropdown);
     return () => {
-      document.removeEventListener("mousedown", handleOutsideClickArtistsDropdown);
+      document.removeEventListener(
+        "mousedown",
+        handleOutsideClickArtistsDropdown
+      );
     };
   }, []);
 
   return (
     <main className="main grid">
-      <section>
-        <h2>Top Tracks Preview</h2>
+      <section className="top-tracks--container grid">
+        <h2 className="top-tracks--header">Top Tracks Preview</h2>
         <button
-          className="top-tracks-filter-btn grid"
+          className="date-filter-btn btn grid"
           ref={tracksButtonRef}
           onClick={() => toggleTopTracksDropdown()}
         >
           Filter Date Range
         </button>
         {showTopTracksDropdown && (
-          <ul className="top-tracks-filter-list" ref={tracksMenuRef}>
+          <ul className="date-filter-list" ref={tracksMenuRef}>
             <li
               onClick={() => {
                 setShowTopTracksDropdown(false);
@@ -120,17 +129,17 @@ function Main({ token }) {
         )}
         {toggleTopTracks()}
       </section>
-      <section>
-      <h2>Top Artists Preview</h2>
+      <section className="top-artists--container grid">
+        <h2 className="top-artists--header">Top Artists Preview</h2>
         <button
-          className="top-artists-filter-btn grid"
+          className="date-filter-btn btn grid"
           ref={artistsButtonRef}
           onClick={() => toggleTopArtistsDropdown()}
         >
           Filter Date Range
         </button>
         {showTopArtistsDropdown && (
-          <ul className="top-artists-filter-list" ref={artistsMenuRef}>
+          <ul className="date-filter-list" ref={artistsMenuRef}>
             <li
               onClick={() => {
                 setShowTopArtistsDropdown(false);

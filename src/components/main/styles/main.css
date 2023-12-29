@@ -1,20 +1,54 @@
 .main {
     grid-area: Main;
-    grid-auto-rows: minmax(350px, auto);
+    /* grid-auto-rows: minmax(350px, auto); */
+    grid-template-rows: repeat(2, 360px) 300px;
     background-color: var(--almost-black);
     padding: 50px;
+    gap: 10PX;
 }
 
 .main > * {
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    margin-bottom: 20px;
 }
 
-/* TOGGLE TOP TRACKS */
-.top-tracks-filter-btn {
-    background-color: red;
+/* DROPDOWN MENUS */
+.top-tracks--container, .top-artists--container {
+    gap: 5px;
+    align-content: center;
+}
+
+.top-tracks--header, .top-artists--header {
+    font-size: 30px;
+    place-self: center;
+}
+
+.date-filter-btn {
     place-self: start;
+    background: linear-gradient(#5619c7, #50058a);
+    color: white;
+    margin: 5px 0;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
 }
 
+.date-filter-list {
+    width: 200px;
+    border-radius: 5px;
+    background: linear-gradient(#5619c7, #50058a);
+}
+
+.date-filter-list li {
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.date-filter-list li:hover {
+    background-color: #200237;
+    color: #07bd07;
+}
 
 /* PREVIEW GENERIC STYLING */
 .preview--container, .recently-played--container {

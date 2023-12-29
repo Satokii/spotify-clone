@@ -25,7 +25,7 @@ function TopArtistsPreview({ token }) {
 
     return (
         <section className="preview--container grid">
-        <h3 className="preview--header">All Time Top Artists Preview</h3>
+        <h3 className="preview--header">All Time Top Artists</h3>
         <ul className="preview--list grid">
           {topArtistsPview.map((artist, index) => 
               <li className="preview--item grid" key={artist.id}>

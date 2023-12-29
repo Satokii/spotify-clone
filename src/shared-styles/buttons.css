@@ -1,3 +1,4 @@
 .btn:active {
     transform: scale(0.95);
+    color: var(--const-green);
 }
