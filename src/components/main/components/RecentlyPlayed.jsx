@@ -95,9 +95,9 @@ function RecentlyPlayed({ token }) {
               alt={`${track.track.name} image`}
             />
             <div className="recently-played--item-text">
-                    <p className="recently-played--item-name">{track.track.name}</p>
-                    <p className="recently-played--item-artist">{track.track.artists[0].name}</p>
-                </div>
+                <p className="recently-played--item-name">{track.track.name}</p>
+                <p className="recently-played--item-artist">{track.track.artists[0].name}</p>
+            </div>
           </li>
         ))}
       </ul>

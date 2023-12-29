@@ -9,6 +9,13 @@
     margin: 20px 0;
 }
 
+/* TOGGLE TOP TRACKS */
+.top-tracks-filter-btn {
+    background-color: red;
+    place-self: start;
+}
+
+
 /* PREVIEW GENERIC STYLING */
 .preview--container, .recently-played--container {
     grid-template-rows: 30px auto;
