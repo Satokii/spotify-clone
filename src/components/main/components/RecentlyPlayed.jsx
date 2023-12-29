@@ -51,10 +51,14 @@ function RecentlyPlayed({ token }) {
     let minutes = (ms / (1000 * 60)).toFixed(0);
     let hours = (ms / (1000 * 60 * 60)).toFixed(0);
     let days = (ms / (1000 * 60 * 60 * 24)).toFixed(0);
-    if (seconds < 60) return seconds + " secs";
-    else if (minutes < 60) return minutes + " mins";
-    else if (hours < 24) return hours + " hrs";
-    else return days + " Days";
+    if (seconds < 2) return seconds + " second";
+    else if (seconds < 60) return seconds + " seconds";
+    else if (minutes < 2) return minutes + " minute";
+    else if (minutes < 60) return minutes + " minutes";
+    else if (hours < 2) return hours + " hour";
+    else if (hours < 24) return hours + " hours";
+    else if (days < 2) return days + " day";
+    else return days + " days";
   };
 
   //   console.log(recentlyPlayedPlayCount)
@@ -63,7 +67,7 @@ function RecentlyPlayed({ token }) {
     <section className="recently-played--container grid">
       <div className="recently-played--header-container grid">
         <h3 className="recently-played--header">Recently Played</h3>
-        <button className="recently-played--refresh-btn btn" onClick={getRecentlyPlayed}>Refresh Recently Played</button>
+        <button className="recently-played--refresh-btn btn" onClick={getRecentlyPlayed}>Refresh</button>
       </div>
       {/* <ul className="recently-played--list grid">
             {recentlyPlayedPlayCount.map((track, index) => 
@@ -90,7 +94,10 @@ function RecentlyPlayed({ token }) {
               src={track.track.album.images[0].url}
               alt={`${track.track.name} image`}
             />
-            <p className="recently-played--text">{track.track.name}</p>
+            <div className="recently-played--item-text">
+                    <p className="recently-played--item-name">{track.track.name}</p>
+                    <p className="recently-played--item-artist">{track.track.artists[0].name}</p>
+                </div>
           </li>
         ))}
       </ul>
