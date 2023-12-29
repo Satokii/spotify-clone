@@ -14,16 +14,18 @@ import './shared-styles/scrollbars.css'
 function App() {
   const [token, setToken] = useState("");
 
+  // function to check if api authorisation is still valid
+  // when test api GET request fails, auto logs out user - checks every 2 mins
   useEffect(() => {
     setInterval(() => {
       const checkStatus = async () => {
         const { status } = await axios.get(
           "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
         );
         if(status !== 200) {
           Logout(setToken)
@@ -32,7 +34,6 @@ function App() {
       checkStatus()
     }, 120000);
   }, [token])
-
 
   useEffect(() => {
     const hash = window.location.hash;
