@@ -1,6 +1,6 @@
 .main {
     grid-area: Main;
-    grid-auto-rows: minmax(300px, auto);
+    grid-auto-rows: minmax(350px, auto);
     background-color: var(--almost-black);
     padding: 50px;
 }
