@@ -2,11 +2,24 @@ import { useEffect, useState } from "react";
 import "./styles/top-tracks-page.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useSharedTopTracksDate } from "../main";
 
-function TopTracksPage({ token }) {
+function TopTracksPage({ token, setShowTopTracks }) {
   
     const [allTopTracks, setAllTopTracks] = useState([])
     const [selectedDateRange, setSelectedDateRange] = useState('long')
+    const [topTracksDate, setTopTracksDate] = useSharedTopTracksDate()
+
+    const toggleTopTracksDate = (selectedDate) => {
+      const updatedTopTracks = topTracksDate.map((date) => {
+        if (date.name === selectedDate.target.innerText) {
+          return { ...date, className: "active-date-filter" };
+        } else {
+          return { ...date, className: "inactive-date-filter" };
+        }
+      });
+      setTopTracksDate(updatedTopTracks);
+    };
 
     useEffect(() => {
         let top50
@@ -57,7 +70,20 @@ function TopTracksPage({ token }) {
             >
                 Go back
             </Link>
-
+            <ul className="date-filter-list grid">
+              {topTracksDate.map((dateFilter, index) => (
+              <li
+                key={`${dateFilter.title}-${index}`}
+                className={dateFilter.className}
+                onClick={(e) => {
+                  toggleTopTracksDate(e);
+                  setShowTopTracks(dateFilter.click);
+                }}
+              >
+                {dateFilter.name}
+              </li>
+              ))}
+            </ul>
             <h2 className="top-tracks-page--header">Top Tracks</h2>
             <ul className="top-tracks-page--list grid">
                 {allTopTracks.map((track, index) => 

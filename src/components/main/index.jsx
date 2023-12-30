@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useBetween } from "use-between";
 import TopTracksPreview from "./components/TopTracksPreview";
 import TopTracksPview6Mths from "./components/TopTracksPview6Mths";
 import TopTracksPview4Wks from "./components/TopTracksPview4Wks";
@@ -7,18 +8,25 @@ import TopArtistsPreview from "./components/TopArtistsPreview";
 import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
 import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
-import TRACKS_INITIAL_STATE from "../../shared-states/TRACKS-INITIAL-STATE";
-import ARTISTS_INITIAL_STATE from "../../shared-states/ARTISTS-INITIAL-STATE";
+import TRACKS_INITIAL_STATE from "../../initial-states/TRACKS-INITIAL-STATE";
+import ARTISTS_INITIAL_STATE from "../../initial-states/ARTISTS-INITIAL-STATE";
 
 import "./styles/main.css";
 import "./styles/main-date-filter.css";
 import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
-function Main({ token }) {
-  // HANDLE TOP TRACKS DATE RANGE
-  const [showTopTracks, setShowTopTracks] = useState("long");
+const useTracksDateState = () => {
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
+  return [topTracksDate, setTopTracksDate]
+}
+const useSharedTopTracksDate = () => useBetween(useTracksDateState)
+
+function Main({ token, showTopTracks, setShowTopTracks }) {
+
+  // HANDLE TOP TRACKS DATE RANGE
+  const [topTracksDate, setTopTracksDate] = useSharedTopTracksDate()
+  // const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
 
   const toggleTopTracksDate = (selectedDate) => {
     const updatedTopTracks = topTracksDate.map((date) => {
@@ -40,7 +48,6 @@ function Main({ token }) {
   };
 
   // HANDLE TOP ARTISTS DATE RANGE
-
   const [showTopArtists, setShowTopArtists] = useState("long");
   const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
 
@@ -122,4 +129,5 @@ function Main({ token }) {
   );
 }
 
-export default Main;
+// export default Main;
+export { Main, useSharedTopTracksDate } ;

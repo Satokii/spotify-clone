@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
-import Main from "./components/main";
+import { Main } from "./components/main";
 import Footer from "./components/footer";
 import Logout from "./Logout";
 import TopTracksPage from "./components/top-tracks-page";
@@ -53,6 +53,9 @@ function App() {
     setToken(token);
   }, []);
 
+  const [showTopTracks, setShowTopTracks] = useState("long");
+
+
   return (
     <>
       <div className="container grid">
@@ -61,12 +64,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} /> : <WelcomePage />}
+            element={token ? <Main token={token} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} /> : <WelcomePage />}
           >
           </Route>
           <Route
             path="/top-tracks"
-            element={<TopTracksPage token={token} />}
+            element={<TopTracksPage token={token} setShowTopTracks={setShowTopTracks} />}
           >
           </Route>
         </Routes>
