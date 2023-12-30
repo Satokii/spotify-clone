@@ -49,16 +49,14 @@ function TopTracksPage({ token }) {
 
     return (
         <section className="top-tracks-page--container grid">
-            <h2>Top Tracks</h2>
-            <ul className="preview--list grid">
+            <h2 className="top-tracks-page--header">Top Tracks</h2>
+            <ul className="top-tracks-page--list grid">
                 {allTopTracks.map((track, index) => 
-                    <li className="preview--item grid" key={track.id}>
-                        <p className="preview--item-rank">{`${index + 1}.`}</p>
+                    <li className="top-tracks-page--item grid" key={track.id}>
+                        <p className="top-tracks-page--item-rank">{`${index + 1}`}</p>
                         <img src={track.album.images[0].url} alt={`${track.name} image`}/>
-                        <div className="preview--item-text">
-                            <p className="preview--item-name">{track.name}</p>
-                            <p className="preview--item-artist">{track.artists[0].name}</p>
-                        </div>
+                        <p className="top-tracks-page--item-name">{track.name}</p>
+                        <p className="top-tracks-page--item-artist">{track.artists[0].name}</p>
                     </li>    
                 )}
             </ul>
