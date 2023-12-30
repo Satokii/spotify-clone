@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function TopArtistsPreview({ token }) {
+function TopArtistsPreview({ token, showTopArtists }) {
     const [topArtistsPview, setTopArtistsPview] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function TopArtistsPreview({ token }) {
               Authorization: `Bearer ${token}`,
             },
             params: {
-              time_range: "long_term",
+              time_range: showTopArtists,
               limit: 20,
             },
           }
@@ -21,7 +21,7 @@ function TopArtistsPreview({ token }) {
         setTopArtistsPview(data.items);
       };
       getTopTracksPview();
-    }, [token]);
+    }, [showTopArtists, token]);
 
     return (
         <section className="preview--container grid">

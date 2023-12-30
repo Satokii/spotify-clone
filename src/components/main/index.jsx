@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import TopTracksPreview from "./components/TopTracksPreview";
 import TopArtistsPreview from "./components/TopArtistsPreview";
-import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
-import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
 import toggleTopArtistsDate from "../../shared-functions/toggleTopArtistsDate";
@@ -13,15 +11,6 @@ import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
 function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
-
-  // HANDLE TOP ARTISTS DATE RANGE
-  const toggleTopArtists = () => {
-    if (showTopArtists === "long_term") return <TopArtistsPreview token={token} />;
-    else if (showTopArtists === "medium_term")
-      return <TopArtistsPview6mths token={token} />;
-    else if (showTopArtists === "short_term")
-      return <TopArtistsPview4Wks token={token} />;
-  };
 
   return (
     <main className="main grid">
@@ -75,7 +64,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
             </li>
           ))}
         </ul>
-        {toggleTopArtists()}
+        <TopArtistsPreview token={token} showTopArtists={showTopArtists} />
       </section>
       <RecentlyPlayed token={token} />
     </main>
