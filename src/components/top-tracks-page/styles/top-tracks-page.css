@@ -1,13 +1,30 @@
 .top-tracks-page--container {
-    grid-template-rows: 80px 1fr;
+    grid-template-rows: 20px 70px 1fr;
     background-color: var(--almost-black);
+}
+
+.top-tracks-page--back-btn {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    align-self: center;
+    justify-self: start;
+    border: solid 1px var(--const-blue);
+    background-color: var(--const-blue);
+    border-radius: 9999px;
+    padding: 0 15px;
+}
+
+.top-tracks-page--back-btn:hover {
+    background-color: var(--const-green-hover);
+    border-color: var(--const-green-hover);
 }
 
 .top-tracks-page--header {
     place-self: center;
     font-size: 34px;
     color: var(--const-green);
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .top-tracks-page--list {

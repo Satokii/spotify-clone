@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/top-tracks-page.css"
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function TopTracksPage({ token }) {
 
@@ -49,6 +50,12 @@ function TopTracksPage({ token }) {
 
     return (
         <section className="top-tracks-page--container grid">
+            <Link
+                className="top-tracks-page--back-btn btn"
+                to="/"
+            >
+                Go back
+            </Link>
             <h2 className="top-tracks-page--header">Top Tracks</h2>
             <ul className="top-tracks-page--list grid">
                 {allTopTracks.map((track, index) => 
