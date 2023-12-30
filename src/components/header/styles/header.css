@@ -7,10 +7,17 @@
 }
 
 .logo--container {
-    grid-template-columns: auto 1fr;
-    gap: 10px;
     align-content: center;
     justify-items: start;
+}
+
+.logo--link-container {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+}
+
+.logo--link-container:hover {
+    color: var(--const-green);
 }
 
 .logo--img {
@@ -22,9 +29,4 @@
 .logo--text {
     font-size: 36px;
     font-variant-caps: all-small-caps;
-}
-
-.logo--text:hover {
-    color: var(--const-green);
-    cursor: pointer;
 }
