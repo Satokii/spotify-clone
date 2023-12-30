@@ -9,6 +9,7 @@ import RecentlyPlayed from "./components/RecentlyPlayed";
 import "./styles/main.css";
 import "./styles/main-date-filter.css"
 import "./styles/main-preview-styles.css"
+import "./styles/main-recently-played.css"
 
 function Main({ token }) {
 
