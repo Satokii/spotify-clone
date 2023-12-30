@@ -25,7 +25,6 @@ function TopArtistsPview6mths({ token }) {
 
     return (
         <section className="preview--container grid">
-        <h3 className="preview--header">Top Artists (Last 6 months)</h3>
         <ul className="preview--list grid">
           {topArtistsPview6Mths.map((artist, index) => 
               <li className="preview--item grid" key={artist.id}>

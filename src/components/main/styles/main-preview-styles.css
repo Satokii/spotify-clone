@@ -1,14 +1,6 @@
 /* PREVIEW GENERIC STYLING */
 .preview--container, .recently-played--container {
-    grid-template-rows: 40px 1fr;
-    grid-auto-flow: row;
-    gap: 10px;
-}
-
-.preview--header, .recently-played--header {
-    color: var(--const-green);
-    font-size: 24px;
-    align-self: center;
+    height: fit-content;
 }
 
 .preview--list, .recently-played--list {

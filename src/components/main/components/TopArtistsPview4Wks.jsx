@@ -25,7 +25,6 @@ function TopArtistsPview4Wks({ token }) {
 
     return (
         <section className="preview--container grid">
-        <h3 className="preview--header">Top Artists (Last 4 Weeks)</h3>
         <ul className="preview--list grid">
           {topArtistsPview4Wks.map((artist, index) => 
               <li className="preview--item grid" key={artist.id}>

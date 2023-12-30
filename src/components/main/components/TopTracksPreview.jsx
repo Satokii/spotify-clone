@@ -25,7 +25,6 @@ function TopTracksPreview({ token }) {
 
   return (
     <section className="preview--container grid">
-      <h3 className="preview--header">All Time Top Tracks</h3>
       <ul className="preview--list grid">
         {topTracksPview.map((track, index) => 
             <li className="preview--item grid" key={track.id}>

@@ -99,7 +99,7 @@ function Main({ token }) {
   return (
     <main className="main grid">
       <section className="top-tracks--container grid">
-        <h2 className="top-tracks--header">Top Tracks Preview</h2>
+        <h3 className="top-tracks--header">Top Tracks Preview</h3>
           <ul className="date-filter-list grid">
             {topTracksDate.map((dateFilter, index) => 
               <li

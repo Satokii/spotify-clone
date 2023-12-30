@@ -25,7 +25,6 @@ function TopTracksPview6Mths({ token }) {
 
   return (
     <section className="preview--container grid">
-      <h3 className="preview--header">Top Tracks (Last 6 Months)</h3>
       <ul className="preview--list grid">
         {topTracksPview6Mths.map((track, index) => 
             <li className="preview--item grid" key={track.id}>

@@ -4,12 +4,13 @@
     justify-content: start;
     align-content: center;
     gap: 20px;
-    margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 .date-filter-list > li {
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
+    font-size: 14px;
 }
 
 .inactive-date-filter {    
@@ -19,18 +20,19 @@
       linear-gradient(var(--const-green) 0 0) 0% var(--_p,0%)/var(--_p,0%) 0.1em no-repeat;
     -webkit-background-clip: text,padding-box;
             background-clip: text,padding-box;
-    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+    transition: .2s var(--_s,0s) linear,background-size .2s calc(.2s - var(--_s,0s));
 }
 
 .inactive-date-filter:hover {
     --_p: 100%;
-    --_s: .3s;
+    --_s: .2s;
+    cursor: pointer;
 }
 
 .active-date-filter {
     text-decoration: underline 0.1em var(--const-green);
     text-underline-offset: 0.4em;
-    transition: 0.3s;
+    transition: 0.2s;
     transform: scale(1.05);
     color: var(--const-green);
 }

@@ -1,22 +1,19 @@
 .main {
     grid-area: Main;
-    grid-template-rows: repeat(2, 420px) 300px;
+    grid-template-rows: repeat(2, 350px) 300px;
     background-color: var(--almost-black);
     padding: 50px;
     gap: 20px;
 }
 
-.main > * {
-    margin-bottom: 20px;
-}
-
 .top-tracks--container, .top-artists--container {
-    grid-template-rows: 50px 40px 1fr;
+    grid-template-rows: 50px 30px 1fr;
     gap: 5px;
     align-content: center;
 }
 
 .top-tracks--header, .top-artists--header {
-    font-size: 30px;
-    place-self: center;
+    color: var(--const-green);
+    font-size: 24px;
+    align-self: center;
 }
