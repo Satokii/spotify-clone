@@ -1,9 +1,9 @@
 /* PREVIEW GENERIC STYLING */
-.preview--container, .recently-played--container {
+.preview--container {
     height: fit-content;
 }
 
-.preview--list, .recently-played--list {
+.preview--list {
     grid-auto-columns: 150px;
     grid-auto-flow: column;
     justify-items: center;
@@ -14,11 +14,11 @@
     min-height: 210px;
 }
 
-.preview--list:hover, .recently-played--list:hover {
+.preview--list:hover {
     overflow-x: scroll;
 }
 
-.preview--item, .recently-played--item {
+.preview--item {
     justify-items: center;
 }
 
@@ -26,23 +26,23 @@
     font-weight: bold;
 }
 
-.preview--item > img, .recently-played--item > img {
+.preview--item > img {
     margin: 5px 0;
     object-fit: cover;
     width: 100px;
     height: 100px;
 }
 
-.preview--item-text, .recently-played--item-text {
+.preview--item-text {
     text-align: center;
     font-size: 14px;
 }
 
-.preview--item-name, .recently-played--item-name {
+.preview--item-name {
     font-weight: bold;
 }
 
-.preview--item-artist, .recently-played--item-artist {
+.preview--item-artist {
     text-decoration: underline;
 }
 

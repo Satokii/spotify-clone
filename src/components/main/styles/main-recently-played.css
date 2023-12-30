@@ -1,4 +1,9 @@
 /* RECENTLY PLAYED */
+.recently-played--container {
+    grid-template-rows: 40px auto;
+    gap: 5px;
+}
+
 .recently-played--header-container {
     grid-template-columns: repeat(2, auto);
     gap: 20px;
@@ -6,11 +11,17 @@
     align-content: center;
 }
 
+.recently-played--header {
+    color: var(--const-green);
+    font-size: 24px;
+}
+
 .recently-played--refresh-btn {
     color: white;
     border: solid 1px var(--const-green);
     border-radius: 9999px;
-    padding: 0 10px;
+    padding: 0 16px;
+    margin-top: 3px;
     background-color: var(--almost-black);
     font-size: 14px;
 }
@@ -22,13 +33,53 @@
     cursor: pointer;
 }
 
+.recently-played--list {
+    grid-auto-columns: 150px;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: start;
+    gap: 5px;
+    overflow: hidden;
+    padding: 10px 0;
+    min-height: 210px;
+}
+
+.recently-played--list:hover {
+    overflow-x: scroll;
+}
+
+.recently-played--item {
+    justify-items: center;
+}
+
 .recently-played--time-since-played {
     font-family: 'Calligraffitti';
     font-size: 12px;
     font-weight: bold;
-    padding-top: 5px;
+    padding: 5px 0;
+}
+
+.recently-played--item > img {
+    margin: 5px 0;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
 }
 
 .recently-played--item-text {
     padding-top: 5px;
 }
+
+.recently-played--item-text {
+    text-align: center;
+    font-size: 14px;
+}
+
+.recently-played--item-name {
+    font-weight: 500;
+}
+
+.recently-played--item-artist {
+    text-decoration: underline;
+}
+
