@@ -11,9 +11,8 @@
 
 }
 
-/* DROPDOWN MENUS */
 .top-tracks--container, .top-artists--container {
-    grid-template-rows: 50px 40px 1fr 1fr;
+    grid-template-rows: 50px 40px 1fr;
     gap: 5px;
     align-content: center;
 }
@@ -23,31 +22,41 @@
     place-self: center;
 }
 
-.date-filter-btn {
-    place-self: start;
-    background: linear-gradient(#5619c7, #50058a);
-    color: white;
-    margin: 5px 0;
-    padding: 3px 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-}
-
+/* FILTER DATE RANGE */
 .date-filter-list {
-    width: 200px;
-    border-radius: 5px;
-    background: linear-gradient(#5619c7, #50058a);
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    align-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
 }
 
-.date-filter-list li {
-    padding: 3px 5px;
-    cursor: pointer;
+.date-filter-list > li {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
-.date-filter-list li:hover {
-    background-color: #200237;
-    color: #07bd07;
+.inactive-date-filter {    
+    padding-block: 0.1em;
+    background: 
+      linear-gradient(var(--const-green) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--const-green) 0 0) 0% var(--_p,0%)/var(--_p,0%) 0.1em no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+}
+
+.inactive-date-filter:hover {
+    --_p: 100%;
+    --_s: .3s;
+}
+
+.active-date-filter {
+    text-decoration: underline 0.1em var(--const-green);
+    text-underline-offset: 0.4em;
+    transition: 0.3s;
+    transform: scale(1.05);
+    color: var(--const-green);
 }
 
 /* PREVIEW GENERIC STYLING */
@@ -60,6 +69,7 @@
 .preview--header, .recently-played--header {
     color: var(--const-green);
     font-size: 24px;
+    align-self: center;
 }
 
 .preview--list, .recently-played--list {
@@ -115,15 +125,14 @@
     grid-template-columns: repeat(2, auto);
     gap: 20px;
     justify-content: start;
+    align-content: center;
 }
 
 .recently-played--refresh-btn {
-    justify-self: start;
-    align-self: center;
     color: white;
     border: solid 1px var(--const-green);
     border-radius: 50px;
-    padding: 2px 10px;
+    padding: 6px 10px;
     background-color: var(--almost-black);
     font-size: 14px;
 }
