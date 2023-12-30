@@ -7,7 +7,9 @@ function TopTracksPage({ token }) {
     const [allTopTracks, setAllTopTracks] = useState([])
 
     useEffect(() => {
-        const getTopTracksAll = async () => {
+        let top50
+        let top51To99
+        const getTop50TracksAll = async () => {
           const { data } = await axios.get(
             "https://api.spotify.com/v1/me/top/tracks",
             {
@@ -17,13 +19,32 @@ function TopTracksPage({ token }) {
               params: {
                 time_range: "long_term",
                 limit: 50,
-                // offset: 49
               },
             }
           );
-          setAllTopTracks(data.items);
+          top50 = data.items
         };
-        getTopTracksAll();
+        const getTop51To99TracksAll = async () => {
+            await getTop50TracksAll()
+            const { data } = await axios.get(
+              "https://api.spotify.com/v1/me/top/tracks",
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                params: {
+                  time_range: "long_term",
+                  limit: 50,
+                  offset: 49
+                },
+              }
+            );
+            top51To99 = data.items
+            top51To99.shift()
+            const combinedTracks = top50.concat(top51To99)
+            setAllTopTracks(combinedTracks);
+          };
+          getTop51To99TracksAll();
       }, [token]);
 
     return (
