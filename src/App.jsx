@@ -57,11 +57,11 @@ function App() {
 
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
-  const [showTopTracks, setShowTopTracks] = useState("long");
+  const [showTopTracks, setShowTopTracks] = useState("long_term");
 
   // TOP ARTISTS STATES
   const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
-  const [showTopArtists, setShowTopArtists] = useState("long");
+  const [showTopArtists, setShowTopArtists] = useState("long_term");
 
   return (
     <>
@@ -76,7 +76,7 @@ function App() {
           </Route>
           <Route
             path="/top-tracks"
-            element={<TopTracksPage token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} setShowTopTracks={setShowTopTracks} />}
+            element={<TopTracksPage token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} />}
           >
           </Route>
         </Routes>

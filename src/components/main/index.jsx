@@ -18,19 +18,19 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
 
   // HANDLE TOP TRACKS DATE RANGE
   const toggleTopTracks = () => {
-    if (showTopTracks === "long") return <TopTracksPreview token={token} />;
-    else if (showTopTracks === "medium")
+    if (showTopTracks === "long_term") return <TopTracksPreview token={token} />;
+    else if (showTopTracks === "medium_term")
       return <TopTracksPview6Mths token={token} />;
-    else if (showTopTracks === "short")
+    else if (showTopTracks === "short_term")
       return <TopTracksPview4Wks token={token} />;
   };
 
   // HANDLE TOP ARTISTS DATE RANGE
   const toggleTopArtists = () => {
-    if (showTopArtists === "long") return <TopArtistsPreview token={token} />;
-    else if (showTopArtists === "medium")
+    if (showTopArtists === "long_term") return <TopArtistsPreview token={token} />;
+    else if (showTopArtists === "medium_term")
       return <TopArtistsPview6mths token={token} />;
-    else if (showTopArtists === "short")
+    else if (showTopArtists === "short_term")
       return <TopArtistsPview4Wks token={token} />;
   };
 

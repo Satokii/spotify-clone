@@ -2,17 +2,17 @@ const ARTISTS_INITIAL_STATE = [
     {
       name: "ALL TIME",
       className: "active-date-filter",
-      click: "long",
+      click: "long_term",
     },
     {
       name: "LAST 6 MONTHS",
       className: "inactive-date-filter",
-      click: "medium",
+      click: "medium_term",
     },
     {
       name: "LAST 4 WEEKS",
       className: "inactive-date-filter",
-      click: "short",
+      click: "short_term",
     },
   ];
 

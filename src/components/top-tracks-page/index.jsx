@@ -5,10 +5,9 @@ import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
 
 import "./styles/top-tracks-page.css"
 
-function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTracks }) {
+function TopTracksPage({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks }) {
   
     const [allTopTracks, setAllTopTracks] = useState([])
-    const [selectedDateRange, setSelectedDateRange] = useState('long')
 
     useEffect(() => {
         let top50
@@ -21,7 +20,7 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTrack
                 Authorization: `Bearer ${token}`,
               },
               params: {
-                time_range: "long_term",
+                time_range: showTopTracks,
                 limit: 50,
               },
             }
@@ -37,7 +36,7 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTrack
                   Authorization: `Bearer ${token}`,
                 },
                 params: {
-                  time_range: "long_term",
+                  time_range: showTopTracks,
                   limit: 50,
                   offset: 49
                 },
@@ -49,7 +48,7 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTrack
             setAllTopTracks(combinedTracks);
           };
           getTop51To99TracksAll();
-      }, [token]);
+      }, [showTopTracks, token]);
 
     return (
         <section className="top-tracks-page--container grid">
