@@ -12,8 +12,26 @@
     align-content: center;
 }
 
+.top-tracks--header-container, .top-artists--header-container {
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+}
+
 .top-tracks--header, .top-artists--header {
     color: var(--const-green);
     font-size: 24px;
-    align-self: center;
+}
+
+.top-tracks--see-all-link, .top-artists--see-all-link {
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.top-tracks--see-all-link:hover, .top-artists--see-all-link:hover {
+    color: var(--const-blue);
+    text-decoration: none;
+    transform: scale(1.1);
 }

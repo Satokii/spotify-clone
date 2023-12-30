@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Main from "./components/main";
 import Footer from "./components/footer";
 import Logout from "./Logout";
+import TopTracksPage from "./components/top-tracks-page";
 import axios from "axios";
 
 import './app.css'
@@ -56,7 +58,19 @@ function App() {
       <div className="container grid">
         <Header token={token} setToken={setToken} />
         <Navigation token={token} />
-        {token ? <Main token={token} /> : <WelcomePage />}
+        <Routes>
+          <Route
+            path="/"
+            element={token ? <Main token={token} /> : <WelcomePage />}
+          >
+          </Route>
+          <Route
+            path="/top-tracks"
+            element={<TopTracksPage />}
+          >
+          </Route>
+        </Routes>
+        {/* {token ? <Main token={token} /> : <WelcomePage />} */}
         <Footer />
       </div>
     </>
