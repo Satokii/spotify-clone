@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import TopTracksPreview from "./components/TopTracksPreview";
-import TopTracksPview6Mths from "./components/TopTracksPview6Mths";
-import TopTracksPview4Wks from "./components/TopTracksPview4Wks";
 import TopArtistsPreview from "./components/TopArtistsPreview";
 import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
 import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
@@ -15,15 +13,6 @@ import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
 function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
-
-  // HANDLE TOP TRACKS DATE RANGE
-  const toggleTopTracks = () => {
-    if (showTopTracks === "long_term") return <TopTracksPreview token={token} />;
-    else if (showTopTracks === "medium_term")
-      return <TopTracksPview6Mths token={token} />;
-    else if (showTopTracks === "short_term")
-      return <TopTracksPview4Wks token={token} />;
-  };
 
   // HANDLE TOP ARTISTS DATE RANGE
   const toggleTopArtists = () => {
@@ -43,7 +32,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
             className="top-tracks--see-all-link"
             to="/top-tracks"
           >
-            View All
+            View Top 99 Tracks
           </Link>
         </div>
         <ul className="date-filter-list grid">
@@ -60,7 +49,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
             </li>
           ))}
         </ul>
-        {toggleTopTracks()}
+        <TopTracksPreview token={token} showTopTracks={showTopTracks} />
       </section>
       <section className="top-artists--container grid">
         <div className="top-artists--header-container grid">
@@ -69,7 +58,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
             className="top-artists--see-all-link"
             to="/top-artists"
           >
-            View All
+            View Top 99 Artists
           </Link>
         </div>
         <ul className="date-filter-list grid">

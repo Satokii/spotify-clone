@@ -27,7 +27,7 @@
 .top-tracks--see-all-link, .top-artists--see-all-link {
     font-size: 12px;
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
     margin-top: 5px;
 }
 
