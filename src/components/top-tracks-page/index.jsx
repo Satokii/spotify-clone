@@ -2,22 +2,12 @@ import { useEffect, useState } from "react";
 import "./styles/top-tracks-page.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
+import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
 
 function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTracks }) {
   
     const [allTopTracks, setAllTopTracks] = useState([])
     const [selectedDateRange, setSelectedDateRange] = useState('long')
-
-    const toggleTopTracksDate = (selectedDate) => {
-      const updatedTopTracks = topTracksDate.map((date) => {
-        if (date.name === selectedDate.target.innerText) {
-          return { ...date, className: "active-date-filter" };
-        } else {
-          return { ...date, className: "inactive-date-filter" };
-        }
-      });
-      setTopTracksDate(updatedTopTracks);
-    };
 
     useEffect(() => {
         let top50
@@ -74,7 +64,7 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTrack
                 key={`${dateFilter.title}-${index}`}
                 className={dateFilter.className}
                 onClick={(e) => {
-                  toggleTopTracksDate(e);
+                  toggleTopTracksDate(e, topTracksDate, setTopTracksDate);
                   setShowTopTracks(dateFilter.click);
                 }}
               >

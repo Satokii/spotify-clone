@@ -15,7 +15,7 @@ import "./styles/main-date-filter.css";
 import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
-function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks }) {
+function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
 
   // HANDLE TOP TRACKS DATE RANGE
   const toggleTopTracks = () => {
@@ -27,8 +27,6 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
   };
 
   // HANDLE TOP ARTISTS DATE RANGE
-  const [showTopArtists, setShowTopArtists] = useState("long");
-  const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
 
   const toggleTopArtistsDate = (selectedDate) => {
     const updatedTopArtists = topArtistsDate.map((date) => {

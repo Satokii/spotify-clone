@@ -9,6 +9,7 @@ import Logout from "./Logout";
 import TopTracksPage from "./components/top-tracks-page";
 import axios from "axios";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
+import ARTISTS_INITIAL_STATE from "./initial-states/ARTISTS-INITIAL-STATE";
 
 import './app.css'
 import './shared-styles/root.css'
@@ -54,10 +55,13 @@ function App() {
     setToken(token);
   }, []);
 
-
+  // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
   const [showTopTracks, setShowTopTracks] = useState("long");
 
+  // TOP ARTISTS STATES
+  const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
+  const [showTopArtists, setShowTopArtists] = useState("long");
 
   return (
     <>
@@ -67,7 +71,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} /> : <WelcomePage />}
+            element={token ? <Main token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
           >
           </Route>
           <Route
