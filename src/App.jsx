@@ -6,7 +6,8 @@ import Navigation from "./components/navigation";
 import Main from "./components/main";
 import Footer from "./components/footer";
 import Logout from "./Logout";
-import TopTracksPage from "./components/top-tracks-page";
+import TopTracksPage from "./components/full-top-results/top-tracks-page";
+import TopArtistsPage from "./components/full-top-results/top-artists-page";
 import axios from "axios";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
 import ARTISTS_INITIAL_STATE from "./initial-states/ARTISTS-INITIAL-STATE";
@@ -77,6 +78,11 @@ function App() {
           <Route
             path="/top-tracks"
             element={<TopTracksPage token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} />}
+          >
+          </Route>
+          <Route
+            path="/top-artists"
+            element={<TopArtistsPage token={token} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} />}
           >
           </Route>
         </Routes>
