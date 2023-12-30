@@ -85,8 +85,8 @@ function RecentlyPlayed({ token }) {
             )}
         </ul> */}
       <ul className="recently-played--list grid">
-        {recentlyPlayed.map((track) => (
-          <li className="recently-played--item grid" key={track.id}>
+        {recentlyPlayed.map((track, index) => (
+          <li className="recently-played--item grid" key={`${track.id}-${index}`}>
             <p className="recently-played--time-since-played">{`Played ${msToTime(
               timeNow - new Date(track.played_at)
             )} ago`}</p>

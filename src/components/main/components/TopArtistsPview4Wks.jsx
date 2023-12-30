@@ -27,7 +27,7 @@ function TopArtistsPview4Wks({ token }) {
         <section className="preview--container grid">
         <ul className="preview--list grid">
           {topArtistsPview4Wks.map((artist, index) => 
-              <li className="preview--item grid" key={artist.id}>
+              <li className="preview--item grid" key={`${artist.id}-${index}`}>
                   <p className="preview--item-rank">{`${index + 1}.`}</p>
                   <img src={artist.images[0].url} alt={`${artist.name} image`} />
                   <div className="preview--item-text preview-top-artists">
