@@ -7,6 +7,7 @@ import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
 import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import "./styles/main.css";
+import "./styles/main-date-filter.css"
 
 function Main({ token }) {
 
