@@ -11,7 +11,7 @@ function Header({ token, setToken }) {
 
   return (
     <header className="header grid">
-      <section className="logo-container">My Spotify Stats</section>
+      <section className="logo-container">Spoti-facts</section>
       <section className="profile-container">Profile</section>
       <section className="login-container">
         {!token ? <Authorisation /> : <p onClick={logout}>Logout</p>}
