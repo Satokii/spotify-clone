@@ -8,6 +8,7 @@ import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import "./styles/main.css";
 import "./styles/main-date-filter.css"
+import "./styles/main-preview-styles.css"
 
 function Main({ token }) {
 
