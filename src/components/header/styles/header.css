@@ -1,11 +1,30 @@
 .header {
     grid-area: Header;
     grid-template-columns: 1fr repeat(2, 100px);
-    align-items: center;
+    align-content: center;
     padding: 0 20px;
     background-color: var(--darker-black);
 }
 
-.logo-container {
-    font-variant-caps: small-caps;
+.logo--container {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-content: center;
+    justify-items: start;
+}
+
+.logo--img {
+    width: 30px;
+    height: 30px;
+    align-self: end;
+}
+
+.logo--text {
+    font-size: 36px;
+    font-variant-caps: all-small-caps;
+}
+
+.logo--text:hover {
+    color: var(--const-green);
+    cursor: pointer;
 }
