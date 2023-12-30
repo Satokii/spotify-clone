@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useBetween } from "use-between";
 import TopTracksPreview from "./components/TopTracksPreview";
 import TopTracksPview6Mths from "./components/TopTracksPview6Mths";
 import TopTracksPview4Wks from "./components/TopTracksPview4Wks";
@@ -8,37 +7,17 @@ import TopArtistsPreview from "./components/TopArtistsPreview";
 import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
 import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
-import TRACKS_INITIAL_STATE from "../../initial-states/TRACKS-INITIAL-STATE";
 import ARTISTS_INITIAL_STATE from "../../initial-states/ARTISTS-INITIAL-STATE";
+import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
 
 import "./styles/main.css";
 import "./styles/main-date-filter.css";
 import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
-const useTracksDateState = () => {
-  const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
-  return [topTracksDate, setTopTracksDate]
-}
-const useSharedTopTracksDate = () => useBetween(useTracksDateState)
-
-function Main({ token, showTopTracks, setShowTopTracks }) {
+function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks }) {
 
   // HANDLE TOP TRACKS DATE RANGE
-  const [topTracksDate, setTopTracksDate] = useSharedTopTracksDate()
-  // const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
-
-  const toggleTopTracksDate = (selectedDate) => {
-    const updatedTopTracks = topTracksDate.map((date) => {
-      if (date.name === selectedDate.target.innerText) {
-        return { ...date, className: "active-date-filter" };
-      } else {
-        return { ...date, className: "inactive-date-filter" };
-      }
-    });
-    setTopTracksDate(updatedTopTracks);
-  };
-
   const toggleTopTracks = () => {
     if (showTopTracks === "long") return <TopTracksPreview token={token} />;
     else if (showTopTracks === "medium")
@@ -88,7 +67,7 @@ function Main({ token, showTopTracks, setShowTopTracks }) {
               key={`${dateFilter.title}-${index}`}
               className={dateFilter.className}
               onClick={(e) => {
-                toggleTopTracksDate(e);
+                toggleTopTracksDate(e, topTracksDate, setTopTracksDate);
                 setShowTopTracks(dateFilter.click);
               }}
             >
@@ -129,5 +108,5 @@ function Main({ token, showTopTracks, setShowTopTracks }) {
   );
 }
 
-// export default Main;
-export { Main, useSharedTopTracksDate } ;
+export default Main;
+// export { Main, useSharedTopTracksDate } ;

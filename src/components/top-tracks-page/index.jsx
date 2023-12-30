@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import "./styles/top-tracks-page.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useSharedTopTracksDate } from "../main";
 
-function TopTracksPage({ token, setShowTopTracks }) {
+function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTracks }) {
   
     const [allTopTracks, setAllTopTracks] = useState([])
     const [selectedDateRange, setSelectedDateRange] = useState('long')
-    const [topTracksDate, setTopTracksDate] = useSharedTopTracksDate()
 
     const toggleTopTracksDate = (selectedDate) => {
       const updatedTopTracks = topTracksDate.map((date) => {

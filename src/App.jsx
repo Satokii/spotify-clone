@@ -3,11 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
-import { Main } from "./components/main";
+import Main from "./components/main";
 import Footer from "./components/footer";
 import Logout from "./Logout";
 import TopTracksPage from "./components/top-tracks-page";
 import axios from "axios";
+import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
 
 import './app.css'
 import './shared-styles/root.css'
@@ -53,6 +54,8 @@ function App() {
     setToken(token);
   }, []);
 
+
+  const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
   const [showTopTracks, setShowTopTracks] = useState("long");
 
 
@@ -64,12 +67,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} /> : <WelcomePage />}
+            element={token ? <Main token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} /> : <WelcomePage />}
           >
           </Route>
           <Route
             path="/top-tracks"
-            element={<TopTracksPage token={token} setShowTopTracks={setShowTopTracks} />}
+            element={<TopTracksPage token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} setShowTopTracks={setShowTopTracks} />}
           >
           </Route>
         </Routes>
