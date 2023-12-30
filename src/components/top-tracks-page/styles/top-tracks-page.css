@@ -1,5 +1,5 @@
 .top-tracks-page--container {
-    grid-template-rows: 20px 70px 1fr;
+    grid-template-rows: 20px 70px 40px 1fr;
     background-color: var(--almost-black);
     position: relative;
     min-height: 100vh;
@@ -26,11 +26,15 @@
 
 .top-tracks-page--header {
     place-self: center;
-    font-size: 34px;
+    font-size: 40px;
     color: var(--const-green);
-    padding-top: 10px;
     opacity: 0;
     animation: 1s ease 0.4s forwards fade-in;
+}
+
+.top-tracks-page--filter {
+    place-self: center;
+    gap: 50px;
 }
 
 .top-tracks-page--list {
@@ -38,7 +42,7 @@
     place-items: center;
     align-items: center;
     gap: 15px;
-    padding: 20px 40px;
+    padding: 10px 40px 20px 40px;
     opacity: 0;
     animation: 1s ease 0.6s forwards fade-in;
 }

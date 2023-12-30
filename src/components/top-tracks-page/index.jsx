@@ -59,7 +59,8 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTrack
             >
                 Go back
             </Link>
-            <ul className="date-filter-list grid">
+            <h2 className="top-tracks-page--header">Top Tracks</h2>
+            <ul className="top-tracks-page--filter date-filter-list grid">
               {topTracksDate.map((dateFilter, index) => (
               <li
                 key={`${dateFilter.title}-${index}`}
@@ -73,7 +74,6 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTrack
               </li>
               ))}
             </ul>
-            <h2 className="top-tracks-page--header">Top Tracks</h2>
             <ul className="top-tracks-page--list grid">
                 {allTopTracks.map((track, index) => 
                     <li className="top-tracks-page--item grid" key={track.id}>
