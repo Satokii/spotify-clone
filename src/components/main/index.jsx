@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import TopTracksPreview from "./components/TopTracksPreview";
 import TopTracksPview6Mths from "./components/TopTracksPview6Mths";
@@ -7,8 +6,8 @@ import TopArtistsPreview from "./components/TopArtistsPreview";
 import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
 import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
-import ARTISTS_INITIAL_STATE from "../../initial-states/ARTISTS-INITIAL-STATE";
 import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
+import toggleTopArtistsDate from "../../shared-functions/toggleTopArtistsDate";
 
 import "./styles/main.css";
 import "./styles/main-date-filter.css";
@@ -27,18 +26,6 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
   };
 
   // HANDLE TOP ARTISTS DATE RANGE
-
-  const toggleTopArtistsDate = (selectedDate) => {
-    const updatedTopArtists = topArtistsDate.map((date) => {
-      if (date.name === selectedDate.target.innerText) {
-        return { ...date, className: "active-date-filter" };
-      } else {
-        return { ...date, className: "inactive-date-filter" };
-      }
-    });
-    setTopArtistsDate(updatedTopArtists);
-  };
-
   const toggleTopArtists = () => {
     if (showTopArtists === "long") return <TopArtistsPreview token={token} />;
     else if (showTopArtists === "medium")
@@ -91,7 +78,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
               key={`${dateFilter.title}-${index}`}
               className={dateFilter.className}
               onClick={(e) => {
-                toggleTopArtistsDate(e);
+                toggleTopArtistsDate(e, topArtistsDate, setTopArtistsDate);
                 setShowTopArtists(dateFilter.click);
               }}
             >

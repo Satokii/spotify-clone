@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import "./styles/top-tracks-page.css"
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
+
+import "./styles/top-tracks-page.css"
 
 function TopTracksPage({ token, topTracksDate, setTopTracksDate, setShowTopTracks }) {
   
