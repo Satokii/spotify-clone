@@ -66,7 +66,7 @@ function App() {
           </Route>
           <Route
             path="/top-tracks"
-            element={<TopTracksPage />}
+            element={<TopTracksPage token={token} />}
           >
           </Route>
         </Routes>
