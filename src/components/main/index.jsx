@@ -7,6 +7,9 @@ import TopArtistsPreview from "./components/TopArtistsPreview";
 import TopArtistsPview6mths from "./components/TopArtistsPview6Mths";
 import TopArtistsPview4Wks from "./components/TopArtistsPview4Wks";
 import RecentlyPlayed from "./components/RecentlyPlayed";
+import TRACKS_INITIAL_STATE from "../../shared-states/TRACKS-INITIAL-STATE";
+import ARTISTS_INITIAL_STATE from "../../shared-states/ARTISTS-INITIAL-STATE";
+
 import "./styles/main.css";
 import "./styles/main-date-filter.css";
 import "./styles/main-preview-styles.css";
@@ -14,24 +17,6 @@ import "./styles/main-recently-played.css";
 
 function Main({ token }) {
   // HANDLE TOP TRACKS DATE RANGE
-  const TRACKS_INITIAL_STATE = [
-    {
-      name: "ALL TIME",
-      className: "active-date-filter",
-      click: "long",
-    },
-    {
-      name: "LAST 6 MONTHS",
-      className: "inactive-date-filter",
-      click: "medium",
-    },
-    {
-      name: "LAST 4 WEEKS",
-      className: "inactive-date-filter",
-      click: "short",
-    },
-  ];
-
   const [showTopTracks, setShowTopTracks] = useState("long");
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
 
@@ -55,23 +40,6 @@ function Main({ token }) {
   };
 
   // HANDLE TOP ARTISTS DATE RANGE
-  const ARTISTS_INITIAL_STATE = [
-    {
-      name: "ALL TIME",
-      className: "active-date-filter",
-      click: "long",
-    },
-    {
-      name: "LAST 6 MONTHS",
-      className: "inactive-date-filter",
-      click: "medium",
-    },
-    {
-      name: "LAST 4 WEEKS",
-      className: "inactive-date-filter",
-      click: "short",
-    },
-  ];
 
   const [showTopArtists, setShowTopArtists] = useState("long");
   const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);

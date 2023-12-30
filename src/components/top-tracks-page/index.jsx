@@ -4,8 +4,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 function TopTracksPage({ token }) {
-
+  
     const [allTopTracks, setAllTopTracks] = useState([])
+    const [selectedDateRange, setSelectedDateRange] = useState('long')
 
     useEffect(() => {
         let top50
@@ -56,6 +57,7 @@ function TopTracksPage({ token }) {
             >
                 Go back
             </Link>
+
             <h2 className="top-tracks-page--header">Top Tracks</h2>
             <ul className="top-tracks-page--list grid">
                 {allTopTracks.map((track, index) => 
