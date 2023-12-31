@@ -1,32 +1,7 @@
 .header {
     grid-area: Header;
-    grid-template-columns: 1fr repeat(2, 100px);
-    align-content: center;
+    grid-template-columns: 1fr 300px 1fr repeat(2, 100px);
+    align-items: center;
     padding: 0 20px;
     background-color: var(--darker-black);
-}
-
-.logo--container {
-    align-content: center;
-    justify-items: start;
-}
-
-.logo--link-container {
-    grid-template-columns: auto 1fr;
-    gap: 10px;
-}
-
-.logo--link-container:hover {
-    color: var(--const-green);
-}
-
-.logo--img {
-    width: 30px;
-    height: 30px;
-    align-self: end;
-}
-
-.logo--text {
-    font-size: 36px;
-    font-variant-caps: all-small-caps;
 }

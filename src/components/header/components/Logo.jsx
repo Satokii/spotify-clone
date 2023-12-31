@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import SpotifyLogo from "../../../assets/svgs/spotify-logo.svg";
 
+import "../styles/logo.css"
+
 function Logo() {
   return (
     <section className="logo--container grid">

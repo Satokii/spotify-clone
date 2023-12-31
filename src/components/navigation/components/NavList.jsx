@@ -6,6 +6,8 @@ function NavList() {
             <li>Artists</li>
             <li>Songs</li>
             <li>Albums</li>
+            <li>Playlists</li>
+            <li>Recommended</li>
         </ul>
     )
 }
