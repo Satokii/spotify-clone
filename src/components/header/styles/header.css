@@ -1,6 +1,6 @@
 .header {
     grid-area: Header;
-    grid-template-columns: 1fr 300px 1fr repeat(2, 100px);
+    grid-template-columns: 1fr 300px auto 100px;
     align-items: center;
     padding: 0 20px;
     background-color: var(--darker-black);

@@ -1,5 +1,6 @@
 import Logo from "./components/Logo";
 import LoginLogout from "./components/LoginLogout";
+import HeaderNav from "./components/HeaderNav";
 
 import "./styles/header.css";
 
@@ -9,14 +10,14 @@ function Header({ token, setToken }) {
     <header className="header grid">
       <Logo />
       <section className="header--search">Search</section>
-      <section className="header--nav">
+      <HeaderNav />
+      {/* <section className="header--nav">
         <ul>
           <li>New Releases</li>
           <li>Profile</li>
           <li>About</li>
         </ul>
-      </section>
-      <section className="profile-container">Profile</section>
+      </section> */}
       <LoginLogout token={token} setToken={setToken} />
     </header>
   );
