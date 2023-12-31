@@ -7,7 +7,8 @@ function HeaderSearchBar({ token }) {
     const [searchQuery, setSearchQuery] = useState("")
     const [results, setResults] = useState([])
 
-        const getSearchResult = async () => {
+        const getSearchResult = async (e) => {
+            e.preventDefault()
           const { data } = await axios.get(
             "https://api.spotify.com/v1/search",
             {
@@ -16,22 +17,19 @@ function HeaderSearchBar({ token }) {
               },
               params: {
                 q: searchQuery,
-                // q: "remaster%20track:Doxy%20artist:Miles%20Davis",
-                // type: "album artist playlist track"
-                type: "artist"
+                type: "album,show,playlist,artist"
               },
             }
           );
-        //   setTopArtistsPview(data.items);
-            console.log(data)
+        setResults(data.albums.items[0].name)
+            // console.log(data)
         };
-        getSearchResult();
 
-    console.log(searchQuery)
+    console.log(results)
 
     return (
         <section className="header--searchbar-container">
-            <form onSubmit={getSearchResult}>
+            <form onSubmit={e => getSearchResult(e)}>
                 <input 
                     type="text"
                     placeholder="Search"
