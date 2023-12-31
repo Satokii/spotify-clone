@@ -61,13 +61,16 @@ function RecentlyPlayed({ token }) {
     else return days + " days";
   };
 
-  //   console.log(recentlyPlayedPlayCount)
-
   return (
     <section className="recently-played--container grid">
       <div className="recently-played--header-container grid">
         <h3 className="recently-played--header">Recently Played</h3>
-        <button className="recently-played--refresh-btn btn" onClick={getRecentlyPlayed}>Refresh</button>
+        <button
+          className="recently-played--refresh-btn btn"
+          onClick={getRecentlyPlayed}
+        >
+          Refresh
+        </button>
       </div>
       {/* <ul className="recently-played--list grid">
             {recentlyPlayedPlayCount.map((track, index) => 
@@ -86,17 +89,19 @@ function RecentlyPlayed({ token }) {
         </ul> */}
       <ul className="recently-played--list grid">
         {recentlyPlayed.map((track, index) => (
-          <li className="recently-played--item grid" key={`${track.id}-${index}`}>
+          <li
+            className="recently-played--item grid"
+            key={`${track.id}-${index}`}
+          >
             <p className="recently-played--time-since-played">{`Played ${msToTime(
               timeNow - new Date(track.played_at)
             )} ago`}</p>
-            <img
-              src={track.track.album.images[0].url}
-              alt={`${track.track.name} image`}
-            />
+            {track.track.album.images.length ? <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} /> : <div>No Image</div>}
             <div className="recently-played--item-text">
-                <p className="recently-played--item-name">{track.track.name}</p>
-                <p className="recently-played--item-artist">{track.track.artists[0].name}</p>
+              <p className="recently-played--item-name">{track.track.name}</p>
+              <p className="recently-played--item-artist">
+                {track.track.artists[0].name}
+              </p>
             </div>
           </li>
         ))}

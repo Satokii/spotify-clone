@@ -11,7 +11,7 @@ function SearchResultsAlbums({ albumResults, albumTotal }) {
           >
             <p>{album.name}</p>
             <p>{album.artists[0].name}</p>
-            <img src={album.images[0].url} alt={`${album.name} image`} />
+            {album.images.length ? <img src={album.images[0].url} alt={`${album.name} image`} /> : <div>No Image</div>}
             <p>{`Released: ${album.release_date}`}</p>
           </li>
         ))}

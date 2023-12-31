@@ -77,7 +77,7 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, showTopTracks, 
                 {allTopTracks.map((track, index) => 
                     <li className="top-results-page--item grid" key={`${track.id}-${index}`}>
                         <p className="top-results-page--item-rank">{`${index + 1}`}</p>
-                        <img src={track.album.images[0].url} alt={`${track.name} image`}/>
+                        {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`}/> : <div>No Image</div>}
                         <p className="top-results-page--item-name">{track.name}</p>
                         <p className="top-results-page--item-artist">{track.artists[0].name}</p>
                     </li>    

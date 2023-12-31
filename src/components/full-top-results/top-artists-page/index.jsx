@@ -77,7 +77,7 @@ function TopArtistsPage({ token, topArtistsDate, setTopArtistsDate, showTopArtis
                 {allTopArtists.map((artist, index) => 
                     <li className="top-results-page--item grid" key={`${artist.id}-${index}`}>
                         <p className="top-results-page--item-rank">{`${index + 1}`}</p>
-                        <img src={artist.images[0].url} alt={`${artist.name} image`}/>
+                        {artist.images.length ? <img src={artist.images[0].url} alt={`${artist.name} image`}/> : <div>No Image</div>}
                         <p className="top-results-page--item-name">{artist.name}</p>
                     </li>    
                 )}

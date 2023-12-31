@@ -11,7 +11,7 @@ function SearchResultsArtists({ artistTotal, artistResults }) {
           >
             <p>{artist.name}</p>
             <p>{`Popularity rating: ${artist.popularity}`}</p>
-            <img src={artist.images[0].url} alt={`${artist.name} image`} />
+            {artist.images.length ? <img src={artist.images[0].url} alt={`${artist.name} image`} /> : <div>No Image</div>}
             <p>{`Spotify followers: ${artist.followers.total}`}</p>
           </li>
         ))}

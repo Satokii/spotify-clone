@@ -29,7 +29,7 @@ function TopArtistsPreview({ token, showTopArtists }) {
           {topArtistsPview.map((artist, index) => 
               <li className="preview--item grid" key={`${artist.id}-${index}`}>
                   <p className="preview--item-rank">{`${index + 1}.`}</p>
-                  <img src={artist.images[0].url} alt={`${artist.name} image`} />
+                  {artist.images.length ? <img src={artist.images[0].url} alt={`${artist.name} image`} /> : <div>No Image</div>}
                   <div className="preview--item-text preview-top-artists">
                       <p className="preview--item-name">{artist.name}</p>
                   </div>

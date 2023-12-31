@@ -11,7 +11,7 @@ function SearchResultsPlaylists({ playlistTotal, playlistResults }) {
           >
             <p>{`Playlist Name: ${playlist.name}`}</p>
             <p>{`Owner: ${playlist.owner.display_name}`}</p>
-            <img src={playlist.images[0].url} alt={`${playlist.name} image`} />
+            {playlist.images.length ? <img src={playlist.images[0].url} alt={`${playlist.name} image`} /> : <div>No Image</div>}
             <p>{`Number of Tracks: ${playlist.tracks.total}`}</p>
           </li>
         ))}

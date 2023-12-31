@@ -11,7 +11,7 @@ function SearchResultsTracks({ trackTotal, trackResults }) {
           >
             <p>{track.name}</p>
             <p>{track.artists[0].name}</p>
-            <img src={track.album.images[0].url} alt={`${track.name} image`} />
+            {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`} /> : <div>No Image</div>}
             <p>{`Released: ${track.album.release_date}`}</p>
           </li>
         ))}

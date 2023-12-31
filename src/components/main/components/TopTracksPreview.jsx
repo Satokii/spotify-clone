@@ -29,7 +29,8 @@ function TopTracksPreview({ token, showTopTracks }) {
         {topTracksPview.map((track, index) => 
             <li className="preview--item grid" key={`${track.id}-${index}`}>
                 <p className="preview--item-rank">{`${index + 1}.`}</p>
-                <img src={track.album.images[0].url} alt={`${track.name} image`}/>
+                {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`}/> : <div>No Image</div>}
+
                 <div className="preview--item-text">
                     <p className="preview--item-name">{track.name}</p>
                     <p className="preview--item-artist">{track.artists[0].name}</p>
