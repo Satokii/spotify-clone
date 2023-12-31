@@ -1,4 +1,5 @@
 import SearchResultsTracks from "./components/SearchResultsTracks"
+import SearchResultsArtists from "./components/SearchResultsArtists"
 
 import "./styles/search-results-page.css"
 
@@ -9,7 +10,7 @@ function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTota
             <h2 className="search-results--header">Search Results</h2>
             <article className="search-results--content grid">
                 <SearchResultsTracks trackResults={trackResults} trackTotal={trackTotal} />
-                <div className="search-results--category-container grid">
+                {/* <div className="search-results--category-container grid">
                     <h3 className="search-results--category-subheader ">Artists</h3>
                     <p className="search-results--category-num-results">{`(Total results: ${artistTotal})`}</p>
                     <ul className="search-results--category-list grid">
@@ -22,7 +23,8 @@ function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTota
                             </li>
                         )}
                     </ul>
-                </div>
+                </div> */}
+                < SearchResultsArtists artistResults={artistResults} artistTotal={artistTotal} />
                 <div className="search-results--category-container grid">
                     <h3 className="search-results--category-subheader ">Albums</h3>
                     <p className="search-results--category-num-results">{`(Total results: ${albumTotal})`}</p>
