@@ -3,9 +3,12 @@ import axios from "axios";
 
 import "../styles/header-searchbar.css"
 
-function HeaderSearchBar({ token }) {
+function HeaderSearchBar({ token, trackResults, setTrackResults }) {
     const [searchQuery, setSearchQuery] = useState("")
-    const [results, setResults] = useState([])
+    // const [trackResults, setTrackResults] = useState([])
+    const [artistResults, setArtistResults] = useState([])
+    const [albumResults, setAlbumResults] = useState([])
+    const [playlistResults, setPlaylistResults] = useState([])
 
         const getSearchResult = async (e) => {
             e.preventDefault()
@@ -17,15 +20,16 @@ function HeaderSearchBar({ token }) {
               },
               params: {
                 q: searchQuery,
-                type: "album,show,playlist,artist"
+                type: "track,artist,album,playlist"
               },
             }
           );
-        setResults(data.albums.items[0].name)
-            // console.log(data)
+        // setTrackResults(data.albums.items[0].name)
+            console.log(data.tracks.total)
+            setTrackResults(data.tracks.items)
         };
 
-    console.log(results)
+    console.log(trackResults)
 
     return (
         <section className="header--searchbar-container">
@@ -37,7 +41,6 @@ function HeaderSearchBar({ token }) {
                 />
                 <button type="submit">Go</button>
             </form>
-        
         </section>
     )
 }

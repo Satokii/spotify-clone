@@ -8,6 +8,7 @@ import Footer from "./components/footer";
 import Logout from "./Logout";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
+import SearchResultsPage from "./components/search-results-page";
 import axios from "axios";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
 import ARTISTS_INITIAL_STATE from "./initial-states/ARTISTS-INITIAL-STATE";
@@ -64,10 +65,14 @@ function App() {
   const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
   const [showTopArtists, setShowTopArtists] = useState("long_term");
 
+  // HEADER SEARCH STATES
+  const [trackResults, setTrackResults] = useState([])
+  
+
   return (
     <>
       <div className="container grid">
-        <Header token={token} setToken={setToken} />
+        <Header token={token} setToken={setToken} trackResults={trackResults} setTrackResults={setTrackResults} />
         <Navigation token={token} />
         <Routes>
           <Route
@@ -83,6 +88,11 @@ function App() {
           <Route
             path="/top-artists"
             element={<TopArtistsPage token={token} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} />}
+          >
+          </Route>
+          <Route
+            path="/search-results"
+            element={<SearchResultsPage />}
           >
           </Route>
         </Routes>
