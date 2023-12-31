@@ -4,29 +4,29 @@ import "../styles/header-nav.css";
 
 function HeaderNav() {
   const toggleActiveHeaderNav = ({ isActive }) =>
-    isActive ? "active-header-nav" : "inactive-header-nav";
+    isActive ? "active-header-nav" : "flip-animate";
 
   return (
     <nav className="header--nav-container">
       <ul className="header--nav-list grid">
         <li>
           <NavLink className={toggleActiveHeaderNav} to="/">
-            Home
+            <span data-hover='Home'>Home</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className={toggleActiveHeaderNav} to="/new-releeases">
-            New Releases
+          <NavLink className={toggleActiveHeaderNav} to="/new-releases">
+            <span data-hover='New Releases'>New Releases</span>
           </NavLink>
         </li>
         <li>
           <NavLink className={toggleActiveHeaderNav} to="/profile">
-            Profile
+          <span data-hover='Profile'>Profile</span>
           </NavLink>
         </li>
         <li>
           <NavLink className={toggleActiveHeaderNav} to="/about">
-            About
+          <span data-hover='About'>About</span>
           </NavLink>
         </li>
       </ul>
