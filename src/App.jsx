@@ -72,11 +72,14 @@ function App() {
   const [artistTotal, setArtistTotal] = useState(0)
   const [albumResults, setAlbumResults] = useState([])
   const [albumTotal, setAlbumTotal] = useState(0)
+  const [playlistResults, setPlaylistResults] = useState([])
+  const [playlistTotal, setPlaylistTotal] = useState(0)
+
 
   return (
     <>
       <div className="container grid">
-        <Header token={token} setToken={setToken} trackResults={trackResults} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} />
+        <Header token={token} setToken={setToken} trackResults={trackResults} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} setPlaylistResults={setPlaylistResults} setPlaylistTotal={setPlaylistTotal} />
         <Navigation token={token} />
         <Routes>
           <Route
@@ -96,7 +99,7 @@ function App() {
           </Route>
           <Route
             path="/search-results"
-            element={<SearchResultsPage trackResults={trackResults} trackTotal={trackTotal} artistResults={artistResults} artistTotal={artistTotal} albumResults={albumResults} albumTotal={albumTotal} />}
+            element={<SearchResultsPage trackResults={trackResults} trackTotal={trackTotal} artistResults={artistResults} artistTotal={artistTotal} albumResults={albumResults} albumTotal={albumTotal} playlistResults={playlistResults} playlistTotal={playlistTotal} />}
           >
           </Route>
         </Routes>

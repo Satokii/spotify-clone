@@ -1,6 +1,6 @@
 import "./styles/search-results-page.css"
 
-function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTotal,  albumResults, albumTotal }) {
+function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTotal,  albumResults, albumTotal, playlistResults, playlistTotal }) {
     
     return (
         <section className="search-results--container grid">
@@ -43,8 +43,21 @@ function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTota
                                 <p>{album.name}</p>
                                 <p>{album.artists[0].name}</p>
                                 <img src={album.images[0].url} alt={`${album.name} image`} />
-                                {/* <p>{`Spotify followers: ${artist.followers.total}`}</p> */}
                                 <p>{`Released: ${album.release_date}`}</p>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+                <div className="search-results--category-container grid">
+                    <h3 className="search-results--category-subheader ">Playlists</h3>
+                    <p className="search-results--category-num-results">{`(Total results: ${playlistTotal})`}</p>
+                    <ul className="search-results--category-list grid">
+                        {playlistResults.map((playlist, index) =>
+                            <li className="search-results--category-item grid" key={`${playlist.id}-${index}`}>
+                                <p>{`Playlist Name: ${playlist.name}`}</p>
+                                <p>{`Owner: ${playlist.owner.display_name}`}</p>
+                                <img src={playlist.images[0].url} alt={`${playlist.name} image`} />
+                                <p>{`Number of Tracks: ${playlist.tracks.total}`}</p>
                             </li>
                         )}
                     </ul>

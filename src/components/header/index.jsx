@@ -5,12 +5,12 @@ import LoginLogout from "./components/LoginLogout";
 
 import "./styles/header.css";
 
-function Header({ token, setToken, setTrackResults, setTrackTotal, setArtistResults, setArtistTotal, setAlbumResults, setAlbumTotal }) {
+function Header({ token, setToken, setTrackResults, setTrackTotal, setArtistResults, setArtistTotal, setAlbumResults, setAlbumTotal, setPlaylistResults, setPlaylistTotal }) {
 
   return (
     <header className="header grid">
       <Logo />
-      <HeaderSearchBar token={token} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} />
+      <HeaderSearchBar token={token} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} setPlaylistResults={setPlaylistResults} setPlaylistTotal={setPlaylistTotal} />
       <HeaderNav />
       <LoginLogout token={token} setToken={setToken} />
     </header>
