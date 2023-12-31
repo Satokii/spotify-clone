@@ -92,7 +92,7 @@ function App() {
           </Route>
           <Route
             path="/search-results"
-            element={<SearchResultsPage />}
+            element={<SearchResultsPage trackResults={trackResults} />}
           >
           </Route>
         </Routes>

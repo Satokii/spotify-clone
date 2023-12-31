@@ -5,12 +5,12 @@ import LoginLogout from "./components/LoginLogout";
 
 import "./styles/header.css";
 
-function Header({ token, setToken, trackResults, setTrackResults }) {
+function Header({ token, setToken, setTrackResults }) {
 
   return (
     <header className="header grid">
       <Logo />
-      <HeaderSearchBar token={token} trackResults={trackResults} setTrackResults={setTrackResults} />
+      <HeaderSearchBar token={token} setTrackResults={setTrackResults} />
       <HeaderNav />
       <LoginLogout token={token} setToken={setToken} />
     </header>

@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import "../styles/header-searchbar.css"
+import { useNavigate } from "react-router-dom";
 
-function HeaderSearchBar({ token, trackResults, setTrackResults }) {
+function HeaderSearchBar({ token, setTrackResults }) {
+
+    const navigate = useNavigate()
+
     const [searchQuery, setSearchQuery] = useState("")
     // const [trackResults, setTrackResults] = useState([])
     const [artistResults, setArtistResults] = useState([])
@@ -20,16 +24,18 @@ function HeaderSearchBar({ token, trackResults, setTrackResults }) {
               },
               params: {
                 q: searchQuery,
-                type: "track,artist,album,playlist"
+                type: "track,artist,album,playlist",
+                limit: 10
               },
             }
           );
         // setTrackResults(data.albums.items[0].name)
             console.log(data.tracks.total)
             setTrackResults(data.tracks.items)
+            navigate("/search-results")
         };
 
-    console.log(trackResults)
+    // console.log(trackResults)
 
     return (
         <section className="header--searchbar-container">
