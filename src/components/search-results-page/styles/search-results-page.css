@@ -16,19 +16,26 @@
 }
 
 .search-results--category-container {
-    grid-template-rows: 40px 1fr;
+    grid-template-rows: 30px 20px 1fr;
+    justify-items: center;
 }
 
 .search-results--category-subheader {
     align-self: start;
-    justify-self: center;
     font-size: 26px;
     color: var(--const-green);
+}
+
+.search-results--category-num-results {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--const-blue);
 }
 
 .search-results--category-list {
     grid-template-rows: repeat(10, auto);
     gap: 20px;
+    font-size: 16px;
 }
 
 .search-results--category-item {

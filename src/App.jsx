@@ -67,12 +67,13 @@ function App() {
 
   // HEADER SEARCH STATES
   const [trackResults, setTrackResults] = useState([])
+  const [trackTotal, setTrackTotal] = useState(null)
   
 
   return (
     <>
       <div className="container grid">
-        <Header token={token} setToken={setToken} trackResults={trackResults} setTrackResults={setTrackResults} />
+        <Header token={token} setToken={setToken} trackResults={trackResults} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} />
         <Navigation token={token} />
         <Routes>
           <Route
@@ -92,7 +93,7 @@ function App() {
           </Route>
           <Route
             path="/search-results"
-            element={<SearchResultsPage trackResults={trackResults} />}
+            element={<SearchResultsPage trackResults={trackResults} trackTotal={trackTotal} />}
           >
           </Route>
         </Routes>
