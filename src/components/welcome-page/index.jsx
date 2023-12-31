@@ -4,11 +4,13 @@ import './styles/welcome-page.css'
 function WelcomePage() {
 
     return (
-        <section className="welcome-page-container grid">
-            <div className="grid">
-                <h2>Welcome to My Spotify Stats</h2>
-                <p>You are currently logged out</p>
-                <p>Please <Authorisation /> to continue</p>
+        <section className="welcome-page--container grid">
+            <div className="welcome-page--text-container grid">
+                <h2 className="welcome-page--header">Welcome to Spoti-facts</h2>
+                <div className="welcome-page--text">
+                    <p>You are currently logged out</p>
+                    <p>Please <span className="welcome-page--login-link"><Authorisation /></span> to continue</p>
+                </div>
             </div>
         </section>
     )
