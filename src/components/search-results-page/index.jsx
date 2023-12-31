@@ -1,6 +1,6 @@
 import "./styles/search-results-page.css"
 
-function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTotal }) {
+function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTotal,  albumResults, albumTotal }) {
     
     return (
         <section className="search-results--container grid">
@@ -30,6 +30,21 @@ function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTota
                                 <p>{`Popularity rating: ${artist.popularity}`}</p>
                                 <img src={artist.images[0].url} alt={`${artist.name} image`} />
                                 <p>{`Spotify followers: ${artist.followers.total}`}</p>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+                <div className="search-results--category-container grid">
+                    <h3 className="search-results--category-subheader ">Albums</h3>
+                    <p className="search-results--category-num-results">{`(Total results: ${albumTotal})`}</p>
+                    <ul className="search-results--category-list grid">
+                        {albumResults.map((album, index) =>
+                            <li className="search-results--category-item grid" key={`${album.id}-${index}`}>
+                                <p>{album.name}</p>
+                                <p>{album.artists[0].name}</p>
+                                <img src={album.images[0].url} alt={`${album.name} image`} />
+                                {/* <p>{`Spotify followers: ${artist.followers.total}`}</p> */}
+                                <p>{`Released: ${album.release_date}`}</p>
                             </li>
                         )}
                     </ul>
