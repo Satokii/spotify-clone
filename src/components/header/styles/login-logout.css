@@ -1,0 +1,24 @@
+.header--login-logout-container {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header--login-logout-container:nth-child(n) {
+    color: var(--const-green);
+}
+
+.header--login-logout-container:nth-child(n):hover {
+    color: var(--const-green-hover);
+    transform: scale(1.1);
+}
+
+.header--logout-link {
+    color: var(--const-red);
+}
+
+.header--logout-link:hover {
+    color: var(--const-red-hover);
+    transform: scale(1.1);
+}
