@@ -16,8 +16,6 @@ function Header({ token, setToken, setTrackResults, setTrackTotal, setArtistResu
           <HeaderSearchBar token={token} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} setPlaylistResults={setPlaylistResults} setPlaylistTotal={setPlaylistTotal} />
           <HeaderNav />
         </> : null}
-        {/* <HeaderSearchBar token={token} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} setPlaylistResults={setPlaylistResults} setPlaylistTotal={setPlaylistTotal} />
-        <HeaderNav /> */}
       </div>
       <LoginLogout token={token} setToken={setToken} />
     </header>

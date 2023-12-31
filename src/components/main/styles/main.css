@@ -1,9 +1,15 @@
 .main {
     grid-area: Main;
-    grid-template-rows: repeat(2, 350px) 320px;
+    grid-template-rows: 70px repeat(2, 350px) 320px;
     background-color: var(--almost-black);
-    padding: 50px;
+    padding: 20px 50px 50px;
     gap: 20px;
+}
+
+.main--header {
+    font-size: 60px;
+    text-align: center;
+    font-variant-caps: all-small-caps;
 }
 
 .top-tracks--container, .top-artists--container {
