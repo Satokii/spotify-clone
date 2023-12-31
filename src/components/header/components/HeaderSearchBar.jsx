@@ -4,12 +4,12 @@ import axios from "axios";
 import "../styles/header-searchbar.css"
 import { useNavigate } from "react-router-dom";
 
-function HeaderSearchBar({ token, setTrackResults, setTrackTotal }) {
+function HeaderSearchBar({ token, setTrackResults, setTrackTotal, setArtistResults, setArtistTotal }) {
 
     const navigate = useNavigate()
 
     const [searchQuery, setSearchQuery] = useState("")
-    const [artistResults, setArtistResults] = useState([])
+    // const [artistResults, setArtistResults] = useState([])
     const [albumResults, setAlbumResults] = useState([])
     const [playlistResults, setPlaylistResults] = useState([])
 
@@ -28,10 +28,11 @@ function HeaderSearchBar({ token, setTrackResults, setTrackTotal }) {
               },
             }
           );
-        // setTrackResults(data.albums.items[0].name)
-            // console.log(data.tracks.total)
+            console.log(data.artists)
             setTrackTotal(data.tracks.total)
             setTrackResults(data.tracks.items)
+            setArtistTotal(data.artists.total)
+            setArtistResults(data.artists.items)
             navigate("/search-results")
         };
 

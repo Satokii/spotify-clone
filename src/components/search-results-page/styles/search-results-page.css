@@ -18,6 +18,8 @@
 .search-results--category-container {
     grid-template-rows: 30px 20px 1fr;
     justify-items: center;
+    border-left: solid 1px white;
+    border-right: solid 1px white;
 }
 
 .search-results--category-subheader {
@@ -39,12 +41,13 @@
 }
 
 .search-results--category-item {
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(2, auto) 150px 30px;
     gap: 5px;
-    border-bottom: solid 1px white;
+    /* border-bottom: solid 1px white; */
     padding: 10px;
     place-items: center;
     text-align: center;
+    min-height: 300px;
 }
 
 .search-results--category-item img {
