@@ -8,7 +8,7 @@ function WelcomePage() {
             <div className="welcome-page--text-container grid">
                 <h2 className="welcome-page--header">Welcome to Spoti-facts</h2>
                 <div className="welcome-page--text">
-                    <p>You are currently logged out</p>
+                    <p className="welcome-page--logged-out-text">You are currently logged out</p>
                     <p>Please <span className="welcome-page--login-link"><Authorisation /></span> to continue</p>
                 </div>
             </div>

@@ -7,25 +7,30 @@
 }
 
 .welcome-page--text-container {
-    gap: 50px;
+    gap: 20px;
     justify-items: center;
     height: fit-content;
     text-align: center;
     font-variant-caps: all-small-caps;
-    font-weight: bold;
 }
 
 .welcome-page--header {
-    font-size: 60px;
+    font-size: 66px;
 }
 
 .welcome-page--text {
-    font-size: 30px;
+    font-size: 36px;
+}
+
+.welcome-page--logged-out-text {
+    font-size: 26px;
+    color: var(--const-red);
     line-height: 2;
 }
 
 .welcome-page--login-link {
     color: var(--const-green);
+    font-weight: bold;
 }
 
 .welcome-page--login-link:hover {
