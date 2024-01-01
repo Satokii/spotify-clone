@@ -1,3 +1,9 @@
 .main-playback--cur-playing-container {
+    grid-template-rows: auto 1fr;
     border: solid 1px white;
 }
+
+.main-playback--cur-playing-item {
+    /* grid-template-rows: ; */
+}
+

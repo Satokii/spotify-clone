@@ -16,7 +16,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
   return (
     <main className="main grid">
       <h2 className="main--header">My Dashboard</h2>
-      <MainPlayback />
+      <MainPlayback token={token} />
       <section className="top-tracks--container grid">
         <div className="top-tracks--header-container grid">
           <h3 className="top-tracks--header">Top Tracks Preview</h3>
