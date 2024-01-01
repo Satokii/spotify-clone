@@ -17,6 +17,7 @@ import './app.css'
 import './shared-styles/root.css'
 import './shared-styles/scrollbars.css'
 import './shared-styles/buttons.css'
+import './keyframes/currently-playing-ani.css'
 
 function App() {
   const [token, setToken] = useState("");

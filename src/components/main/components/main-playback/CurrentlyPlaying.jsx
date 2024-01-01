@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import CurrentlyPlayingHeader from "./CurrentlyPlayingHeader";
 
 import "../../styles/main-playback/currently-playing.css"
 
@@ -28,23 +29,7 @@ function CurrentlyPlaying({ token }) {
 
     return (
         <div className="main-playback--cur-playing-container grid">
-            <div className="main-playback--cur-playing-header-container grid">
-                <h3 className="main-playback--cur-playing-header">Currently playing</h3>
-                {isPlaying ? 
-                <div className="bars grid">
-                    <div className="bars__item"></div>
-                    <div className="bars__item"></div>
-                    <div className="bars__item"></div>
-                    <div className="bars__item"></div>
-                </div> :
-                <div className="empty-bars grid">
-                    <div className="empty-bars__item"></div>
-                    <div className="empty-bars__item"></div>
-                    <div className="empty-bars__item"></div>
-                    <div className="empty-bars__item"></div>
-                </div>
-                } 
-            </div>
+            <CurrentlyPlayingHeader isPlaying={isPlaying} />
             {currentTrack.map((track, index) =>
                 <div className="main-playback--cur-playing-item grid" key={`${track.id}-${index}`}>
                     {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
