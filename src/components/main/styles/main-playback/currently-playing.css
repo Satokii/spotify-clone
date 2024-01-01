@@ -3,34 +3,3 @@
     gap: 10px;
     border-right: solid 1px var(--const-white);
 }
-
-.main-playback--cur-playing-item {
-    grid-template-columns: 140px 1fr;
-    gap: 20px;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.main-playback--cur-playing-item img {
-    border-radius: 100%;
-    transition: all 1s;
-}
-
-.main-playback--cur-playing-item img:hover  {
-    transform: rotateX(360deg) scale(1.2);
-    border-radius: 0%;
-    cursor: pointer;
-}
-
-.main-playback--cur-playing-details {
-    line-height: 1.3;
-}
-
-.main-playback--cur-playing-title {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.main-playback--cur-playing-artist {
-    color: var(--const-honey-dew);
-}

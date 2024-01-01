@@ -1,4 +1,5 @@
 import "../../styles/main-playback/currently-playing-header.css"
+import "../../../../keyframes/currently-playing-ani.css"
 
 function CurrentlyPlayingHeader({ isPlaying }) {
 
