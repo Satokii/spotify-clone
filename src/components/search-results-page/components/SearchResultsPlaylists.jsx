@@ -1,3 +1,5 @@
+import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
+
 function SearchResultsPlaylists({ playlistTotal, playlistResults }) {
   return (
     <div className="search-results--category-container grid">
@@ -9,8 +11,8 @@ function SearchResultsPlaylists({ playlistTotal, playlistResults }) {
             className="search-results--category-item grid"
             key={`${playlist.id}-${index}`}
           >
-            <p className="search-results--category-text-bold">{`Playlist Name: ${playlist.name}`}</p>
-            <p className="search-results--category-text">{`Owner: ${playlist.owner.display_name}`}</p>
+            <p className="search-results--category-text-bold">{fixLengthSearch(playlist.name)}</p>
+            <p className="search-results--category-text">{fixLengthSearch(playlist.owner.display_name)}</p>
             {playlist.images.length ? <img src={playlist.images[0].url} alt={`${playlist.name} image`} /> : <div>No Image</div>}
             <p className="search-results--category-text-other">{`Number of Tracks: ${playlist.tracks.total}`}</p>
           </li>

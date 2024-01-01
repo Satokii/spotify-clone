@@ -1,3 +1,7 @@
+import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
+
+fixLengthSearch
+
 function SearchResultsTracks({ trackTotal, trackResults }) {
   return (
     <div className="search-results--category-container grid">
@@ -9,8 +13,8 @@ function SearchResultsTracks({ trackTotal, trackResults }) {
             className="search-results--category-item grid"
             key={`${track.id}-${index}`}
           >
-            <p className="search-results--category-text-bold">{track.name}</p>
-            <p className="search-results--category-text">{track.artists[0].name}</p>
+            <p className="search-results--category-text-bold">{fixLengthSearch(track.name)}</p>
+            <p className="search-results--category-text">{fixLengthSearch(track.artists[0].name)}</p>
             {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`} /> : <div>No Image</div>}
             <p className="search-results--category-text-other">{`Released: ${track.album.release_date}`}</p>
           </li>
