@@ -7,6 +7,6 @@
 }
 
 .header--options-container {
-    grid-template-columns: 300px auto;
+    grid-template-columns: 320px auto;
     align-items: center;
 }

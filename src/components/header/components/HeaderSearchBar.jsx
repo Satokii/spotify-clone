@@ -38,11 +38,11 @@ function HeaderSearchBar({ token, setTrackResults, setTrackTotal, setArtistResul
         };
 
     return (
-        <section className="header--searchbar-container">
-            <form onSubmit={e => getSearchResult(e)}>
+        <section className="header--searchbar-container grid">
+            <form className="header--searchbar-form grid" onSubmit={e => getSearchResult(e)}>
                 <input 
                     type="text"
-                    placeholder="Search"
+                    placeholder="Search: Song, Artist, etc."
                     onChange={e => setSearchQuery(e.target.value)}
                 />
                 <button className="search" type="submit"></button>

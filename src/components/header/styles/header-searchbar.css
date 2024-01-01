@@ -1,120 +1,97 @@
-.header--searchbar-container {
+  .header--searchbar-container {
     position: relative;
-    /* justify-self: end; */
-}
-
-.header--searchbar-container form {
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  input {
     position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
+    height: 40px;
+    width: 0px;
+    top: 7px;
     right: 0;
-    bottom: 0;
-    width: 300px;
-    height: 100px;
-    .search {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--const-green);
-      border: none;
-      border-radius: 50%;
-      transition: all 1s;
+    padding: 0 80px 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    border: none;
+    color: black;
+    transition: all 0.3s;
+    opacity: 0;
+    outline: none;
+    background: var(--const-green);
+    z-index: 3;
+    cursor: pointer;
+    &:focus ~ .search {
+      background-color: #151515;
       z-index: 4;
-      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-      &:hover {
-        cursor: pointer;
-      }
       &::before {
-        content: "";
-        position: absolute;
-        margin: auto;
-        top: 14px;
-        right: 0;
-        bottom: 0;
-        left: 12px;
-        width: 8px;
-        height: 2px;
-        background: white;
-        transform: rotate(45deg);
-        transition: all .5s;
+        top: 0;
+        left: 0;
+        width: 15px;
       }
       &::after {
-        content: "";
-        position: absolute;
-        margin: auto;
-        top: -2px;
-        right: 0;
-        bottom: 0;
-        left: -3px;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        border: 2px solid white;
-        transition: all .5s;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 2px;
+        border: none;
+        background: var(--const-white);
+        border-radius: 0%;
+        transform: rotate(-45deg);
       }
     }
-    input {
-      /* font-family: 'Inconsolata', monospace; */
-      position: absolute;
-      margin: auto;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 50px;
-      outline: none;
-      border: none;
-      background: var(--const-green);
+    &::placeholder {
       color: black;
-      text-shadow: 0 0 10px var(--const-green);
-      padding: 0 80px 0 20px;
-      border-radius: 30px;
-      box-shadow: 0 0 25px 0 var(--const-green),
-                  0 20px 25px 0 rgba(0, 0, 0, 0.2);
-      transition: all 1s;
-      opacity: 0;
-      z-index: 5;
-      font-weight: bolder;
-      letter-spacing: 0.1em;
-      &:hover {
-        cursor: pointer;
-      }
-      &:focus {
-        width: 300px;
-        opacity: 1;
-        cursor: text;
-      }
-      &:focus ~ .search {
-        right: -250px;
-        background: #151515;
-        z-index: 6;
-        &::before {
-          top: 0;
-          left: 0;
-          width: 15px;
-        }
-        &::after {
-          top: 0;
-          left: 0;
-          width: 15px;
-          height: 2px;
-          border: none;
-          background: white;
-          border-radius: 0%;
-          transform: rotate(-45deg);
-        }
-      }
-      &::placeholder {
-        color: white;
-        opacity: 0.5;
-        font-weight: bolder;
-      }
+      opacity: 0.7;
     }
   }
+
+  .header--searchbar-container form input:focus {
+    width: 300px;
+    z-index: 1;
+    cursor: text;
+    opacity: 1;
+  }
+
+  .search {
+    height: 40px;
+    width: 40px;
+    text-indent: -10000px;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    background: var(--const-green);
+    border-radius: 9999px;
+    border: var(--const-green) solid 1px;
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 12px;
+    right: 0;
+    bottom: 0;
+    left: 12px;
+    width: 8px;
+    height: 2px;
+    background: var(--const-white);
+    transform: rotate(45deg);
+    transition: all .3s;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -3px;
+    right: 0;
+    bottom: 0;
+    left: -2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+    border: 2px solid var(--const-white);
+    transition: all .3s;
+  }
+}
