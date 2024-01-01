@@ -45,7 +45,7 @@ function HeaderSearchBar({ token, setTrackResults, setTrackTotal, setArtistResul
                     placeholder="Search"
                     onChange={e => setSearchQuery(e.target.value)}
                 />
-                <button type="submit">Go</button>
+                <button className="search" type="submit"></button>
             </form>
         </section>
     )
