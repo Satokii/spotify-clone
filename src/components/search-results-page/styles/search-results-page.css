@@ -1,5 +1,6 @@
 .search-results--container {
     grid-template-rows: 70px 1fr;
+    gap: 20px;
     background-color: var(--almost-black);
     min-height: 100vh;
     padding: 20px 20px 40px 20px;
@@ -13,22 +14,21 @@
 
 .search-results--content {
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .search-results--category-container {
     grid-template-rows: 30px 20px 1fr;
-    justify-items: center;
-    border-left: solid 1px white;
-    border-right: solid 1px white;
 }
 
 .search-results--category-subheader {
-    align-self: start;
+    text-align: center;
     font-size: 26px;
     color: var(--const-green);
 }
 
 .search-results--category-num-results {
+    text-align: center;
     font-size: 12px;
     font-weight: bold;
     color: var(--const-blue);
@@ -36,22 +36,61 @@
 
 .search-results--category-list {
     grid-template-rows: repeat(10, auto);
-    gap: 20px;
+    gap: 30px;
     font-size: 16px;
+    padding: 10px;
 }
 
 .search-results--category-item {
-    grid-template-rows: repeat(2, auto) 150px 30px;
-    gap: 5px;
-    /* border-bottom: solid 1px white; */
+    /* grid-template-rows: repeat(2, auto) 150px 30px; */
+    grid-template-rows: 25px 35px 160px 30px;
+    /* gap: 5px; */
     padding: 10px;
-    place-items: center;
+    justify-items: center;
+    align-content: center;
     text-align: center;
-    min-height: 300px;
+    min-height: 280px;
+    background-color: var(--const-card-gray);
+    border: solid 1px var(--const-card-gray-hover);
+    border-radius: 10px;
+}
+
+.search-results--category-item:hover {
+    background-color: var(--const-card-gray-hover);
+    cursor: pointer;
 }
 
 .search-results--category-item img {
     object-fit: cover;
     width: 150px;
     height: 150px;
+}
+
+.search-results--category-text-bold {
+    color: var(--const-card-yellow);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.search-results--category-text {
+    color: var(--const-dull-white);
+    font-size: 17px;
+}
+
+.search-results--category-text-other {
+    color: var(--const-green);
+    font-weight: 500;
+    font-variant-caps: all-small-caps;
+}
+
+.search-results--category-item:hover .search-results--category-text-bold {
+    color: var(--const-card-yellow-hover);
+}
+
+.search-results--category-item:hover .search-results--category-text{
+    color: var(--const-white);
+}
+
+.search-results--category-item:hover .search-results--category-text-other {
+    color: var(--const-green-hover);
 }

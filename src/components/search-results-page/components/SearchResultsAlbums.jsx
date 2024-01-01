@@ -9,10 +9,10 @@ function SearchResultsAlbums({ albumResults, albumTotal }) {
             className="search-results--category-item grid"
             key={`${album.id}-${index}`}
           >
-            <p>{album.name}</p>
-            <p>{album.artists[0].name}</p>
+            <p className="search-results--category-text-bold">{album.name}</p>
+            <p className="search-results--category-text">{album.artists[0].name}</p>
             {album.images.length ? <img src={album.images[0].url} alt={`${album.name} image`} /> : <div>No Image</div>}
-            <p>{`Released: ${album.release_date}`}</p>
+            <p className="search-results--category-text-other">{`Released: ${album.release_date}`}</p>
           </li>
         ))}
       </ul>

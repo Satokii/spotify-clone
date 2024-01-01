@@ -9,10 +9,10 @@ function SearchResultsArtists({ artistTotal, artistResults }) {
             className="search-results--category-item grid"
             key={`${artist.id}-${index}`}
           >
-            <p>{artist.name}</p>
-            <p>{`Popularity rating: ${artist.popularity}`}</p>
+            <p className="search-results--category-text-bold">{artist.name}</p>
+            <p className="search-results--category-text">{`Popularity rating: ${artist.popularity}`}</p>
             {artist.images.length ? <img src={artist.images[0].url} alt={`${artist.name} image`} /> : <div>No Image</div>}
-            <p>{`Spotify followers: ${artist.followers.total}`}</p>
+            <p className="search-results--category-text-other">{`Spotify followers: ${artist.followers.total}`}</p>
           </li>
         ))}
       </ul>
