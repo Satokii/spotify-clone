@@ -45,7 +45,7 @@ function HeaderSearchBar({ token, setTrackResults, setTrackTotal, setArtistResul
                     placeholder="Search: Song, Artist, etc."
                     onChange={e => setSearchQuery(e.target.value)}
                 />
-                <button className="search" type="submit"></button>
+                <button className="search" type="reset"></button>
             </form>
         </section>
     )
