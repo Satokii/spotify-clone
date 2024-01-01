@@ -1,3 +1,4 @@
 .main-playback--queue-container {
+    grid-template-rows: 20px 20px 1fr;
     background-color: red;
 }

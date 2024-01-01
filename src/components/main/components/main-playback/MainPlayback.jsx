@@ -8,7 +8,7 @@ function MainPlayback({ token }) {
     return (
         <section className="main-playback--container grid">
             <CurrentlyPlaying token={token} />
-            <Queue />
+            <Queue token={token} />
         </section>
     )
 }
