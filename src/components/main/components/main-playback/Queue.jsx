@@ -17,17 +17,33 @@ function Queue({ token }) {
               }
             }
           );
-          console.log(data.queue)
           setQueue(data.queue)
         };
         getQueue();
       }, [token]);
 
+      const fixLength = (string) => {
+        if (string.length > 13) {
+            return `${string.slice(0, 13)}...`
+        }
+        else return string
+      }
+
+      console.log(fixLength('hello world my name is the world'))
+
     return (
         <div className="main-playback--queue-container grid">
             <h3>Queue</h3>
             <p>Up next:</p>
-            <div></div>
+            <div className="main-playback--queue-list grid" >
+                {queue.map((track, index) =>
+                    <div className="main-playback--queue-item grid" key={`${track.id}-${index}`}>
+                        {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
+                        <p className="main-playback--queue-track">{fixLength(track.name)}</p>
+                        <p className="main-playback--queue-artist">{fixLength(track.artists[0].name)}</p>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

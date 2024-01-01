@@ -1,4 +1,36 @@
 .main-playback--queue-container {
     grid-template-rows: 20px 20px 1fr;
-    background-color: red;
+    /* background-color: red; */
+}
+
+.main-playback--queue-list {
+    grid-auto-columns: 160px;
+    grid-auto-flow: column;
+    gap: 20px;
+    overflow-x: scroll;
+    padding: 10px 0;
+}
+
+.main-playback--queue-item {
+    grid-template-rows: repeat(3, auto);
+    border: solid 2px var(--const-green);
+    border-radius: 15px;
+    background-color: var(--const-card-blue);
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 5px;
+    color: var(--const-card-yellow);
+}
+
+.main-playback--queue-item img {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+
+.main-playback--queue-track {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
 }
