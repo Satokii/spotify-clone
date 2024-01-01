@@ -11,8 +11,6 @@
 
 .active-header-nav {
     color: var(--const-green);
-    text-decoration: underline 2px var(--const-green);
-    text-underline-offset: 0.3em;
 }
   
 .flip-animate {
@@ -49,7 +47,5 @@
     &:hover span:before,
     &:focus span:before {
       color: var(--const-green);
-      text-decoration: underline 2px var(--const-green);
-      text-underline-offset: 0.3em;
     }
 }
