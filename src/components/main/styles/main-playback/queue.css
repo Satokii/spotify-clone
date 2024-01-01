@@ -1,5 +1,12 @@
 .main-playback--queue-container {
-    grid-template-rows: 20px 20px 1fr;
+    grid-template-rows: 20px 1fr;
+    gap: 10px;
+}
+
+.main-playback--queue-header {
+    font-variant-caps: all-small-caps;
+    font-size: 20px;
+    color: var(--const-peach);
 }
 
 .main-playback--queue-list {
@@ -12,14 +19,21 @@
 
 .main-playback--queue-item {
     grid-template-rows: repeat(3, auto);
-    border: solid 2px var(--const-green);
-    border-radius: 15px;
-    background-color: var(--const-card-blue);
+    border: solid 1px var(--const-card-gray-hover);
+    border-radius: 10px;
+    background-color: var(--const-card-gray);
     justify-items: center;
     align-content: center;
     text-align: center;
     padding: 5px;
     color: var(--const-card-yellow);
+    margin-bottom: 10px;
+}
+
+.main-playback--queue-item:hover {
+    background-color: var(--const-card-gray-hover);
+    cursor: pointer;
+    color: var(--const-card-yellow-hover);
 }
 
 .main-playback--queue-item img {
@@ -32,4 +46,11 @@
     font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
+    line-height: 1;
+}
+
+.main-playback--queue-artist {
+    font-size: 14px;
+    line-height: 1.7;
+
 }

@@ -6,10 +6,13 @@
     --const-green-hover: #0aef5a;
     --const-honey-dew: #bdffbd;
     --const-blue: #452ADB;
-    --const-card-blue: #041690;
+    --const-card-blue: #0000cd;
     --const-white: #ffffff;
     --const-red: #9f0000;
     --const-red-hover: #E10600;
     --const-peach: #ffddca;
-    --const-card-yellow: #cece07;
+    --const-card-yellow: #868604;
+    --const-card-yellow-hover: #cece07;
+    --const-card-gray: #1b1e24;
+    --const-card-gray-hover: #262a33;
 }

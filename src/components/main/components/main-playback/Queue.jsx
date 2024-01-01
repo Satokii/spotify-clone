@@ -33,8 +33,7 @@ function Queue({ token }) {
 
     return (
         <div className="main-playback--queue-container grid">
-            <h3>Queue</h3>
-            <p>Up next:</p>
+            <h3 className="main-playback--queue-header">Next in queue...</h3>
             <div className="main-playback--queue-list grid" >
                 {queue.map((track, index) =>
                     <div className="main-playback--queue-item grid" key={`${track.id}-${index}`}>
