@@ -1,5 +1,6 @@
 .main-playback--cur-playing-container {
     grid-template-rows: auto 1fr;
+    gap: 10px;
     border-right: solid 1px var(--const-white);
 }
 
@@ -9,14 +10,21 @@
 }
 
 .main-playback--cur-playing-item {
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 140px 1fr;
     gap: 20px;
     align-items: center;
     padding: 10px 0;
 }
 
 .main-playback--cur-playing-item img {
-    border-radius: 9999px;
+    border-radius: 100%;
+    transition: all 1s;
+}
+
+.main-playback--cur-playing-item img:hover  {
+    transform: rotateX(360deg) scale(1.2);
+    border-radius: 0%;
+    cursor: pointer;
 }
 
 .main-playback--cur-playing-details {
