@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import fixLengthQueue from "../../../../shared-functions/fixLengthQueue";
 
 import "../../styles/main-playback/queue.css"
 
@@ -22,15 +23,6 @@ function Queue({ token }) {
         getQueue();
       }, [token]);
 
-      const fixLength = (string) => {
-        if (string.length > 13) {
-            return `${string.slice(0, 13)}...`
-        }
-        else return string
-      }
-
-      console.log(fixLength('hello world my name is the world'))
-
     return (
         <div className="main-playback--queue-container grid">
             <h3 className="main-playback--queue-header">Next in queue...</h3>
@@ -38,8 +30,8 @@ function Queue({ token }) {
                 {queue.map((track, index) =>
                     <div className="main-playback--queue-item grid" key={`${track.id}-${index}`}>
                         {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
-                        <p className="main-playback--queue-track">{fixLength(track.name)}</p>
-                        <p className="main-playback--queue-artist">{fixLength(track.artists[0].name)}</p>
+                        <p className="main-playback--queue-track">{fixLengthQueue(track.name)}</p>
+                        <p className="main-playback--queue-artist">{fixLengthQueue(track.artists[0].name)}</p>
                     </div>
                 )}
             </div>

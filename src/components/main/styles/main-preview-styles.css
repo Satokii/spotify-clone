@@ -11,7 +11,6 @@
     gap: 5px;
     overflow: hidden;
     padding: 10px 0;
-    min-height: 210px;
 }
 
 .preview--list:hover {

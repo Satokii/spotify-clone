@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useCallback } from "react";
+import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
 
 function RecentlyPlayed({ token }) {
   const [recentlyPlayed, setRecentlyPlayed] = useState([]);
@@ -98,9 +99,9 @@ function RecentlyPlayed({ token }) {
             )} ago`}</p>
             {track.track.album.images.length ? <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} /> : <div>No Image</div>}
             <div className="recently-played--item-text">
-              <p className="recently-played--item-name">{track.track.name}</p>
+              <p className="recently-played--item-name">{fixLengthPreviews(track.track.name)}</p>
               <p className="recently-played--item-artist">
-                {track.track.artists[0].name}
+                {fixLengthPreviews(track.track.artists[0].name)}
               </p>
             </div>
           </li>
