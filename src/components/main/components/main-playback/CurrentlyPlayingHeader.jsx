@@ -5,7 +5,8 @@ function CurrentlyPlayingHeader({ isPlaying }) {
 
     return (
         <div className="main-playback--cur-playing-header-container grid">
-            <h3 className="main-playback--cur-playing-header">Currently playing</h3>
+            {isPlaying ? <h3 className="main-playback--cur-playing-header">Currently playing</h3> :
+            <h3 className="main-playback--cur-playing-header">Currently paused</h3>}
             {isPlaying ? 
             <div className="bars grid">
                 <div className="bars__item"></div>
