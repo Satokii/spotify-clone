@@ -1,8 +1,8 @@
 .main-playback--cur-playing-item {
     grid-template-columns: 140px 1fr;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
 }
 
 .main-playback--cur-playing-item img {
