@@ -1,8 +1,9 @@
 .main-playback--cur-playing-item {
-    grid-template-columns: 140px 1fr;
-    gap: 40px;
+    grid-template-columns: 140px 150px;
+    gap: 30px;
     align-items: center;
     padding: 20px;
+    text-align: center;
 }
 
 .main-playback--cur-playing-item img {
@@ -24,6 +25,7 @@
 .main-playback--cur-playing-title {
     font-size: 18px;
     font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .main-playback--cur-playing-artist {
