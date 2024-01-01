@@ -29,7 +29,15 @@ function CurrentlyPlaying({ token }) {
 
     return (
         <div className="main-playback--cur-playing-container grid">
-            <h3 className="main-playback--cur-playing-header">Currently Playing:</h3>
+            <div className="main-playback--cur-playing-header-container grid">
+                <h3 className="main-playback--cur-playing-header">Currently playing</h3>
+                <div className="bars grid">
+                    <div className="bars__item"></div>
+                    <div className="bars__item"></div>
+                    <div className="bars__item"></div>
+                    <div className="bars__item"></div>
+                </div>
+            </div>
             {currentTrack.map((track, index) =>
                 <div className="main-playback--cur-playing-item grid" key={`${track.id}-${index}`}>
                     {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
