@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import MainPlayback from "./components/main-playback/MainPlayback";
 import TopTracksPreview from "./components/TopTracksPreview";
 import TopArtistsPreview from "./components/TopArtistsPreview";
 import RecentlyPlayed from "./components/RecentlyPlayed";
@@ -15,9 +16,10 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
   return (
     <main className="main grid">
       <h2 className="main--header">My Dashboard</h2>
+      <MainPlayback />
       <section className="top-tracks--container grid">
         <div className="top-tracks--header-container grid">
-          <h2 className="top-tracks--header">Top Tracks Preview</h2>
+          <h3 className="top-tracks--header">Top Tracks Preview</h3>
           <Link 
             className="top-tracks--see-all-link"
             to="/top-tracks"
@@ -43,7 +45,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
       </section>
       <section className="top-artists--container grid">
         <div className="top-artists--header-container grid">
-          <h2 className="top-artists--header">Top Artists Preview</h2>
+          <h3 className="top-artists--header">Top Artists Preview</h3>
           <Link
             className="top-artists--see-all-link"
             to="/top-artists"
@@ -73,4 +75,3 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
 }
 
 export default Main;
-// export { Main, useSharedTopTracksDate } ;

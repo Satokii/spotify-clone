@@ -103,7 +103,6 @@ function App() {
           >
           </Route>
         </Routes>
-        {/* {token ? <Main token={token} /> : <WelcomePage />} */}
         <Footer />
       </div>
     </>
