@@ -25,19 +25,20 @@ function CurrentlyPlaying({ token }) {
         getCurrentTrack();
       }, [token]);
 
-    //   console.log(currentTrack.name)
+    //   console.log(currentTrack)
 
     return (
         <div className="main-playback--cur-playing-container grid">
-            <h3>Currently Playing</h3>
-            <div className="main-playback--cur-playing-item grid">
-                {currentTrack.map((track, index) =>
-                    <div className="main-playback--cur-playing-details" key={`${track.id}-${index}`}>
-                        {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
-                        <p>{track.name}</p>
+            <h3 className="main-playback--cur-playing-header">Currently Playing:</h3>
+            {currentTrack.map((track, index) =>
+                <div className="main-playback--cur-playing-item grid" key={`${track.id}-${index}`}>
+                    {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
+                    <div className="main-playback--cur-playing-details">
+                        <p className="main-playback--cur-playing-title">{track.name}</p>
+                        <p className="main-playback--cur-playing-artist">{track.artists[0].name}</p>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     )
 }
