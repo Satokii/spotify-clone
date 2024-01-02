@@ -22,10 +22,8 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-    color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Figtree", sans-serif;
+  color: white;
 }
 
 ul,
