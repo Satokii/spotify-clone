@@ -2,5 +2,5 @@
     grid-template-columns: minmax(300px, max-content) 1fr;
     gap: 20px;
     background-color: var(--darker-black);
-    padding: 20px;
+    padding: 0 20px;
 }

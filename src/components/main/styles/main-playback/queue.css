@@ -1,6 +1,7 @@
 .main-playback--queue-container {
-    grid-template-rows: 20px 1fr;
+    grid-template-rows: 40px 1fr;
     gap: 10px;
+    padding-top: 20px;
 }
 
 .main-playback--queue-header {
@@ -8,6 +9,7 @@
     font-size: 22px;
     letter-spacing: 0.03rem;
     color: var(--const-peach);
+    line-height: 0.9;
 }
 
 .main-playback--queue-list {

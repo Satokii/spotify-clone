@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import "../../styles/main-playback/currently-playing-header.css"
 import "../../../../keyframes/currently-playing-ani.css"
 
@@ -34,7 +32,7 @@ function CurrentlyPlayingHeader({ isPlaying, setPulse }) {
                 <div className="empty-bars__item"></div>
             </div>
             }
-            <div className="hi" onClick={e => playPulse(e)}>Click me for a good time</div>
+            <button className="grid" type="submit" onClick={e => playPulse(e)}><span>Click me</span></button>
         </div>
     )
 }
