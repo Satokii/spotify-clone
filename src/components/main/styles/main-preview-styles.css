@@ -19,6 +19,8 @@
 
 .preview--item {
     justify-items: center;
+    min-height: 190px;
+    padding: 10px 0;
 }
 
 .preview--item-rank {
