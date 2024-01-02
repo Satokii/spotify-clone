@@ -9,6 +9,7 @@ function CurrentlyPlaying({ token }) {
 
     const [currentTrack, setCurrentTrack] = useState([])
     const [isPlaying, setIsPlaying] = useState(false)
+    const [pulse, setPulse] = useState(false)
 
     useEffect(() => {
         let track = []
@@ -30,8 +31,8 @@ function CurrentlyPlaying({ token }) {
 
     return (
         <div className="main-playback--cur-playing-container grid">
-            <CurrentlyPlayingHeader isPlaying={isPlaying} />
-            <CurrentlyPlayingTrack currentTrack={currentTrack} />
+            <CurrentlyPlayingHeader isPlaying={isPlaying} setPulse={setPulse} />
+            <CurrentlyPlayingTrack currentTrack={currentTrack} pulse={pulse} />
         </div>
     )
 }

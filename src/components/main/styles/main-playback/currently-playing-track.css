@@ -16,6 +16,10 @@
     /* transform: rotateX(360deg) scale(1.2); */
     border-radius: 0%;
     cursor: pointer;
+    /* animation: img-pulse 1.65s infinite ease-in-out; */
+}
+
+.main-playback--pulse-img {
     animation: img-pulse 1.65s infinite ease-in-out;
 }
 

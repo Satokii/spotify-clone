@@ -1,7 +1,20 @@
+import { useState } from "react"
+
 import "../../styles/main-playback/currently-playing-header.css"
 import "../../../../keyframes/currently-playing-ani.css"
 
-function CurrentlyPlayingHeader({ isPlaying }) {
+function CurrentlyPlayingHeader({ isPlaying, setPulse }) {
+
+    const playPulse = (e) => {
+        if (e.target.className === 'pulse-on') {
+            e.target.className = 'pulse-off'
+            setPulse(false)
+        }
+        else {
+            e.target.className = 'pulse-on'
+            setPulse(true)
+        }
+    }
 
     return (
         <div className="main-playback--cur-playing-header-container grid">
@@ -21,6 +34,7 @@ function CurrentlyPlayingHeader({ isPlaying }) {
                 <div className="empty-bars__item"></div>
             </div>
             }
+            <div className="hi" onClick={e => playPulse(e)}>Click me for a good time</div>
         </div>
     )
 }
