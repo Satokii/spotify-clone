@@ -1,8 +1,8 @@
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
-
-fixLengthSearch
+import formatDate from "../../../shared-functions/formatDate";
 
 function SearchResultsTracks({ trackTotal, trackResults }) {
+
   return (
     <div className="search-results--category-container grid">
       <h3 className="search-results--category-subheader ">Tracks</h3>
@@ -16,7 +16,7 @@ function SearchResultsTracks({ trackTotal, trackResults }) {
             <p className="search-results--category-text-bold">{fixLengthSearch(track.name)}</p>
             <p className="search-results--category-text">{fixLengthSearch(track.artists[0].name)}</p>
             {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`} /> : <div>No Image</div>}
-            <p className="search-results--category-text-other">{`Released: ${track.album.release_date}`}</p>
+            <p className="search-results--category-text-other">{`Released: ${formatDate(track.album.release_date)}`}</p>
           </li>
         ))}
       </ul>

@@ -14,7 +14,7 @@ function SearchResultsPlaylists({ playlistTotal, playlistResults }) {
             <p className="search-results--category-text-bold">{fixLengthSearch(playlist.name)}</p>
             <p className="search-results--category-text">{fixLengthSearch(playlist.owner.display_name)}</p>
             {playlist.images.length ? <img src={playlist.images[0].url} alt={`${playlist.name} image`} /> : <div>No Image</div>}
-            <p className="search-results--category-text-other">{`Number of Tracks: ${playlist.tracks.total}`}</p>
+            <p className="search-results--category-text-other">{`Number of Tracks: ${(playlist.tracks.total).toLocaleString()}`}</p>
           </li>
         ))}
       </ul>

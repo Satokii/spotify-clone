@@ -25,7 +25,6 @@ function HeaderSearchBar({ token, setTrackResults, setTrackTotal, setArtistResul
               },
             }
           );
-          console.log(data.artists.items[6].images.length)
             setTrackTotal(data.tracks.total)
             setTrackResults(data.tracks.items)
             setArtistTotal(data.artists.total)

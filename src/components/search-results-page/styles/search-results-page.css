@@ -80,7 +80,8 @@
 .search-results--category-text-other {
     color: var(--const-green);
     font-weight: 500;
-    font-variant-caps: all-small-caps;
+    /* font-variant-caps: all-small-caps; */
+    /* font-variant-caps: all-petite-caps; */
 }
 
 .search-results--category-item:hover .search-results--category-text-bold {

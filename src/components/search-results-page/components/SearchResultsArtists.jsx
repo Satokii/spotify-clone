@@ -14,7 +14,7 @@ function SearchResultsArtists({ artistTotal, artistResults }) {
             <p className="search-results--category-text-bold">{fixLengthSearch(artist.name)}</p>
             <p className="search-results--category-text">{`Popularity rating: ${artist.popularity}`}</p>
             {artist.images.length ? <img src={artist.images[0].url} alt={`${artist.name} image`} /> : <div>No Image</div>}
-            <p className="search-results--category-text-other">{`Spotify followers: ${artist.followers.total}`}</p>
+            <p className="search-results--category-text-other">{`Spotify followers: ${(artist.followers.total).toLocaleString()}`}</p>
           </li>
         ))}
       </ul>
