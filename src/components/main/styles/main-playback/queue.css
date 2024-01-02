@@ -1,7 +1,7 @@
 .main-playback--queue-container {
     grid-template-rows: 40px 1fr;
     gap: 10px;
-    padding-top: 20px;
+    padding: 20px 10px;
 }
 
 .main-playback--queue-header {

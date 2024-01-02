@@ -4,6 +4,7 @@ import CurrentlyPlayingHeader from "./CurrentlyPlayingHeader";
 import CurrentlyPlayingTrack from "./CurrentlyPlayingTrack";
 
 import "../../styles/main-playback/currently-playing.css"
+import "../../../../keyframes/img-pulse.css"
 
 function CurrentlyPlaying({ token }) {
 
