@@ -13,9 +13,10 @@
 }
 
 .main-playback--cur-playing-item img:hover  {
-    transform: rotateX(360deg) scale(1.2);
+    /* transform: rotateX(360deg) scale(1.2); */
     border-radius: 0%;
     cursor: pointer;
+    animation: img-pulse 1.65s infinite ease-in-out;
 }
 
 .main-playback--cur-playing-details {
@@ -31,4 +32,22 @@
 .main-playback--cur-playing-artist {
     color: var(--const-honey-dew);
     font-size: 18px;
+}
+
+@keyframes img-pulse {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

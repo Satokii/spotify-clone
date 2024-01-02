@@ -20,7 +20,7 @@ function CurrentlyPlayingHeader({ isPlaying }) {
                 <div className="empty-bars__item"></div>
                 <div className="empty-bars__item"></div>
             </div>
-                } 
+            }
         </div>
     )
 }
