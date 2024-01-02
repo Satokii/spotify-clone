@@ -5,7 +5,8 @@
 
 .main-playback--queue-header {
     font-variant-caps: all-small-caps;
-    font-size: 20px;
+    font-size: 22px;
+    letter-spacing: 0.03rem;
     color: var(--const-peach);
 }
 
@@ -24,6 +25,7 @@
 
 .main-playback--queue-item {
     grid-template-rows: repeat(3, auto);
+    grid-template-rows: 100px auto 20px;
     border: solid 1px var(--const-card-gray-hover);
     border-radius: 10px;
     background-color: var(--const-card-gray);
@@ -33,7 +35,6 @@
     min-height: 150px;
     padding: 5px;
     color: var(--const-card-yellow);
-    margin-bottom: 10px;
 }
 
 .main-playback--queue-item:hover {
@@ -46,17 +47,15 @@
     object-fit: cover;
     width: 80px;
     height: 80px;
+    margin: 10px 0;
 }
 
 .main-playback--queue-track {
     font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
-    line-height: 1;
 }
 
 .main-playback--queue-artist {
     font-size: 14px;
-    line-height: 1.7;
-
 }
