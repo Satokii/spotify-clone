@@ -18,6 +18,18 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
         setIsPlaying(!isPlaying)
         };
 
+        const skipTrack = async (skipDirection) => {
+          await axios.post(
+            `https://api.spotify.com/v1/me/player/${skipDirection}`, {},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+              },
+            }
+          );
+        };
+
         const togglePlayBtn = isPlaying ? 'fa fa-pause-circle-o pause-btn' : 'fa fa-play-circle-o play-btn'
 
     return (
@@ -32,7 +44,7 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
 
             <div className='song-controls'>
 
-              <div className='reverse-song'>
+              <div className='reverse-song' onClick={() => skipTrack("previous")}>
                 <i className="fa fa-step-backward reverse" aria-hidden="true" />
               </div>
 
@@ -40,7 +52,7 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
                 <i className={"fa play-btn" + togglePlayBtn} aria-hidden="true" />
               </div>
 
-              <div className='next-song'>
+              <div className='next-song' onClick={() => skipTrack("next")}>
                 <i className="fa fa-step-forward forward" aria-hidden="true" />
               </div>
 
