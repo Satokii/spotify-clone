@@ -68,7 +68,7 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
                 {/* <input className='song-expired' type="range" name="song-expired" min={0} max={100} value={60} /> */}
                 <div className='song-expired' style={{width: timeElapsed * 1}}/>
               </div>
-              <p className='song-end'>3:24</p>
+              <p className='song-end'>{calcTrackTime(trackDuration)}</p>
             </div>
           </div>
         </section>
