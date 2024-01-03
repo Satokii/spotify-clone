@@ -70,6 +70,7 @@ function Main({ token, topTracksDate, setTopTracksDate, showTopTracks, setShowTo
         <TopArtistsPreview token={token} showTopArtists={showTopArtists} />
       </section>
       <RecentlyPlayed token={token} />
+      <section>Player</section>
     </main>
   );
 }
