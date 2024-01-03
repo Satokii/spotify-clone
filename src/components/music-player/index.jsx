@@ -36,10 +36,16 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
           );
         };
 
+        function calcTrackTime(ms) {
+          const minutes = Math.floor(ms / 60000);
+          const seconds = ((ms % 60000) / 1000).toFixed(0);
+          return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        }
+
         const togglePlayBtn = isPlaying ? pauseButton : playButton
 
         const timeElapsed = Number((currentProgress/trackDuration) * 500).toFixed(0)
-        console.log(timeElapsed)
+        // console.log(timeElapsed)
 
     return (
         <section>
@@ -57,7 +63,7 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
               </div>
             </div>
             <div className='song-progress-bar-container grid'>
-              <p className='song-start'>0:00</p>
+              <p className='song-start'>{calcTrackTime(currentProgress)}</p>
               <div className='song-progress-bar' >
                 {/* <input className='song-expired' type="range" name="song-expired" min={0} max={100} value={60} /> */}
                 <div className='song-expired' style={{width: timeElapsed * 1}}/>
