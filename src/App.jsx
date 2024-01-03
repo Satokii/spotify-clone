@@ -87,9 +87,9 @@ const [currentProgress, setCurrentProgress] = useState(null)
       setTrackDuration(data.item.duration_ms)
       setCurrentProgress(data.progress_ms)
     };
-    // setInterval(() => {
+    setInterval(() => {
       getCurrentTrack();
-    // }, 1000);
+    }, 1000);
   }, [setIsPlaying, token]);
 
 
