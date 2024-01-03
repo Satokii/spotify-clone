@@ -6,8 +6,9 @@ import forwardButton from "../../assets/svgs/player/forward-button.svg"
 import backButton from "../../assets/svgs/player/back-button.svg"
 
 import "./styles/music-player.css"
+import { useState } from "react";
 
-function MusicPlayer({ token, currentTrack, currentProgress, isPlaying, setIsPlaying }) {
+function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying }) {
 
         const changePlayerState = async () => {
           const playState = isPlaying ? "pause" : "play"
@@ -36,7 +37,9 @@ function MusicPlayer({ token, currentTrack, currentProgress, isPlaying, setIsPla
         };
 
         const togglePlayBtn = isPlaying ? pauseButton : playButton
-        // console.log(currentTrack)
+
+        const timeElapsed = Number((currentProgress/trackDuration) * 500).toFixed(0)
+        console.log(timeElapsed)
 
     return (
         <section>
@@ -55,8 +58,9 @@ function MusicPlayer({ token, currentTrack, currentProgress, isPlaying, setIsPla
             </div>
             <div className='song-progress-bar-container grid'>
               <p className='song-start'>0:00</p>
-              <div className='song-progress-bar'>
-                <div className='song-expired' />
+              <div className='song-progress-bar' >
+                {/* <input className='song-expired' type="range" name="song-expired" min={0} max={100} value={60} /> */}
+                <div className='song-expired' style={{width: timeElapsed * 1}}/>
               </div>
               <p className='song-end'>3:24</p>
             </div>

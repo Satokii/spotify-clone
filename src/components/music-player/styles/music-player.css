@@ -36,14 +36,30 @@
     height: 5px;
     background: var(--const-player-slider);
     border-radius: 4px;
+    position: relative;
 }
   
 .song-expired {
     margin: 0;
-    width: 100px;
+    /* width: 100px; */
     height: 5px;
     background: var(--const-main-white);
     border-radius: 4px;
+
+
+    /* padding: 0;
+    width: 300px;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    top: 0; */
+}
+
+input {
+    margin: 0.5rem;
 }
 
 .song-progress-bar:hover .song-expired {

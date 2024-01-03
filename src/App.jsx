@@ -60,6 +60,7 @@ function App() {
 // FETCH CURRENTLY PLAYING TRACK
 const [currentTrack, setCurrentTrack] = useState([])
 const [isPlaying, setIsPlaying] = useState(false)
+const [trackDuration, setTrackDuration] = useState(null)
 const [currentProgress, setCurrentProgress] = useState(null)
 
   useEffect(() => {
@@ -73,10 +74,10 @@ const [currentProgress, setCurrentProgress] = useState(null)
           }
         }
       );
-      console.log(data)
       track.push(data.item)
       setCurrentTrack(track)
       setIsPlaying(data.is_playing)
+      setTrackDuration(data.item.duration_ms)
       setCurrentProgress(data.progress_ms)
     };
     getCurrentTrack();
@@ -108,7 +109,7 @@ const [currentProgress, setCurrentProgress] = useState(null)
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} currentTrack={currentTrack} currentProgress={currentProgress} isPlaying={isPlaying} setIsPlaying={setIsPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
+            element={token ? <Main token={token} currentTrack={currentTrack} trackDuration={trackDuration} currentProgress={currentProgress} isPlaying={isPlaying} setIsPlaying={setIsPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
           >
           </Route>
           <Route

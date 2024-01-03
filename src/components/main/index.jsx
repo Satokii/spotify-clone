@@ -12,7 +12,7 @@ import "./styles/main-date-filter.css";
 import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
-function Main({ token, currentTrack, currentProgress, isPlaying, setIsPlaying, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
+function Main({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
 
 
   return (
@@ -72,7 +72,7 @@ function Main({ token, currentTrack, currentProgress, isPlaying, setIsPlaying, t
         <TopArtistsPreview token={token} showTopArtists={showTopArtists} />
       </section>
       <RecentlyPlayed token={token} />
-      <MusicPlayer token={token} currentTrack={currentTrack} currentProgress={currentProgress} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+      <MusicPlayer token={token} currentTrack={currentTrack} trackDuration={trackDuration} currentProgress={currentProgress} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
     </main>
   );
 }
