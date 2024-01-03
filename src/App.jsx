@@ -61,8 +61,8 @@ function App() {
 const [currentTrack, setCurrentTrack] = useState({})
 const [isPlaying, setIsPlaying] = useState(false)
 const [notPlaying, setNotPlaying] = useState(null)
-const [trackDuration, setTrackDuration] = useState(null)
-const [currentProgress, setCurrentProgress] = useState(null)
+const [trackDuration, setTrackDuration] = useState()
+const [currentProgress, setCurrentProgress] = useState(0)
 
   useEffect(() => {
     const getCurrentTrack = async () => {
@@ -70,28 +70,29 @@ const [currentProgress, setCurrentProgress] = useState(null)
         "https://api.spotify.com/v1/me/player/currently-playing",
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`
           }
         }
       );
       if (!data) setNotPlaying(true)
-    const { item } = data
-    setCurrentTrack({
-      trackId: item.id,
-      trackImageLength: item.album.images.length,
-      trackImage: item.album.images[0].url,
-      trackName: item.name,
-      trackArtist: item.artists[0].name
-    })
-      setIsPlaying(data.is_playing)
-      setTrackDuration(data.item.duration_ms)
-      setCurrentProgress(data.progress_ms)
-    };
-    setInterval(() => {
-      getCurrentTrack();
-    }, 1000);
-  }, [setIsPlaying, token]);
-
+      else {
+        const { item } = data
+        setCurrentTrack({
+          trackId: item.id,
+          trackImageLength: item.album.images.length,
+          trackImage: item.album.images[0].url,
+          trackName: item.name,
+          trackArtist: item.artists[0].name
+        })
+        setIsPlaying(data.is_playing)
+        setTrackDuration(data.item.duration_ms)
+        setCurrentProgress(data.progress_ms)
+      }
+      };
+      setInterval(() => {
+        getCurrentTrack();
+      }, 1000);
+    }, [setIsPlaying, token]);
 
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);

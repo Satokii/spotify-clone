@@ -8,7 +8,6 @@ import backButton from "../../assets/svgs/player/back-button.svg"
 import "./styles/music-player.css"
 
 function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying }) {
-
           
         const changePlayerState = async () => {
           const playState = isPlaying ? "pause" : "play"
@@ -40,12 +39,23 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
         const calcTrackTime = (ms) => {
           const minutes = Math.floor(ms / 60000);
           const seconds = ((ms % 60000) / 1000).toFixed(0);
-          return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+          return (
+            seconds == 60 ?
+            (minutes+1) + ":00" :
+            minutes + ":" + (seconds < 10 ? "0" : "") + seconds
+          )
         }
-
+        
         const togglePlayBtn = isPlaying ? pauseButton : playButton
 
-        const timeElapsed = Number((currentProgress/trackDuration * 500).toFixed(0) * 1)
+        const songTimeCounter = () => {
+          if (currentProgress === 0) {
+            return "0:00"
+          }
+          else return calcTrackTime(currentProgress - 1000)
+        }
+
+        const timeElapsed = Number(((currentProgress)/trackDuration * 500).toFixed(0))
 
     return (
         <section>
@@ -63,7 +73,7 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
               </div>
             </div>
             <div className='song-progress-bar-container grid'>
-              <p className='song-start'>{calcTrackTime(currentProgress)}</p>
+              <p className='song-start'>{songTimeCounter()}</p>
               <div className='song-progress-bar' >
                 {/* <input className='song-expired' type="range" name="song-expired" min={0} max={100} value={60} /> */}
                 <div className='song-expired' style={{width: timeElapsed}}/>
