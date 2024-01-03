@@ -75,6 +75,8 @@ function App() {
   const [playlistResults, setPlaylistResults] = useState([])
   const [playlistTotal, setPlaylistTotal] = useState(0)
 
+  // PLAYBACK STATE
+  const [isPlaying, setIsPlaying] = useState(false)
 
   return (
     <>
@@ -84,7 +86,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
+            element={token ? <Main token={token} isPlaying={isPlaying} setIsPlaying={setIsPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
           >
           </Route>
           <Route

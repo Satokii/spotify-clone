@@ -9,7 +9,6 @@ function CurrentlyPlayingTrack({ currentTrack, pulse }) {
         else return ""
     } 
 
-    console.log(pulse)
     return (
         <>
         {currentTrack.map((track, index) =>

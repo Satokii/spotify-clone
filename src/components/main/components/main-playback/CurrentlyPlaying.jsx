@@ -6,10 +6,9 @@ import CurrentlyPlayingTrack from "./CurrentlyPlayingTrack";
 import "../../styles/main-playback/currently-playing.css"
 import "../../../../keyframes/img-pulse.css"
 
-function CurrentlyPlaying({ token }) {
+function CurrentlyPlaying({ token, isPlaying, setIsPlaying }) {
 
     const [currentTrack, setCurrentTrack] = useState([])
-    const [isPlaying, setIsPlaying] = useState(false)
     const [pulse, setPulse] = useState(false)
 
     useEffect(() => {
