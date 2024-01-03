@@ -57,6 +57,28 @@ function App() {
     setToken(token);
   }, []);
 
+// FETCH CURRENTLY PLAYING TRACK
+const [currentTrack, setCurrentTrack] = useState([])
+const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    let track = []
+    const getCurrentTrack = async () => {
+      const { data } = await axios.get(
+        "https://api.spotify.com/v1/me/player/currently-playing",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      );
+      track.push(data.item)
+      setCurrentTrack(track)
+      setIsPlaying(data.is_playing)
+    };
+    getCurrentTrack();
+  }, [setIsPlaying, token]);
+
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
   const [showTopTracks, setShowTopTracks] = useState("long_term");
@@ -75,9 +97,6 @@ function App() {
   const [playlistResults, setPlaylistResults] = useState([])
   const [playlistTotal, setPlaylistTotal] = useState(0)
 
-  // PLAYBACK STATE
-  const [isPlaying, setIsPlaying] = useState(false)
-
   return (
     <>
       <div className="container grid">
@@ -86,7 +105,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} isPlaying={isPlaying} setIsPlaying={setIsPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
+            element={token ? <Main token={token} currentTrack={currentTrack} isPlaying={isPlaying} setIsPlaying={setIsPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
           >
           </Route>
           <Route

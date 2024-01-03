@@ -33,7 +33,7 @@
 
 .song-progress-bar {
     width: 500px;
-    height: 4px;
+    height: 5px;
     background: var(--const-player-slider);
     border-radius: 4px;
 }
@@ -46,7 +46,7 @@
     border-radius: 4px;
 }
 
-.song-expired:hover {
+.song-progress-bar:hover .song-expired {
     background: var(--const-dark-green);
 }
   
