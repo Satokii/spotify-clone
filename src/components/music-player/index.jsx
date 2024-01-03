@@ -1,5 +1,10 @@
 import axios from "axios";
 
+import playButton from "../../assets/svgs/player/play-button.svg"
+import pauseButton from "../../assets/svgs/player/pause-button.svg"
+import forwardButton from "../../assets/svgs/player/forward-button.svg"
+import backButton from "../../assets/svgs/player/back-button.svg"
+
 import "./styles/music-player.css"
 
 function MusicPlayer({ token, isPlaying, setIsPlaying }) {
@@ -30,42 +35,30 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
           );
         };
 
-        const togglePlayBtn = isPlaying ? 'fa fa-pause-circle-o pause-btn' : 'fa fa-play-circle-o play-btn'
+        const togglePlayBtn = isPlaying ? pauseButton : playButton
 
     return (
         <section>
-            <h3>Playback</h3>    
-          <div className='song-player-container'>
-
-            <div className='song-details'>
-              <p className='song-name'></p>
-              <p className='artist-name'></p>
-            </div>
-
-            <div className='song-controls'>
-
-              <div className='reverse-song' onClick={() => skipTrack("previous")}>
-                <i className="fa fa-step-backward reverse" aria-hidden="true" />
+          <h3>Playback</h3>    
+          <div className='song-player-container grid'>
+            <div className='song-controls grid'>
+              <div className='back-btn' onClick={() => skipTrack("previous")}>
+                <img src={backButton} alt="skip back button" />
               </div>
-
               <div className='play-btn' onClick={changePlayerState}>
-                <i className={"fa play-btn" + togglePlayBtn} aria-hidden="true" />
+                <img src={togglePlayBtn} alt="play/pause button" />
               </div>
-
-              <div className='next-song' onClick={() => skipTrack("next")}>
-                <i className="fa fa-step-forward forward" aria-hidden="true" />
+              <div className='forward-btn' onClick={() => skipTrack("next")}>
+                <img src={forwardButton} alt="skip forward button" />
               </div>
-
             </div>
-
-            <div className='song-progress-container'>
-              <p className='timer-start'></p>
-              <div className='song-progress'>
+            <div className='song-progress-bar-container grid'>
+              <p className='song-start'>0:00</p>
+              <div className='song-progress-bar'>
                 <div className='song-expired' />
               </div>
-              <p className='timer-end'></p>
+              <p className='song-end'>3:24</p>
             </div>
-
           </div>
         </section>
     )

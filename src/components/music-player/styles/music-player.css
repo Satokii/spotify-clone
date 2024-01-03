@@ -1,88 +1,55 @@
-.song-details {
-    position: absolute;
-    left: 20px;
-    line-height: 22px;
-  }
-  
-  .song-details .song-name {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
-    color: #fff;
-    font-size: 14px;
-  }
-  
-  .song-details .artist-name {
-    font-family: 'Proxima Thin', Georgia, sans-serif;
-    color: #aaa;
-    font-size: 12px;
-  }
-  
-  .song-controls {
+.song-player-container {
+    grid-template-rows: 50px 20px;
+    gap: 5px;
+}
+
+/* PLAYER CONTROL BUTTONS */
+.song-controls {
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    align-items: center;
     justify-content: center;
-    display: flex;
-    margin-top: 20px;
-  }
-  
-  .forward,
-  .reverse,
-  .play-btn {
-    padding: 0 5px;
-    color: rgb(179, 179, 179);
-    cursor: pointer;
-  }
-  
-  .reverse,
-  .forward {
-    font-size: 16px;
-  }
-  
-  .song-player-container .play-btn {
-    position: relative;
-    top: -7px;
-    font-size: 40px;
-  }
-  
-  .song-player-container .pause-btn {
-    position: relative;
-    top: -7px;
-    font-size: 40px;
-    margin: 0 5px;
-  }
-  
-  .play-btn .fa {
-    -webkit-text-stroke: 4px rgb(40, 40, 40);
-  }
-  
-  .song-progress-container {
-    margin-top: -10px;
-    display: flex;
+}
+
+.play-btn {
+    width: 40px;
+}
+
+.back-btn, .forward-btn {
+    width: 18px;
+}
+
+.forward-btn:hover, .back-btn:hover {
+    filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(606%) hue-rotate(253deg) brightness(112%) contrast(81%);
+}
+
+/* PLAYER SLIDER */
+.song-progress-bar-container {
+    grid-template-columns: 30px auto 30px;
+    gap: 10px;
     justify-content: center;
-  }
-  
-  .song-progress {
+    align-items: center;
+}
+
+.song-progress-bar {
     width: 500px;
     height: 4px;
-    background: rgb(64, 64, 64);;
+    background: var(--const-player-slider);
     border-radius: 4px;
-  }
+}
   
-  .song-expired {
+.song-expired {
     margin: 0;
     width: 100px;
-    height: 4px;
-    background: #1db954;
+    height: 5px;
+    background: var(--const-main-white);
     border-radius: 4px;
-  }
+}
+
+.song-expired:hover {
+    background: var(--const-dark-green);
+}
   
-  .timer-start {
+.song-start, .song-end {
     font-size: 12px;
-    position: relative;
-    top: -5px;
-    left: -10px;
-  }
-  
-  .timer-end {
-    font-size: 12px;
-    position: relative;
-    top: -5px;
-    left: 10px;
-  }
+}
