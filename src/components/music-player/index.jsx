@@ -7,7 +7,7 @@ import backButton from "../../assets/svgs/player/back-button.svg"
 
 import "./styles/music-player.css"
 
-function MusicPlayer({ token, isPlaying, setIsPlaying }) {
+function MusicPlayer({ token, currentTrack, currentProgress, isPlaying, setIsPlaying }) {
 
         const changePlayerState = async () => {
           const playState = isPlaying ? "pause" : "play"
@@ -36,6 +36,7 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
         };
 
         const togglePlayBtn = isPlaying ? pauseButton : playButton
+        // console.log(currentTrack)
 
     return (
         <section>
