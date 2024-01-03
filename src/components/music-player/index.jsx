@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function MusicPlayer({ token, isPlaying }) {
+function MusicPlayer({ token, isPlaying, setIsPlaying }) {
 
-    const [playback, setPlayback] = useState()
-
-    // useEffect(() => {
         const changePlayerState = async () => {
           const playState = isPlaying ? "pause" : "play"
-          const { data } = await axios.put(
-            `https://api.spotify.com/v1/me/player/${playState}`,{} ,
+          await axios.put(
+            `https://api.spotify.com/v1/me/player/${playState}`, {},
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -17,16 +14,13 @@ function MusicPlayer({ token, isPlaying }) {
               },
             }
           );
-          console.log(data)
-          setPlayback(data)
+        setIsPlaying(!isPlaying)
         };
-        changePlayerState();
-    //   }, [token]);
 
     return (
         <section>
             <h3>Playback</h3>
-            <button onClick={getTopTracksPview}>play</button>
+            <button onClick={changePlayerState}>play</button>
         </section>
     )
 }

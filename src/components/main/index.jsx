@@ -72,7 +72,7 @@ function Main({ token, isPlaying, setIsPlaying, topTracksDate, setTopTracksDate,
         <TopArtistsPreview token={token} showTopArtists={showTopArtists} />
       </section>
       <RecentlyPlayed token={token} />
-      <MusicPlayer token={token} isPlaying={isPlaying} />
+      <MusicPlayer token={token} isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
     </main>
   );
 }
