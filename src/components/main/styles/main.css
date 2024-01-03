@@ -32,13 +32,15 @@
 
 .top-tracks--see-all-link, .top-artists--see-all-link {
     font-size: 12px;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    font-size: 13px;
     margin-top: 5px;
+    color: var(--const-card-yellow);
+    border: solid 1px var(--const-card-yellow);
+    border-radius: 60px;
+    padding: 3px 10px;
 }
 
 .top-tracks--see-all-link:hover, .top-artists--see-all-link:hover {
-    color: var(--const-blue);
-    text-decoration: none;
-    transform: scale(1.1);
+    color: var(--const-card-yellow-hover);
+    border-color: var(--const-card-yellow-hover);
 }
