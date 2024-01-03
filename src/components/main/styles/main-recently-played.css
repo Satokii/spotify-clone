@@ -52,9 +52,9 @@
 }
 
 .recently-played--time-since-played {
-    font-family: 'Calligraffitti';
-    font-size: 12px;
-    font-weight: bold;
+    /* font-family: 'Calligraffitti'; */
+    font-size: 11px;
+    color: var(--const-dull-white);
     padding: 5px 0;
 }
 
