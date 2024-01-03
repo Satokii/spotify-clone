@@ -8,7 +8,7 @@
 }
 
 .main-playback--cur-playing-item img {
-    border-radius: 100%;
+    /* border-radius: 100%; */
     transition: all 1s;
     object-fit: cover;
 }
