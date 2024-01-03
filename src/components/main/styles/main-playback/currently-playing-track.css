@@ -1,3 +1,13 @@
+.main-playback--no-track-playing {
+    width: 360px;
+    align-items: center;
+    padding: 20px;
+    font-size: 26px;
+    font-variant-caps: all-small-caps;
+    text-align: center;
+    color: var(--const-red);
+}
+
 .main-playback--cur-playing-item {
     grid-template-columns: 140px 150px;
     gap: 30px;

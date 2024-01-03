@@ -41,7 +41,7 @@
   
 .song-expired {
     margin: 0;
-    /* width: 100px; */
+    width: 0;
     height: 5px;
     background: var(--const-main-white);
     border-radius: 4px;

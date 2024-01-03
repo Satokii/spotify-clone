@@ -6,7 +6,6 @@ import forwardButton from "../../assets/svgs/player/forward-button.svg"
 import backButton from "../../assets/svgs/player/back-button.svg"
 
 import "./styles/music-player.css"
-import { useState } from "react";
 
 function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying }) {
 
@@ -36,16 +35,22 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
           );
         };
 
-        function calcTrackTime(ms) {
+        const calcTrackTime = (ms) => {
           const minutes = Math.floor(ms / 60000);
           const seconds = ((ms % 60000) / 1000).toFixed(0);
           return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
         }
 
+        // const updateTimeEverySec = () => {
+        //   setInterval(() => {
+        //     currentProgress
+        //   }, 1000)
+        // }
+
         const togglePlayBtn = isPlaying ? pauseButton : playButton
 
-        const timeElapsed = Number((currentProgress/trackDuration) * 500).toFixed(0)
-        // console.log(timeElapsed)
+        const timeElapsed = Number((currentProgress/trackDuration * 500).toFixed(0) * 1)
+        // console.log(typeof timeElapsed)
 
     return (
         <section>
@@ -66,7 +71,7 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
               <p className='song-start'>{calcTrackTime(currentProgress)}</p>
               <div className='song-progress-bar' >
                 {/* <input className='song-expired' type="range" name="song-expired" min={0} max={100} value={60} /> */}
-                <div className='song-expired' style={{width: timeElapsed * 1}}/>
+                <div className='song-expired' style={{width: timeElapsed}}/>
               </div>
               <p className='song-end'>{calcTrackTime(trackDuration)}</p>
             </div>
