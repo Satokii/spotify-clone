@@ -18,11 +18,11 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
         setIsPlaying(!isPlaying)
         };
 
+        const togglePlayBtn = isPlaying ? 'fa fa-pause-circle-o pause-btn' : 'fa fa-play-circle-o play-btn'
+
     return (
         <section>
-            <h3>Playback</h3>
-            <button onClick={changePlayerState}>play</button>
-    
+            <h3>Playback</h3>    
           <div className='song-player-container'>
 
             <div className='song-details'>
@@ -36,8 +36,8 @@ function MusicPlayer({ token, isPlaying, setIsPlaying }) {
                 <i className="fa fa-step-backward reverse" aria-hidden="true" />
               </div>
 
-              <div className='play-btn'>
-                <i className="fa play-btn" aria-hidden="true" />
+              <div className='play-btn' onClick={changePlayerState}>
+                <i className={"fa play-btn" + togglePlayBtn} aria-hidden="true" />
               </div>
 
               <div className='next-song'>
