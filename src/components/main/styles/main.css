@@ -31,12 +31,11 @@
 }
 
 .top-tracks--see-all-link, .top-artists--see-all-link {
-    font-size: 12px;
     font-size: 13px;
-    margin-top: 5px;
+    margin-top: 3px;
     color: var(--const-card-yellow);
     border: solid 1px var(--const-card-yellow);
-    border-radius: 60px;
+    border-radius: 9999px;
     padding: 3px 10px;
 }
 
