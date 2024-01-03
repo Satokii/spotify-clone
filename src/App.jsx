@@ -58,14 +58,13 @@ function App() {
   }, []);
 
 // FETCH CURRENTLY PLAYING TRACK
-const [currentTrack, setCurrentTrack] = useState([])
+const [currentTrack, setCurrentTrack] = useState({})
 const [isPlaying, setIsPlaying] = useState(false)
-const [notPlaying, setNotPlaying] = useState(true)
+const [notPlaying, setNotPlaying] = useState(null)
 const [trackDuration, setTrackDuration] = useState(null)
 const [currentProgress, setCurrentProgress] = useState(null)
 
   useEffect(() => {
-    let track = []
     const getCurrentTrack = async () => {
       const { data } = await axios.get(
         "https://api.spotify.com/v1/me/player/currently-playing",
@@ -76,15 +75,23 @@ const [currentProgress, setCurrentProgress] = useState(null)
         }
       );
       if (!data) setNotPlaying(true)
-      // console.log(data)
-      track.push(data.item)
-      setCurrentTrack(track)
+    const { item } = data
+    setCurrentTrack({
+      trackId: item.id,
+      trackImageLength: item.album.images.length,
+      trackImage: item.album.images[0].url,
+      trackName: item.name,
+      trackArtist: item.artists[0].name
+    })
       setIsPlaying(data.is_playing)
       setTrackDuration(data.item.duration_ms)
       setCurrentProgress(data.progress_ms)
     };
-    getCurrentTrack();
+    // setInterval(() => {
+      getCurrentTrack();
+    // }, 1000);
   }, [setIsPlaying, token]);
+
 
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);

@@ -9,8 +9,10 @@ import "./styles/music-player.css"
 
 function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying }) {
 
+          
         const changePlayerState = async () => {
           const playState = isPlaying ? "pause" : "play"
+
           await axios.put(
             `https://api.spotify.com/v1/me/player/${playState}`, {},
             {
@@ -41,16 +43,9 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
           return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
         }
 
-        // const updateTimeEverySec = () => {
-        //   setInterval(() => {
-        //     currentProgress
-        //   }, 1000)
-        // }
-
         const togglePlayBtn = isPlaying ? pauseButton : playButton
 
         const timeElapsed = Number((currentProgress/trackDuration * 500).toFixed(0) * 1)
-        // console.log(typeof timeElapsed)
 
     return (
         <section>
