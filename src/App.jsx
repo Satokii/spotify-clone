@@ -14,10 +14,10 @@ import CURRENT_TRACK_INITIAL_STATE from "./initial-states/CURRENT_TRACK_INITIAL_
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
 import ARTISTS_INITIAL_STATE from "./initial-states/ARTISTS-INITIAL-STATE";
 
-import './app.css'
-import './shared-styles/root.css'
-import './shared-styles/scrollbars.css'
-import './shared-styles/buttons.css'
+import "./app.css";
+import "./shared-styles/root.css";
+import "./shared-styles/scrollbars.css";
+import "./shared-styles/buttons.css";
 
 function App() {
   const [token, setToken] = useState("");
@@ -35,13 +35,13 @@ function App() {
             },
           }
         );
-        if(status !== 200) {
-          Logout(setToken)
+        if (status !== 200) {
+          Logout(setToken);
         }
-      }
-      checkStatus()
+      };
+      checkStatus();
     }, 120000);
-  }, [token])
+  }, [token]);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -58,9 +58,9 @@ function App() {
     setToken(token);
   }, []);
 
-// FETCH CURRENTLY PLAYING TRACK
-const [currentTrack, setCurrentTrack] = useState(CURRENT_TRACK_INITIAL_STATE)
-const [notPlaying, setNotPlaying] = useState(null)
+  // FETCH CURRENTLY PLAYING TRACK
+  const [currentTrack, setCurrentTrack] = useState(CURRENT_TRACK_INITIAL_STATE);
+  const [notPlaying, setNotPlaying] = useState(null);
 
   useEffect(() => {
     const getCurrentTrack = async () => {
@@ -68,14 +68,13 @@ const [notPlaying, setNotPlaying] = useState(null)
         "https://api.spotify.com/v1/me/player/currently-playing",
         {
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
-      if (!data) setNotPlaying(true)
+      if (!data) setNotPlaying(true);
       else {
-        const { item } = data
-        console.log(data)
+        const { item } = data;
         setCurrentTrack({
           trackId: item.id,
           trackImageLength: item.album.images.length,
@@ -85,13 +84,13 @@ const [notPlaying, setNotPlaying] = useState(null)
           trackIsPlaying: data.is_playing,
           trackProgress: data.progress_ms,
           trackDuration: item.duration_ms,
-        })
+        });
       }
-      };
-      // setInterval(() => {
-        getCurrentTrack();
-      // }, 1000);
-    }, [token]);
+    };
+    // setInterval(() => {
+    getCurrentTrack();
+    // }, 1000);
+  }, [token]);
 
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
@@ -102,43 +101,101 @@ const [notPlaying, setNotPlaying] = useState(null)
   const [showTopArtists, setShowTopArtists] = useState("long_term");
 
   // HEADER SEARCH STATES
-  const [trackResults, setTrackResults] = useState([])
-  const [trackTotal, setTrackTotal] = useState(0)
-  const [artistResults, setArtistResults] = useState([])
-  const [artistTotal, setArtistTotal] = useState(0)
-  const [albumResults, setAlbumResults] = useState([])
-  const [albumTotal, setAlbumTotal] = useState(0)
-  const [playlistResults, setPlaylistResults] = useState([])
-  const [playlistTotal, setPlaylistTotal] = useState(0)
+  const [trackResults, setTrackResults] = useState([]);
+  const [trackTotal, setTrackTotal] = useState(0);
+  const [artistResults, setArtistResults] = useState([]);
+  const [artistTotal, setArtistTotal] = useState(0);
+  const [albumResults, setAlbumResults] = useState([]);
+  const [albumTotal, setAlbumTotal] = useState(0);
+  const [playlistResults, setPlaylistResults] = useState([]);
+  const [playlistTotal, setPlaylistTotal] = useState(0);
 
   return (
     <>
       <div className="container grid">
-        <Header token={token} setToken={setToken} trackResults={trackResults} setTrackResults={setTrackResults} setTrackTotal={setTrackTotal} setArtistResults={setArtistResults} setArtistTotal={setArtistTotal} setAlbumResults={setAlbumResults} setAlbumTotal={setAlbumTotal} setPlaylistResults={setPlaylistResults} setPlaylistTotal={setPlaylistTotal} />
+        <Header
+          token={token}
+          setToken={setToken}
+          trackResults={trackResults}
+          setTrackResults={setTrackResults}
+          setTrackTotal={setTrackTotal}
+          setArtistResults={setArtistResults}
+          setArtistTotal={setArtistTotal}
+          setAlbumResults={setAlbumResults}
+          setAlbumTotal={setAlbumTotal}
+          setPlaylistResults={setPlaylistResults}
+          setPlaylistTotal={setPlaylistTotal}
+        />
         <Navigation token={token} />
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} notPlaying={notPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
-          >
-          </Route>
+            element={
+              token ? (
+                <Main
+                  token={token}
+                  currentTrack={currentTrack}
+                  setCurrentTrack={setCurrentTrack}
+                  notPlaying={notPlaying}
+                  topTracksDate={topTracksDate}
+                  setTopTracksDate={setTopTracksDate}
+                  showTopTracks={showTopTracks}
+                  setShowTopTracks={setShowTopTracks}
+                  topArtistsDate={topArtistsDate}
+                  setTopArtistsDate={setTopArtistsDate}
+                  showTopArtists={showTopArtists}
+                  setShowTopArtists={setShowTopArtists}
+                />
+              ) : (
+                <WelcomePage />
+              )
+            }
+          ></Route>
           <Route
             path="/top-tracks"
-            element={<TopTracksPage token={token} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} />}
-          >
-          </Route>
+            element={
+              <TopTracksPage
+                token={token}
+                topTracksDate={topTracksDate}
+                setTopTracksDate={setTopTracksDate}
+                showTopTracks={showTopTracks}
+                setShowTopTracks={setShowTopTracks}
+              />
+            }
+          ></Route>
           <Route
             path="/top-artists"
-            element={<TopArtistsPage token={token} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} />}
-          >
-          </Route>
+            element={
+              <TopArtistsPage
+                token={token}
+                topArtistsDate={topArtistsDate}
+                setTopArtistsDate={setTopArtistsDate}
+                showTopArtists={showTopArtists}
+                setShowTopArtists={setShowTopArtists}
+              />
+            }
+          ></Route>
           <Route
             path="/search-results"
-            element={<SearchResultsPage trackResults={trackResults} trackTotal={trackTotal} artistResults={artistResults} artistTotal={artistTotal} albumResults={albumResults} albumTotal={albumTotal} playlistResults={playlistResults} playlistTotal={playlistTotal} />}
-          >
-          </Route>
+            element={
+              <SearchResultsPage
+                trackResults={trackResults}
+                trackTotal={trackTotal}
+                artistResults={artistResults}
+                artistTotal={artistTotal}
+                albumResults={albumResults}
+                albumTotal={albumTotal}
+                playlistResults={playlistResults}
+                playlistTotal={playlistTotal}
+              />
+            }
+          ></Route>
         </Routes>
-        <Footer token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
+        <Footer
+          token={token}
+          currentTrack={currentTrack}
+          setCurrentTrack={setCurrentTrack}
+        />
       </div>
     </>
   );

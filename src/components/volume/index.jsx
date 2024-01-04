@@ -6,7 +6,31 @@ import { useEffect, useState } from "react";
 
 function VolumeControls({ token, currentTrack }) {
 
-  const [volume, setVolume] = useState(0)
+  const [activeDevice, setActiveDevice] = useState([])
+  const [volume, setVolume] = useState(60)
+
+    // GET DEVICES API CALL
+    useEffect(() => {
+      const getDevices = async () => {
+        const { data } = await axios.get(
+          "https://api.spotify.com/v1/me/player/devices",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        // console.log(data);
+        setActiveDevice(data.devices)
+      };
+      getDevices()
+    }, [token]);
+
+
+    console.log(activeDevice)
+    const getVolume = () => {
+      
+    }
 
   useEffect(() => {
     const changeVolume = async () => {
@@ -25,7 +49,7 @@ function VolumeControls({ token, currentTrack }) {
     changeVolume()
   }, [token, volume])
 
-    console.log(volume)
+    // console.log(volume)
 
   return (
     <section className="volume-controls-container grid">
