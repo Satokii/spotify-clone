@@ -3,9 +3,9 @@
         "Header Header"
         "Navigation Main"
         "Footer Footer";
-    grid-template-rows: 100px 1fr 160px;
+    grid-template-rows: 100px 1fr 80px;
     grid-template-columns: 150px 1fr;
-    height: 100%;
+    height: 100vh;
 }
 
 .grid {

@@ -4,6 +4,7 @@
     background-color: var(--almost-black);
     padding: 20px 50px 50px;
     gap: 30px;
+    overflow-y: scroll;
 }
 
 .main--header {
