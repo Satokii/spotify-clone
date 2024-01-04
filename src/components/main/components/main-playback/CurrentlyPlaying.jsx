@@ -5,13 +5,13 @@ import CurrentlyPlayingTrack from "./CurrentlyPlayingTrack";
 import "../../styles/main-playback/currently-playing.css"
 import "../../../../keyframes/img-pulse.css"
 
-function CurrentlyPlaying({ currentTrack, isPlaying, notPlaying }) {
+function CurrentlyPlaying({ currentTrack, notPlaying }) {
 
     const [pulse, setPulse] = useState(false)
 
     return (
         <div className="main-playback--cur-playing-container grid">
-            <CurrentlyPlayingHeader isPlaying={isPlaying} setPulse={setPulse} />
+            <CurrentlyPlayingHeader currentTrack={currentTrack} setPulse={setPulse} />
             <CurrentlyPlayingTrack currentTrack={currentTrack} notPlaying={notPlaying} pulse={pulse} />
         </div>
     )

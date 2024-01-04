@@ -2,7 +2,7 @@ import "../../styles/main-playback/currently-playing-header.css"
 import "../../../../keyframes/currently-playing-ani.css"
 import { useState } from "react"
 
-function CurrentlyPlayingHeader({ isPlaying, setPulse }) {
+function CurrentlyPlayingHeader({ currentTrack, setPulse }) {
 
     const [funBtnClass, setFunBtnClass] = useState("pulse-off")
 
@@ -19,9 +19,9 @@ function CurrentlyPlayingHeader({ isPlaying, setPulse }) {
 
     return (
         <div className="main-playback--cur-playing-header-container grid">
-            {isPlaying ? <h3 className="main-playback--cur-playing-header">Currently playing</h3> :
+            {currentTrack.trackIsPlaying ? <h3 className="main-playback--cur-playing-header">Currently playing</h3> :
             <h3 className="main-playback--cur-playing-header">Currently paused</h3>}
-            {isPlaying ? 
+            {currentTrack.trackIsPlaying ? 
             <div className="bars grid">
                 <div className="bars__item"></div>
                 <div className="bars__item"></div>
