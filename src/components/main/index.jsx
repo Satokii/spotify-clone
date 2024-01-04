@@ -5,7 +5,6 @@ import TopArtistsPreview from "./components/TopArtistsPreview";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import toggleTopTracksDate from "../../shared-functions/toggleTopTracksDate";
 import toggleTopArtistsDate from "../../shared-functions/toggleTopArtistsDate";
-import MusicPlayer from "../music-player";
 
 import "./styles/main.css";
 import "./styles/main-date-filter.css";
@@ -72,7 +71,6 @@ function Main({ token, currentTrack, setCurrentTrack, notPlaying, topTracksDate,
         <TopArtistsPreview token={token} showTopArtists={showTopArtists} />
       </section>
       <RecentlyPlayed token={token} />
-      <MusicPlayer token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
     </main>
   );
 }

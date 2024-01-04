@@ -137,7 +137,7 @@ const [notPlaying, setNotPlaying] = useState(null)
           >
           </Route>
         </Routes>
-        <Footer />
+        <Footer token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
       </div>
     </>
   );
