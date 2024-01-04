@@ -27,7 +27,6 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
     setSliderVal(timeElapsed);
   }, [timeElapsed]);
 
-  // API CALL TO SEEK TO POSITION
   useEffect(() => {
     seekToPosition(token, manualSeekVal);
   }, [manualSeekVal, token]);
