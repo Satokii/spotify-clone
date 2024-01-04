@@ -59,21 +59,24 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
 
         // RENDER CURRENT TRACK TIME
         const renderCurrentTrackTime = () => {
-          const currentTime = currentTrack.trackProgress - 1000
-          if (currentTrack.trackProgress === 0) return "0:00"
+          const currentTime = currentTrack.trackProgress
+          console.log(currentTime)
+          if (currentTime === null) return "0:00"
+          if (currentTime === 0) return "0:00"
           else if (currentTime < 0) return "0:00"
           else return calcTrackTime(currentTime)
         }
 
         // HANDLE SLIDER POSITION - BOTH MANUAL AND AUTOMATIC
         const [sliderVal, setSliderVal] = useState(0)
-        const [manualSeekVal, setManualSeekVal] = useState(timeElapsed)
+        const [manualSeekVal, setManualSeekVal] = useState()
 
         useEffect(() => {
           setSliderVal(timeElapsed)
         }, [timeElapsed])
 
         // API CALL TO SEEK TO POSITION
+        useEffect(() => {
           const seekToPosition = async () => {
             await axios.put(
               "https://api.spotify.com/v1/me/player/seek", {},
@@ -87,11 +90,13 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
               }
             );
           };
+          seekToPosition()
+        }, [manualSeekVal, token])
+          
 
-        const calcSeekPosition = (slidebarPosition) => {
+        const calcSeekPosition = async (slidebarPosition) => {
           const currentTimeinMs = (slidebarPosition / 100) * currentTrack.trackDuration
           setManualSeekVal(Number(currentTimeinMs.toFixed(0)))
-          seekToPosition()
         }
 
     return (

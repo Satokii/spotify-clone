@@ -58,7 +58,19 @@ function App() {
   }, []);
 
 // FETCH CURRENTLY PLAYING TRACK
-const [currentTrack, setCurrentTrack] = useState({})
+
+const INITIAL_TRACK_STATE = {
+    trackId: "",
+    trackImageLength: 0,
+    trackImage: "",
+    trackName: "",
+    trackArtist: "",
+    trackIsPlaying: false,
+    trackProgress: 0,
+    trackDuration: 0,
+}
+
+const [currentTrack, setCurrentTrack] = useState(INITIAL_TRACK_STATE)
 const [notPlaying, setNotPlaying] = useState(null)
 
   useEffect(() => {
@@ -86,9 +98,9 @@ const [notPlaying, setNotPlaying] = useState(null)
         })
       }
       };
-      // setInterval(() => {
+      setInterval(() => {
         getCurrentTrack();
-      // }, 1000);
+      }, 1000);
     }, [token]);
 
   // TOP TRACKS STATES
