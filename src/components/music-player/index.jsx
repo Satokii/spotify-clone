@@ -8,12 +8,11 @@ import backButton from "../../assets/svgs/player/back-button.svg"
 import "./styles/music-player.css"
 import { useState } from "react";
 
-function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying }) {
+function MusicPlayer({ token, currentTrack, setCurrentTrack, trackDuration }) {
           
         const changePlayerState = async () => {
-          const playState = isPlaying ? "pause" : "play"
-
-          await axios.put(
+          const playState = currentTrack.trackIsPlaying ? "pause" : "play"
+          await axios.put(  
             `https://api.spotify.com/v1/me/player/${playState}`, {},
             {
               headers: {
@@ -22,7 +21,13 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
               },
             }
           );
-        setIsPlaying(!isPlaying)
+          const updatedCurrentTrackState = {
+            ...currentTrack,
+            trackIsPlaying: !currentTrack.trackIsPlaying
+          }
+          
+        // setIsPlaying(!isPlaying)
+        setCurrentTrack(updatedCurrentTrackState)
         };
 
         const skipTrack = async (skipDirection) => {
@@ -47,26 +52,23 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
           )
         }
         
-        const togglePlayBtn = isPlaying ? pauseButton : playButton
+        const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton
 
         const songTimeCounter = () => {
-          if (currentProgress === 0) {
+          if (currentTrack.trackProgress === 0) {
             return "0:00"
           }
-          else return calcTrackTime(currentProgress - 1000)
+          else return calcTrackTime(currentTrack.trackProgress - 1000)
         }
 
-        const timeElapsed = Number(((currentProgress)/trackDuration * 500).toFixed(0))
+        const timeElapsed = Number(((currentTrack.trackProgress)/currentTrack.trackDuration * 500).toFixed(0))
 
         // const rangeSlide = (e) => {
         //   return e.target.value
         // }
 
         const [val, setVal] = useState(0)
-        console.log(val)
-
-        const progressScript = `linear-gradient(to right, #f50 ${val}%, #ccc ${val}%)`;
-        
+        // console.log(val)        
 
     return (
         <section>
@@ -89,7 +91,7 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
                 <div className='song-expired' style={{width: timeElapsed}}/>
               </div> */}
               <div className="slidecontainer">
-                <input className='slider' type="range" name="song-expired" min={0} max={100} value={val} onChange={e => setVal(e.target.value)} style={{background: progressScript}}/>
+                <input className='slider' type="range" name="song-expired" min={0} max={100} value={val} onChange={e => setVal(e.target.value)} />
               </div>
               <p className='song-end'>{calcTrackTime(trackDuration)}</p>
             </div>

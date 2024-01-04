@@ -62,7 +62,6 @@ const [currentTrack, setCurrentTrack] = useState({})
 const [isPlaying, setIsPlaying] = useState(false)
 const [notPlaying, setNotPlaying] = useState(null)
 const [trackDuration, setTrackDuration] = useState()
-const [currentProgress, setCurrentProgress] = useState(0)
 
   useEffect(() => {
     const getCurrentTrack = async () => {
@@ -84,21 +83,18 @@ const [currentProgress, setCurrentProgress] = useState(0)
           trackImage: item.album.images[0].url,
           trackName: item.name,
           trackArtist: item.artists[0].name,
-          trackPlaystate: data.is_playing,
+          trackIsPlaying: data.is_playing,
           trackProgress: data.progress_ms,
           trackDuration: item.duration_ms,
         })
         setIsPlaying(data.is_playing)
         setTrackDuration(data.item.duration_ms)
-        setCurrentProgress(data.progress_ms)
       }
       };
       // setInterval(() => {
         getCurrentTrack();
       // }, 1000);
     }, [setIsPlaying, token]);
-
-    console.log(currentTrack)
 
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
@@ -126,7 +122,7 @@ const [currentProgress, setCurrentProgress] = useState(0)
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} currentTrack={currentTrack} trackDuration={trackDuration} currentProgress={currentProgress} isPlaying={isPlaying} setIsPlaying={setIsPlaying} notPlaying={notPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
+            element={token ? <Main token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} trackDuration={trackDuration} isPlaying={isPlaying} setIsPlaying={setIsPlaying} notPlaying={notPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
           >
           </Route>
           <Route
