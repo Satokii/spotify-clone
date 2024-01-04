@@ -6,6 +6,7 @@ import forwardButton from "../../assets/svgs/player/forward-button.svg"
 import backButton from "../../assets/svgs/player/back-button.svg"
 
 import "./styles/music-player.css"
+import { useState } from "react";
 
 function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPlaying, setIsPlaying }) {
           
@@ -57,6 +58,16 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
 
         const timeElapsed = Number(((currentProgress)/trackDuration * 500).toFixed(0))
 
+        // const rangeSlide = (e) => {
+        //   return e.target.value
+        // }
+
+        const [val, setVal] = useState(0)
+        console.log(val)
+
+        const progressScript = `linear-gradient(to right, #f50 ${val}%, #ccc ${val}%)`;
+        
+
     return (
         <section>
           <h3>Playback</h3>    
@@ -74,9 +85,11 @@ function MusicPlayer({ token, currentTrack, trackDuration, currentProgress, isPl
             </div>
             <div className='song-progress-bar-container grid'>
               <p className='song-start'>{songTimeCounter()}</p>
-              <div className='song-progress-bar' >
-                {/* <input className='song-expired' type="range" name="song-expired" min={0} max={100} value={60} /> */}
+              {/* <div className='song-progress-bar' >
                 <div className='song-expired' style={{width: timeElapsed}}/>
+              </div> */}
+              <div className="slidecontainer">
+                <input className='slider' type="range" name="song-expired" min={0} max={100} value={val} onChange={e => setVal(e.target.value)} style={{background: progressScript}}/>
               </div>
               <p className='song-end'>{calcTrackTime(trackDuration)}</p>
             </div>

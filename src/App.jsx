@@ -89,9 +89,9 @@ const [currentProgress, setCurrentProgress] = useState(0)
         setCurrentProgress(data.progress_ms)
       }
       };
-      setInterval(() => {
+      // setInterval(() => {
         getCurrentTrack();
-      }, 1000);
+      // }, 1000);
     }, [setIsPlaying, token]);
 
   // TOP TRACKS STATES

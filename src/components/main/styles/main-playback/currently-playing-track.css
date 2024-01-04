@@ -6,6 +6,7 @@
     font-variant-caps: all-small-caps;
     text-align: center;
     color: var(--const-red);
+    margin-bottom: 20px;
 }
 
 .main-playback--cur-playing-item {

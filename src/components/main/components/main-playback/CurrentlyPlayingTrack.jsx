@@ -15,7 +15,7 @@ function CurrentlyPlayingTrack({ currentTrack, notPlaying, pulse }) {
             <>
                  {
                     <div className="main-playback--cur-playing-item grid" id={currentTrack.trackId} >
-                        {currentTrack.trackImageLength ? <img className={togglePulse()} src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /> : <div>No Image</div>}
+                        {currentTrack.trackImageLength ? <img className={togglePulse()} src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /> : <div></div>}
                         <div className="main-playback--cur-playing-details">
                             <p className="main-playback--cur-playing-title">{currentTrack.trackName}</p>
                             <p className="main-playback--cur-playing-artist">{currentTrack.trackArtist}</p>

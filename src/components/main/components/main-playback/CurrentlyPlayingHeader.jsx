@@ -1,15 +1,18 @@
 import "../../styles/main-playback/currently-playing-header.css"
 import "../../../../keyframes/currently-playing-ani.css"
+import { useState } from "react"
 
 function CurrentlyPlayingHeader({ isPlaying, setPulse }) {
 
-    const playPulse = (e) => {
-        if (e.target.className === 'pulse-on') {
-            e.target.className = 'pulse-off'
+    const [funBtnClass, setFunBtnClass] = useState("pulse-off")
+
+    const playPulse = () => {
+        if (funBtnClass === "pulse-on") {
+            setFunBtnClass("pulse-off")
             setPulse(false)
         }
         else {
-            e.target.className = 'pulse-on'
+            setFunBtnClass("pulse-on")
             setPulse(true)
         }
     }
@@ -32,7 +35,7 @@ function CurrentlyPlayingHeader({ isPlaying, setPulse }) {
                 <div className="empty-bars__item"></div>
             </div>
             }
-            <button className="grid" type="submit" onClick={e => playPulse(e)}><span>Click me</span></button>
+            <button className={`${funBtnClass} fun-btn grid`} type="submit" onClick={() => playPulse()}>Click me</button>
         </div>
     )
 }
