@@ -77,12 +77,16 @@ const [currentProgress, setCurrentProgress] = useState(0)
       if (!data) setNotPlaying(true)
       else {
         const { item } = data
+        // console.log(data)
         setCurrentTrack({
           trackId: item.id,
           trackImageLength: item.album.images.length,
           trackImage: item.album.images[0].url,
           trackName: item.name,
-          trackArtist: item.artists[0].name
+          trackArtist: item.artists[0].name,
+          trackPlaystate: data.is_playing,
+          trackProgress: data.progress_ms,
+          trackDuration: item.duration_ms,
         })
         setIsPlaying(data.is_playing)
         setTrackDuration(data.item.duration_ms)
@@ -93,6 +97,8 @@ const [currentProgress, setCurrentProgress] = useState(0)
         getCurrentTrack();
       // }, 1000);
     }, [setIsPlaying, token]);
+
+    console.log(currentTrack)
 
   // TOP TRACKS STATES
   const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
