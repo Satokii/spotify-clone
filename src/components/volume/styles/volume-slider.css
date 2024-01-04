@@ -1,7 +1,6 @@
 /* PLAYER SLIDER */
 .volume-slide-container {
   width: 100%;
-  /* place-items: center; */
   position: relative;
 }
 
@@ -15,10 +14,7 @@
     outline: none;
     border-radius: 15px;
     overflow: hidden;
-    background: black;
     cursor: default;
-
-    /* padding: 2px 0; */
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -26,7 +22,6 @@
     appearance: none;
     width: 5px;
     height: 5px;
-    padding: 0;
     border-radius: 50%;
     background: var(--const-main-white);
     border: none;
@@ -41,10 +36,9 @@
 
 .volume-slider:hover::-webkit-slider-thumb {
     box-shadow: -407px 0 0 405px var(--const-green);
-
 }
 
 .volume-slider::-webkit-slider-runnable-track {
     -webkit-appearance: none;
-    background-color: #444;
+    background-color: var(--const-player-slider);
 }
