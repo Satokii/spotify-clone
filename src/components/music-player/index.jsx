@@ -6,10 +6,11 @@ import forwardButton from "../../assets/svgs/player/forward-button.svg"
 import backButton from "../../assets/svgs/player/back-button.svg"
 
 import "./styles/music-player.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
           
+        // API CALL TO PLAY/PAUSE TRACK
         const changePlayerState = async () => {
           const playState = currentTrack.trackIsPlaying ? "pause" : "play"
           await axios.put(  
@@ -25,10 +26,10 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
             ...currentTrack,
             trackIsPlaying: !currentTrack.trackIsPlaying
           }
-          
         setCurrentTrack(updatedCurrentTrackState)
         };
 
+        // API CALL TO SKIP TRACK
         const skipTrack = async (skipDirection) => {
           await axios.post(
             `https://api.spotify.com/v1/me/player/${skipDirection}`, {},
@@ -41,6 +42,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
           );
         };
 
+        // CALCULATE TRACK TIME IN 00:00 FORMAT
         const calcTrackTime = (ms) => {
           const minutes = Math.floor(ms / 60000);
           const seconds = ((ms % 60000) / 1000).toFixed(0);
@@ -55,7 +57,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
 
         const timeElapsed = Number(((currentTrack.trackProgress)/currentTrack.trackDuration * 100).toFixed(0))
 
-
+        // FUNCT TO RENDER CURRENT TRACK TIME
         const renderCurrentTrackTime = () => {
           const currentTime = currentTrack.trackProgress - 1000
           if (currentTrack.trackProgress === 0) return "0:00"
@@ -63,8 +65,13 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
           else return calcTrackTime(currentTime)
         }
 
-        const [val, setVal] = useState(0)
-        // console.log(val)
+        // HANDLE SLIDER POSITION - BOTH MANUAL AND AUTOMATIC
+        const [sliderVal, setSliderVal] = useState(0)
+
+        useEffect(() => {
+          setSliderVal(timeElapsed)
+        }, [timeElapsed])
+
 
     return (
         <section>
@@ -83,11 +90,8 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
             </div>
             <div className='song-progress-bar-container grid'>
               <p className='song-start'>{renderCurrentTrackTime()}</p>
-              {/* <div className='song-progress-bar' >
-                <div className='song-expired' style={{width: timeElapsed}}/>
-              </div> */}
-              <div className="slidecontainer">
-                <input className='slider' type="range" name="song-expired" min={0} max={100} value={timeElapsed} onChange={e => setVal(e.target.value)} />
+              <div className="slide-container">
+                <input className='slider' type="range" name="song-expired" min={0} max={100} step={1} value={sliderVal} onChange={e => setSliderVal(e.target.value)} />
               </div>
               <p className='song-end'>{calcTrackTime(currentTrack.trackDuration)}</p>
             </div>

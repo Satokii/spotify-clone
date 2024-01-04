@@ -28,36 +28,12 @@
     grid-template-columns: 30px 500px 30px;
     gap: 10px;
     justify-content: center;
-    align-items: center;
+    align-content: start;
 }
 
-.song-progress-bar {
-    width: 500px;
-    height: 5px;
-    background: var(--const-player-slider);
-    border-radius: 4px;
-    position: relative;
-}
-  
-.song-expired {
-    margin: 0;
-    width: 0;
-    height: 5px;
-    background: var(--const-main-white);
-    border-radius: 4px;
-}
-
-.song-progress-bar:hover .song-expired {
-    background: var(--const-dark-green);
-}
-  
-.song-start, .song-end {
-    font-size: 12px;
-}
-
-.slidecontainer {
-    width: 100%;
-    position: relative;
+.slide-container {
+  width: 100%;
+  position: relative;
 }
 
 .slider {
@@ -67,11 +43,9 @@
     width: 500px;
     height: 6px;
     padding: 0;
-    /* background: #111; */
     outline: none;
     border-radius: 15px;
     overflow: hidden;
-    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 1); */
     cursor: default;
 }
 
@@ -98,4 +72,9 @@
 .slider::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     background-color: #444;
+}
+
+/* PLAYBACK TEXT */
+.song-start, .song-end {
+  font-size: 12px;
 }
