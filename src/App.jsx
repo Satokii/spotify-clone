@@ -86,9 +86,9 @@ const [notPlaying, setNotPlaying] = useState(null)
         })
       }
       };
-      // setInterval(() => {
+      setInterval(() => {
         getCurrentTrack();
-      // }, 1000);
+      }, 1000);
     }, [token]);
 
   // TOP TRACKS STATES

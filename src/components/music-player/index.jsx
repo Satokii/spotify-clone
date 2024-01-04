@@ -53,21 +53,18 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
         
         const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton
 
-        const songTimeCounter = () => {
-          if (currentTrack.trackProgress === 0) {
-            return "0:00"
-          }
-          else return calcTrackTime(currentTrack.trackProgress - 1000)
+        const timeElapsed = Number(((currentTrack.trackProgress)/currentTrack.trackDuration * 100).toFixed(0))
+
+
+        const renderCurrentTrackTime = () => {
+          const currentTime = currentTrack.trackProgress - 1000
+          if (currentTrack.trackProgress === 0) return "0:00"
+          else if (currentTime < 0) return "0:00"
+          else return calcTrackTime(currentTime)
         }
 
-        const timeElapsed = Number(((currentTrack.trackProgress)/currentTrack.trackDuration * 500).toFixed(0))
-
-        // const rangeSlide = (e) => {
-        //   return e.target.value
-        // }
-
         const [val, setVal] = useState(0)
-        // console.log(val)        
+        // console.log(val)
 
     return (
         <section>
@@ -85,12 +82,12 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
               </div>
             </div>
             <div className='song-progress-bar-container grid'>
-              <p className='song-start'>{songTimeCounter()}</p>
+              <p className='song-start'>{renderCurrentTrackTime()}</p>
               {/* <div className='song-progress-bar' >
                 <div className='song-expired' style={{width: timeElapsed}}/>
               </div> */}
               <div className="slidecontainer">
-                <input className='slider' type="range" name="song-expired" min={0} max={100} value={val} onChange={e => setVal(e.target.value)} />
+                <input className='slider' type="range" name="song-expired" min={0} max={100} value={timeElapsed} onChange={e => setVal(e.target.value)} />
               </div>
               <p className='song-end'>{calcTrackTime(currentTrack.trackDuration)}</p>
             </div>
