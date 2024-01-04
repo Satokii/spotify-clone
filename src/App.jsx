@@ -61,7 +61,6 @@ function App() {
 const [currentTrack, setCurrentTrack] = useState({})
 const [isPlaying, setIsPlaying] = useState(false)
 const [notPlaying, setNotPlaying] = useState(null)
-const [trackDuration, setTrackDuration] = useState()
 
   useEffect(() => {
     const getCurrentTrack = async () => {
@@ -88,7 +87,6 @@ const [trackDuration, setTrackDuration] = useState()
           trackDuration: item.duration_ms,
         })
         setIsPlaying(data.is_playing)
-        setTrackDuration(data.item.duration_ms)
       }
       };
       // setInterval(() => {
@@ -122,7 +120,7 @@ const [trackDuration, setTrackDuration] = useState()
         <Routes>
           <Route
             path="/"
-            element={token ? <Main token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} trackDuration={trackDuration} isPlaying={isPlaying} setIsPlaying={setIsPlaying} notPlaying={notPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
+            element={token ? <Main token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} isPlaying={isPlaying} setIsPlaying={setIsPlaying} notPlaying={notPlaying} topTracksDate={topTracksDate} setTopTracksDate={setTopTracksDate} showTopTracks={showTopTracks} setShowTopTracks={setShowTopTracks} topArtistsDate={topArtistsDate} setTopArtistsDate={setTopArtistsDate} showTopArtists={showTopArtists} setShowTopArtists={setShowTopArtists} /> : <WelcomePage />}
           >
           </Route>
           <Route

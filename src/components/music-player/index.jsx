@@ -8,7 +8,7 @@ import backButton from "../../assets/svgs/player/back-button.svg"
 import "./styles/music-player.css"
 import { useState } from "react";
 
-function MusicPlayer({ token, currentTrack, setCurrentTrack, trackDuration }) {
+function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
           
         const changePlayerState = async () => {
           const playState = currentTrack.trackIsPlaying ? "pause" : "play"
@@ -26,7 +26,6 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack, trackDuration }) {
             trackIsPlaying: !currentTrack.trackIsPlaying
           }
           
-        // setIsPlaying(!isPlaying)
         setCurrentTrack(updatedCurrentTrackState)
         };
 
@@ -93,7 +92,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack, trackDuration }) {
               <div className="slidecontainer">
                 <input className='slider' type="range" name="song-expired" min={0} max={100} value={val} onChange={e => setVal(e.target.value)} />
               </div>
-              <p className='song-end'>{calcTrackTime(trackDuration)}</p>
+              <p className='song-end'>{calcTrackTime(currentTrack.trackDuration)}</p>
             </div>
           </div>
         </section>
