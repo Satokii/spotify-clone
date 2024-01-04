@@ -10,6 +10,7 @@ import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
 import SearchResultsPage from "./components/search-results-page";
 import axios from "axios";
+import CURRENT_TRACK_INITIAL_STATE from "./initial-states/CURRENT_TRACK_INITIAL_STATE";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
 import ARTISTS_INITIAL_STATE from "./initial-states/ARTISTS-INITIAL-STATE";
 
@@ -58,19 +59,7 @@ function App() {
   }, []);
 
 // FETCH CURRENTLY PLAYING TRACK
-
-const INITIAL_TRACK_STATE = {
-    trackId: "",
-    trackImageLength: 0,
-    trackImage: "",
-    trackName: "",
-    trackArtist: "",
-    trackIsPlaying: false,
-    trackProgress: 0,
-    trackDuration: 0,
-}
-
-const [currentTrack, setCurrentTrack] = useState(INITIAL_TRACK_STATE)
+const [currentTrack, setCurrentTrack] = useState(CURRENT_TRACK_INITIAL_STATE)
 const [notPlaying, setNotPlaying] = useState(null)
 
   useEffect(() => {
