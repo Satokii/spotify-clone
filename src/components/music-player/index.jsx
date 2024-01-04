@@ -19,7 +19,9 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
   const [manualSeekVal, setManualSeekVal] = useState();
 
   const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton;
-  const timeElapsed = Number(((currentTrack.trackProgress / currentTrack.trackDuration) * 100).toFixed(0));
+  const timeElapsed = Number(
+    ((currentTrack.trackProgress / currentTrack.trackDuration) * 100).toFixed(0)
+  );
 
   useEffect(() => {
     setSliderVal(timeElapsed);
@@ -31,51 +33,46 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
   }, [manualSeekVal, token]);
 
   return (
-    <section>
-      <h3>Playback</h3>
-      <div className="song-player-container grid">
-        <div className="song-controls grid">
-          <div
-            className="back-btn"
-            onClick={() => skipTrack(token, currentTrack, "previous")}
-          >
-            <img src={backButton} alt="skip back button" />
-          </div>
-          <div
-            className="play-btn"
-            onClick={() =>
-              changePlayerState(token, currentTrack, setCurrentTrack)
+    <section className="song-player-container grid">
+      <div className="song-controls grid">
+        <div
+          className="back-btn"
+          onClick={() => skipTrack(token, currentTrack, "previous")}
+        >
+          <img src={backButton} alt="skip back button" />
+        </div>
+        <div
+          className="play-btn"
+          onClick={() =>
+            changePlayerState(token, currentTrack, setCurrentTrack)
+          }
+        >
+          <img src={togglePlayBtn} alt="play/pause button" />
+        </div>
+        <div className="forward-btn" onClick={() => skipTrack(token, currentTrack, "next")}>
+          <img src={forwardButton} alt="skip forward button" />
+        </div>
+      </div>
+      <div className="song-progress-bar-container grid">
+        <p className="song-start">{renderCurrentTrackTime(currentTrack)}</p>
+        <div className="slide-container">
+          <input
+            className="slider"
+            type="range"
+            name="song-expired"
+            min={0}
+            max={100}
+            step={1}
+            value={sliderVal}
+            onChange={(e) => {
+              setSliderVal(e.target.value);
+            }}
+            onMouseUp={(e) =>
+              calcSeekPosition(e.target.value, currentTrack, setManualSeekVal)
             }
-          >
-            <img src={togglePlayBtn} alt="play/pause button" />
-          </div>
-          <div className="forward-btn" onClick={() => skipTrack(token, "next")}>
-            <img src={forwardButton} alt="skip forward button" />
-          </div>
+          />
         </div>
-        <div className="song-progress-bar-container grid">
-          <p className="song-start">{renderCurrentTrackTime(currentTrack)}</p>
-          <div className="slide-container">
-            <input
-              className="slider"
-              type="range"
-              name="song-expired"
-              min={0}
-              max={100}
-              step={1}
-              value={sliderVal}
-              onChange={(e) => {
-                setSliderVal(e.target.value);
-              }}
-              onMouseUp={(e) =>
-                calcSeekPosition(e.target.value, currentTrack, setManualSeekVal)
-              }
-            />
-          </div>
-          <p className="song-end">
-            {calcTrackTime(currentTrack.trackDuration)}
-          </p>
-        </div>
+        <p className="song-end">{calcTrackTime(currentTrack.trackDuration)}</p>
       </div>
     </section>
   );
