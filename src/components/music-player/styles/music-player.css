@@ -46,17 +46,19 @@
     outline: none;
     border-radius: 15px;
     overflow: hidden;
+    background: red;
     cursor: default;
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--const-main-white);
     border: none;
+    border: solid 2px white;
     cursor: default;
     box-shadow: -407px 0 0 405px var(--const-main-white);
 }

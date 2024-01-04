@@ -74,7 +74,6 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
         }, [timeElapsed])
 
         // API CALL TO SEEK TO POSITION
-        useEffect(() => {
           const seekToPosition = async () => {
             await axios.put(
               "https://api.spotify.com/v1/me/player/seek", {},
@@ -88,12 +87,11 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
               }
             );
           };
-          seekToPosition()
-        }, [manualSeekVal, token])
 
         const calcSeekPosition = (slidebarPosition) => {
           const currentTimeinMs = (slidebarPosition / 100) * currentTrack.trackDuration
           setManualSeekVal(Number(currentTimeinMs.toFixed(0)))
+          seekToPosition()
         }
 
     return (
