@@ -28,6 +28,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
             ...currentTrack,
             trackIsPlaying: !currentTrack.trackIsPlaying
           }
+          console.log(currentTrack)
         setCurrentTrack(updatedCurrentTrackState)
         };
 
@@ -49,7 +50,6 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
         // RENDER CURRENT TRACK TIME
         const renderCurrentTrackTime = () => {
           const currentTime = currentTrack.trackProgress
-          console.log(currentTime)
           if (currentTime === null) return "0:00"
           if (currentTime === 0) return "0:00"
           else if (currentTime < 0) return "0:00"
@@ -93,7 +93,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
           <h3>Playback</h3>    
           <div className='song-player-container grid'>
             <div className='song-controls grid'>
-              <div className='back-btn' onClick={() => skipTrack(token, "previous")}>
+              <div className='back-btn' onClick={() => skipTrack(token, currentTrack, "previous")}>
                 <img src={backButton} alt="skip back button" />
               </div>
               <div className='play-btn' onClick={changePlayerState}>
