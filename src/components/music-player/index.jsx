@@ -4,6 +4,7 @@ import changePlayerState from "./functions/changePlayerState";
 import skipTrack from "./functions/skipTrack";
 import calcTrackTime from "./functions/calcTrackTime";
 import renderCurrentTrackTime from "./functions/renderCurrentTrackTime";
+import seekToPosition from "./functions/seekToPosition";
 
 import playButton from "../../assets/svgs/player/play-button.svg"
 import pauseButton from "../../assets/svgs/player/pause-button.svg"
@@ -16,7 +17,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
         
         const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton
         const timeElapsed = Number(((currentTrack.trackProgress)/currentTrack.trackDuration * 100).toFixed(0))
-        
+
         // HANDLE SLIDER POSITION - BOTH MANUAL AND AUTOMATIC
         const [sliderVal, setSliderVal] = useState(0)
         const [manualSeekVal, setManualSeekVal] = useState()
@@ -27,20 +28,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
 
         // API CALL TO SEEK TO POSITION
         useEffect(() => {
-          const seekToPosition = async () => {
-            await axios.put(
-              "https://api.spotify.com/v1/me/player/seek", {},
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                params: {
-                  position_ms: manualSeekVal,
-                },
-              }
-            );
-          };
-          seekToPosition()
+          seekToPosition(token, manualSeekVal)
         }, [manualSeekVal, token])
 
         const calcSeekPosition = async (slidebarPosition) => {
