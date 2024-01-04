@@ -3,7 +3,7 @@ import axios from "axios";
 // API CALL TO SKIP TRACK
 const skipTrack = async (token, currentTrack, skipDirection) => {
   if (currentTrack.trackProgress > 4000 && skipDirection === "previous") {
-    await axios.put(
+    axios.put(
       "https://api.spotify.com/v1/me/player/seek",
       {},
       {

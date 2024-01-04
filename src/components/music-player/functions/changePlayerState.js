@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // API CALL TO PLAY/PAUSE TRACK
-const changePlayerState = async () => {
+const changePlayerState = async (token, currentTrack, setCurrentTrack) => {
   const playState = currentTrack.trackIsPlaying ? "pause" : "play";
   await axios.put(
     `https://api.spotify.com/v1/me/player/${playState}`,

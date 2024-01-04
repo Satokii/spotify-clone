@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import changePlayerState from "./functions/changePlayerState";
+import changePlayerState from "./functions/changePlayerState";
 import skipTrack from "./functions/skipTrack";
 
 import playButton from "../../assets/svgs/player/play-button.svg"
@@ -11,26 +11,6 @@ import backButton from "../../assets/svgs/player/back-button.svg"
 import "./styles/music-player.css"
 
 function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
-          
-        // API CALL TO PLAY/PAUSE TRACK
-        const changePlayerState = async () => {
-          const playState = currentTrack.trackIsPlaying ? "pause" : "play"
-          await axios.put(  
-            `https://api.spotify.com/v1/me/player/${playState}`, {},
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json"
-              },
-            }
-          );
-          const updatedCurrentTrackState = {
-            ...currentTrack,
-            trackIsPlaying: !currentTrack.trackIsPlaying
-          }
-          console.log(currentTrack)
-        setCurrentTrack(updatedCurrentTrackState)
-        };
 
         // CALCULATE TRACK TIME IN 00:00 FORMAT
         const calcTrackTime = (ms) => {
@@ -96,7 +76,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
               <div className='back-btn' onClick={() => skipTrack(token, currentTrack, "previous")}>
                 <img src={backButton} alt="skip back button" />
               </div>
-              <div className='play-btn' onClick={changePlayerState}>
+              <div className='play-btn' onClick={() => changePlayerState(token, currentTrack, setCurrentTrack)}>
                 <img src={togglePlayBtn} alt="play/pause button" />
               </div>
               <div className='forward-btn' onClick={() => skipTrack(token, "next")}>
