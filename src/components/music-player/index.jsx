@@ -3,6 +3,7 @@ import axios from "axios";
 import changePlayerState from "./functions/changePlayerState";
 import skipTrack from "./functions/skipTrack";
 import calcTrackTime from "./functions/calcTrackTime";
+import renderCurrentTrackTime from "./functions/renderCurrentTrackTime";
 
 import playButton from "../../assets/svgs/player/play-button.svg"
 import pauseButton from "../../assets/svgs/player/pause-button.svg"
@@ -14,18 +15,8 @@ import "./styles/music-player.css"
 function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
         
         const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton
-
         const timeElapsed = Number(((currentTrack.trackProgress)/currentTrack.trackDuration * 100).toFixed(0))
-
-        // RENDER CURRENT TRACK TIME
-        const renderCurrentTrackTime = () => {
-          const currentTime = currentTrack.trackProgress
-          if (currentTime === null) return "0:00"
-          if (currentTime === 0) return "0:00"
-          else if (currentTime < 0) return "0:00"
-          else return calcTrackTime(currentTime)
-        }
-
+        
         // HANDLE SLIDER POSITION - BOTH MANUAL AND AUTOMATIC
         const [sliderVal, setSliderVal] = useState(0)
         const [manualSeekVal, setManualSeekVal] = useState()
@@ -51,7 +42,6 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
           };
           seekToPosition()
         }, [manualSeekVal, token])
-          
 
         const calcSeekPosition = async (slidebarPosition) => {
           const currentTimeinMs = (slidebarPosition / 100) * currentTrack.trackDuration
@@ -74,7 +64,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
               </div>
             </div>
             <div className='song-progress-bar-container grid'>
-              <p className='song-start'>{renderCurrentTrackTime()}</p>
+              <p className='song-start'>{renderCurrentTrackTime(currentTrack)}</p>
               <div className="slide-container">
                 <input className='slider' type="range" name="song-expired" min={0} max={100} step={1} value={sliderVal} onChange={e => {setSliderVal(e.target.value)}} onMouseUp={e => calcSeekPosition(e.target.value)} />
               </div>
