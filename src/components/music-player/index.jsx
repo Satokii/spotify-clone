@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import changePlayerState from "./functions/changePlayerState";
 import skipTrack from "./functions/skipTrack";
+import calcTrackTime from "./functions/calcTrackTime";
 
 import playButton from "../../assets/svgs/player/play-button.svg"
 import pauseButton from "../../assets/svgs/player/pause-button.svg"
@@ -11,17 +12,6 @@ import backButton from "../../assets/svgs/player/back-button.svg"
 import "./styles/music-player.css"
 
 function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
-
-        // CALCULATE TRACK TIME IN 00:00 FORMAT
-        const calcTrackTime = (ms) => {
-          const minutes = Math.floor(ms / 60000);
-          const seconds = ((ms % 60000) / 1000).toFixed(0);
-          return (
-            seconds == 60 ?
-            (minutes+1) + ":00" :
-            minutes + ":" + (seconds < 10 ? "0" : "") + seconds
-          )
-        }
         
         const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton
 
