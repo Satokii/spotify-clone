@@ -11,6 +11,8 @@ function VolumeControls({ token }) {
   const [manualVolumeSelect, setManualVolumeSelect] = useState()
 
     // GET DEVICES API CALL
+    // USE TURN ON SET INTERVAL FOR REAL-TIME UPDATES WHEN VOLUME IS
+    // CHANGED ON A DEVICE
     useEffect(() => {
       const getDevices = async () => {
         const { data } = await axios.get(
@@ -23,20 +25,21 @@ function VolumeControls({ token }) {
         );
         setAvailableDevices(data.devices)
       };
-      getDevices()
+      // setInterval(() => {
+        getDevices()
+      // }, 1000);
     }, [token]);
 
+    // CHECK IF CURRENT ACTIVE DEVICE & SET VOLUME
+    // IF NOT SET DEFAULT VOLUME OF 50
     useEffect(() => {
         const activeDevice = availableDevices.find(device => device.is_active === true)
-        console.log(activeDevice)
-        if (!activeDevice) setVolume(40)
+        if (!activeDevice) setVolume(50)
         else {
-          setVolume(activeDevice.volume_percent)
+        setVolume(activeDevice.volume_percent)
         }
     }, [availableDevices])
 
-
-    // getVolume()
 
   useEffect(() => {
     const changeVolume = async () => {
@@ -53,9 +56,7 @@ function VolumeControls({ token }) {
       );
     };
     changeVolume()
-  }, [token, volume])
-
-    // console.log(volume)
+  }, [manualVolumeSelect, token, volume])
 
   return (
     <section className="volume-controls-container grid">
@@ -69,14 +70,9 @@ function VolumeControls({ token }) {
           max={100}
           step={1}
           value={volume}
-          //   onChange={(e) => {
-          //     setSliderVal(e.target.value);
-          //   }}
-            // onMouseUp={(e) =>
-            //   calcSeekPosition(e.target.value, currentTrack, setManualSeekVal)
-            // }
-            onChange={(e => setVolume(e.target.value))}
-            // onMouseUp={(e => setVolume(e.target.value))}
+          onChange={(e => setVolume(e.target.value))}
+          onMouseUp={(e => setVolume(e.target.value))}
+          onMouseDown={(e => setVolume(e.target.value))}
         />
       </div>
     </section>
