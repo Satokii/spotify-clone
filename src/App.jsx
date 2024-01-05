@@ -191,7 +191,7 @@ function App() {
             path="/album"
             element={
               token ?
-              <Album />
+              <Album token={token} />
               : <WelcomePage />
             }
           >
