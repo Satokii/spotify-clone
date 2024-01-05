@@ -4,7 +4,7 @@ import getQueue from "./functions/getQueue";
 
 import "./styles/queue.css"
 
-function Queue({ token, queue, setQueue, currentTrack }) {
+function Queue({ token, queue, setQueue }) {
 
     useEffect(() => {
         getQueue(token, setQueue);

@@ -8,7 +8,7 @@ function MainPlayback({ token, queue, setQueue, currentTrack, notPlaying }) {
     return (
         <section className="main-playback--container grid">
             <CurrentlyPlaying currentTrack={currentTrack} notPlaying={notPlaying} />
-            <Queue token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} />
+            <Queue token={token} queue={queue} setQueue={setQueue}/>
         </section>
     )
 }
