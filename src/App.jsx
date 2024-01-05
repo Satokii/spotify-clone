@@ -12,7 +12,6 @@ import axios from "axios";
 import CURRENT_TRACK_INITIAL_STATE from "./initial-states/CURRENT_TRACK_INITIAL_STATE";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
 import ARTISTS_INITIAL_STATE from "./initial-states/ARTISTS-INITIAL-STATE";
-import getQueue from "./components/Queue/functions/getQueue";
 
 import "./app.css";
 import "./shared-styles/root.css";
@@ -87,9 +86,9 @@ function App() {
         });
       }
     };
-    setInterval(() => {
+    // setInterval(() => {
       getCurrentTrack();
-    }, 1000);
+    // }, 1000);
   }, [ token]);
 
   return (
