@@ -36,7 +36,7 @@
         width: 15px;
         height: 2px;
         border: none;
-        background: var(--const-white);
+        background: var(--const-main-white);
         border-radius: 0%;
         transform: rotate(-45deg);
       }
@@ -76,7 +76,7 @@
     left: 12px;
     width: 8px;
     height: 2px;
-    background: var(--const-white);
+    background: var(--const-main-white);
     transform: rotate(45deg);
     transition: all .3s;
   }
@@ -91,7 +91,7 @@
     width: 15px;
     height: 15px;
     border-radius: 9999px;
-    border: 2px solid var(--const-white);
+    border: 2px solid var(--const-main-white);
     transition: all .3s;
   }
 }
