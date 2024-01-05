@@ -1,0 +1,23 @@
+/* PLAYER CONTROL BUTTONS */
+.song-controls {
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn {
+    width: 34px;
+}
+
+.play-btn:hover {
+    transform: scale(1.07);
+}
+
+.back-btn, .forward-btn {
+    width: 14px;
+}
+
+.forward-btn:hover, .back-btn:hover {
+    filter: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(606%) hue-rotate(253deg) brightness(112%) contrast(81%);
+}
