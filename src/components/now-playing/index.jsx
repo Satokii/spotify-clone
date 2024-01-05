@@ -10,7 +10,9 @@ function NowPlaying({ currentTrack }) {
                 {currentTrack.trackImageLength ? <img className="img" src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /> : <div></div>}
             </div>
             <div className="now-playing--text-container grid">
-                <Link className="now-playing--track-name" to={""}>{currentTrack.trackName}</Link>
+                <div className="now-playing--track-name-container">
+                    <Link className="now-playing--track-name" to={""}>{currentTrack.trackName}</Link>
+                </div>
                 <Link className="now-playing--artist-name" to={""}>{currentTrack.trackArtist}</Link>
                 <p></p>
             </div>
