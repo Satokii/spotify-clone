@@ -1,8 +1,13 @@
 .navigation-container {
     grid-area: Navigation;
     background-color: var(--darker-black);
+    height: 100%;
+    overflow-y: hidden;
 }
 
 .nav-list {
     list-style: none;
 }
+
+
+/* 3MLhDn5jwjMjv7S3qIRXnG */

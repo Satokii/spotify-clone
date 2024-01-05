@@ -4,6 +4,7 @@ import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Main from "./components/main";
+import Album from "./components/album";
 import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
@@ -136,7 +137,8 @@ function App() {
                 /> 
                 : <WelcomePage />
             }
-          ></Route>
+          >
+          </Route>
           <Route
             path="/top-tracks"
             element={ 
@@ -150,7 +152,8 @@ function App() {
               />
               : <WelcomePage />
             }
-          ></Route>
+          >
+          </Route>
           <Route
             path="/top-artists"
             element={
@@ -164,7 +167,8 @@ function App() {
               /> 
               : <WelcomePage />
             }
-          ></Route>
+          >
+          </Route>
           <Route
             path="/search-results"
             element={
@@ -181,7 +185,17 @@ function App() {
               />
               : <WelcomePage />
             }
-          ></Route>
+          >
+          </Route>
+          <Route
+            path="/album"
+            element={
+              token ?
+              <Album />
+              : <WelcomePage />
+            }
+          >
+          </Route>
         </Routes>
         {token ?
           <Footer
