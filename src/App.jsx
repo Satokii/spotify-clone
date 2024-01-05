@@ -112,7 +112,7 @@ function App() {
           <Route
             path="/"
             element={
-              token ? (
+              token ? 
                 <Main
                   token={token}
                   queue={queue}
@@ -127,15 +127,14 @@ function App() {
                   setTopArtistsDate={setTopArtistsDate}
                   showTopArtists={showTopArtists}
                   setShowTopArtists={setShowTopArtists}
-                />
-              ) : (
-                <WelcomePage />
-              )
+                /> 
+                : <WelcomePage />
             }
           ></Route>
           <Route
             path="/top-tracks"
-            element={
+            element={ 
+              token ?
               <TopTracksPage
                 token={token}
                 topTracksDate={topTracksDate}
@@ -143,23 +142,27 @@ function App() {
                 showTopTracks={showTopTracks}
                 setShowTopTracks={setShowTopTracks}
               />
+              : <WelcomePage />
             }
           ></Route>
           <Route
             path="/top-artists"
             element={
+              token ?
               <TopArtistsPage
                 token={token}
                 topArtistsDate={topArtistsDate}
                 setTopArtistsDate={setTopArtistsDate}
                 showTopArtists={showTopArtists}
                 setShowTopArtists={setShowTopArtists}
-              />
+              /> 
+              : <WelcomePage />
             }
           ></Route>
           <Route
             path="/search-results"
             element={
+              token ?
               <SearchResultsPage
                 trackResults={trackResults}
                 trackTotal={trackTotal}
@@ -170,15 +173,19 @@ function App() {
                 playlistResults={playlistResults}
                 playlistTotal={playlistTotal}
               />
+              : <WelcomePage />
             }
           ></Route>
         </Routes>
-        <Footer
+        {token ?
+          <Footer
           token={token}
           currentTrack={currentTrack}
           setCurrentTrack={setCurrentTrack}
           setQueue={setQueue}
         />
+        : null
+        }
       </div>
     </>
   );
