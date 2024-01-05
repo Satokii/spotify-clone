@@ -3,15 +3,22 @@
     grid-template-rows: 70px 1fr;
     gap: 20px;
     background-color: var(--almost-black);
-    padding: 20px 20px 150px 20px;
+    padding: 20px 10px 150px;
     height: 100%;
     margin-bottom: 100px;
+}
+
+.search-results--header-container {
+    grid-template-columns: 150px 1fr;
+    padding-right: 150px;
 }
 
 .search-results--header {
     place-self: center;
     font-size: 40px;
     color: var(--const-green);
+    opacity: 0;
+    animation: 1s ease 0.4s forwards fade-in;
 }
 
 .search-results--content {
@@ -27,6 +34,8 @@
     text-align: center;
     font-size: 26px;
     color: var(--const-green);
+    opacity: 0;
+    animation: 1s ease 0.5s forwards fade-in;
 }
 
 .search-results--category-num-results {
@@ -34,6 +43,8 @@
     font-size: 12px;
     font-weight: bold;
     color: var(--const-blue);
+    opacity: 0;
+    animation: 1s ease 0.5s forwards fade-in;
 }
 
 .search-results--category-list {
@@ -41,6 +52,8 @@
     gap: 30px;
     font-size: 16px;
     padding: 10px;
+    opacity: 0;
+    animation: 1s ease 0.6s forwards fade-in;
 }
 
 .search-results--category-item {
