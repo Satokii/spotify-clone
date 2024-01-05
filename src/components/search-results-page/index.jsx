@@ -12,7 +12,7 @@ function SearchResultsPage({ trackResults, trackTotal, artistResults, artistTota
         <section className="search-results--container grid">
             <div className="search-results--header-container grid">
                 <Link
-                  className="top-results-page--back-btn btn"
+                  className="page--back-btn btn"
                   to="/"
                 >
                   Go back

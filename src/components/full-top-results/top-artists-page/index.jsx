@@ -54,7 +54,7 @@ function TopArtistsPage({ token, topArtistsDate, setTopArtistsDate, showTopArtis
         <section className="top-results-page--container grid">
           <div className="top-results-page--header-container grid">
             <Link
-                className="top-results-page--back-btn btn"
+                className="page--back-btn btn"
                 to="/"
             >
                 Go back
