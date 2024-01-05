@@ -26,7 +26,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack, setQueue }) {
     if (sliderVal >= 1 || sliderVal <= 3) {
       getQueue(token, setQueue)
     }
-  })
+  }, [setQueue, sliderVal, token])
 
   return (
     <section className="song-player-container grid">
