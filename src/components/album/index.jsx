@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function Album({ token }) {
+
+    const [albumInfo, setAlbumInfo] = useState([])
 
     const { albumId } = useParams()
 
@@ -20,12 +22,15 @@ function Album({ token }) {
             }
           );
           console.log(data)
+          setAlbumInfo(data)
         };
           getAlbum();
       }, [albumId, token]);
 
     return (
-        <section></section>
+        <section>
+
+        </section>
     )
 }
 
