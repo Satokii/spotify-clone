@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function Album({ token }) {
+
+    const { albumId } = useParams()
 
     useEffect(() => {
         const getAlbum = async () => {
@@ -19,7 +22,7 @@ function Album({ token }) {
           console.log(data)
         };
           getAlbum();
-      }, [ token]);
+      }, [albumId, token]);
 
     return (
         <section></section>
