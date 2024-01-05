@@ -1,4 +1,5 @@
 import axios from "axios";
+import getDevices from "./functions/getDevices";
 
 import "./styles/volume-controls-container.css"
 import "./styles/volume-slider.css";
@@ -8,25 +9,11 @@ function VolumeControls({ token }) {
 
   const [availableDevices, setAvailableDevices] = useState([])
   const [volume, setVolume] = useState()
-  const [manualVolumeSelect, setManualVolumeSelect] = useState()
 
-    // GET DEVICES API CALL
-    // USE TURN ON SET INTERVAL FOR REAL-TIME UPDATES WHEN VOLUME IS
-    // CHANGED ON A DEVICE
+    // TURN ON SET INTERVAL FOR REAL-TIME UPDATES TO VOLUME SLIDER WHEN VOLUME IS CHANGED ON A DEVICE
     useEffect(() => {
-      const getDevices = async () => {
-        const { data } = await axios.get(
-          "https://api.spotify.com/v1/me/player/devices",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        setAvailableDevices(data.devices)
-      };
       // setInterval(() => {
-        getDevices()
+        getDevices(token, setAvailableDevices)
       // }, 1000);
     }, [token]);
 
@@ -39,7 +26,6 @@ function VolumeControls({ token }) {
         setVolume(activeDevice.volume_percent)
         }
     }, [availableDevices])
-
 
   useEffect(() => {
     const changeVolume = async () => {
@@ -56,7 +42,7 @@ function VolumeControls({ token }) {
       );
     };
     changeVolume()
-  }, [manualVolumeSelect, token, volume])
+  }, [token, volume])
 
   return (
     <section className="volume-controls-container grid">
