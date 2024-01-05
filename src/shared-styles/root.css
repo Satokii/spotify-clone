@@ -23,4 +23,6 @@
     --const-light-purple: #AF40FF;
     --const-purple: #5B42F3;
     --const-cyan: #00DDEB;
+
+    --filter-hover-white: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(606%) hue-rotate(253deg) brightness(112%) contrast(81%);
 }

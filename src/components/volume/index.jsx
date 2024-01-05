@@ -28,7 +28,7 @@ function VolumeControls({ token }) {
  
   return (
     <section className="volume-controls-container grid">
-      <VolumeIcon token={token} volume={volume} />
+      <VolumeIcon token={token} volume={volume} setVolume={setVolume} />
       <div className="volume-slide-container grid">
         <input
           className="volume-slider"

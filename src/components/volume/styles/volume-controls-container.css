@@ -10,3 +10,7 @@
     width: 20px;
     height: 20px;
 }
+
+.volume-mute-icon-container img:hover {
+    filter: var(--filter-hover-white);
+}
