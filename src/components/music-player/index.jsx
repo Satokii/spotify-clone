@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import changePlayerState from "./functions/changePlayerState";
 import skipTrack from "./functions/skipTrack";
-import calcTrackTime from "./functions/calcTrackTime";
-import renderCurrentTrackTime from "./functions/renderCurrentTrackTime";
 import seekToPosition from "./functions/seekToPosition";
-import calcSeekPosition from "./functions/calcSeekPosition";
 import getQueue from "../Queue/functions/getQueue";
+import TrackSlider from "./components/TrackSlider";
 
 import playButton from "../../assets/svgs/player/play-button.svg";
 import pauseButton from "../../assets/svgs/player/pause-button.svg";
@@ -20,9 +18,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack, setQueue }) {
   const [manualSeekVal, setManualSeekVal] = useState();
 
   const togglePlayBtn = currentTrack.trackIsPlaying ? pauseButton : playButton;
-  const timeElapsed = Number(
-    ((currentTrack.trackProgress / currentTrack.trackDuration) * 100).toFixed(0)
-  );
+  const timeElapsed = Number(((currentTrack.trackProgress / currentTrack.trackDuration) * 100).toFixed(0));
 
   useEffect(() => {
     setSliderVal(timeElapsed);
@@ -60,27 +56,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack, setQueue }) {
           <img src={forwardButton} alt="skip forward button" />
         </div>
       </div>
-      <div className="song-progress-bar-container grid">
-        <p className="song-start">{renderCurrentTrackTime(currentTrack)}</p>
-        <div className="slide-container">
-          <input
-            className="slider"
-            type="range"
-            name="song-expired"
-            min={0}
-            max={100}
-            step={1}
-            value={sliderVal}
-            onChange={(e) => {
-              setSliderVal(e.target.value);
-            }}
-            onMouseUp={(e) =>
-              calcSeekPosition(e.target.value, currentTrack, setManualSeekVal)
-            }
-          />
-        </div>
-        <p className="song-end">{calcTrackTime(currentTrack.trackDuration)}</p>
-      </div>
+      <TrackSlider currentTrack={currentTrack} sliderVal={sliderVal} setSliderVal={setSliderVal} setManualSeekVal={setManualSeekVal} />
     </section>
   );
 }
