@@ -1,3 +1,4 @@
+import CurrentTrack from '../current-track'
 import MusicPlayer from '../music-player'
 import VolumeControls from '../volume'
 
@@ -7,7 +8,7 @@ function Footer({ token, currentTrack, setCurrentTrack, setQueue }) {
 
     return (
         <footer className='footer grid'>
-            <section></section>
+            <CurrentTrack />
             <MusicPlayer token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} setQueue={setQueue} />
             <VolumeControls token={token} />
         </footer>
