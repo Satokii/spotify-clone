@@ -1,6 +1,6 @@
-import axios from "axios";
 import getDevices from "./functions/getDevices";
 import handleDeviceVolumeChanges from "./functions/handleDeviceVolumeChanges";
+import changeVolume from "./functions/changeVolume";
 
 import "./styles/volume-controls-container.css";
 import "./styles/volume-slider.css";
@@ -22,21 +22,7 @@ function VolumeControls({ token }) {
   }, [availableDevices]);
 
   useEffect(() => {
-    const changeVolume = async () => {
-      await axios.put(
-        "https://api.spotify.com/v1/me/player/volume",
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          params: {
-            volume_percent: Number(volume),
-          },
-        }
-      );
-    };
-    changeVolume();
+    changeVolume(token, volume);
   }, [token, volume]);
 
   return (
