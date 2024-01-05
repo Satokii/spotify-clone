@@ -44,27 +44,6 @@ function App() {
     const [playlistResults, setPlaylistResults] = useState([]);
     const [playlistTotal, setPlaylistTotal] = useState(0);
 
-  // function to check if api authorisation is still valid
-  // when test api GET request fails, auto logs out user - checks every 2 mins
-  useEffect(() => {
-    setInterval(() => {
-      const checkStatus = async () => {
-        const { status } = await axios.get(
-          "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        if (status !== 200) {
-          Logout(setToken);
-        }
-      };
-      checkStatus();
-    }, 120000);
-  }, [token]);
-
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
