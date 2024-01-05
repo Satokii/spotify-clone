@@ -5,7 +5,6 @@ import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Main from "./components/main";
 import Footer from "./components/footer";
-import Logout from "./Logout";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
 import SearchResultsPage from "./components/search-results-page";
@@ -90,9 +89,8 @@ function App() {
     };
     setInterval(() => {
       getCurrentTrack();
-      getQueue(token, setQueue)
     }, 1000);
-  }, [currentTrack.trackDuration, currentTrack.trackProgress, token]);
+  }, [ token]);
 
   return (
     <>
@@ -180,6 +178,7 @@ function App() {
           token={token}
           currentTrack={currentTrack}
           setCurrentTrack={setCurrentTrack}
+          setQueue={setQueue}
         />
       </div>
     </>

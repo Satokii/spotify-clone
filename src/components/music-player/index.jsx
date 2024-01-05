@@ -5,6 +5,7 @@ import calcTrackTime from "./functions/calcTrackTime";
 import renderCurrentTrackTime from "./functions/renderCurrentTrackTime";
 import seekToPosition from "./functions/seekToPosition";
 import calcSeekPosition from "./functions/calcSeekPosition";
+import getQueue from "../Queue/functions/getQueue";
 
 import playButton from "../../assets/svgs/player/play-button.svg";
 import pauseButton from "../../assets/svgs/player/pause-button.svg";
@@ -13,7 +14,7 @@ import backButton from "../../assets/svgs/player/back-button.svg";
 
 import "./styles/music-player.css";
 
-function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
+function MusicPlayer({ token, currentTrack, setCurrentTrack, setQueue }) {
   // HANDLE SLIDER POSITION - BOTH MANUAL AND AUTOMATIC
   const [sliderVal, setSliderVal] = useState(0);
   const [manualSeekVal, setManualSeekVal] = useState();
@@ -30,6 +31,13 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack }) {
   useEffect(() => {
     seekToPosition(token, manualSeekVal);
   }, [manualSeekVal, token]);
+
+  // CHECK TO UPDATE QUEUE WHEN TRACK CHANGES
+  useEffect(() => {
+    if (sliderVal >= 1 || sliderVal <= 3) {
+      getQueue(token, setQueue)
+    }
+  })
 
   return (
     <section className="song-player-container grid">
