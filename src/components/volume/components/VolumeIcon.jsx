@@ -27,10 +27,10 @@ function VolumeIcon({ token, volume }) {
       }, [setMute, volume]);
 
     return (
-        <div onClick={handleMuteBehaviour}>
+        <div className="volume-mute-icon-container" onClick={handleMuteBehaviour}>
             {mute ? 
-            <img className="volume-mute-icon" src={VolumeMuteIcon} alt="volume mute icon" width={50} />
-            : <img className="volume-on-icon" src={VolumeOnIcon} alt="volume on icon" width={50} />
+            <img className="volume-mute-icon" src={VolumeMuteIcon} alt="volume mute icon" />
+            : <img className="volume-on-icon" src={VolumeOnIcon} alt="volume on icon" />
             }
         </div>
     )
