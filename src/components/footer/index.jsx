@@ -9,7 +9,7 @@ function Footer({ token, currentTrack, setCurrentTrack }) {
         <footer className='footer grid'>
             <section></section>
             <MusicPlayer token={token} currentTrack={currentTrack} setCurrentTrack={setCurrentTrack} />
-            <VolumeControls token={token} currentTrack={currentTrack} />
+            <VolumeControls token={token} />
         </footer>
     )
 }

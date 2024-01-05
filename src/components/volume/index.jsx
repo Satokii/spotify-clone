@@ -4,10 +4,11 @@ import "./styles/volume-controls-container.css"
 import "./styles/volume-slider.css";
 import { useEffect, useState } from "react";
 
-function VolumeControls({ token, currentTrack }) {
+function VolumeControls({ token }) {
 
-  const [activeDevice, setActiveDevice] = useState([])
-  const [volume, setVolume] = useState(60)
+  const [availableDevices, setAvailableDevices] = useState([])
+  const [volume, setVolume] = useState()
+  const [manualVolumeSelect, setManualVolumeSelect] = useState()
 
     // GET DEVICES API CALL
     useEffect(() => {
@@ -20,17 +21,22 @@ function VolumeControls({ token, currentTrack }) {
             },
           }
         );
-        // console.log(data);
-        setActiveDevice(data.devices)
+        setAvailableDevices(data.devices)
       };
       getDevices()
     }, [token]);
 
+    useEffect(() => {
+        const activeDevice = availableDevices.find(device => device.is_active === true)
+        console.log(activeDevice)
+        if (!activeDevice) setVolume(40)
+        else {
+          setVolume(activeDevice.volume_percent)
+        }
+    }, [availableDevices])
 
-    console.log(activeDevice)
-    const getVolume = () => {
-      
-    }
+
+    // getVolume()
 
   useEffect(() => {
     const changeVolume = async () => {
@@ -62,14 +68,15 @@ function VolumeControls({ token, currentTrack }) {
           min={0}
           max={100}
           step={1}
-          // value={volume}
+          value={volume}
           //   onChange={(e) => {
           //     setSliderVal(e.target.value);
           //   }}
             // onMouseUp={(e) =>
             //   calcSeekPosition(e.target.value, currentTrack, setManualSeekVal)
             // }
-            onMouseUp={(e => setVolume(e.target.value))}
+            onChange={(e => setVolume(e.target.value))}
+            // onMouseUp={(e => setVolume(e.target.value))}
         />
       </div>
     </section>
