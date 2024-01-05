@@ -94,7 +94,8 @@ function App() {
   return (
     <>
       <div className="container grid">
-        <Header
+        {token ?
+          <Header
           token={token}
           setToken={setToken}
           trackResults={trackResults}
@@ -106,8 +107,13 @@ function App() {
           setAlbumTotal={setAlbumTotal}
           setPlaylistResults={setPlaylistResults}
           setPlaylistTotal={setPlaylistTotal}
-        />
-        <Navigation token={token} />
+          />
+          : null
+        }
+        {token ? 
+          <Navigation token={token} />
+          : null
+        }
         <Routes>
           <Route
             path="/"

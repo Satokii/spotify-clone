@@ -1,29 +1,24 @@
 .welcome-page--container {
     grid-area: Main;
-    justify-items: center;
-    align-items: center;
+    justify-content: center;
+    align-content: center;
     background-color: var(--almost-black);
-    min-height: calc(100vh - 100px);
-}
-
-.welcome-page--text-container {
     gap: 20px;
-    justify-items: center;
-    height: fit-content;
+    padding-right: 150px;
     text-align: center;
     font-variant-caps: all-small-caps;
 }
 
 .welcome-page--header {
-    font-size: 66px;
+    font-size: 100px;
 }
 
 .welcome-page--text {
-    font-size: 36px;
+    font-size: 70px;
 }
 
 .welcome-page--logged-out-text {
-    font-size: 26px;
+    font-size: 40px;
     color: var(--const-red);
     line-height: 2;
 }
