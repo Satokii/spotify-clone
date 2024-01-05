@@ -35,7 +35,7 @@
 }
 
 .volume-slider:hover::-webkit-slider-thumb {
-    box-shadow: -407px 0 0 405px var(--const-green);
+    box-shadow: -407px 0 0 405px var(--const-green);volume-on-icon
 }
 
 .volume-slider::-webkit-slider-runnable-track {
