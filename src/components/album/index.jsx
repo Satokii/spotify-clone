@@ -31,7 +31,7 @@ function Album({ token }) {
       }, [albumId, token]);
 
     return (
-        <section className="album-page--container" style={{backgroundColor: "blue"}}>
+        <section className="album-page--container grid" style={{backgroundColor: "blue"}}>
             <div className="album-page--banner"></div>
             <div className="album-page--controls"></div>
             <div className="album-page--tracks"></div>

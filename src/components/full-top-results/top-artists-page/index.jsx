@@ -52,6 +52,7 @@ function TopArtistsPage({ token, topArtistsDate, setTopArtistsDate, showTopArtis
 
     return (
         <section className="top-results-page--container grid">
+          <div className="top-results-page--header-container grid">
             <Link
                 className="top-results-page--back-btn btn"
                 to="/"
@@ -59,6 +60,7 @@ function TopArtistsPage({ token, topArtistsDate, setTopArtistsDate, showTopArtis
                 Go back
             </Link>
             <h2 className="top-results-page--header">Top Artists</h2>
+          </div>
             <ul className="top-results-page--filter date-filter-list grid">
               {topArtistsDate.map((dateFilter, index) => (
               <li

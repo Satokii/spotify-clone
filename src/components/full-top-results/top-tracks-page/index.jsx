@@ -52,13 +52,15 @@ function TopTracksPage({ token, topTracksDate, setTopTracksDate, showTopTracks, 
 
     return (
         <section className="top-results-page--container grid">
-            <Link
-                className="top-results-page--back-btn btn"
-                to="/"
-            >
-                Go back
-            </Link>
-            <h2 className="top-results-page--header">Top Tracks</h2>
+            <div className="top-results-page--header-container grid">
+              <Link
+                  className="top-results-page--back-btn btn"
+                  to="/"
+              >
+                  Go back
+              </Link>
+              <h2 className="top-results-page--header">Top Tracks</h2>
+            </div>
             <ul className="top-results-page--filter date-filter-list grid">
               {topTracksDate.map((dateFilter, index) => (
               <li

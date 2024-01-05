@@ -1,21 +1,27 @@
 .top-results-page--container {
-    grid-template-rows: 20px 70px 40px 1fr;
+    grid-area: Main;
+    grid-template-rows: 60px 40px 1fr;
     background-color: var(--almost-black);
-    position: relative;
+    padding-top: 20px;
     padding-bottom: 300px;
-    height: 100%;
+    padding: 20px 20px 200px;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.top-results-page--header-container {
+    grid-template-columns: 150px 1fr;
+    padding-right: 150px;
 }
 
 .top-results-page--back-btn {
-    position: relative;
-    top: 30px;
-    left: 30px;
     align-self: center;
     justify-self: start;
     border: solid 1px var(--const-blue);
     background-color: var(--const-blue);
     border-radius: 9999px;
     padding: 0 15px;
+    margin-left: 20px;
     opacity: 0;
     animation: 1s ease 0.3s forwards fade-in;
 }
