@@ -4,9 +4,8 @@ import VolumeOnIcon from "../../../assets/svgs/volume/volume-on.svg"
 import VolumeMuteIcon from "../../../assets/svgs/volume/volume-mute.svg"
 import { useState } from "react"
 
-function VolumeIcon({ token, volume }) {
+function VolumeIcon({ token, volume, mute, setMute }) {
 
-    const [mute, setMute] = useState(false)
     const [savedLastVolume, setSavedLastVolume] = useState(0)
 
     const handleMuteBehaviour = (e) => {

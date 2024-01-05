@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 function VolumeControls({ token }) {
   const [availableDevices, setAvailableDevices] = useState([]);
   const [volume, setVolume] = useState();
+  const [mute, setMute] = useState(false)
 
   // TURN ON SET INTERVAL FOR REAL-TIME UPDATES TO VOLUME SLIDER WHEN VOLUME IS CHANGED ON A DEVICE
   useEffect(() => {
@@ -28,7 +29,7 @@ function VolumeControls({ token }) {
 
   return (
     <section className="volume-controls-container grid">
-      <VolumeIcon token={token} volume={volume} />
+      <VolumeIcon token={token} volume={volume} mute={mute} setMute={setMute} />
       <div className="volume-slide-container grid">
         <input
           className="volume-slider"
