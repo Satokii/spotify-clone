@@ -2,6 +2,8 @@ import getDevices from "./functions/getDevices";
 import handleDeviceVolumeChanges from "./functions/handleDeviceVolumeChanges";
 import changeVolume from "./functions/changeVolume";
 
+import VolumeOnIcon from "../../assets/svgs/volume/volume-on.svg"
+import VolumeMuteIcon from "../../assets/svgs/volume/volume-mute.svg"
 import "./styles/volume-controls-container.css";
 import "./styles/volume-slider.css";
 import { useEffect, useState } from "react";
@@ -27,7 +29,10 @@ function VolumeControls({ token }) {
 
   return (
     <section className="volume-controls-container grid">
-      <div>Mute</div>
+      <div>
+        <img src={VolumeOnIcon} alt="volume on icon" width={50} />
+        <img src={VolumeMuteIcon} alt="volume mute icon" />
+      </div>
       <div className="volume-slide-container grid">
         <input
           className="volume-slider"

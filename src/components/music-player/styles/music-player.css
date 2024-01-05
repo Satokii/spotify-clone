@@ -73,10 +73,10 @@
 .slider::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     background-color: var(--const-player-slider);
-    
 }
 
 /* PLAYBACK TEXT */
 .song-start, .song-end {
   font-size: 12px;
+  color: var(--const-gray);
 }
