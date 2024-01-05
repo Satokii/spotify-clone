@@ -75,8 +75,10 @@ function App() {
       if (!data) setNotPlaying(true);
       else {
         const { item } = data;
+        console.log(data)
         setCurrentTrack({
           trackId: item.id,
+          albumId: item.album.id,
           trackImageLength: item.album.images.length,
           trackImage: item.album.images[0].url,
           trackName: item.name,
@@ -188,7 +190,7 @@ function App() {
           >
           </Route>
           <Route
-            path="/album"
+            path="/album/:id"
             element={
               token ?
               <Album token={token} />
