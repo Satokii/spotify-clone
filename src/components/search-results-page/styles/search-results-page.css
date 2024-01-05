@@ -1,11 +1,10 @@
 .search-results--container {
     grid-area: Main;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 60px 1fr;
     gap: 20px;
     background-color: var(--almost-black);
     padding: 20px 10px 150px;
     height: 100%;
-    margin-bottom: 100px;
 }
 
 .search-results--header-container {
@@ -24,6 +23,7 @@
 .search-results--content {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    padding: 10px 20px;
 }
 
 .search-results--category-container {

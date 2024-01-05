@@ -12,18 +12,6 @@
     padding-right: 150px;
 }
 
-.top-results-page--back-btn {
-    align-self: center;
-    justify-self: start;
-    border: solid 1px var(--const-blue);
-    background-color: var(--const-blue);
-    border-radius: 9999px;
-    padding: 0 15px;
-    margin-left: 20px;
-    opacity: 0;
-    animation: 1s ease 0.3s forwards fade-in;
-}
-
 .top-results-page--back-btn:hover {
     background-color: var(--const-green-hover);
     border-color: var(--const-green-hover);
