@@ -11,13 +11,13 @@ import "./styles/main-date-filter.css";
 import "./styles/main-preview-styles.css";
 import "./styles/main-recently-played.css";
 
-function Main({ token, currentTrack, setCurrentTrack, notPlaying, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
+function Main({ token, queue, setQueue, currentTrack, notPlaying, topTracksDate, setTopTracksDate, showTopTracks, setShowTopTracks,topArtistsDate, setTopArtistsDate, showTopArtists, setShowTopArtists }) {
 
 
   return (
     <main className="main grid">
       <h2 className="main--header">My Dashboard</h2>
-      <MainPlayback token={token} currentTrack={currentTrack} notPlaying={notPlaying} />
+      <MainPlayback token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} />
       <section className="top-tracks--container grid">
         <div className="top-tracks--header-container grid">
           <h3 className="top-tracks--header">Top Tracks Preview</h3>

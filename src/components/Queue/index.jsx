@@ -1,27 +1,14 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import fixLengthQueue from "../../../../shared-functions/fixLengthQueue";
+import { useEffect } from "react";
+import fixLengthQueue from "../../shared-functions/fixLengthQueue";
+import getQueue from "./functions/getQueue";
 
-import "../../styles/main-playback/queue.css"
+import "./styles/queue.css"
 
-function Queue({ token }) {
-
-    const [queue, setQueue] = useState([])
+function Queue({ token, queue, setQueue, currentTrack }) {
 
     useEffect(() => {
-        const getQueue = async () => {
-          const { data } = await axios.get(
-            "https://api.spotify.com/v1/me/player/queue",
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              }
-            }
-          );
-          setQueue(data.queue)
-        };
-        getQueue();
-      }, [token]);
+        getQueue(token, setQueue);
+      }, [setQueue, token]);
 
     return (
         <div className="main-playback--queue-container grid">

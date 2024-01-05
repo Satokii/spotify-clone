@@ -22,6 +22,27 @@ import "./shared-styles/buttons.css";
 function App() {
   const [token, setToken] = useState("");
 
+    //  QUEUE
+    const [queue, setQueue] = useState([])
+
+    // TOP TRACKS STATES
+    const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
+    const [showTopTracks, setShowTopTracks] = useState("long_term");
+  
+    // TOP ARTISTS STATES
+    const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
+    const [showTopArtists, setShowTopArtists] = useState("long_term");
+  
+    // HEADER SEARCH STATES
+    const [trackResults, setTrackResults] = useState([]);
+    const [trackTotal, setTrackTotal] = useState(0);
+    const [artistResults, setArtistResults] = useState([]);
+    const [artistTotal, setArtistTotal] = useState(0);
+    const [albumResults, setAlbumResults] = useState([]);
+    const [albumTotal, setAlbumTotal] = useState(0);
+    const [playlistResults, setPlaylistResults] = useState([]);
+    const [playlistTotal, setPlaylistTotal] = useState(0);
+
   // function to check if api authorisation is still valid
   // when test api GET request fails, auto logs out user - checks every 2 mins
   useEffect(() => {
@@ -87,28 +108,12 @@ function App() {
         });
       }
     };
-    // setInterval(() => {
+    setInterval(() => {
     getCurrentTrack();
-    // }, 1000);
+    }, 1000);
   }, [token]);
 
-  // TOP TRACKS STATES
-  const [topTracksDate, setTopTracksDate] = useState(TRACKS_INITIAL_STATE);
-  const [showTopTracks, setShowTopTracks] = useState("long_term");
 
-  // TOP ARTISTS STATES
-  const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
-  const [showTopArtists, setShowTopArtists] = useState("long_term");
-
-  // HEADER SEARCH STATES
-  const [trackResults, setTrackResults] = useState([]);
-  const [trackTotal, setTrackTotal] = useState(0);
-  const [artistResults, setArtistResults] = useState([]);
-  const [artistTotal, setArtistTotal] = useState(0);
-  const [albumResults, setAlbumResults] = useState([]);
-  const [albumTotal, setAlbumTotal] = useState(0);
-  const [playlistResults, setPlaylistResults] = useState([]);
-  const [playlistTotal, setPlaylistTotal] = useState(0);
 
   return (
     <>
@@ -134,8 +139,9 @@ function App() {
               token ? (
                 <Main
                   token={token}
+                  queue={queue}
+                  setQueue={setQueue}
                   currentTrack={currentTrack}
-                  setCurrentTrack={setCurrentTrack}
                   notPlaying={notPlaying}
                   topTracksDate={topTracksDate}
                   setTopTracksDate={setTopTracksDate}
