@@ -4,6 +4,8 @@
     grid-template-rows: 320px 100px 1fr 300px;
     /* overflow-y: scroll; */
     padding: 20px 0 150px;
+    opacity: 0;
+    animation: 0.5s ease 0.3s forwards fade-in;
 }
 
 /* BANNER */

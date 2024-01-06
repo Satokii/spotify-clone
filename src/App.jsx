@@ -20,6 +20,8 @@ import "./shared-styles/scrollbars.css";
 import "./shared-styles/buttons.css";
 import "./shared-styles/back-button.css"
 import "./shared-styles/middot.css"
+import "./keyframes/fade-in.css"
+import "./keyframes/text-transform.css"
 
 function App() {
   const [token, setToken] = useState("");
