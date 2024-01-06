@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import getAlbum from "./functions/getAlbum";
+import getArtist from "../artist/functions/getArtist";
 import convertMsToTime from "../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../shared-functions/albumTimeinMs";
 import getYear from "../../shared-functions/getYear";
@@ -23,22 +23,7 @@ function Album({ token }) {
     const [artistInfo, setArtistInfo] = useState({});
 
     useEffect(() => {
-      const getArtist = async () => {
-        const { data } = await axios.get(
-          `https://api.spotify.com/v1/artists/${artistId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        //   console.log(data)
-        setArtistInfo({
-          name: data.name,
-          img: data.images[0].url,
-        });
-      };
-      getArtist();
+      getArtist(token, artistId, setArtistInfo);
     }, [artistId, token]);
 
     sleep(100).then(() => {
