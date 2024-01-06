@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import convertMsToTime from "../../shared-functions/convertMsToTime";
+import albumTimeinMs from "../../shared-functions/albumTimeinMs";
 
 import "./styles/album-page.css"
 
@@ -67,29 +69,6 @@ function Album({ token }) {
         return `${year}`
       }
 
-      const albumTimeinMs = () => {
-        const trackTimesArr = albumTracksArr.map(track => {
-            return track.duration_ms
-        })
-        const sum = trackTimesArr.reduce((acc, curr) => acc + curr, 0)
-        return sum
-      }
-
-      function convertMsToTime(milliseconds) {
-        let seconds = Math.floor(milliseconds / 1000);
-        let minutes = Math.floor(seconds / 60);
-        let hours = Math.floor(minutes / 60);
-
-        seconds = seconds % 60;
-        minutes = minutes % 60;
-
-        if (!hours && !minutes) return `${seconds} sec`
-        if (!hours) return `${minutes} min ${seconds} sec`;
-        if (hours) return `${hours} hr ${minutes} min`; 
-      }
-
-    console.log(convertMsToTime(albumTimeinMs()))
-
     return (
         <section className="album-page--container grid">
             <div className="album-page--banner grid">
@@ -105,7 +84,7 @@ function Album({ token }) {
                         </div>
                         <p className="album-overview-artist-name">{artistInfo.name}</p>
                         <p className="album-overview-release-year">{getYear(albumInfo.releaseDate)}</p>
-                        <p className="album-overview-total-tracks">{`${albumInfo.totalTracks} songs, ${convertMsToTime(albumTimeinMs())}`}</p>
+                        <p className="album-overview-total-tracks">{`${albumInfo.totalTracks} songs, ${convertMsToTime(albumTimeinMs(albumTracksArr))}`}</p>
                     </div>
                 </div>
             </div>
