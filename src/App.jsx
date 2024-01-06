@@ -79,7 +79,7 @@ function App() {
       if (!data) setNotPlaying(true);
       else {
         const { item } = data;
-        console.log(data)
+        // console.log(data)
         setCurrentTrack({
           trackId: item.id,
           albumId: item.album.id,

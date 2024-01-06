@@ -12,7 +12,7 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo) => {
         },
       }
     );
-      console.log(data)
+      // console.log(data)
     setAlbumTracksArr(data.tracks.items);
     setAlbumInfo({
       name: data.name,

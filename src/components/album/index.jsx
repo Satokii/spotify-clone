@@ -39,8 +39,9 @@ function Album({ token }) {
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
             <div className="album-page--controls grid">
-              <img className="play-btn-green" src={MainPlayBtn} alt="play btn green" />
-              <img src={GreenShuffleBtn} alt="" />
+              <img className="album-page--play-btn" src={MainPlayBtn} alt="play btn green" />
+              <img className="album-page--shuffle-btn-gray" src={GrayShuffleBtn} alt="" />
+              <img className="album-page--shuffle-btn-green" src={GreenShuffleBtn} alt="" />
               <img src="" alt="" />
               <img src="" alt="" />
             </div>

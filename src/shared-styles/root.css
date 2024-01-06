@@ -25,4 +25,5 @@
     --const-cyan: #00DDEB;
 
     --filter-hover-white: brightness(0) saturate(100%) invert(98%) sepia(1%) saturate(606%) hue-rotate(253deg) brightness(112%) contrast(81%);
+    --filter-hover-green: filter: brightness(0) saturate(100%) invert(64%) sepia(55%) saturate(715%) hue-rotate(86deg) brightness(100%) contrast(100%);
 }

@@ -1,12 +1,38 @@
 .album-page--controls {
-    grid-template-columns: 90px repeat(3, 50px);
+    grid-template-columns: 100px repeat(3, 50px);
     padding: 25px;
     justify-content: start;
-    align-content: center;
+    align-items: center;
 }
 
-.play-btn-green {
-    width: 60px;
-    height: 60px;
+/* PLAY BUTTON */
+.album-page--play-btn {
+    width: 70px;
+    height: 70px;
 }
 
+.album-page--play-btn:hover {
+    transform: scale(1.05);
+}
+
+/* SHUFFLE BUTTON GRAY */
+.album-page--shuffle-btn-gray {
+    width: 30px;
+    height: 30px;
+}
+
+.album-page--shuffle-btn-gray:hover {
+    filter: var(--filter-hover-white);
+    transform: scale(1.05);
+}
+
+/* SHUFFLE BUTTON GREEN */
+.album-page--shuffle-btn-green {
+    width: 30px;
+    height: 30px;
+}
+
+.album-page--shuffle-btn-green:hover {
+    filter: var(--filter-hover-green);
+    transform: scale(1.05);
+}
