@@ -2,7 +2,7 @@
     grid-area: Main;
     justify-content: center;
     align-content: center;
-    background-color: var(--almost-black);
+    background-color: var(--const-base-bg);
     gap: 20px;
     padding-right: 150px;
     text-align: center;

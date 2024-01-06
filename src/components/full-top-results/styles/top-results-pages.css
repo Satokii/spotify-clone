@@ -1,7 +1,7 @@
 .top-results-page--container {
     grid-area: Main;
     grid-template-rows: 60px 40px 1fr;
-    background-color: var(--almost-black);
+    background-color: var(--const-base-bg);
     padding: 20px 10px 200px;
     z-index: 1;
     overflow-y: scroll;

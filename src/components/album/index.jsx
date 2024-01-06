@@ -29,7 +29,7 @@ function Album({ token }) {
               }
             }
           );
-          console.log(data)
+        //   console.log(data)
           setAlbumTracksArr(data.tracks.items)
           setAlbumInfo({
             name: data.name,
@@ -79,7 +79,8 @@ function Album({ token }) {
                 img.src = `${albumInfo.img}`
                 let background = document.querySelector(".album-page--container ");
                 let color = colorThief.getColor(img);
-                background.style.backgroundColor = "rgb(" + color + ")";
+                let foundColor = "rgb(" + color + ")"
+                background.style.background = `linear-gradient(${foundColor}, #121212)`                
             });
 
     return (

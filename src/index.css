@@ -24,7 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: -apple-system, BlinkMacSystemFont, "Figtree", sans-serif;
   color: var(--const-main-white);
-  background-color: var(--almost-black);
+  background-color: var(--const-base-bg);
 }
 
 ul,
