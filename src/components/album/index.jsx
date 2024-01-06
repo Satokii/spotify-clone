@@ -7,7 +7,7 @@ import "./styles/album-page.css"
 function Album({ token }) {
 
     const [albumInfo, setAlbumInfo] = useState({})
-    const { albumId } = useParams()
+    const { albumId, artistId } = useParams()
 
     // const bg = document.querySelector(".album-page--container")
 
@@ -35,26 +35,26 @@ function Album({ token }) {
           getAlbum();
       }, [albumId, token]);
 
-    //   const [artistInfo, setArtistInfo] = useState({})
+      const [artistInfo, setArtistInfo] = useState({})
 
-    //   useEffect(() => {
-    //     const getArtist = async () => {
-    //       const { data } = await axios.get(
-    //         `https://api.spotify.com/v1/artists/01XYiBYaoMJcNhPokrg0l0`,
-    //         {
-    //           headers: {
-    //             Authorization: `Bearer ${token}`,
-    //           },
-    //         }
-    //       );
-    //       console.log(data)
-    //       setAlbumInfo(data)
-    //       setArtistInfo({
-    //         img: data.images[0].url
-    //       })
-    //     };
-    //       getArtist();
-    //   }, [token]);
+      useEffect(() => {
+        const getArtist = async () => {
+          const { data } = await axios.get(
+            `https://api.spotify.com/v1/${artistId}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          console.log(data)
+          setAlbumInfo(data)
+          setArtistInfo({
+            img: data.images[0].url
+          })
+        };
+          getArtist();
+      }, [token]);
 
     return (
         <section className="album-page--container grid" style={{backgroundColor: "blue"}}>
