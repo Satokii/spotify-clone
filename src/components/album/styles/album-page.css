@@ -36,3 +36,24 @@
 .album-page--album-name {
     font-size: 30px;
 }
+
+.album-page--album-overview-container {
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.album-overview-artist-img-container {
+    width: 30px;
+    height: 30px;
+}
+
+.album-overview-artist-img-container > img {
+    border-radius: 100%;
+}
+
+.album-overview-artist-name {
+    font-weight: bold;
+}

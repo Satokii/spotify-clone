@@ -75,7 +75,6 @@ function App() {
       );
       if (!data) setNotPlaying(true);
       else {
-        console.log(data.item)
         const { item } = data;
         setCurrentTrack({
           trackId: item.id,

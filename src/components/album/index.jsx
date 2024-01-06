@@ -24,12 +24,14 @@ function Album({ token }) {
               }
             }
           );
-          console.log(data)
-        //   setAlbumInfo(data)
+        //   console.log(data)
           setAlbumInfo({
             name: data.name,
             img: data.images[0].url,
-            type: data.album_type
+            type: data.album_type,
+            releaseDate: data.release_date,
+            totalTracks: data.total_tracks,
+            tracks: data.tracks.items,
           })
         };
           getAlbum();
@@ -40,24 +42,40 @@ function Album({ token }) {
       useEffect(() => {
         const getArtist = async () => {
           const { data } = await axios.get(
-            `https://api.spotify.com/v1/${artistId}`,
+            `https://api.spotify.com/v1/artists/${artistId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
             }
           );
-          console.log(data)
-          setAlbumInfo(data)
+        //   console.log(data)
           setArtistInfo({
-            img: data.images[0].url
+            name: data.name,
+            img: data.images[0].url,
           })
         };
           getArtist();
-      }, [token]);
+      }, [artistId, token]);
+
+      const getYear = (inputDate) => {
+        const date = new Date(inputDate)
+        const year = date.getFullYear();
+        return `${year}`
+      }
+
+    //   console.log(albumInfo.tracks)
+
+    //   const calcAlbumPlayTime = () => {
+    //     const tracks = albumInfo.tracks
+    //     tracks.tracks.map(track => {
+    //         console.log(track)
+    //     })
+    //   }
+    //   calcAlbumPlayTime()
 
     return (
-        <section className="album-page--container grid" style={{backgroundColor: "blue"}}>
+        <section className="album-page--container grid">
             <div className="album-page--banner grid">
                 <div className="album-page--banner-img-container">
                     {albumInfo.img ? <img className="album-page--img" src={albumInfo.img} alt={`${albumInfo.name}-image`} /> : <div className="album-page--img"></div>}
@@ -66,9 +84,13 @@ function Album({ token }) {
                     <p className="album-page--album-type">{albumInfo.type}</p>
                     <p className="album-page--album-name">{albumInfo.name}</p>
                     <div className="album-page--album-overview-container grid">
-                        <div>
-                            {/* <img src={artistInfo.img} alt="" /> */}
+                        <div className="album-overview-artist-img-container">
+                            {artistInfo.img ? <img src={artistInfo.img} alt={`${artistInfo.name}-image`} /> : <div></div>}
                         </div>
+                        <p className="album-overview-artist-name">{artistInfo.name}</p>
+                        <p className="album-overview-release-year">{getYear(albumInfo.releaseDate)}</p>
+                        <p className="album-overview-total-tracks">{`${albumInfo.totalTracks} songs`}</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
