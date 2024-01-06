@@ -8,6 +8,7 @@ function Album({ token }) {
 
     const [albumInfo, setAlbumInfo] = useState({})
     const { albumId, artistId } = useParams()
+    const [albumTracksArr, setAlbumTracksArr] = useState([])
 
     // const bg = document.querySelector(".album-page--container")
 
@@ -25,6 +26,7 @@ function Album({ token }) {
             }
           );
         //   console.log(data)
+          setAlbumTracksArr(data.tracks.items)
           setAlbumInfo({
             name: data.name,
             img: data.images[0].url,
@@ -32,6 +34,7 @@ function Album({ token }) {
             releaseDate: data.release_date,
             totalTracks: data.total_tracks,
             tracks: data.tracks.items,
+            time: data.tracks.items.map(track => track.duration_ms)
           })
         };
           getAlbum();
@@ -64,15 +67,28 @@ function Album({ token }) {
         return `${year}`
       }
 
-    //   console.log(albumInfo.tracks)
+      const albumTimeinMs = () => {
+        const trackTimesArr = albumTracksArr.map(track => {
+            return track.duration_ms
+        })
+        const sum = trackTimesArr.reduce((acc, curr) => acc + curr, 0)
+        return sum
+      }
 
-    //   const calcAlbumPlayTime = () => {
-    //     const tracks = albumInfo.tracks
-    //     tracks.tracks.map(track => {
-    //         console.log(track)
-    //     })
-    //   }
-    //   calcAlbumPlayTime()
+      function convertMsToTime(milliseconds) {
+        let seconds = Math.floor(milliseconds / 1000);
+        let minutes = Math.floor(seconds / 60);
+        let hours = Math.floor(minutes / 60);
+
+        seconds = seconds % 60;
+        minutes = minutes % 60;
+
+        if (!hours && !minutes) return `${seconds} sec`
+        if (!hours) return `${minutes} min ${seconds} sec`;
+        if (hours) return `${hours} hr ${minutes} min`; 
+      }
+
+    console.log(convertMsToTime(albumTimeinMs()))
 
     return (
         <section className="album-page--container grid">
@@ -89,8 +105,7 @@ function Album({ token }) {
                         </div>
                         <p className="album-overview-artist-name">{artistInfo.name}</p>
                         <p className="album-overview-release-year">{getYear(albumInfo.releaseDate)}</p>
-                        <p className="album-overview-total-tracks">{`${albumInfo.totalTracks} songs`}</p>
-                        <p></p>
+                        <p className="album-overview-total-tracks">{`${albumInfo.totalTracks} songs, ${convertMsToTime(albumTimeinMs())}`}</p>
                     </div>
                 </div>
             </div>
