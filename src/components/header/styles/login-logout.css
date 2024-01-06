@@ -5,15 +5,6 @@
     cursor: pointer;
 }
 
-.header--login-logout-container:nth-child(n) {
-    color: var(--const-green);
-}
-
-.header--login-logout-container:nth-child(n):hover {
-    color: var(--const-green-hover);
-    transform: scale(1.1);
-}
-
 .header--logout-link {
     color: var(--const-red);
 }

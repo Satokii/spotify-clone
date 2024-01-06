@@ -5,6 +5,8 @@ import getArtist from "../artist/functions/getArtist";
 import sleep from "../../shared-functions/sleep";
 import dynamicGradient from "../../ColorThief/dynamicGradient";
 
+import MainPlayBtn from "../../assets/svgs/main-app/main-play-btn.svg"
+
 import AlbumBanner from "./components/AlbumBanner";
 
 import "./styles/album-page.css"
@@ -32,7 +34,11 @@ function Album({ token }) {
     return (
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
-            <div className="album-page--controls"></div>
+            <div className="album-page--controls">
+              <img src={MainPlayBtn} alt="" />
+              <img src="" alt="" />
+              <img src="" alt="" />
+            </div>
             <div className="album-page--tracks"></div>
             <div className="album-page--more"></div>
         </section>
