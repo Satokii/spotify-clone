@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import getAlbum from "./functions/getAlbum";
 import convertMsToTime from "../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../shared-functions/albumTimeinMs";
 import getYear from "../../shared-functions/getYear";
 import sleep from "../../shared-functions/sleep";
 import dynamicGradient from "../../ColorThief/dynamicGradient";
-import ColorThief from '../../../node_modules/colorthief/dist/color-thief.mjs'
 
 import "./styles/album-page.css"
 
@@ -17,31 +17,7 @@ function Album({ token }) {
     const [albumTracksArr, setAlbumTracksArr] = useState([])
 
     useEffect(() => {
-      const getAlbum = async () => {
-        const { data } = await axios.get(
-          `https://api.spotify.com/v1/albums/${albumId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-            params: {
-              id: albumId,
-            },
-          }
-        );
-        //   console.log(data)
-        setAlbumTracksArr(data.tracks.items);
-        setAlbumInfo({
-          name: data.name,
-          img: data.images[0].url,
-          type: data.album_type,
-          releaseDate: data.release_date,
-          totalTracks: data.total_tracks,
-          tracks: data.tracks.items,
-          time: data.tracks.items.map((track) => track.duration_ms),
-        });
-      };
-      getAlbum();
+      getAlbum(token, albumId, setAlbumTracksArr, setAlbumInfo);
     }, [albumId, token]);
 
     const [artistInfo, setArtistInfo] = useState({});
