@@ -10,6 +10,8 @@ import MainPlayBtn from "../../assets/svgs/main-app/main-play-btn.svg"
 import MainPauseBtn from "../../assets/svgs/main-app/main-pause-btn.svg"
 import GreenShuffleBtn from "../../assets/svgs/main-app/shuffle-green.svg"
 import GrayShuffleBtn from "../../assets/svgs/main-app/shuffle-gray.svg"
+import GreenHeart from "../../assets/svgs/main-app/heart-green.svg"
+import GrayHeart from "../../assets/svgs/main-app/heart-gray.svg"
 
 
 import "./styles/album-page.css"
@@ -31,7 +33,7 @@ function Album({ token }) {
       getArtist(token, artistId, setArtistInfo);
     }, [artistId, token]);
 
-    sleep(100).then(() => {
+    sleep(200).then(() => {
       dynamicGradient(albumInfo);
     });
 
@@ -41,9 +43,9 @@ function Album({ token }) {
             <div className="album-page--controls grid">
               <img className="album-page--play-btn" src={MainPlayBtn} alt="play btn green" />
               <img className="album-page--shuffle-btn-gray" src={GrayShuffleBtn} alt="" />
-              <img className="album-page--shuffle-btn-green" src={GreenShuffleBtn} alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
+              {/* <img className="album-page--shuffle-btn-green" src={GreenShuffleBtn} alt="" /> */}
+              <img className="album-page--heart-gray" src={GrayHeart} alt="" />
+              <img className="album-page--heart-green" src={GreenHeart} alt="" />
             </div>
             <div className="album-page--tracks"></div>
             <div className="album-page--more grid"></div>

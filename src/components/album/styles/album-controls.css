@@ -36,3 +36,14 @@
     filter: var(--filter-hover-green);
     transform: scale(1.05);
 }
+
+/* HEART BUTTON GRAY */
+.album-page--heart-gray {
+    width: 40px;
+    height: 40px;
+}
+
+.album-page--heart-green{
+    width: 40px;
+    height: 40px;
+}
