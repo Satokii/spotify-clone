@@ -1,0 +1,12 @@
+.album-page--controls {
+    grid-template-columns: 90px repeat(3, 50px);
+    padding: 25px;
+    justify-content: start;
+    align-content: center;
+}
+
+.play-btn-green {
+    width: 60px;
+    height: 60px;
+}
+

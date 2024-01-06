@@ -5,11 +5,15 @@ import getArtist from "../artist/functions/getArtist";
 import sleep from "../../shared-functions/sleep";
 import dynamicGradient from "../../ColorThief/dynamicGradient";
 
-import MainPlayBtn from "../../assets/svgs/main-app/main-play-btn.svg"
-
 import AlbumBanner from "./components/AlbumBanner";
+import MainPlayBtn from "../../assets/svgs/main-app/main-play-btn.svg"
+import MainPauseBtn from "../../assets/svgs/main-app/main-pause-btn.svg"
+import GreenShuffleBtn from "../../assets/svgs/main-app/shuffle-green.svg"
+import GrayShuffleBtn from "../../assets/svgs/main-app/shuffle-gray.svg"
+
 
 import "./styles/album-page.css"
+import "./styles/album-controls.css"
 
 function Album({ token }) {
 
@@ -34,8 +38,9 @@ function Album({ token }) {
     return (
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
-            <div className="album-page--controls">
-              <img src={MainPlayBtn} alt="" />
+            <div className="album-page--controls grid">
+              <img className="play-btn-green" src={MainPlayBtn} alt="play btn green" />
+              <img src={GreenShuffleBtn} alt="" />
               <img src="" alt="" />
               <img src="" alt="" />
             </div>
