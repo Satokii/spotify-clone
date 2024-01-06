@@ -23,7 +23,7 @@ function MusicPlayer({ token, currentTrack, setCurrentTrack, setQueue }) {
 
   // CHECK TO UPDATE QUEUE WHEN TRACK CHANGES
   useEffect(() => {
-    if (sliderVal >= 1 || sliderVal <= 3) {
+    if (sliderVal >= 1 && sliderVal <= 3) {
       getQueue(token, setQueue)
     }
   }, [setQueue, sliderVal, token])

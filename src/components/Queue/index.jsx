@@ -8,7 +8,7 @@ function Queue({ token, queue, setQueue }) {
 
     useEffect(() => {
         getQueue(token, setQueue);
-      }, []);
+      }, [setQueue, token]);
 
     return (
         <div className="main-playback--queue-container grid">
