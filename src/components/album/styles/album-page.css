@@ -1,7 +1,8 @@
 .album-page--container {
     grid-area: Main;
     /* background-color: red; */
-    grid-template-rows: 300px 100px 1fr 300px;
+    grid-template-rows: 240px 100px 1fr 300px;
+    margin-top: 50px;
     /* overflow-y: scroll; */
     padding: 20px 10px 150px;
 }
@@ -9,44 +10,58 @@
 /* BANNER */
 .album-page--banner {
     grid-template-columns: 300px 1fr;
-    align-items: center;
 }
-
+/* ALBUM IMAGE */
 .album-page--banner-img-container {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
+    place-self: center;
 }
 
 .album-page--img {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
 
+/* ALBUM INFO */
 .album-page--banner-info-container {
     grid-template-rows: repeat(3, auto);
+    grid-template-rows: 1fr auto 30px;
+    align-items: end;
     line-height: 1;
+    height: 240px;
+    gap: 10px;
 }
 
 .album-page--album-type {
     font-size: 14px;
     text-transform: capitalize;
+    align-self: end;
 }
 
 .album-page--album-name {
-    font-size: 30px;
+    font-size: 86px;
+    font-weight: bold;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-top: 5px;
 }
 
+/* ALBUM OVERVIEW */
 .album-page--album-overview-container {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(6, auto);
     align-items: center;
     justify-content: start;
-    gap: 5px;
+    gap: 3px;
     font-size: 14px;
 }
 
 .album-overview-artist-img-container {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
 }
 
 .album-overview-artist-img-container > img {

@@ -78,7 +78,9 @@ function Album({ token }) {
                             {artistInfo.img ? <img src={artistInfo.img} alt={`${artistInfo.name}-image`} /> : <div></div>}
                         </div>
                         <p className="album-overview-artist-name">{artistInfo.name}</p>
-                        <p className="album-overview-release-year">{getYear(albumInfo.releaseDate)}</p>
+                        <span className="middot">&middot;</span>
+                        <p className="album-overview-release-year"> {getYear(albumInfo.releaseDate)} </p>
+                        <span className="middot">&middot;</span>
                         <p className="album-overview-total-tracks">{`${albumInfo.totalTracks} songs, ${convertMsToTime(albumTimeinMs(albumTracksArr))}`}</p>
                     </div>
                 </div>
