@@ -46,7 +46,7 @@ function Album({ token }) {
               <img src="" alt="" />
             </div>
             <div className="album-page--tracks"></div>
-            <div className="album-page--more"></div>
+            <div className="album-page--more grid"></div>
         </section>
     )
 }

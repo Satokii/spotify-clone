@@ -10,6 +10,7 @@ const dynamicGradient = (image) => {
     img.src = `${image.img}`
     let background = document.querySelector(".album-page--container ");
     let color = colorThief.getColor(img);
+    // console.log(color)
     let foundColor = "rgb(" + color + ")"
     background.style.background = `linear-gradient(${foundColor}, #262222 60%, #121212 70%)`    
 }
