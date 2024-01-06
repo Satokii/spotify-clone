@@ -1,85 +1,9 @@
 .album-page--container {
     grid-area: Main;
-    /* background-color: red; */
     background-color: var(--const-base-bg);
     grid-template-rows: 320px 100px 1fr 300px;
     /* overflow-y: scroll; */
     padding: 20px 0 150px;
     opacity: 0;
     animation: 0.5s ease 0.3s forwards fade-in;
-}
-
-/* BANNER */
-.album-page--banner {
-    grid-template-columns: 300px 1fr;
-    border-bottom: solid 1px rgb(255, 255, 255);
-    margin-top: 50px;
-}
-
-/* ALBUM IMAGE */
-.album-page--banner-img-container {
-    width: 235px;
-    height: 235px;
-    justify-self: center;
-    align-self: start;
-}
-
-.album-page--img {
-    width: 235px;
-    height: 235px;
-    border-radius: 5px;
-}
-
-.album-page--img-none {
-    width: 100%;
-    height: 100%;
-}
-
-/* ALBUM INFO */
-.album-page--banner-info-container {
-    grid-template-rows: repeat(3, auto);
-    grid-template-rows: 1fr auto 30px;
-    align-self: start;
-    line-height: 1;
-    height: 235px;
-    gap: 10px;
-}
-
-.album-page--album-type {
-    font-size: 14px;
-    text-transform: capitalize;
-    align-self: end;
-}
-
-.album-page--album-name {
-    /* font-size: 86px; */
-    font-size:calc(100% + 3vw);
-    font-weight: bold;
-    text-shadow: 0px 1px, 1px 0px, 1px 1px;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-
-/* ALBUM OVERVIEW */
-.album-page--album-overview-container {
-    grid-template-columns: repeat(6, auto);
-    align-items: center;
-    justify-content: start;
-    gap: 3px;
-    font-size: 14px;
-}
-
-.album-overview-artist-img-container {
-    width: 25px;
-    height: 25px;
-    margin-right: 2px;
-}
-
-.album-overview-artist-img-container > img {
-    border-radius: 100%;
-}
-
-.album-overview-artist-name {
-    font-weight: bold;
 }

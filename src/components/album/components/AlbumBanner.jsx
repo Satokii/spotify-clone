@@ -2,6 +2,8 @@ import getYear from "../../../shared-functions/getYear";
 import convertMsToTime from "../../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../../shared-functions/albumTimeinMs";
 
+import "../styles/album-banner.css"
+
 function AlbumBanner({ albumInfo, artistInfo, albumTracksArr }) {
   return (
     <div className="album-page--banner grid">
