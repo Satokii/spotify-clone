@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import convertMsToTime from "../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../shared-functions/albumTimeinMs";
+import getYear from "../../shared-functions/getYear";
 
 import "./styles/album-page.css"
 
@@ -62,12 +63,6 @@ function Album({ token }) {
         };
           getArtist();
       }, [artistId, token]);
-
-      const getYear = (inputDate) => {
-        const date = new Date(inputDate)
-        const year = date.getFullYear();
-        return `${year}`
-      }
 
     return (
         <section className="album-page--container grid">

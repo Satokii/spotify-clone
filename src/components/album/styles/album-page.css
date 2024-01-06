@@ -9,7 +9,6 @@
 /* BANNER */
 .album-page--banner {
     grid-template-columns: 300px 1fr;
-    margin-top: 50px;
     align-items: center;
 }
 
