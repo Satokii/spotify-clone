@@ -7,7 +7,7 @@ function NowPlaying({ currentTrack }) {
     return (
         <section className="now-playing--container grid">
             <div className="now-playing--img">
-                {currentTrack.trackImageLength ? <img className="img" src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /> : <div></div>}
+                {currentTrack.trackImageLength ? <img src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /> : <div></div>}
             </div>
             <div className="now-playing--text-container grid">
                 <div className="now-playing--track-name-container">
