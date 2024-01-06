@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import convertMsToTime from "../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../shared-functions/albumTimeinMs";
 import getYear from "../../shared-functions/getYear";
+import sleep from "../../shared-functions/sleep";
+import dynamicGradient from "../../ColorThief/dynamicGradient";
 import ColorThief from '../../../node_modules/colorthief/dist/color-thief.mjs'
 
 import "./styles/album-page.css"
@@ -14,74 +16,58 @@ function Album({ token }) {
     const { albumId, artistId } = useParams()
     const [albumTracksArr, setAlbumTracksArr] = useState([])
 
-    // const bg = document.querySelector(".album-page--container")
+    useEffect(() => {
+      const getAlbum = async () => {
+        const { data } = await axios.get(
+          `https://api.spotify.com/v1/albums/${albumId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            params: {
+              id: albumId,
+            },
+          }
+        );
+        //   console.log(data)
+        setAlbumTracksArr(data.tracks.items);
+        setAlbumInfo({
+          name: data.name,
+          img: data.images[0].url,
+          type: data.album_type,
+          releaseDate: data.release_date,
+          totalTracks: data.total_tracks,
+          tracks: data.tracks.items,
+          time: data.tracks.items.map((track) => track.duration_ms),
+        });
+      };
+      getAlbum();
+    }, [albumId, token]);
+
+    const [artistInfo, setArtistInfo] = useState({});
 
     useEffect(() => {
-        const getAlbum = async () => {
-          const { data } = await axios.get(
-            `https://api.spotify.com/v1/albums/${albumId}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-              params: {
-                id: albumId,
-              }
-            }
-          );
+      const getArtist = async () => {
+        const { data } = await axios.get(
+          `https://api.spotify.com/v1/artists/${artistId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         //   console.log(data)
-          setAlbumTracksArr(data.tracks.items)
-          setAlbumInfo({
-            name: data.name,
-            img: data.images[0].url,
-            type: data.album_type,
-            releaseDate: data.release_date,
-            totalTracks: data.total_tracks,
-            tracks: data.tracks.items,
-            time: data.tracks.items.map(track => track.duration_ms)
-          })
-        };
-          getAlbum();
-      }, [albumId, token]);
+        setArtistInfo({
+          name: data.name,
+          img: data.images[0].url,
+        });
+      };
+      getArtist();
+    }, [artistId, token]);
 
-      const [artistInfo, setArtistInfo] = useState({})
-
-      useEffect(() => {
-        const getArtist = async () => {
-          const { data } = await axios.get(
-            `https://api.spotify.com/v1/artists/${artistId}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-        //   console.log(data)
-          setArtistInfo({
-            name: data.name,
-            img: data.images[0].url,
-          })
-        };
-          getArtist();
-      }, [artistId, token]);
-
-            function sleep (time) {
-                return new Promise((resolve) => setTimeout(resolve, time));
-            }
-              
-            sleep(100).then(() => {
-                const colorThief = new ColorThief();
-                const img = new Image();
-                img.addEventListener('load', function() {
-                    colorThief.getColor(img);
-                });
-                img.crossOrigin = 'Anonymous';
-                img.src = `${albumInfo.img}`
-                let background = document.querySelector(".album-page--container ");
-                let color = colorThief.getColor(img);
-                let foundColor = "rgb(" + color + ")"
-                background.style.background = `linear-gradient(${foundColor}, #262222 60%, #121212 70%)`                
-            });
+    sleep(100).then(() => {
+      dynamicGradient(albumInfo);
+    });
 
     return (
         <section className="album-page--container grid">
