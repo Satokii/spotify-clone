@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import convertMsToTime from "../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../shared-functions/albumTimeinMs";
 import getYear from "../../shared-functions/getYear";
+import ColorThief from '../../../node_modules/colorthief/dist/color-thief.mjs'
 
 import "./styles/album-page.css"
 
@@ -28,7 +29,7 @@ function Album({ token }) {
               }
             }
           );
-        //   console.log(data)
+          console.log(data)
           setAlbumTracksArr(data.tracks.items)
           setAlbumInfo({
             name: data.name,
@@ -64,11 +65,28 @@ function Album({ token }) {
           getArtist();
       }, [artistId, token]);
 
+            function sleep (time) {
+                return new Promise((resolve) => setTimeout(resolve, time));
+            }
+              
+            sleep(100).then(() => {
+                const colorThief = new ColorThief();
+                const img = new Image();
+                img.addEventListener('load', function() {
+                    colorThief.getColor(img);
+                });
+                img.crossOrigin = 'Anonymous';
+                img.src = `${albumInfo.img}`
+                let background = document.querySelector(".album-page--container ");
+                let color = colorThief.getColor(img);
+                background.style.backgroundColor = "rgb(" + color + ")";
+            });
+
     return (
         <section className="album-page--container grid">
             <div className="album-page--banner grid">
                 <div className="album-page--banner-img-container">
-                    {albumInfo.img ? <img className="album-page--img" src={albumInfo.img} alt={`${albumInfo.name}-image`} /> : <div className="album-page--img"></div>}
+                    {albumInfo.img ? <img className="album-page--img" src={albumInfo.img} alt={`${albumInfo.name}-image`} /> : <div className="album-page--img-none"></div>}
                 </div>
                 <div className="album-page--banner-info-container grid">
                     <p className="album-page--album-type">{albumInfo.type}</p>
