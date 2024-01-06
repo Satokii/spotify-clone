@@ -80,7 +80,7 @@ function Album({ token }) {
                 let background = document.querySelector(".album-page--container ");
                 let color = colorThief.getColor(img);
                 let foundColor = "rgb(" + color + ")"
-                background.style.background = `linear-gradient(${foundColor}, #121212)`                
+                background.style.background = `linear-gradient(${foundColor}, #262222 60%, #121212 70%)`                
             });
 
     return (
