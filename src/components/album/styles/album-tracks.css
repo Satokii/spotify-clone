@@ -9,7 +9,6 @@
     gap: 20px;
     align-items: center;
     padding: 0 20px;
-    /* margin-bottom: 20px; */
     color: var(--const-gray);
     font-size: 14px;
     border-bottom: solid 1px var(--const-gray-faint);
@@ -27,4 +26,6 @@
 .tracks-header--time {
     height: 18px;
     width: 18px;
+    
 }
+

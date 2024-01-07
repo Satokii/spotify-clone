@@ -16,6 +16,7 @@ function Album({ token }) {
     const [albumInfo, setAlbumInfo] = useState({})
     const { albumId, artistId } = useParams()
     const [albumTracksArr, setAlbumTracksArr] = useState([])
+    console.log(albumTracksArr)
 
     useEffect(() => {
       getAlbum(token, albumId, setAlbumTracksArr, setAlbumInfo);
@@ -35,7 +36,7 @@ function Album({ token }) {
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
             <AlbumControls />
-            <AlbumTracks />
+            <AlbumTracks albumTracksArr={albumTracksArr} albumInfo={albumInfo} artistInfo={artistInfo} />
             <div className="album-page--more grid"></div>
         </section>
     )
