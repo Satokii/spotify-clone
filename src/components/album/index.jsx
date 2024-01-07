@@ -34,22 +34,36 @@ function Album({ token }) {
       getArtist(token, artistId, setArtistInfo);
     }, [artistId, token]);
 
-    sleep(200).then(() => {
+    sleep(300).then(() => {
       dynamicGradient(albumInfo);
     });
 
-    const [shuffle, setShuffle] = useState()
-    console.log(albumInfo)
+    const [shuffle, setShuffle] = useState(false)
+    const [saved, setSaved] = useState(false)
+
+    const toggleShuffle = () => {
+      if (!shuffle) setShuffle(true)
+      else setShuffle(false)
+    }
+
+    const toggleSaved = () => {
+      if (!saved) setSaved(true)
+      else setSaved(false)
+    }
 
     return (
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
             <div className="album-page--controls grid">
               <img className="album-page--play-btn" src={MainPlayBtn} alt="play btn green" />
-              <img className="album-page--shuffle-btn-gray" src={GrayShuffleBtn} alt="shuffle btn gray" />
-              {/* <img className="album-page--shuffle-btn-green" src={GreenShuffleBtn} alt="shuffle btn green" /> */}
-              <img className="album-page--heart-gray" src={GrayHeart} alt="heart gray" />
-              {/* <img className="album-page--heart-green" src={GreenHeart} alt="heart green" /> */}
+              {shuffle ? 
+                <img className="album-page--shuffle-btn-green" src={GreenShuffleBtn} alt="shuffle btn green" onClick={toggleShuffle} />
+                : <img className="album-page--shuffle-btn-gray" src={GrayShuffleBtn} alt="shuffle btn gray" onClick={toggleShuffle} />
+              }
+              {saved ?
+                <img className="album-page--heart-green" src={GreenHeart} alt="heart green" onClick={toggleSaved} />
+                : <img className="album-page--heart-gray" src={GrayHeart} alt="heart gray" onClick={toggleSaved} />
+              }
               <img className="album-page--menu-dots" src={MenuDots} alt="menu dots" />
             </div>
             <div className="album-page--tracks"></div>
