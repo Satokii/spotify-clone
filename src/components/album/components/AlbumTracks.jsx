@@ -1,8 +1,11 @@
+import { useState } from "react"
 import TimeIcon from "../../../assets/svgs/main-app/time.svg"
 
 import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
+
+    const [displayIcons, setDisplayIcons] = useState(false)
 
     return (
         <div className="album-page--tracks grid">
@@ -13,7 +16,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
             </div>
             <div className="album-page--tracks-tracks grid">
                 {albumTracksArr.map((track, index) =>
-                    <div className="album-page--single-track grid" key={track.id}>
+                    <div className="album-page--single-track grid" tabIndex={1} key={track.id}>
                         <div className="album-page--track-number">{index + 1}</div>
                         <div className="album-page--track-name-container grid">
                             <div className="album-page--track-name">{track.name}</div>

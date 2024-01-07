@@ -14,6 +14,7 @@ import "./styles/album-page.css"
 function Album({ token }) {
 
     const [albumInfo, setAlbumInfo] = useState({})
+    const [artistInfo, setArtistInfo] = useState({});
     const { albumId, artistId } = useParams()
     const [albumTracksArr, setAlbumTracksArr] = useState([])
     // console.log(albumTracksArr)
@@ -21,8 +22,6 @@ function Album({ token }) {
     useEffect(() => {
       sleep(0).then(() => getAlbum(token, albumId, setAlbumTracksArr, setAlbumInfo))
     }, [albumId, token]);
-
-    const [artistInfo, setArtistInfo] = useState({});
 
     useEffect(() => {
       sleep(0).then(() => getArtist(token, artistId, setArtistInfo))

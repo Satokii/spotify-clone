@@ -6,6 +6,8 @@
     --const-gray: #a7a7a7;
     --const-gray-faint: #ffffff1a;
     --const-player-slider: #444;
+    --album-track-hover:hsla(0,0%,100%,.1);
+    --album-track-focus:hsla(0,0%,100%,.3);
     --const-green: #1ed760;
     --const-green-hover: #0aef5a;
     --const-dark-green: #1db954;
