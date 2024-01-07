@@ -6,6 +6,7 @@
     padding: 20px 0 150px;
     opacity: 0;
     animation: 0.5s ease 0.3s forwards fade-in;
+    border-radius: 10px;
 }
 
 

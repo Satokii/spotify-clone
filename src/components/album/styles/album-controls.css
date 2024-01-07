@@ -18,13 +18,13 @@
 }
 
 .album-page--play-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* SHUFFLE BUTTON GRAY */
 .album-page--shuffle-btn-gray {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     transition: 0.1s;
 }
 

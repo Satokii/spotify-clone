@@ -12,7 +12,8 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo) => {
         },
       }
     );
-      // console.log(data)
+      console.log(data)
+      const { tracks } = data
     setAlbumTracksArr(data.tracks.items);
     setAlbumInfo({
       name: data.name,
@@ -20,8 +21,10 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo) => {
       type: data.album_type,
       releaseDate: data.release_date,
       totalTracks: data.total_tracks,
-      tracks: data.tracks.items,
-      time: data.tracks.items.map((track) => track.duration_ms),
+      tracks: tracks.items,
+      time: tracks.items.map((track) => track.duration_ms),
+      isExplicit: tracks.items.map((track) => track.explicit),
+      copyrights: data.copyrights.map(copyright => copyright.text)
     });
 };
 

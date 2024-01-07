@@ -38,6 +38,9 @@ function Album({ token }) {
       dynamicGradient(albumInfo);
     });
 
+    const [shuffle, setShuffle] = useState()
+    console.log(albumInfo)
+
     return (
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
