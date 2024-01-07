@@ -16,21 +16,19 @@ function Album({ token }) {
     const [albumInfo, setAlbumInfo] = useState({})
     const { albumId, artistId } = useParams()
     const [albumTracksArr, setAlbumTracksArr] = useState([])
-    console.log(albumTracksArr)
+    // console.log(albumTracksArr)
 
     useEffect(() => {
-      getAlbum(token, albumId, setAlbumTracksArr, setAlbumInfo);
+      sleep(0).then(() => getAlbum(token, albumId, setAlbumTracksArr, setAlbumInfo))
     }, [albumId, token]);
 
     const [artistInfo, setArtistInfo] = useState({});
 
     useEffect(() => {
-      getArtist(token, artistId, setArtistInfo);
+      sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
     }, [artistId, token]);
 
-    sleep(500).then(() => {
-      dynamicGradient(albumInfo);
-    });
+    sleep(0).then(() => dynamicGradient(albumInfo))
 
     return (
         <section className="album-page--container grid">

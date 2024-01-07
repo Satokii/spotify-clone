@@ -94,9 +94,9 @@ function App() {
         });
       }
     };
-    // setInterval(() => {
+    setInterval(() => {
       getCurrentTrack();
-    // }, 1000);
+    }, 1000);
   }, [ token]);
 
   return (
