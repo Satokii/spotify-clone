@@ -38,8 +38,14 @@ function Album({ token }) {
       dynamicGradient(albumInfo);
     });
 
+    const [play, setPlay] = useState(false)
     const [shuffle, setShuffle] = useState(false)
     const [saved, setSaved] = useState(false)
+
+    const togglePlayAlbum = () => {
+      if (!play) setPlay(true)
+      else setPlay(false)
+    }
 
     const toggleShuffle = () => {
       if (!shuffle) setShuffle(true)
@@ -55,7 +61,10 @@ function Album({ token }) {
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
             <div className="album-page--controls grid">
-              <img className="album-page--play-btn" src={MainPlayBtn} alt="play btn green" />
+              {play ?
+              <img className="album-page--pause-btn" src={MainPauseBtn} alt="pause btn green" onClick={togglePlayAlbum} />
+              : <img className="album-page--play-btn" src={MainPlayBtn} alt="play btn green" onClick={togglePlayAlbum} />
+              }
               {shuffle ? 
                 <img className="album-page--shuffle-btn-green" src={GreenShuffleBtn} alt="shuffle btn green" onClick={toggleShuffle} />
                 : <img className="album-page--shuffle-btn-gray" src={GrayShuffleBtn} alt="shuffle btn gray" onClick={toggleShuffle} />

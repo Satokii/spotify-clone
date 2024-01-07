@@ -21,6 +21,17 @@
     transform: scale(1.03);
 }
 
+/* PAUSE BUTTON */
+.album-page--pause-btn {
+    width: 70px;
+    height: 70px;
+    transition: 0.1s;
+}
+
+.album-page--pause-btn:hover {
+    transform: scale(1.03);
+}
+
 /* SHUFFLE BUTTON GRAY */
 .album-page--shuffle-btn-gray {
     width: 30px;
