@@ -4,6 +4,7 @@ import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
+import formatDate from "../../../shared-functions/formatDate"
 
 import "../styles/album-tracks.css"
 
@@ -38,6 +39,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
                 )}
             </div>
             <div>
+                <div>{formatDate(albumInfo.releaseDate)}</div>
                 <div className="album-page--tracks-copyrights grid">
                     {copyrights.map((copyright, index) => 
                         <div key={`${copyright}=${index}`}>{copyright.text}</div>
