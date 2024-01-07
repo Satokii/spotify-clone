@@ -7,7 +7,9 @@ import calcTrackTime from "../../../shared-functions/calcTrackTime"
 
 import "../styles/album-tracks.css"
 
-function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
+function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
+
+    console.log(albumInfo)
 
     return (
         <div className="album-page--tracks grid">
@@ -34,9 +36,14 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
                         <img className="album-page--track-dots" src={MenuDots} alt="menu dots" />
                     </div>
                 )}
-                <img src="" alt="" />
             </div>
-            <div className="album-page--tracks-copyrights"></div>
+            <div>
+                <div className="album-page--tracks-copyrights grid">
+                    {copyrights.map((copyright, index) => 
+                        <div key={`${copyright}=${index}`}>{copyright.text}</div>
+                    )}
+                </div>
+            </div>
         </div>
     )
 }

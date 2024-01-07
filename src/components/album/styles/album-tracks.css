@@ -149,3 +149,8 @@
     filter: var(--filter-hover-white);
     transform: scale(1.05);
 }
+
+/* COPYRIGHTS */
+.album-page--tracks-copyrights {
+    grid-auto-flow: row;
+}

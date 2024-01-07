@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo) => {
+const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo, setCopyrights) => {
     const { data } = await axios.get(
       `https://api.spotify.com/v1/albums/${albumId}`,
       {
@@ -15,6 +15,7 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo) => {
       // console.log(data)
       // const { tracks } = data
     setAlbumTracksArr(data.tracks.items);
+    setCopyrights(data.copyrights)
     setAlbumInfo({
       name: data.name,
       img: data.images[0].url,
