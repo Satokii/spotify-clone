@@ -7,6 +7,7 @@ import dynamicGradient from "../../ColorThief/dynamicGradient";
 
 import AlbumBanner from "./components/AlbumBanner";
 import AlbumControls from "./components/AlbumControls";
+import AlbumTracks from "./components/AlbumTracks";
 
 import "./styles/album-page.css"
 
@@ -26,7 +27,7 @@ function Album({ token }) {
       getArtist(token, artistId, setArtistInfo);
     }, [artistId, token]);
 
-    sleep(300).then(() => {
+    sleep(500).then(() => {
       dynamicGradient(albumInfo);
     });
 
@@ -34,7 +35,7 @@ function Album({ token }) {
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
             <AlbumControls />
-            <div className="album-page--tracks"></div>
+            <AlbumTracks />
             <div className="album-page--more grid"></div>
         </section>
     )
