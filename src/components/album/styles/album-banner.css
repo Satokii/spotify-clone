@@ -2,7 +2,6 @@
 .album-page--banner {
     grid-template-columns: 235px 1fr;
     gap: 20px;
-    /* padding: 50px; */
     padding: 70px 25px 25px;
 }
 

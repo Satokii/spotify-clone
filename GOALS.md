@@ -2,13 +2,10 @@
 
 ## TODOS
 
-- Add currently playing track to My Dashboard
-- Add a playback state in My Dashboard to play/pause/skip to next/skip to previous/seek to position/change volume/shuffle tracks
 - Add Header Nav functionality to links
   - New Releases
   - Profile
   - About
-- Add Footer
 - Adjust styling for search results to make items more clear
 - Add functionality to Main Nav bar links
 - Potentially reshuffle design to display a normal dashboard page on first load and link top tracks/artists elsewhere
@@ -16,3 +13,9 @@
 - Create a new page to render more details about an item when clicked (should be able to display all info in actual spotify app on these pages)
   - Artists
   - Albums (songs)
+- Create a panel on right side of page displaying the currently playing track, artist, and next song
+- Change design of main scroll bar
+  
+- Remove header
+- Add search to left nav bar - clicking opens the search page with search bar at top of page
+- Improve display of results returned from search
