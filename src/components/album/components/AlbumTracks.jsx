@@ -11,17 +11,17 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
                 <p className="tracks-header--title">Title</p>
                 <img className="tracks-header--time" src={TimeIcon} alt="time icon" />
             </div>
-            <div className="album-page--tracks-tracks">
+            <div className="album-page--tracks-tracks grid">
                 {albumTracksArr.map((track, index) =>
-                    <div key={track.id}>
+                    <div className="album-page--single-track grid" key={track.id}>
                         <div className="album-page--track-number">{index + 1}</div>
-                        <div className="album-page--track-name-container">
+                        <div className="album-page--track-name-container grid">
                             <div className="album-page--track-name">{track.name}</div>
-                            <div className="album-page--artist-name-container">
-                                <div>{track.explicit ? "yes" : "No"}</div>
-                                {track.artists.map(artist =>
-                                <div className="album-page--artist-name" key={artist.id}>{artist.name}</div>    
-                                )}
+                            <div className="album-page--artist-sub-container grid">
+                                <div className="album-page--explicit-container grid">{track.explicit ? <><div className="album-page--explicit-track">E</div></> : null}</div>
+                                <div className="album-page--artist-name">
+                                    {track.artists.map(artist => artist.name).join(", ")}
+                                </div>
                             </div>
                         </div>
                         <div>Like</div>

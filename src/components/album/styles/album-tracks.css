@@ -1,5 +1,6 @@
 .album-page--tracks {
     grid-template-rows: 35px 1fr 50px;
+    gap: 10px;
     padding: 0 25px;
 }
 
@@ -16,7 +17,7 @@
 
 .tracks-header--number {
     justify-self: end;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .tracks-header--title {
@@ -29,3 +30,56 @@
     
 }
 
+/* TRACKS */
+.album-page--tracks-tracks {
+    gap: 10px;
+    line-height: 1.3;
+}
+
+.album-page--single-track {
+    grid-template-columns: 20px 1fr 20px 30px 20px;
+    gap: 20px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.album-page--track-number {
+    justify-self: center;
+    font-size: 18px;
+    color: var(--const-gray);
+}
+
+.album-page--track-name-container {
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+}
+
+.album-page--track-name {
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.album-page--artist-sub-container {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+}
+
+.album-page--explicit-container {
+    align-items: start;
+    /* place-items: center; */
+}
+
+.album-page--explicit-track {
+    font-size: 9px;
+    height: fit-content;
+    color: var(--darker-black);
+    border-radius: 2px;
+    background-color: hsla(0,0%,100%,.6);
+    padding: 2px 5px;
+    margin-right: 7px;
+}
+
+.album-page--artist-name {
+    font-size: 14px;
+    color: var(--const-gray);
+}
