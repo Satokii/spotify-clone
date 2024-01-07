@@ -17,7 +17,12 @@
     width: 235px;
     height: 235px;
     border-radius: 5px;
-    transition: 0.4s;
+    transition: 0.6s;
+    box-shadow: 0 4px 60px rgba(0,0,0,.5);
+}
+
+.album-page--img:hover {
+    transform: scale(1.05);
 }
 
 .album-page--img-none {
