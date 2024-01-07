@@ -77,3 +77,9 @@
 .album-overview-artist-name {
     font-weight: bold;
 }
+
+.album-overview-artist-name:hover {
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+    cursor: pointer;
+}
