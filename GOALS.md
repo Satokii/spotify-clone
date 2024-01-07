@@ -19,3 +19,5 @@
 - Remove header
 - Add search to left nav bar - clicking opens the search page with search bar at top of page
 - Improve display of results returned from search
+
+- Get liked tracks and albums from api to update album/playlist pages and individual tracks with a green heart if already liked. Toggle between green and gray hearts when clicked and save/unsave from likes songs

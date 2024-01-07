@@ -8,9 +8,6 @@ import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
 
-    const [isLiked, setIsLiked] = useState(false)
-    const [displayIcons, setDisplayIcons] = useState(false)
-
     return (
         <div className="album-page--tracks grid">
             <div className="album-page--tracks-headers grid">
@@ -31,7 +28,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
                                 </div>
                             </div>
                         </div>
-                        {displayIcons ? <img className="album-page--show-like" src={GreenHeart} alt="green heart" /> : <img className="album-page--hide-like" src={GrayHeart} alt="gray heart"></img>}
+                        <img className="album-page--hide-like" src={GrayHeart} alt="gray heart"></img>
                         <div>{track.duration_ms}</div>
                         <img className="album-page--track-dots" src={MenuDots} alt="menu dots" />
                     </div>
