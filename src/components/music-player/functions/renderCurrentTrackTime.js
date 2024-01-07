@@ -1,4 +1,4 @@
-import calcTrackTime from "./calcTrackTime";
+import calcTrackTime from "../../../shared-functions/calcTrackTime";
 
 // RENDER CURRENT TRACK TIME
 const renderCurrentTrackTime = (currentTrack) => {

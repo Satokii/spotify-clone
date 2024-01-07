@@ -3,6 +3,7 @@ import TimeIcon from "../../../assets/svgs/main-app/time.svg"
 import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
+import calcTrackTime from "../../../shared-functions/calcTrackTime"
 
 import "../styles/album-tracks.css"
 
@@ -29,7 +30,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
                             </div>
                         </div>
                         <img className="album-page--hide-like" src={GrayHeart} alt="gray heart"></img>
-                        <div>{track.duration_ms}</div>
+                        <div className="album-page--track-time">{calcTrackTime(track.duration_ms)}</div>
                         <img className="album-page--track-dots" src={MenuDots} alt="menu dots" />
                     </div>
                 )}

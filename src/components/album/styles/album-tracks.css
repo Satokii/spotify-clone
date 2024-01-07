@@ -6,7 +6,7 @@
 
 /* TRACKS HEADERS */
 .album-page--tracks-headers {
-    grid-template-columns: 20px 1fr 50px;
+    grid-template-columns: 20px 1fr 65px;
     gap: 20px;
     align-items: center;
     padding: 0 20px;
@@ -129,6 +129,12 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+/* TRACK TIME */
+.album-page--track-time {
+    color: var(--const-gray);
+    font-size: 14px;
 }
 
 /* TRACK MENU DOTS */
