@@ -1,13 +1,16 @@
 .album-page--container {
     grid-area: Main;
     background-color: var(--const-base-bg);
-    grid-template-rows: 320px 120px 1fr 200px;
-    padding: 20px 0 150px;
+    grid-template-rows: 340px 1fr;
+    padding: 0 0 150px;
     opacity: 0;
     animation: 0.5s ease 0.3s forwards fade-in;
     border-radius: 10px;
 }
 
+.album-page--sub-container {
+    grid-template-rows: 120px 1fr 200px;
+}
 
 .album-page--more {
     grid-template-columns: repeat(10, auto);

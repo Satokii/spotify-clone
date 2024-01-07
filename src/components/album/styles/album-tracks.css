@@ -1,6 +1,6 @@
 .album-page--tracks {
     grid-template-rows: 35px 1fr 50px;
-    gap: 10px;
+    gap: 20px;
     padding: 0 25px;
 }
 
@@ -32,7 +32,7 @@
 
 /* TRACKS */
 .album-page--tracks-tracks {
-    gap: 10px;
+    gap: 15px;
     line-height: 1.3;
 }
 

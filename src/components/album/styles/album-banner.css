@@ -1,7 +1,9 @@
 /* BANNER */
 .album-page--banner {
-    grid-template-columns: 300px 1fr;
-    margin-top: 50px;
+    grid-template-columns: 235px 1fr;
+    gap: 20px;
+    /* padding: 50px; */
+    padding: 70px 25px 25px;
 }
 
 /* ALBUM IMAGE */
@@ -9,7 +11,7 @@
     width: 235px;
     height: 235px;
     justify-self: center;
-    align-self: start;
+    align-self: end;
 }
 
 .album-page--img {
@@ -33,7 +35,7 @@
 .album-page--banner-info-container {
     grid-template-rows: repeat(3, auto);
     grid-template-rows: 1fr auto 30px;
-    align-self: start;
+    align-self: end;
     line-height: 1;
     height: 235px;
     gap: 10px;
@@ -47,7 +49,8 @@
 
 .album-page--album-name {
     /* font-size: 86px; */
-    font-size:calc(100% + 3vw);
+    /* font-size:calc(100% + 3vw); */
+    font-size: 5em;
     font-weight: bold;
     text-shadow: 0px 1px, 1px 0px, 1px 1px;
     letter-spacing: 1px;
@@ -72,6 +75,8 @@
 
 .album-overview-artist-img-container > img {
     border-radius: 100%;
+    width: 25px;
+    height: 25px;
 }
 
 .album-overview-artist-name {

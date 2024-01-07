@@ -35,9 +35,11 @@ function Album({ token }) {
     return (
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
-            <AlbumControls />
-            <AlbumTracks albumTracksArr={albumTracksArr} albumInfo={albumInfo} artistInfo={artistInfo} />
-            <div className="album-page--more grid"></div>
+            <div className="album-page--sub-container grid">
+              <AlbumControls />
+              <AlbumTracks albumTracksArr={albumTracksArr} albumInfo={albumInfo} artistInfo={artistInfo} />
+              <div className="album-page--more grid"></div>
+            </div>
         </section>
     )
 }
