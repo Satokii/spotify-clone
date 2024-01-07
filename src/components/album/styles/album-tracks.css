@@ -1,0 +1,30 @@
+.album-page--tracks {
+    grid-template-rows: 35px 1fr 50px;
+    padding: 0 25px;
+}
+
+/* TRACKS HEADERS */
+.album-page--tracks-headers {
+    grid-template-columns: 20px 1fr 50px;
+    gap: 20px;
+    align-items: center;
+    padding: 0 20px;
+    /* margin-bottom: 20px; */
+    color: var(--const-gray);
+    font-size: 14px;
+    border-bottom: solid 1px var(--const-gray-faint);
+}
+
+.tracks-header--number {
+    justify-self: end;
+    font-size: 16px;
+}
+
+.tracks-header--title {
+    justify-self: start;
+}
+
+.tracks-header--time {
+    height: 18px;
+    width: 18px;
+}
