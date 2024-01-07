@@ -50,9 +50,17 @@
     background-color: var(--album-track-hover);
 }
 
+.album-page--single-track:hover div {
+    color: var(--const-main-white);
+}
+
 .album-page--single-track:focus {
     background-color: var(--album-track-focus);
     outline: 0;
+}
+
+.album-page--single-track:focus div {
+    color: var(--const-main-white);
 }
 
 .album-page--single-track:hover img, .album-page--single-track:focus img {
