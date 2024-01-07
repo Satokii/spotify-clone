@@ -1,10 +1,14 @@
 import { useState } from "react"
 import TimeIcon from "../../../assets/svgs/main-app/time.svg"
+import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
+import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
+import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 
 import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
 
+    const [isLiked, setIsLiked] = useState(false)
     const [displayIcons, setDisplayIcons] = useState(false)
 
     return (
@@ -27,9 +31,9 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo }) {
                                 </div>
                             </div>
                         </div>
-                        <div>Like</div>
+                        {displayIcons ? <img className="album-page--show-like" src={GreenHeart} alt="green heart" /> : <img className="album-page--hide-like" src={GrayHeart} alt="gray heart"></img>}
                         <div>{track.duration_ms}</div>
-                        <div>Dots</div>
+                        <img className="album-page--track-dots" src={MenuDots} alt="menu dots" />
                     </div>
                 )}
                 <img src="" alt="" />
