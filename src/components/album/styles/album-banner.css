@@ -17,6 +17,7 @@
     width: 235px;
     height: 235px;
     border-radius: 5px;
+    transition: 0.4s;
 }
 
 .album-page--img-none {

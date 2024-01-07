@@ -1,8 +1,13 @@
 .album-page--controls {
-    grid-template-columns: 100px repeat(3, 50px);
+    grid-template-columns: 100px repeat(3, auto);
     padding: 25px;
     justify-content: start;
     align-items: center;
+}
+
+.album-page--controls img {
+    margin-right: 25px;
+    cursor: pointer;
 }
 
 /* PLAY BUTTON */
@@ -43,13 +48,30 @@
     height: 40px;
 }
 
-.album-page--heart-green{
+.album-page--heart-gray:hover {
+    filter: var(--filter-hover-white);
+    transform: scale(1.05);
+}
+
+/* HEART BUTTON GREEN */
+.album-page--heart-green {
     width: 40px;
     height: 40px;
 }
+
+.album-page--heart-green:hover {
+    filter: var(--filter-hover-green);
+    transform: scale(1.05);
+}
+
 
 /* MENU DOTS */
 .album-page--menu-dots {
     width: 30px;
     height: 30px;
+}
+
+.album-page--menu-dots:hover {
+    filter: var(--filter-hover-white);
+    transform: scale(1.05);
 }
