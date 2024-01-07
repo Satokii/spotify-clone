@@ -9,9 +9,12 @@ const dynamicGradient = (image) => {
     img.crossOrigin = 'Anonymous';
     img.src = `${image.img}`
     let background = document.querySelector(".album-page--container ");
-    let color = colorThief.getColor(img);
-    let foundColor = "rgb(" + color + ")"
-    background.style.background = `linear-gradient(${foundColor}, #262222 60%, #121212 70%)`    
+    let colour = colorThief.getColor(img);
+    let foundColour = "rgb(" + colour + ")"
+    let darkFoundColour = "rgb(" + colour + ", 0.5)"
+    let darkerFoundColour = "rgb(" + colour + ", 0.4)"
+    let evenDarkerFoundColour = "rgb(" + colour + ", 0.2)"
+    background.style.background = `linear-gradient(${foundColour}, ${darkFoundColour} 37.2%, ${darkerFoundColour} 37.2%, ${evenDarkerFoundColour}, #1a1a1a, #121212)`    
 }
 
 export default dynamicGradient

@@ -1,7 +1,6 @@
 /* BANNER */
 .album-page--banner {
     grid-template-columns: 300px 1fr;
-    border-bottom: solid 1px #0e0e0e25;
     margin-top: 50px;
 }
 
