@@ -113,6 +113,12 @@
     margin-right: 7px;
 }
 
+.album-page--artist-name-container {
+    grid-template-columns: repeat(auto-fill, auto);
+    grid-auto-flow: column;
+    gap: 4px;
+}
+
 .album-page--artist-name {
     font-size: 14px;
     color: var(--const-gray);
