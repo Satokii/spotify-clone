@@ -53,29 +53,22 @@
     border-radius: 4px;
 }
 
+/* TRACK HOVER AND FOCUS EFFECTS */
 .album-page--single-track:hover {
     background-color: var(--album-track-hover);
 }
 
-.album-page--single-track:hover .album-page--track-number {
+.album-page--single-track:hover .album-page--track-number, .album-page--single-track:focus .album-page--track-number {
     opacity: 0;
 }
 
-.album-page--single-track:hover div {
+.album-page--single-track:hover div, .album-page--single-track:focus div {
     color: var(--const-main-white);
 }
 
 .album-page--single-track:focus {
     background-color: var(--album-track-focus);
     outline: 0;
-}
-
-.album-page--single-track:focus .album-page--track-number  {
-    visibility: hidden;
-}
-
-.album-page--single-track:focus div {
-    color: var(--const-main-white);
 }
 
 .album-page--single-track:hover img, .album-page--single-track:focus img {
@@ -108,7 +101,6 @@
 
 .album-page--explicit-container {
     align-items: start;
-    /* place-items: center; */
 }
 
 .album-page--explicit-track {
@@ -124,6 +116,12 @@
 .album-page--artist-name {
     font-size: 14px;
     color: var(--const-gray);
+}
+
+.album-page--artist-name:hover {
+    text-decoration: underline;
+    text-underline-offset: 1.7px;
+    cursor: pointer;
 }
 
 /* TRACK LIKE */
