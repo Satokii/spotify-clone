@@ -6,22 +6,11 @@ import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import formatDate from "../../../shared-functions/formatDate"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
+import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
 
 import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
-
-    const getTrackArtists = (track) => {
-        const numArtists = track.artists.length
-        if (numArtists === 1) return <div className="album-page--artist-name">{track.artists[0].name}</div>
-        else {
-            const separated = track.artists.map((artist, index) => {
-                if (index === numArtists - 1) return <div className="album-page--artist-name">{artist.name}</div>
-                else return <div className="album-page--artist-name">{`${artist.name}, `}</div>
-            })
-        return separated
-        } 
-    }
 
     return (
         <div className="album-page--tracks grid">
@@ -40,7 +29,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
                             <div className="album-page--artist-sub-container grid">
                                 <div className="album-page--explicit-container grid">{track.explicit ? <><div className="album-page--explicit-track">E</div></> : null}</div>
                                 <div className="album-page--artist-name-container grid">
-                                    {getTrackArtists(track)}
+                                    {GetTrackArtists(track)}
                                 </div>
                             </div>
                         </div>
