@@ -12,7 +12,7 @@ import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
 
-    console.log(albumTracksArr)
+    // console.log(albumTracksArr)
     
     return (
         <div className="album-page--tracks grid">

@@ -4,7 +4,7 @@ import getYear from "../../../shared-functions/getYear";
 
 import "../styles/album-more.css"
 
-function AlbumMoreByArtist({ token, artistId, artistAlbums, setArtistAlbums }) {
+function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtistAlbums }) {
 
     useEffect(() => {
         const getArtistAlbums = async () => {
@@ -15,13 +15,13 @@ function AlbumMoreByArtist({ token, artistId, artistAlbums, setArtistAlbums }) {
                 Authorization: `Bearer ${token}`,
               },
               params: {
-                limit: 6,
+                limit: 8,
                 include_groups: "album,single"
               },
             }
           );
             const { items } = data
-            console.log(items)
+            // console.log(items)
             setArtistAlbums(items)
         };
       getArtistAlbums()
@@ -29,18 +29,21 @@ function AlbumMoreByArtist({ token, artistId, artistAlbums, setArtistAlbums }) {
 
     return (
         <div className="album-page--more-by-artist grid">
-            {artistAlbums.map(album =>
-                <div  key={album.id}>
-                <div className="album-overview--more-img">
-                    {album.images.length ? (
-                    <img src={album.images[0].url} alt={album.name} />
-                    ) : (<div></div>
-                    )}
-                </div>
-                <div className="album-overview-more-name">{album.name}</div>
-                <div>{getYear(album.release_date)}</div>
-                </div>
-            )}
+            <div className="more-by-artist-header">{`More by ${artistInfo.name}`}</div>
+            <div className="more-by-artist-album-list grid">
+                {artistAlbums.map(album =>
+                    <div className="more-by-artist--item-container grid" key={album.id}>
+                        <div className="more-by-artist--album-img">
+                            {album.images.length ? (
+                            <img src={album.images[0].url} alt={album.name} />
+                            ) : (<div></div>
+                            )}
+                        </div>
+                        <div className="more-by-artist--album-name">{album.name}</div>
+                        <div className="more-by-artist--album-date">{getYear(album.release_date)}</div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
