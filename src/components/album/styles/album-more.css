@@ -1,0 +1,4 @@
+.album-page--more {
+    grid-template-columns: repeat(10, auto);
+    height: 100px;
+}
