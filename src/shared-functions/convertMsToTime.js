@@ -8,6 +8,7 @@ const convertMsToTime = (ms) => {
 
     if (!hours && !minutes) return `${seconds} sec`
     if (!hours) return `${minutes} min ${seconds} sec`;
+    if (!minutes) return `${hours} hr`;
     if (hours) return `${hours} hr ${minutes} min`; 
 }
 
