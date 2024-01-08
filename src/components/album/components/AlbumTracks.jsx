@@ -10,8 +10,6 @@ import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
 
-    console.log(albumInfo)
-
     return (
         <div className="album-page--tracks grid">
             <div className="album-page--tracks-headers grid">
@@ -38,8 +36,8 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
                     </div>
                 )}
             </div>
-            <div>
-                <div>{formatDate(albumInfo.releaseDate)}</div>
+            <div className="album-page--date-copyright-container">
+                <div className="album-page--release-date">{formatDate(albumInfo.releaseDate)}</div>
                 <div className="album-page--tracks-copyrights grid">
                     {copyrights.map((copyright, index) => 
                         <div key={`${copyright}=${index}`}>{copyright.text}</div>

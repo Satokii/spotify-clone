@@ -9,7 +9,7 @@
 }
 
 .album-page--sub-container {
-    grid-template-rows: 120px 1fr 200px;
+    grid-template-rows: 120px 1fr auto;
 }
 
 .album-page--more {

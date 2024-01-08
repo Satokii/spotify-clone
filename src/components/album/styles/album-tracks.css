@@ -1,5 +1,5 @@
 .album-page--tracks {
-    grid-template-rows: 35px 1fr 50px;
+    grid-template-rows: 35px 1fr auto;
     gap: 20px;
     padding: 0 25px;
 }
@@ -150,7 +150,22 @@
     transform: scale(1.05);
 }
 
-/* COPYRIGHTS */
+/* RELEASE DATE AND COPYRIGHTS */
+.album-page--date-copyright-container {
+    /* padding: 0 20px; */
+    margin-top: 10px;
+    color: var(--const-gray);
+    line-height: 1.4;
+}
+
+.album-page--release-date {
+    font-size: 14px;
+    width: fit-content;
+}
+
 .album-page--tracks-copyrights {
     grid-auto-flow: row;
+    font-size: 11px;
+    margin-left: 1px;
+    width: fit-content;
 }
