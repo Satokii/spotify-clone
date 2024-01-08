@@ -7,13 +7,9 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo, setCopy
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        params: {
-          id: albumId,
-        },
       }
     );
       // console.log(data)
-      // const { tracks } = data
     setAlbumTracksArr(data.tracks.items);
     setCopyrights(data.copyrights)
     setAlbumInfo({
@@ -22,10 +18,6 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo, setCopy
       type: data.album_type,
       releaseDate: data.release_date,
       totalTracks: data.total_tracks,
-      // tracks: tracks.items,
-      // time: tracks.items.map((track) => track.duration_ms),
-      // isExplicit: tracks.items.map((track) => track.explicit),
-      // copyrights: data.copyrights.map(copyright => copyright.text)
     });
 };
 
