@@ -20,6 +20,14 @@
     font-size: 17px;
 }
 
+.album-page--hover-play-btn {
+    height: 15px;
+    width: 15px;
+    margin-left: 4px;
+    position: absolute;
+    opacity: 0;
+}
+
 .tracks-header--title {
     justify-self: start;
 }
@@ -27,7 +35,6 @@
 .tracks-header--time {
     height: 18px;
     width: 18px;
-    
 }
 
 /* TRACKS */
@@ -50,6 +57,10 @@
     background-color: var(--album-track-hover);
 }
 
+.album-page--single-track:hover .album-page--track-number {
+    opacity: 0;
+}
+
 .album-page--single-track:hover div {
     color: var(--const-main-white);
 }
@@ -57,6 +68,10 @@
 .album-page--single-track:focus {
     background-color: var(--album-track-focus);
     outline: 0;
+}
+
+.album-page--single-track:focus .album-page--track-number  {
+    visibility: hidden;
 }
 
 .album-page--single-track:focus div {
