@@ -30,6 +30,7 @@
 
 .more-by-artist--item-container:hover {
     background-color: var(--album-track-hover);
+    cursor: pointer;
 }
 
 /* ALBUM IMAGE */
