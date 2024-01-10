@@ -50,13 +50,13 @@
 .more-by-artist--item-container {
     grid-template-rows: 180px 25px 1fr;
     padding: 16px;
-    background-color: #181818;
+    background-color: var(--const-card-bg);
     border-radius: 8px;
     transition: 0.3s;
 }
 
 .more-by-artist--item-container:hover {
-    background-color: var(--album-track-hover);
+    background-color: var(--const-card-hover);
     cursor: pointer;
 }
 
