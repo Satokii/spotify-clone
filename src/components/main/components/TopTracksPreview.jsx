@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 
 function TopTracksPreview({ token, showTopTracks }) {
   const [topTracksPview, setTopTracksPview] = useState([]);
@@ -23,18 +25,20 @@ function TopTracksPreview({ token, showTopTracks }) {
     };
     getTopTracksPview();
   }, [showTopTracks, token]);
-
+  console.log(topTracksPview)
   return (
     <section className="preview--container grid">
       <ul className="preview--list grid">
         {topTracksPview.map((track, index) => 
-            <li className="preview--item grid" key={`${track.id}-${index}`}>
+            <li key={`${track.id}-${index}`}>
+              <Link className="preview--item grid" to={`/album/${track.album.id}/${track.artists[0].id}`} onClick={scrollToTop}>
                 <p className="preview--item-rank">{`${index + 1}.`}</p>
                 {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`}/> : <div>No Image</div>}
                 <div className="preview--item-text">
                     <p className="preview--item-name">{fixLengthPreviews(track.name)}</p>
                     <p className="preview--item-artist">{fixLengthPreviews(track.artists[0].name)}</p>
                 </div>
+              </Link>  
             </li>    
         )}
       </ul>
