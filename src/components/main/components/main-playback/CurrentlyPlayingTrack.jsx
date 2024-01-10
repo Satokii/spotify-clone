@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import scrollToTop from "../../../../shared-functions/scrollToTop"
 import "../../styles/main-playback/currently-playing-track.css"
 
 function CurrentlyPlayingTrack({ currentTrack, notPlaying, pulse }) {
@@ -15,9 +17,9 @@ function CurrentlyPlayingTrack({ currentTrack, notPlaying, pulse }) {
             <>
                  {
                     <div className="main-playback--cur-playing-item grid" id={currentTrack.trackId} >
-                        {currentTrack.trackImageLength ? <img className={togglePulse()} src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /> : <div></div>}
-                        <div className="main-playback--cur-playing-details">
-                            <p className="main-playback--cur-playing-title">{currentTrack.trackName}</p>
+                        {currentTrack.trackImageLength ? <Link to={`/album/${currentTrack.albumId}/${currentTrack.artistId}`} onClick={scrollToTop}><img className={togglePulse()} src={currentTrack.trackImage} alt={`${currentTrack.trackName}-image`} /></Link> : <div></div>}
+                        <div className="main-playback--cur-playing-details grid">
+                            <Link className="main-playback--cur-playing-title" to={`/album/${currentTrack.albumId}/${currentTrack.artistId}`} onClick={scrollToTop}>{currentTrack.trackName}</Link>
                             <p className="main-playback--cur-playing-artist">{currentTrack.trackArtist}</p>
                         </div>
                     </div>

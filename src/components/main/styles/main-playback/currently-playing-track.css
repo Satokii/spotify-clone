@@ -29,12 +29,18 @@
 
 .main-playback--cur-playing-details {
     line-height: 1;
+    gap: 10px;
+    justify-items: center;
 }
 
 .main-playback--cur-playing-title {
     font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.main-playback--cur-playing-title:hover {
+    text-decoration: underline 1px;
+    text-underline-offset: 1.5px;
 }
 
 .main-playback--cur-playing-artist {
