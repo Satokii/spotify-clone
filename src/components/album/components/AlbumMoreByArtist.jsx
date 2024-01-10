@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import getYear from "../../../shared-functions/getYear";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
@@ -27,6 +28,8 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
       getArtistAlbums()
       }, [artistId, setArtistAlbums, token])  
 
+      console.log(artistAlbums)
+
     return (
         <div className="album-page--more-by-artist grid">
           <div className="more-by-artist--header-container grid">
@@ -35,7 +38,7 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
           </div>
             <div className="more-by-artist--album-list grid">
                 {artistAlbums.map(album =>
-                    <div className="more-by-artist--item-container grid" key={album.id}>
+                    <Link className="more-by-artist--item-container grid" key={album.id} to={`/album/${album.id}/${album.artists[0].id}`}>
                         <div className="more-by-artist--album-img">
                             {album.images.length ? (
                             <img src={album.images[0].url} alt={album.name} />
@@ -44,7 +47,7 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
                         </div>
                         <div className="more-by-artist--album-name">{fixLengthPreviews(album.name)}</div>
                         <div className="more-by-artist--album-date">{getYear(album.release_date)}</div>
-                    </div>
+                    </Link>
                 )}
             </div>
         </div>
