@@ -64,6 +64,7 @@
     font-size: 11px;
     color: var(--const-dull-white);
     padding: 5px 0;
+    text-align: center;
 }
 
 .recently-played--item > img {

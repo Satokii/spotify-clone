@@ -29,7 +29,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
                         <div className="album-page--track-name-container grid">
                             <div className="album-page--track-name">{track.name}</div>
                             <div className="album-page--artist-sub-container grid">
-                                <div className="album-page--explicit-container grid">{track.explicit ? <><div className="album-page--explicit-track">E</div></> : null}</div>
+                                <div className="album-page--explicit-container grid">{track.explicit ? <><p className="album-page--explicit-track">E</p></> : null}</div>
                                 <div className="album-page--artist-name-container grid">
                                     {GetTrackArtists(track)}
                                 </div>

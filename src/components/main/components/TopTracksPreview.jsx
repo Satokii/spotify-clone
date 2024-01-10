@@ -25,7 +25,7 @@ function TopTracksPreview({ token, showTopTracks }) {
     };
     getTopTracksPview();
   }, [showTopTracks, token]);
-  console.log(topTracksPview)
+
   return (
     <section className="preview--container grid">
       <ul className="preview--list grid">

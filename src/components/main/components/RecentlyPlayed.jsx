@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useCallback } from "react";
+import { Link } from "react-router-dom";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 
 function RecentlyPlayed({ token }) {
   const [recentlyPlayed, setRecentlyPlayed] = useState([]);
@@ -77,8 +79,9 @@ function RecentlyPlayed({ token }) {
         {recentlyPlayed.map((track, index) => (
           <li
             className="recently-played--item grid"
-            key={`${track.id}-${index}`}
+            key={`${track.track.id}-${index}`}
           >
+            <Link to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop} >
             <p className="recently-played--time-since-played">{`Played ${msToTime(
               timeNow - new Date(track.played_at)
             )} ago`}</p>
@@ -89,6 +92,7 @@ function RecentlyPlayed({ token }) {
                 {fixLengthPreviews(track.track.artists[0].name)}
               </p>
             </div>
+            </Link>
           </li>
         ))}
       </ul>
