@@ -1,19 +1,46 @@
 .album-page--more-by-artist {
     grid-template-rows: 40px 1fr;
-    padding: 0 20px;
+    padding: 0 25px;
     gap: 24px;
+    width: 1370px;
+}
+
+/* HEADER CONTAINER */
+.more-by-artist--header-container {
+    grid-template-columns: 1fr auto;
+    align-content: center;
 }
 
 /* HEADER */
-.more-by-artist-header {
+.more-by-artist--header {
     font-size: 24px;
     font-weight: bold;
     height: fit-content;
-    align-self: end;
+    width: fit-content;
+}
+
+.more-by-artist--header:hover {
+    text-decoration: underline 2px;
+    cursor: pointer;
+    text-underline-offset: 2px;
+}
+
+/* DISCOGRAPHY */
+.more-by-artist--discography {
+    color: var(--const-lighter-gray);
+    font-size: 14px;
+    font-weight: bold;
+    width: fit-content;
+    justify-self: start;
+}
+
+.more-by-artist--discography:hover {
+    text-decoration: underline 2px;
+    cursor: pointer;
 }
 
 /* ALBUM LIST */
-.more-by-artist-album-list  {
+.more-by-artist--album-list  {
     grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
     grid-auto-flow: column;
     gap: 24px;

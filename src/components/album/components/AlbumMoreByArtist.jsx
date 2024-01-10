@@ -29,8 +29,11 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
 
     return (
         <div className="album-page--more-by-artist grid">
-            <div className="more-by-artist-header">{`More by ${artistInfo.name}`}</div>
-            <div className="more-by-artist-album-list grid">
+          <div className="more-by-artist--header-container grid">
+            <div className="more-by-artist--header">{`More by ${artistInfo.name}`}</div>
+            <div className="more-by-artist--discography">See discography</div>
+          </div>
+            <div className="more-by-artist--album-list grid">
                 {artistAlbums.map(album =>
                     <div className="more-by-artist--item-container grid" key={album.id}>
                         <div className="more-by-artist--album-img">
