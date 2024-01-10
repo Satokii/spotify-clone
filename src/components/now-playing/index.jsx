@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import scrollToTop from "../../shared-functions/scrollToTop"
 
 import "./styles/now-playing.css"
 
@@ -11,7 +12,7 @@ function NowPlaying({ currentTrack }) {
             </div>
             <div className="now-playing--text-container grid">
                 <div className="now-playing--track-name-container">
-                    <Link className="now-playing--track-name" to={`/album/${currentTrack.albumId}/${currentTrack.artistId}`}>{currentTrack.trackName}</Link>
+                    <Link className="now-playing--track-name" to={`/album/${currentTrack.albumId}/${currentTrack.artistId}`} onClick={scrollToTop} >{currentTrack.trackName}</Link>
                 </div>
                 <Link className="now-playing--artist-name" to={""}>{currentTrack.trackArtist}</Link>
                 <p></p>

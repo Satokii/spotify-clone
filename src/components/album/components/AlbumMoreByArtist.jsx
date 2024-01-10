@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import getYear from "../../../shared-functions/getYear";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
+import scrollToTop from "../../../shared-functions/scrollToTop.js"
 
 import "../styles/album-more.css"
 
@@ -38,7 +39,7 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
           </div>
             <div className="more-by-artist--album-list grid">
                 {artistAlbums.map(album =>
-                    <Link className="more-by-artist--item-container grid" key={album.id} to={`/album/${album.id}/${album.artists[0].id}`}>
+                    <Link className="more-by-artist--item-container grid" key={album.id} to={`/album/${album.id}/${album.artists[0].id}`} onClick={scrollToTop} >
                         <div className="more-by-artist--album-img">
                             {album.images.length ? (
                             <img src={album.images[0].url} alt={album.name} />
