@@ -5,6 +5,7 @@ import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Main from "./components/main";
 import Album from "./components/album";
+import Artist from "./components/artist";
 import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
@@ -199,6 +200,15 @@ function App() {
             element={
               token ?
               <Album token={token} />
+              : <WelcomePage />
+            }
+          >
+          </Route>
+          <Route
+            path="/artist/:artistId"
+            element={
+              token ?
+              <Artist />
               : <WelcomePage />
             }
           >

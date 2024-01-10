@@ -1,4 +1,3 @@
-import { useState } from "react"
 import TimeIcon from "../../../assets/svgs/main-app/time.svg"
 import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
@@ -10,9 +9,7 @@ import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
 
 import "../styles/album-tracks.css"
 
-function AlbumTracks({ albumTracksArr, albumInfo, artistInfo, copyrights }) {
-
-    // console.log(albumTracksArr)
+function AlbumTracks({ albumTracksArr, albumInfo, copyrights }) {
     
     return (
         <div className="album-page--tracks grid">

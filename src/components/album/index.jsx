@@ -40,7 +40,7 @@ function Album({ token }) {
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
             <div className="album-page--sub-container grid">
               <AlbumControls />
-              <AlbumTracks albumTracksArr={albumTracksArr} albumInfo={albumInfo} artistInfo={artistInfo} copyrights={copyrights} />
+              <AlbumTracks albumTracksArr={albumTracksArr} albumInfo={albumInfo} copyrights={copyrights} />
               <AlbumMoreByArtist token={token} artistId={artistId} artistInfo={artistInfo} artistAlbums={artistAlbums} setArtistAlbums={setArtistAlbums} />
             </div>
         </section>
