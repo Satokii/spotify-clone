@@ -56,7 +56,12 @@
 
 .preview--item-artist {
     font-size: 14px;
-    color:  var(--const-gray);
+    color:  var(--const-lighter-gray);
+}
+
+.preview--item-artist:hover {
+    color: var(--const-main-white);
+    text-decoration: underline 1px;
 }
 
 /* TOP ARTISTS PREVIEW SPECIFIC */

@@ -30,11 +30,12 @@
 .main-playback--cur-playing-details {
     line-height: 1;
     gap: 10px;
-    justify-items: center;
+    text-align: start;
 }
 
 .main-playback--cur-playing-title {
     font-size: 18px;
+    font-weight: bold;
     width: fit-content;
 }
 
@@ -44,6 +45,13 @@
 }
 
 .main-playback--cur-playing-artist {
-    color: var(--const-honey-dew);
-    font-size: 18px;
+    font-size: 14px;
+    color:  var(--const-lighter-gray);
+}
+
+.main-playback--cur-playing-artist:hover {
+    cursor: pointer;
+    color:  var(--const-main-white);
+    text-decoration: underline 1px;
+    text-underline-offset: 1.5px;
 }

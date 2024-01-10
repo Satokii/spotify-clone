@@ -58,5 +58,10 @@
 
 .main-playback--queue-artist {
     font-size: 14px;
-    color:  var(--const-gray);
+    color:  var(--const-lighter-gray);
+}
+
+.main-playback--queue-artist:hover {
+    color: var(--const-main-white);
+    text-decoration: underline 1px;
 }
