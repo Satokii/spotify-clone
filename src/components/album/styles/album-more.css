@@ -14,7 +14,7 @@
 
 /* ALBUM LIST */
 .more-by-artist-album-list  {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 200px));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
     grid-auto-flow: column;
     gap: 24px;
 }

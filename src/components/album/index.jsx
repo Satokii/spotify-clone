@@ -5,7 +5,7 @@ import getAlbum from "./functions/getAlbum";
 import getArtist from "../artist/functions/getArtist";
 import sleep from "../../shared-functions/sleep";
 import dynamicGradient from "../../ColorThief/dynamicGradient";
-import PalletGradient from "../../ColorThief/PaletteGradient";
+import palletGradient from "../../ColorThief/paletteGradient";
 
 import AlbumBanner from "./components/AlbumBanner";
 import AlbumControls from "./components/AlbumControls";
@@ -33,7 +33,7 @@ function Album({ token }) {
     }, [artistId, token]);
 
     // sleep(0).then(() => dynamicGradient(albumInfo))
-    sleep(0).then(() => PalletGradient(data))
+    sleep(0).then(() => palletGradient(data))
 
     return (
         <section className="album-page--container grid">

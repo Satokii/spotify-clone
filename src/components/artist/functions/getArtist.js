@@ -9,7 +9,7 @@ const getArtist = async (token, artistId, setArtistInfo) => {
         },
       }
     );
-      console.log(data)
+      // console.log(data)
     setArtistInfo({
       name: data.name,
       img: data.images[0].url,

@@ -15,13 +15,12 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
                 Authorization: `Bearer ${token}`,
               },
               params: {
-                limit: 8,
+                limit: 6,
                 include_groups: "album,single"
               },
             }
           );
             const { items } = data
-            // console.log(items)
             setArtistAlbums(items)
         };
       getArtistAlbums()
