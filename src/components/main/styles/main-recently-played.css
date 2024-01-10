@@ -1,6 +1,6 @@
 /* RECENTLY PLAYED */
 .recently-played--container {
-    grid-template-rows: 40px auto;
+    grid-template-rows: 40px 1fr;
     gap: 5px;
 }
 
@@ -33,11 +33,10 @@
 }
 
 .recently-played--list {
-    grid-auto-columns: 150px;
+    grid-template-columns: repeat(auto-fit, 200px);
     grid-auto-flow: column;
-    justify-items: center;
     align-items: start;
-    gap: 5px;
+    gap: 20px;
     overflow: hidden;
     padding: 10px 0;
 }
@@ -48,10 +47,20 @@
 
 .recently-played--item {
     justify-items: center;
+    min-width: 200px;
+    min-height: 290px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--const-card-bg);
+    transition: 0.3s;
+}
+
+.recently-played--item:hover {
+    background-color: var(--const-card-hover);
+    cursor: pointer;
 }
 
 .recently-played--time-since-played {
-    /* font-family: 'Calligraffitti'; */
     font-size: 11px;
     color: var(--const-dull-white);
     padding: 5px 0;
@@ -60,8 +69,8 @@
 .recently-played--item > img {
     margin: 5px 0;
     object-fit: cover;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 .recently-played--item-text {
@@ -70,14 +79,23 @@
 
 .recently-played--item-text {
     text-align: center;
-    font-size: 14px;
+    justify-items: center;
 }
 
 .recently-played--item-name {
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--const-main-white);
+    overflow: hidden;
 }
 
 .recently-played--item-artist {
-    text-decoration: underline;
+    font-size: 14px;
+    color:  var(--const-lighter-gray);
+    width: fit-content;
 }
 
+.recently-played--item-artist:hover {
+    color: var(--const-main-white);
+    text-decoration: underline 1px;
+}

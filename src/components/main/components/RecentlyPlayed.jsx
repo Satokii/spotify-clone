@@ -73,21 +73,6 @@ function RecentlyPlayed({ token }) {
           Refresh
         </button>
       </div>
-      {/* <ul className="recently-played--list grid">
-            {recentlyPlayedPlayCount.map((track, index) => 
-                <li className="recently-played--item grid" key={track.id}>
-                    <p className="recently-played--time-played">{`Played ${msToTime(timeNow - new Date(track.played_at))} ago`}</p>
-                    <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} />
-                    <p className="recently-played--text">
-                        Song: {track.track.name}, times played: {track.timesPlayed}, time
-                        spent listening:{" "}
-                        {new Date(track.timesPlayed * track.track.duration_ms)
-                            .toISOString()
-                            .substring(11, 19)}
-                    </p>
-                </li>
-            )}
-        </ul> */}
       <ul className="recently-played--list grid">
         {recentlyPlayed.map((track, index) => (
           <li
@@ -98,7 +83,7 @@ function RecentlyPlayed({ token }) {
               timeNow - new Date(track.played_at)
             )} ago`}</p>
             {track.track.album.images.length ? <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} /> : <div>No Image</div>}
-            <div className="recently-played--item-text">
+            <div className="recently-played--item-text grid">
               <p className="recently-played--item-name">{fixLengthPreviews(track.track.name)}</p>
               <p className="recently-played--item-artist">
                 {fixLengthPreviews(track.track.artists[0].name)}
