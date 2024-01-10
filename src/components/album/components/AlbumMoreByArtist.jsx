@@ -29,8 +29,6 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
       getArtistAlbums()
       }, [artistId, setArtistAlbums, token])  
 
-      console.log(artistAlbums)
-
     return (
         <div className="album-page--more-by-artist grid">
           <div className="more-by-artist--header-container grid">
