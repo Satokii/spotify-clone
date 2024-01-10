@@ -1,6 +1,6 @@
 .main {
     grid-area: Main;
-    grid-template-rows: 70px 280px repeat(2, 320px) 280px;
+    grid-template-rows: 70px 280px repeat(2, 420px) 280px;
     background-color: var(--const-base-bg);
 
     padding: 20px 50px 50px;

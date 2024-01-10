@@ -34,7 +34,7 @@
     text-align: center;
     min-height: 160px;
     padding: 5px;
-    color: var(--const-card-yellow);
+    transition: 0.3s;
 }
 
 .main-playback--queue-item:hover {
