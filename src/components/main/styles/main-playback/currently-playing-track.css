@@ -19,8 +19,13 @@
 }
 
 .main-playback--cur-playing-item img {
-    transition: all 1s;
+    border-radius: 5px;
+    transition: 0.3s;
     object-fit: cover;
+}
+
+.main-playback--cur-playing-item img:hover {
+    transform: scale(1.05);
 }
 
 .main-playback--pulse-img {
