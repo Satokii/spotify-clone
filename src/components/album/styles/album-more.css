@@ -48,6 +48,7 @@
     font-size: 16px;
     font-weight: bold;
     color: var(--const-main-white);
+    overflow: hidden;
 }
 
 /* RELEASE DATE */

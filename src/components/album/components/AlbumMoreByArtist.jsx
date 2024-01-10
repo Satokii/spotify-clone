@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import getYear from "../../../shared-functions/getYear";
+import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
 
 import "../styles/album-more.css"
 
@@ -38,7 +39,7 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
                             ) : (<div></div>
                             )}
                         </div>
-                        <div className="more-by-artist--album-name">{album.name}</div>
+                        <div className="more-by-artist--album-name">{fixLengthPreviews(album.name)}</div>
                         <div className="more-by-artist--album-date">{getYear(album.release_date)}</div>
                     </div>
                 )}
