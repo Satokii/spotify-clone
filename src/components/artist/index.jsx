@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import getArtist from "./functions/getArtist";
 import sleep from "../../shared-functions/sleep";
 import VerifiedIcon from "../../assets/svgs/main-app/verified-icon.svg"
@@ -14,20 +13,19 @@ function Artist({ token }) {
     // const [albumInfo, setAlbumInfo] = useState({})
     const [artistInfo, setArtistInfo] = useState({});
     const { artistId } = useParams()
-    const { data } = usePalette(artistInfo.img)
     // const [albumTracksArr, setAlbumTracksArr] = useState([])
     // const [copyrights, setCopyrights] = useState([])
     // const [artistAlbums, setArtistAlbums] = useState([])
     // const { data } = usePalette(albumInfo.img)
+    // console.log(artistInfo)
 
 
     useEffect(() => {
         sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
     }, [artistId, token])
 
-    useEffect(() => {
-        sleep(0).then(() => palletGradientArtist(data))
-    }, [data])
+    const { data } = usePalette(artistInfo.img)
+    sleep(0).then(() => palletGradientArtist(data))
 
     return (
         <section className="artist-page--container grid">

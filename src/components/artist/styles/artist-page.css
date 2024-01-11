@@ -1,6 +1,5 @@
 .artist-page--container {
     grid-area: Main;
-    background-color: var(--const-base-bg);
     grid-template-rows: 350px 1fr;
     padding: 0 0 150px;
     opacity: 0;
@@ -10,6 +9,7 @@
 
 .artist-page--sub-container {
     grid-template-rows: 120px 1fr auto;
+    height: 100vh;
 }
 
 /* ARTIST BANNER */
@@ -17,12 +17,14 @@
     grid-template-rows: 25px 120px 35px;
     line-height: normal;
     align-content: end;
-    /* background-color: red; */
+    align-items: center;
+    padding: 0 25px 25px;
 }
 
 /* BANNER VERIFIED CONTAINER */
 .artist-banner--verified-container {
     grid-template-columns: 24px 1fr;
+    align-items: center;
 }
 
 .artist-banner--verified-img {
@@ -38,6 +40,7 @@
 .artist-banner--artist-name {
     font-size: 96px;
     font-weight: bold;
+    margin: 10px 0;
 }
 
 /* BANNER FOLLOWERS */

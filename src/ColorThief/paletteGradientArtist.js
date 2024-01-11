@@ -1,6 +1,6 @@
-const palletGradientArtist = async (data) => {
-    const lightImgColour = data.lightMuted;
-    const darkImgColour = data.vibrant;
+const palletGradientArtist = (data) => {
+    const lightImgColour = data.muted;
+    const darkImgColour = data.lightVibrant;
     let mixedImgColour = "#";
   
     // FORMULA TO FIND MID-COLOUR OF VIBRANT AND LIGHT MUTED COLOURS RETURNED FROM
@@ -20,11 +20,11 @@ const palletGradientArtist = async (data) => {
     let bannerBackground = document.querySelector(".artist-page--banner-container");
     let artistBackground = document.querySelector(".artist-page--sub-container");
     let foundColour = `${mixedImgColour}`;
-    let darkFoundColour = `${mixedImgColour}90`;
-    let darkerFoundColour = `${mixedImgColour} 50`;
-    let evenDarkerFoundColour = `${mixedImgColour}25`;
+    let darkFoundColour = `${mixedImgColour}80`;
+    let darkerFoundColour = `${mixedImgColour}50`;
+    let evenDarkerFoundColour = `${mixedImgColour}30`;
     bannerBackground.style.backgroundColor = `${foundColour}`;
-    artistBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 40%, ${evenDarkerFoundColour} 60%, #1a1a1a 65%, #121212 90%)`;
+    artistBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 70%)`
   }
   
   export default palletGradientArtist;
