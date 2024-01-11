@@ -11,29 +11,11 @@ function Artist({ token }) {
     // const [albumInfo, setAlbumInfo] = useState({})
     const [artistInfo, setArtistInfo] = useState({});
     const { albumId, artistId } = useParams()
-    const [artistBio, setArtistBio] = useState('')
-    const [artistUuid, setArtistUuid] = useState('')
     // const [albumTracksArr, setAlbumTracksArr] = useState([])
     // const [copyrights, setCopyrights] = useState([])
     // const [artistAlbums, setArtistAlbums] = useState([])
     // const { data } = usePalette(albumInfo.img)
 
-    useEffect(() => {
-        const getArtistDetails = async () => {
-            const { data } = await axios.get(
-              `https://customer.api.soundcharts.com/api/v2.9/artist/by-platform/spotify/6qqNVTkY8uBg9cP3Jd7DAH`,
-              {
-                headers: {
-                "x-app-id": "soundcharts",
-                "x-api-key": "soundcharts"
-                },
-              }
-            );
-              console.log(data)
-          };
-          getArtistDetails()
-    })
-   
 
     useEffect(() => {
         sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
