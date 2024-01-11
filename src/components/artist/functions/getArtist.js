@@ -18,3 +18,4 @@ const getArtist = async (token, artistId, setArtistInfo) => {
   };
 
 export default getArtist
+

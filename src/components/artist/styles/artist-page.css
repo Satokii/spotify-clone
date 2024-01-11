@@ -1,13 +1,46 @@
 .artist-page--container {
     grid-area: Main;
     background-color: var(--const-base-bg);
-    grid-template-rows: 340px 1fr;
+    grid-template-rows: 350px 1fr;
     padding: 0 0 150px;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
     border-radius: 10px;
 }
 
-/* .artist-page--sub-container {
+.artist-page--sub-container {
     grid-template-rows: 120px 1fr auto;
-} */
+}
+
+/* ARTIST BANNER */
+.artist-page--banner-container {
+    grid-template-rows: 25px 120px 35px;
+    line-height: normal;
+    align-content: end;
+    /* background-color: red; */
+}
+
+/* BANNER VERIFIED CONTAINER */
+.artist-banner--verified-container {
+    grid-template-columns: 24px 1fr;
+}
+
+.artist-banner--verified-img {
+    width: 24px;
+    height: 24px;
+}
+
+.artist-banner--verified-text {
+    font-size: 14px;
+}
+
+/* BANNER ARTIST NAME */
+.artist-banner--artist-name {
+    font-size: 96px;
+    font-weight: bold;
+}
+
+/* BANNER FOLLOWERS */
+.artist-banner--artist-followers {
+    font-size: 16px;
+}
