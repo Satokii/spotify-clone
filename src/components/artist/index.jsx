@@ -35,7 +35,7 @@ function Artist({ token }) {
                     <p className="artist-banner--verified-text">Verified Artist</p>
                 </div>
                 <div className="artist-banner--artist-name">{artistInfo.name}</div>
-                <div className="artist-banner--artist-followers">{`${(artistInfo.followers)} followers`}</div>
+                <div className="artist-banner--artist-followers">{`${artistInfo.followers} followers`}</div>
             </div>
             <div className="artist-page--sub-container grid">
                 <div>Artist Options</div>
