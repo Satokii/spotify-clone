@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import getArtist from "./functions/getArtist";
+import ArtistBanner from "./components/ArtistBanner";
 import sleep from "../../shared-functions/sleep";
-import VerifiedIcon from "../../assets/svgs/main-app/verified-icon.svg"
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
 
 import "./styles/artist-page.css"
@@ -29,14 +29,7 @@ function Artist({ token }) {
 
     return (
         <section className="artist-page--container grid">
-            <div className="artist-page--banner-container grid" style={{ backgroundImage: `url(${artistInfo.img})`, backgroundPosition: "50% 30%", backgroundRepeat: "no-repeat", backgroundSize: "70%"}}>
-                <div className="artist-banner--verified-container grid">
-                    <img className="artist-banner--verified-img" src={VerifiedIcon} alt="verified icon" />
-                    <p className="artist-banner--verified-text">Verified Artist</p>
-                </div>
-                <div className="artist-banner--artist-name grid ">{artistInfo.name}</div>
-                <div className="artist-banner--artist-followers">{`${artistInfo.followers} followers`}</div>
-            </div>
+            <ArtistBanner artistInfo={artistInfo} />
             <div className="artist-page--sub-container grid">
                 <div>Artist Options</div>
                 <div>Popular Tracks</div>
