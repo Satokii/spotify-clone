@@ -14,7 +14,7 @@
 
 /* ARTIST BANNER */
 .artist-page--banner-container {
-    grid-template-rows: 25px 120px 35px;
+    grid-template-rows: 30px 130px 40px;
     line-height: normal;
     align-content: end;
     align-items: center;
@@ -23,27 +23,31 @@
 
 /* BANNER VERIFIED CONTAINER */
 .artist-banner--verified-container {
-    grid-template-columns: 24px 1fr;
+    grid-template-columns: 30px 1fr;
+    gap: 2px;
     align-items: center;
 }
 
 .artist-banner--verified-img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 }
 
 .artist-banner--verified-text {
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* BANNER ARTIST NAME */
 .artist-banner--artist-name {
-    font-size: 96px;
+    font-size: 100px;
     font-weight: bold;
-    margin: 10px 0;
+    align-self: start;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px;
+    letter-spacing: 1px;
 }
 
 /* BANNER FOLLOWERS */
 .artist-banner--artist-followers {
     font-size: 16px;
+    padding-left: 5px;
 }
