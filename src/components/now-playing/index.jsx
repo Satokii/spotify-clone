@@ -4,7 +4,6 @@ import scrollToTop from "../../shared-functions/scrollToTop"
 import "./styles/now-playing.css"
 
 function NowPlaying({ currentTrack }) {
-    console.log(currentTrack)
     
     return (
         <section className="now-playing--container grid">

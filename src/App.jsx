@@ -208,7 +208,7 @@ function App() {
             path="/artist/:artistId"
             element={
               token ?
-              <Artist />
+              <Artist token={token} />
               : <WelcomePage />
             }
           >

@@ -13,6 +13,7 @@ const getArtist = async (token, artistId, setArtistInfo) => {
     setArtistInfo({
       name: data.name,
       img: data.images[0].url,
+      followers: data.followers.total
     });
   };
 
