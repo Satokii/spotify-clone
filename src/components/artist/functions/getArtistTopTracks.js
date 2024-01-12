@@ -13,7 +13,7 @@ const getArtistTopTracks = async (token, artistId, setTopTracksArr) => {
       }
     );
     //   console.log(data.tracks)
-    setTopTracksArr(data)
+    setTopTracksArr(data.tracks)
   };
 
   export default getArtistTopTracks

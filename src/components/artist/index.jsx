@@ -21,7 +21,6 @@ function Artist({ token }) {
     // const [artistAlbums, setArtistAlbums] = useState([])
     // const { data } = usePalette(albumInfo.img)
     // console.log(artistInfo)
-    console.log(artistId)
     
     useEffect(() => {
         sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
