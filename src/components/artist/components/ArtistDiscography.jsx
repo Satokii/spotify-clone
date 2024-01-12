@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import getYear from "../../../shared-functions/getYear"
 
 import "../styles/artist-discography.css"
 
@@ -70,9 +71,21 @@ function ArtistDiscography({ topTracksArr }) {
                     <li className={filter.className} key={index} onClick={e => toggleDiscoFilter(e)}>{filter.name}</li>
                 )}
             </ul>
-            <div className="artist--discography-item-list">
+            <div className="artist--discography-item-list grid">
                 {showDiscoItems.map((item, index) =>
-                    <div key={`${item.name}-${index}`}>{item.name}</div>
+                    <div className="artist--discography-single-item" key={`${item.name}-${index}`}>
+                        <div className="artist--discography-single-item-img">
+                            {item.album.images.length ? (
+                            <img src={item.album.images[0].url} alt={item.name} />
+                            ) : (<div></div>
+                            )}
+                            <div className="artist--discography-single-item-name">{item.name}</div>
+                            <div>
+                                <div>{getYear(item.album.release_date)}</div>
+                                <div>{item.album.album_type}</div>
+                            </div>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>

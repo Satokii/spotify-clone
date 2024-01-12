@@ -34,6 +34,7 @@
     border-radius: 9999px;
     padding: 4px 12px;
     background-color: var(--disco-filter);
+    transition: 0.3s;
 }
 
 .inactive-artist--discography-filter:hover {
@@ -41,3 +42,16 @@
     background-color: var(--album-track-hover);
 }
 
+/* DISCOGRAPHY ITEM LIST */
+.artist--discography-item-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    gap: 24px;
+    overflow-y: hidden;
+}
+.artist--discography-single-item {
+    grid-template-rows: 180px 25px 1fr;
+    padding: 16px;
+    background-color: var(--const-card-bg);
+    border-radius: 8px;
+    transition: 0.3s;
+}
