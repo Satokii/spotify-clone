@@ -8,17 +8,17 @@ function ArtistDiscography() {
         {
             name: 'Popular Releases',
             isActive: true,
-            className: 'artist--discography-filter-popular'
+            className: 'active-artist--discography-filter'
         },
         {
             name:'Albums',
             isActive: false,
-            className: 'artist--discography-filter-albums'
+            className: 'inactive-artist--discography-filter'
         },
         {
             name: 'Singles and EPs',
             isActive: false,
-            className: 'artist--discography-filter-singles'
+            className: 'inactive-artist--discography-filter'
         }
     ]
 
@@ -26,8 +26,8 @@ function ArtistDiscography() {
 
     const toggleDiscoFilter = (e) => {
         const updatedDiscoFilter = activeFilter.map(filter =>{
-            if (filter.name === e.target.innerText) return {...filter, isActive: true}
-            else return {...filter, isActive: false}
+            if (filter.name === e.target.innerText) return {...filter, className: 'active-artist--discography-filter', isActive: true}
+            else return {...filter,  className: 'inactive-artist--discography-filter', isActive: false}
         })
         setActiveFilter(updatedDiscoFilter)
     }
@@ -37,7 +37,7 @@ function ArtistDiscography() {
             <h3 className="artist--discography-header">Discography</h3>
             <ul className="artist--discography-filter grid">
                 {activeFilter.map((filter, index) =>
-                    <li key={index} onClick={e => toggleDiscoFilter(e)}>{filter.name}</li>
+                    <li className={filter.className} key={index} onClick={e => toggleDiscoFilter(e)}>{filter.name}</li>
                 )}
                 {/* <li className="artist--discography-filter-popular">Popular Releases</li>
                 <li className="artist--discography-filter-albums">Albums</li>

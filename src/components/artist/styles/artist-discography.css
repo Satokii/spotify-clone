@@ -22,14 +22,22 @@
     gap: 10px;
 }
 
-.artist--discography-filter li {
-    /* border: solid 1px; */
+.active-artist--discography-filter {
+    border-radius: 9999px;
+    padding: 4px 12px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.inactive-artist--discography-filter {
     border-radius: 9999px;
     padding: 4px 12px;
     background-color: var(--disco-filter);
 }
 
-.artist--discography-filter li:hover {
+.inactive-artist--discography-filter:hover {
     cursor: pointer;
     background-color: var(--album-track-hover);
 }
+
