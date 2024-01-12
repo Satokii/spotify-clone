@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
+import getAlbums from "../functions/getAlbums.js"
 import getYear from "../../../shared-functions/getYear"
 import GrayCircle from "../../../assets/svgs/main-app/gray-circle.svg"
 
 import "../styles/artist-discography.css"
 
-function ArtistDiscography({ topTracksArr }) {
+function ArtistDiscography({ token, artistId, topTracksArr, albumObj, setAlbumObj }) {
 
     const FILTER_INITIAL_STATE = [
         {
@@ -25,6 +26,8 @@ function ArtistDiscography({ topTracksArr }) {
     ]
 
     const [activeFilter, setActiveFilter] = useState(FILTER_INITIAL_STATE)
+    const [showDiscoItems, setShowDiscoItems] = useState([])
+    const [discoAlbums, setDiscoAlbums] = useState([])
 
     const toggleDiscoFilter = (e) => {
         const updatedDiscoFilter = activeFilter.map(filter =>{
@@ -33,22 +36,41 @@ function ArtistDiscography({ topTracksArr }) {
         })
         setActiveFilter(updatedDiscoFilter)
     }
-
-    const [showDiscoItems, setShowDiscoItems] = useState([])
+    // getAlbums(token, artistId, 'album', setDiscoAlbums)
+    // console.log(discoAlbums)
+    console.log(topTracksArr)
+    topTracksArr.map(track => {
+        setAlbumObj({
+            name: track.name,
+            img: track.album.images[0].url,
+            release_date: track.album.release_date,
+            type: track.album.album_type
+        })
+    })
 
     useEffect(() => {
-        let arr = []
+        let obj
         activeFilter.map(filter => {
             if (filter.isActive) {
                 if (filter.name === "Popular Releases") {
-                    arr = topTracksArr
+                    // arr = topTracksArr
+                    topTracksArr.map(track => {
+                        setAlbumObj({
+                            name: track.name,
+                            img: track.album.images[0].url,
+                            release_date: track.album.release_date,
+                            type: track.album.album_type
+                        })
+                    })
+                    obj = albumObj
                 }
                 else if (filter.name === "Albums") {
-                    topTracksArr.map(track => {
-                        if (track.album.album_type === "album") {
-                            arr.push(track)
-                        }
-                    })
+                    // topTracksArr.map(track => {
+                    //     if (track.album.album_type === "album") {
+                    //         arr.push(track)
+                    //     }
+                    // })
+                    obj = albumObj
                 }
                 else if (filter.name === "Singles and EPs") {
                     topTracksArr.map(track => {
@@ -56,13 +78,13 @@ function ArtistDiscography({ topTracksArr }) {
                             arr.push(track)
                         }
                     })
+                    // getAlbums(token, artistId, 'single', setDiscoAlbums)
+                    // arr = discoAlbums
                 }
                 setShowDiscoItems(arr)
             }
         })
-    }, [activeFilter, topTracksArr])
-
-    console.log(showDiscoItems)
+    }, [activeFilter, artistId, discoAlbums, token, topTracksArr])
 
     return (
         <div className="artist-page--discography grid">
