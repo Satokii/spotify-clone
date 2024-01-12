@@ -18,7 +18,7 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
                 Authorization: `Bearer ${token}`,
               },
               params: {
-                limit: 6,
+                limit: 9,
                 include_groups: "album,single"
               },
             }

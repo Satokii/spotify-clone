@@ -1,8 +1,7 @@
 .album-page--more-by-artist {
-    grid-template-rows: 40px 1fr;
+    grid-template-rows: 40px 270px;
     padding: 0 25px;
     gap: 24px;
-    width: 1370px;
 }
 
 /* HEADER CONTAINER */
@@ -32,6 +31,7 @@
     font-weight: bold;
     width: fit-content;
     justify-self: start;
+    padding-right: 15px;
 }
 
 .more-by-artist--discography:hover {
@@ -42,8 +42,8 @@
 /* ALBUM LIST */
 .more-by-artist--album-list  {
     grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
-    grid-auto-flow: column;
     gap: 24px;
+    overflow-y: hidden;
 }
 
 /* SINGLE ITEM CONTAINER */
