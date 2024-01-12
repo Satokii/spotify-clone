@@ -1,6 +1,6 @@
 const palletGradientArtist = (data) => {
-    const lightImgColour = data.muted;
-    const darkImgColour = data.lightVibrant;
+    const lightImgColour = data.darkMuted;
+    const darkImgColour = data.vibrant;
     let mixedImgColour = "#";
   
     // FORMULA TO FIND MID-COLOUR OF VIBRANT AND LIGHT MUTED COLOURS RETURNED FROM

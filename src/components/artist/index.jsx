@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import getArtist from "./functions/getArtist";
 import ArtistBanner from "./components/ArtistBanner";
+import ArtistControls from "./components/ArtistControls";
 import sleep from "../../shared-functions/sleep";
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
 
@@ -31,7 +32,7 @@ function Artist({ token }) {
         <section className="artist-page--container grid">
             <ArtistBanner artistInfo={artistInfo} />
             <div className="artist-page--sub-container grid">
-                <div>Artist Options</div>
+                <ArtistControls />
                 <div>Popular Tracks</div>
                 <div>Discography</div>
                 <div>Related Artists</div>
