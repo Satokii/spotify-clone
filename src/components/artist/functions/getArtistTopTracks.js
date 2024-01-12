@@ -12,7 +12,6 @@ const getArtistTopTracks = async (token, artistId, setTopTracksArr) => {
         }
       }
     );
-    //   console.log(data.tracks)
     setTopTracksArr(data.tracks)
   };
 

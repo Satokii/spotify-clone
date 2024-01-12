@@ -107,3 +107,17 @@
     filter: var(--filter-hover-white);
     transform: scale(1.05);
 }
+
+/* EXPAND TRACKS */
+.artist-page--expand-tracks {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--const-gray);
+    width: fit-content;
+    padding: 0 16px;
+}
+
+.artist-page--expand-tracks:hover {
+    color: var(--const-white);
+    cursor: default;
+}

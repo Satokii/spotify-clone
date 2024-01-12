@@ -5,7 +5,6 @@ import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 
-
 import "../styles/artist-popular-tracks.css"
 
 function ArtistPopularTracks({ topTracksArr, top5TracksArr }) {
@@ -36,7 +35,7 @@ function ArtistPopularTracks({ topTracksArr, top5TracksArr }) {
                     </div>
                 )}
             </div>
-            <div onClick={toggleTopTracksShown}>{showAllTracks ? <div>Show Less</div> : <div>See more</div>}</div>
+            <div className="artist-page--expand-tracks" onClick={toggleTopTracksShown}>{showAllTracks ? <div>Show Less</div> : <div>See more</div>}</div>
         </div>
     )
 }
