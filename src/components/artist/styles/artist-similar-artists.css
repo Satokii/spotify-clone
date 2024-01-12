@@ -1,0 +1,23 @@
+.artist-page--similar-artists {
+    grid-template-rows: 30px 290px;
+    gap: 10px;
+    padding: 0 25px;
+    margin-top: 20px;
+}
+
+/* SIMILAR ARTISTS HEADER */
+.artist--similar-artists-header-container {
+    grid-template-columns: 1fr 100px;
+}
+
+.artist--similar-artists-header {
+    font-size: 24px;
+}
+
+.artist--similar-artists-show-all {
+    color: var(--const-gray);
+    font-size: 14px;
+    font-weight: bold;
+    align-self: end;
+    justify-self: center;
+}

@@ -9,6 +9,7 @@ import ArtistBanner from "./components/ArtistBanner";
 import ArtistControls from "./components/ArtistControls";
 import ArtistPopularTracks from "./components/ArtistPopularTracks";
 import ArtistDiscography from "./components/ArtistDiscography";
+import ArtistSimilarArtists from "./components/ArtistSimilarArtists";
 import sleep from "../../shared-functions/sleep";
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
 
@@ -60,8 +61,8 @@ function Artist({ token }) {
             <div className="artist-page--sub-container grid">
                 <ArtistControls />
                 <ArtistPopularTracks topTracksArr={topTracksArr} top5TracksArr={top5TracksArr} />
-                <ArtistDiscography token={token} artistId={artistId} topTracksArr={topTracksArr} popularReleases={popularReleases} album={album} single={single} />
-                <div>Related Artists</div>
+                <ArtistDiscography popularReleases={popularReleases} album={album} single={single} />
+                <ArtistSimilarArtists/>
                 <div>Appears on (compilation)</div>
             </div>
         </section>

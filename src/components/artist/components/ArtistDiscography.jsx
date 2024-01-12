@@ -6,7 +6,7 @@ import scrollToTop from "../../../shared-functions/scrollToTop.js"
 
 import "../styles/artist-discography.css"
 
-function ArtistDiscography({ token, artistId, topTracksArr, popularReleases, album, single }) {
+function ArtistDiscography({ popularReleases, album, single }) {
 
     const FILTER_INITIAL_STATE = [
         {
@@ -120,7 +120,7 @@ function ArtistDiscography({ token, artistId, topTracksArr, popularReleases, alb
         <div className="artist-page--discography grid">
             <div className="artist--discography-header-container grid">
                 <h3 className="artist--discography-header">Discography</h3>
-                <div className="artist--discography-show-all">Show all</div>
+                <div className="artist-page--show-all">Show all</div>
             </div>
             <ul className="artist--discography-filter grid">
                 {activeFilter.map((filter, index) =>
