@@ -4,6 +4,11 @@
     padding: 0 25px;
 }
 
+/* DISCOGRAPHY HEADER */
+.artist--discography-header-container {
+    grid-template-columns: 1fr 100px;
+}
+
 .artist--discography-header {
     font-size: 24px;
 }
@@ -12,6 +17,20 @@
     text-decoration: underline 2px;
     text-underline-offset: 2px;
     cursor: pointer;
+}
+
+.artist--discography-show-all {
+    color: var(--const-gray);
+    font-size: 14px;
+    font-weight: bold;
+    align-self: end;
+    justify-self: center;
+}
+
+.artist--discography-show-all:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 1.5px;
 }
 
 /* DISCOGRAPHY FILTER */

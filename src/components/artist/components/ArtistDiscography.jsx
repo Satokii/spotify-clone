@@ -28,9 +28,7 @@ function ArtistDiscography({ token, artistId, topTracksArr, popularReleases, alb
     ]
 
     const [activeFilter, setActiveFilter] = useState(FILTER_INITIAL_STATE)
-    // const [showDiscoItems, setShowDiscoItems] = useState([])
     const [showDiscoItems, setShowDiscoItems] = useState('popular')
-    // const [discoAlbums, setDiscoAlbums] = useState([])
 
     const toggleDiscoFilter = (e) => {
         const updatedDiscoFilter = activeFilter.map(filter =>{
@@ -40,23 +38,17 @@ function ArtistDiscography({ token, artistId, topTracksArr, popularReleases, alb
         setActiveFilter(updatedDiscoFilter)
     }
 
-    // const [showFiltered, setShowFiltered] = useState()
-
     useEffect(() => {
         activeFilter.map(filter => {
             if (filter.isActive) {
                 if (filter.name === "Popular Releases") {
                     setShowDiscoItems('popular')
-                    
                 }
                 else if (filter.name === "Albums") {
                     setShowDiscoItems('albums')
-                    
-
                 }
                 else if (filter.name === "Singles and EPs") {
-                    setShowDiscoItems('singles')
-                   
+                    setShowDiscoItems('singles') 
                 }
             }
         })
@@ -124,11 +116,13 @@ function ArtistDiscography({ token, artistId, topTracksArr, popularReleases, alb
             )
         }
     }
-    console.log(showFiltered())
 
     return (
         <div className="artist-page--discography grid">
-            <h3 className="artist--discography-header">Discography</h3>
+            <div className="artist--discography-header-container grid">
+                <h3 className="artist--discography-header">Discography</h3>
+                <div className="artist--discography-show-all">Show all</div>
+            </div>
             <ul className="artist--discography-filter grid">
                 {activeFilter.map((filter, index) =>
                     <li className={filter.className} key={index} onClick={e => toggleDiscoFilter(e)}>{filter.name}</li>
