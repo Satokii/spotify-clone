@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 
 import "../styles/artist-similar-artists.css"
 
@@ -23,7 +25,7 @@ function ArtistSimilarArtists({ token, artistId }) {
         }
         getRelatedArtists()
     }, [artistId, token])
-
+console.log(relatedArtists)
     return (
         <div className="artist-page--similar-artists grid">
             <div className="artist--similar-artists-header-container grid">
@@ -32,13 +34,13 @@ function ArtistSimilarArtists({ token, artistId }) {
             </div>
             <div className="artist--similar-artists-list grid">
                 {relatedArtists.map((artist, index) =>
-                    <div className="artist--similar-artists-single-artist grid" key={`${artist.name}-${index}`}>
+                    <Link className="artist--similar-artists-single-artist grid" key={`${artist.name}-${index}`} to={`/artist/${artist.id}`} onClick={scrollToTop}>
                         {artist.images.length ? <img className="artist--similar-artists-img" src={artist.images[0].url} alt="artist image" />
                         : <div className="artist--similar-artists-img"></div>
                         }
                         <div className="artist--similar-artists-name">{artist.name}</div>
                         <div className="artist--similar-artists-type">{artist.type}</div>
-                    </div>
+                    </Link>
                 )}
             </div>
         </div>

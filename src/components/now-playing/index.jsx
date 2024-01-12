@@ -14,7 +14,7 @@ function NowPlaying({ currentTrack }) {
                 <div className="now-playing--track-name-container">
                     <Link className="now-playing--track-name" to={`/album/${currentTrack.albumId}/${currentTrack.artistId}`} onClick={scrollToTop} >{currentTrack.trackName}</Link>
                 </div>
-                <Link className="now-playing--artist-name" to={`/artist/${currentTrack.artistId}`}>{currentTrack.trackArtist}</Link>
+                <Link className="now-playing--artist-name" to={`/artist/${currentTrack.artistId}`} onClick={scrollToTop}>{currentTrack.trackArtist}</Link>
                 <p></p>
             </div>
         </section>
