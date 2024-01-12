@@ -1,8 +1,7 @@
 .artist-page--similar-artists {
-    grid-template-rows: 30px 290px;
+    grid-template-rows: 30px 270px;
     gap: 10px;
     padding: 0 25px;
-    margin-top: 20px;
 }
 
 /* SIMILAR ARTISTS HEADER */
@@ -20,4 +19,49 @@
     font-weight: bold;
     align-self: end;
     justify-self: center;
+}
+
+/* SIMILAR ARTISTS LIST */
+.artist--similar-artists-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    gap: 24px;
+    overflow-y: hidden;
+    margin-top: 10px;
+}
+
+
+/* SIMILAR ARTISTS SINGLE ARTIST */
+.artist--similar-artists-single-artist {
+    grid-template-rows: 180px 20px 20px;
+    padding: 16px;
+    background-color: var(--const-card-bg);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.artist--similar-artists-single-artist:hover {
+    background-color: var(--const-card-hover);
+    cursor: pointer;
+}
+
+.artist--similar-artists-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 9999px;
+    object-fit: cover;
+    justify-self: center;
+    align-self: start;
+}
+
+.artist--similar-artists-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--const-main-white);
+    overflow: hidden;
+}
+
+.artist--similar-artists-type {
+    font-size: 15px;
+    color:  var(--const-gray);
+    text-transform: capitalize;
 }

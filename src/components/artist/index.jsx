@@ -62,7 +62,7 @@ function Artist({ token }) {
                 <ArtistControls />
                 <ArtistPopularTracks topTracksArr={topTracksArr} top5TracksArr={top5TracksArr} />
                 <ArtistDiscography popularReleases={popularReleases} album={album} single={single} />
-                <ArtistSimilarArtists/>
+                <ArtistSimilarArtists token={token} artistId={artistId} />
                 <div>Appears on (compilation)</div>
             </div>
         </section>
