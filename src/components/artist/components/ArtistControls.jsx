@@ -26,7 +26,7 @@ function ArtistControls() {
     const toggleFollow = () => {
         if (!follow) setFollow(true);
         else setFollow(false);
-      };
+    };
 
     return (
         <div className="artist-page--controls grid">

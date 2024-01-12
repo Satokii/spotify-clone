@@ -22,7 +22,7 @@
     height: 56px;
     border: solid 1px transparent;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 16px;
     border-radius: 4px;
 }
 
@@ -63,6 +63,7 @@
     opacity: 0;
 }
 
+/* TRACK IMAGE */
 .artist-page--track-img {
     width: 40px;
     height: 40px;
@@ -70,108 +71,38 @@
 }
 
 /* TRACK NAME */
-.album-page--track-name-container {
-    grid-template-rows: repeat(2, auto);
-    align-items: center;
-}
-
-.album-page--track-name {
-    font-size: 17px;
-    line-height: 1.4;
-}
-
-/* TRACK ARTISTS */
-.album-page--artist-sub-container {
-    grid-template-columns: auto 1fr;
-    justify-items: start;
-}
-
-.album-page--explicit-container {
-    align-items: start;
-}
-
-.album-page--explicit-track {
-    font-size: 9px;
-    height: fit-content;
-    color: var(--darker-black);
-    border-radius: 2px;
-    background-color: var(--explicit-bg);
-    padding: 2px 5px;
-    margin-right: 7px;
-}
-
-.album-page--artist-name-container {
-    grid-template-columns: repeat(auto-fill, auto);
-    grid-auto-flow: column;
-    gap: 4px;
-}
-
-.album-page--artist-name {
-    font-size: 14px;
-    color: var(--const-gray);
-}
-
-.album-page--artist-name:hover {
-    text-decoration: underline;
-    text-underline-offset: 1.7px;
-    cursor: pointer;
+.artist-page--track-name {
+    font-size: 18px;
 }
 
 /* TRACK LIKE */
-.album-page--hide-like {
+.artist-page--hide-like {
     opacity: 0;
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 
-.album-page--hide-like:hover {
+.artist-page--hide-like:hover {
     filter: var(--filter-hover-white);
     transform: scale(1.05);
 }
 
-.album-page--show-like {
-    opacity: 1;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
 /* TRACK TIME */
-.album-page--track-time {
+.artist-page--track-time {
     color: var(--const-gray);
     font-size: 14px;
 }
 
 /* TRACK MENU DOTS */
-.album-page--track-dots {
+.artist-page--track-dots {
     opacity: 0;
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 
-.album-page--track-dots:hover {
+.artist-page--track-dots:hover {
     filter: var(--filter-hover-white);
     transform: scale(1.05);
-}
-
-/* RELEASE DATE AND COPYRIGHTS */
-.album-page--date-copyright-container {
-    /* padding: 0 20px; */
-    margin-top: 10px;
-    color: var(--const-gray);
-    line-height: 1.4;
-}
-
-.album-page--release-date {
-    font-size: 14px;
-    width: fit-content;
-}
-
-.album-page--tracks-copyrights {
-    grid-auto-flow: row;
-    font-size: 11px;
-    margin-left: 1px;
-    width: fit-content;
 }

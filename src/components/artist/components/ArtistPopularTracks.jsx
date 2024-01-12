@@ -1,4 +1,8 @@
+import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
+import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
+import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
+import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 
 import "../styles/artist-popular-tracks.css"
 
@@ -17,6 +21,9 @@ function ArtistPopularTracks({ topTrackArr }) {
                         <img className="artist-page--track-img" src={track.album.images[0].url} alt="track image"/>
                         : <div className="artist-page--track-img"></div> }
                         <div className="artist-page--track-name">{track.name}</div>
+                        <img className="artist-page--hide-like" src={GrayHeart} alt="gray heart"></img>
+                        <div className="artist-page--track-time">{calcTrackTime(track.duration_ms)}</div>
+                        <img className="artist-page--track-dots" src={MenuDots} alt="menu dots" />
                     </div>
                 )}
             </div>
