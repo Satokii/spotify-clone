@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import getYear from "../../../shared-functions/getYear"
 import GrayCircle from "../../../assets/svgs/main-app/gray-circle.svg"
 import scrollToTop from "../../../shared-functions/scrollToTop.js"
+import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
 
 import "../styles/artist-discography.css"
 
@@ -59,10 +60,13 @@ function ArtistDiscography({ popularReleases, album, single }) {
                 popularReleases.map((item, index) =>
                 <Link className="artist--discography-single-item grid" key={`${item.name}-${index}`} to={`/album/${item.album.id}/${item.artists[0].id}`} onClick={scrollToTop}>
                     <div className="artist--discography-single-item-img">
-                        {item.album.images.length ? (
-                        <img src={item.album.images[0].url} alt={item.name} />
-                        ) : (<div></div>
-                        )}
+                        {item.album.images.length ? 
+                        <div className="artist--discography-img-container">
+                            <img src={item.album.images[0].url} alt={item.name} />
+                            <img className="artist--discography-play" src={PlayGreen} alt="play button" />
+                        </div>
+                         : <div></div>
+                        }
                     </div>
                     <div className="artist--discography-single-item-name">{item.name}</div>
                     <div className="artist--discography-single-item-more-details-container grid">
@@ -79,10 +83,13 @@ function ArtistDiscography({ popularReleases, album, single }) {
                 album.map((item, index) =>
                 <Link className="artist--discography-single-item grid" key={`${item.name}-${index}`} to={`/album/${item.id}/${item.artists[0].id}`} onClick={scrollToTop}>
                     <div className="artist--discography-single-item-img">
-                        {item.images.length ? (
-                        <img src={item.images[0].url} alt={item.name} />
-                        ) : (<div></div>
-                        )}
+                        {item.images.length ?
+                        <div className="artist--discography-img-container">
+                            <img src={item.images[0].url} alt={item.name} />
+                            <img className="artist--discography-play" src={PlayGreen} alt="play button" />
+                        </div>
+                        : <div></div>
+                        }
                     </div>
                     <div className="artist--discography-single-item-name">{item.name}</div>
                     <div className="artist--discography-single-item-more-details-container grid">
@@ -99,10 +106,13 @@ function ArtistDiscography({ popularReleases, album, single }) {
                 single.map((item, index) =>
                 <Link className="artist--discography-single-item grid" key={`${item.name}-${index}`} to={`/album/${item.id}/${item.artists[0].id}`} onClick={scrollToTop}>
                     <div className="artist--discography-single-item-img">
-                        {item.images.length ? (
-                        <img src={item.images[0].url} alt={item.name} />
-                        ) : (<div></div>
-                        )}
+                        {item.images.length ?
+                        <div className="artist--discography-img-container">
+                            <img src={item.images[0].url} alt={item.name} />
+                            <img className="artist--discography-play" src={PlayGreen} alt="play button" />
+                        </div>
+                        : <div></div>
+                        }
                     </div>
                     <div className="artist--discography-single-item-name">{item.name}</div>
                     <div className="artist--discography-single-item-more-details-container grid">

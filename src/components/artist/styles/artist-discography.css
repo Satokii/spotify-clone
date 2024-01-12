@@ -69,13 +69,32 @@
     cursor: pointer;
 }
 
+.artist--discography-single-item:hover .artist--discography-play {
+    opacity: 1;
+}
+
 /* ITEM IMAGE */
+.artist--discography-img-container {
+    position: relative;
+    place-self: center;
+}
+
 .artist--discography-single-item-img {
     object-fit: cover;
     width: fit-content;
     height: 150px;
     justify-self: center;
     align-self: start;
+}
+
+.artist--discography-play {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 60px;
+    height: 60px;
+    transition: 0.5s;
+    opacity: 0;
 }
 
 /* ITEM NAME */
