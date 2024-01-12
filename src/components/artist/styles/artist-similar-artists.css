@@ -29,10 +29,9 @@
     margin-top: 10px;
 }
 
-
 /* SIMILAR ARTISTS SINGLE ARTIST */
 .artist--similar-artists-single-artist {
-    grid-template-rows: 180px 20px 20px;
+    grid-template-rows: 160px 28px 35px;
     padding: 16px;
     background-color: var(--const-card-bg);
     border-radius: 8px;
@@ -44,6 +43,16 @@
     cursor: pointer;
 }
 
+.artist--similar-artists-single-artist:hover .artist--similar-artists-play {
+    opacity: 1;
+}
+
+/* SIMILAR ARTISTS IMG */
+.artist--similar-artists-img-container {
+    position: relative;
+    place-self: center;
+}
+
 .artist--similar-artists-img {
     width: 150px;
     height: 150px;
@@ -51,6 +60,17 @@
     object-fit: cover;
     justify-self: center;
     align-self: start;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+}
+
+.artist--similar-artists-play {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 60px;
+    height: 60px;
+    transition: 0.5s;
+    opacity: 0;
 }
 
 .artist--similar-artists-name {

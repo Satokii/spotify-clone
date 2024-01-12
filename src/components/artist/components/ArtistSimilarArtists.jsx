@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import scrollToTop from "../../../shared-functions/scrollToTop";
+import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
 
 import "../styles/artist-similar-artists.css"
 
@@ -35,7 +36,11 @@ console.log(relatedArtists)
             <div className="artist--similar-artists-list grid">
                 {relatedArtists.map((artist, index) =>
                     <Link className="artist--similar-artists-single-artist grid" key={`${artist.name}-${index}`} to={`/artist/${artist.id}`} onClick={scrollToTop}>
-                        {artist.images.length ? <img className="artist--similar-artists-img" src={artist.images[0].url} alt="artist image" />
+                        {artist.images.length ? 
+                        <div className="artist--similar-artists-img-container">
+                            <img className="artist--similar-artists-img" src={artist.images[0].url} alt="artist image" />
+                            <img className="artist--similar-artists-play" src={PlayGreen} alt="play button" />
+                        </div>
                         : <div className="artist--similar-artists-img"></div>
                         }
                         <div className="artist--similar-artists-name">{artist.name}</div>
