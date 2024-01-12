@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { usePalette } from "react-palette";
 import getArtist from "./functions/getArtist";
 import getArtistTopTracks from "./functions/getArtistTopTracks";
 import getArtistTop5Tracks from "./functions/getArtistTop5Tracks";
@@ -12,8 +13,8 @@ import sleep from "../../shared-functions/sleep";
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
 
 import "./styles/artist-page.css"
-import { usePalette } from "react-palette";
-import { all } from "axios";
+import getPopularReleases from "./functions/getPopularReleases";
+import getSingles from "./functions/getSingles";
 
 function Artist({ token }) {
 
@@ -21,11 +22,10 @@ function Artist({ token }) {
     const { artistId } = useParams()
     const [topTracksArr, setTopTracksArr] = useState([])
     const [top5TracksArr, setTop5TracksArr] = useState([])
-    const [albumObj, setAlbumObj] = useState({})
 
-    // const [copyrights, setCopyrights] = useState([])
-    // const [artistAlbums, setArtistAlbums] = useState([])
-    // const { data } = usePalette(albumInfo.img)
+    const [popularReleases, setPopularReleases] = useState([])
+    const [album, setAlbum] = useState([])
+    const [single, setSingle] = useState([])
 
     useEffect(() => {
         sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
@@ -38,6 +38,18 @@ function Artist({ token }) {
     useEffect(() => {
         sleep(0).then(() => getArtistTop5Tracks(token, artistId, setTop5TracksArr))
     }, [artistId, token])
+
+    useEffect(() => {
+        sleep(0).then(() => getPopularReleases(token, artistId, setPopularReleases))
+    }, [artistId, token])
+
+    useEffect(() => {
+        sleep(0).then(() => getAlbums(token, artistId, setAlbum))
+    }, [artistId, token])
+
+    useEffect(() => {
+        sleep(0).then(() => getSingles(token, artistId, setSingle))
+    }, [artistId, token])
     
     const { data } = usePalette(artistInfo.img)
     sleep(0).then(() => palletGradientArtist(data))
@@ -48,7 +60,7 @@ function Artist({ token }) {
             <div className="artist-page--sub-container grid">
                 <ArtistControls />
                 <ArtistPopularTracks topTracksArr={topTracksArr} top5TracksArr={top5TracksArr} />
-                <ArtistDiscography token={token} artistId={artistId} topTracksArr={topTracksArr} albumObj={albumObj} />
+                <ArtistDiscography token={token} artistId={artistId} topTracksArr={topTracksArr} popularReleases={popularReleases} album={album} single={single} />
                 <div>Related Artists</div>
                 <div>Appears on (compilation)</div>
             </div>

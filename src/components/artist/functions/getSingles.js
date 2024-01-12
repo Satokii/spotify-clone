@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getAlbums = async (token, artistId, setAlbum) => {
+const getSingles = async (token, artistId, setSingle) => {
     const { data } = await axios.get(
       `https://api.spotify.com/v1/artists/${artistId}/albums`,
       {
@@ -8,13 +8,13 @@ const getAlbums = async (token, artistId, setAlbum) => {
           Authorization: `Bearer ${token}`,
         },
         params: {
-          include_groups: 'album',
+          include_groups: 'single',
           limit: 10
         }
       }
     );
     const { items } = data
-    setAlbum(items)
+    setSingle(items)
 };
 
-export default getAlbums
+export default getSingles
