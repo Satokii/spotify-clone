@@ -1,0 +1,35 @@
+.artist-page--discography {
+    grid-template-rows: 24px 40px 270px;
+    gap: 20px;
+    padding: 0 25px;
+    justify-content: start;
+    align-items: center;
+}
+
+.artist--discography-header {
+    font-size: 24px;
+}
+
+.artist--discography-header:hover {
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+/* DISCOGRAPHY FILTER */
+.artist--discography-filter {
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+}
+
+.artist--discography-filter li {
+    /* border: solid 1px; */
+    border-radius: 9999px;
+    padding: 4px 12px;
+    background-color: var(--disco-filter);
+}
+
+.artist--discography-filter li:hover {
+    cursor: pointer;
+    background-color: var(--album-track-hover);
+}
