@@ -8,14 +8,12 @@ import ArtistControls from "./components/ArtistControls";
 import ArtistPopularTracks from "./components/ArtistPopularTracks";
 import sleep from "../../shared-functions/sleep";
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
-import axios from "axios";
 
 import "./styles/artist-page.css"
 import { usePalette } from "react-palette";
 
 function Artist({ token }) {
 
-    // const [albumInfo, setAlbumInfo] = useState({})
     const [artistInfo, setArtistInfo] = useState({});
     const { artistId } = useParams()
     const [topTracksArr, setTopTracksArr] = useState([])
@@ -23,7 +21,6 @@ function Artist({ token }) {
     // const [copyrights, setCopyrights] = useState([])
     // const [artistAlbums, setArtistAlbums] = useState([])
     // const { data } = usePalette(albumInfo.img)
-    // console.log(artistInfo)
     
     useEffect(() => {
         sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
@@ -33,12 +30,12 @@ function Artist({ token }) {
         sleep(0).then(() => getArtistTopTracks(token, artistId, setTopTracksArr))
     }, [artistId, token])
 
-    const { data } = usePalette(artistInfo.img)
-    sleep(0).then(() => palletGradientArtist(data))
-
     useEffect(() => {
         sleep(0).then(() => getArtistTop5Tracks(token, artistId, setTop5TracksArr))
     }, [artistId, token])
+    
+    const { data } = usePalette(artistInfo.img)
+    sleep(0).then(() => palletGradientArtist(data))
 
     return (
         <section className="artist-page--container grid">

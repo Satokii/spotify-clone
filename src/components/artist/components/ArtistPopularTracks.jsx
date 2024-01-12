@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
 import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
@@ -13,32 +13,16 @@ function ArtistPopularTracks({ topTracksArr, top5TracksArr }) {
     const [showAllTracks, setShowAllTracks] = useState(false)
 
     const toggleTopTracksShown = () => {
-        if (!showAllTracks) {
-            setShowAllTracks(true)
-        }
-        else {
-            setShowAllTracks(false)
-        }
+        if (!showAllTracks) setShowAllTracks(true)
+        else setShowAllTracks(false)
     }
-console.log(top5TracksArr)
+
     return (
         <div className="artist-page--popular-tracks grid">
             <h2 className="artist--tracks-header">Popular</h2>
             <div className="artist--tracks-tracks grid">
-                {/* {topTracksArr.map((track, index) =>
-                    <div className="artist-page--single-track grid" key={track.id} tabIndex={1}>
-                        <div className="artist-page--track-number">{index + 1}</div>
-                        <img className="artist-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
-                        {track.album.images.length ? 
-                        <img className="artist-page--track-img" src={track.album.images[0].url} alt="track image"/>
-                        : <div className="artist-page--track-img"></div> }
-                        <div className="artist-page--track-name">{track.name}</div>
-                        <img className="artist-page--hide-like" src={GrayHeart} alt="gray heart"></img>
-                        <div className="artist-page--track-time">{calcTrackTime(track.duration_ms)}</div>
-                        <img className="artist-page--track-dots" src={MenuDots} alt="menu dots" />
-                    </div>
-                )} */}
-                {(showAllTracks ? topTracksArr : top5TracksArr).map((track, index) =>
+                {(showAllTracks ? 
+                    topTracksArr : top5TracksArr).map((track, index) =>
                     <div className="artist-page--single-track grid" key={track.id} tabIndex={1}>
                         <div className="artist-page--track-number">{index + 1}</div>
                         <img className="artist-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
@@ -51,21 +35,8 @@ console.log(top5TracksArr)
                         <img className="artist-page--track-dots" src={MenuDots} alt="menu dots" />
                     </div>
                 )}
-                {/* {topTracksArr.map((track, index) =>
-                    <div className="artist-page--single-track grid" key={track.id} tabIndex={1}>
-                        <div className="artist-page--track-number">{index + 1}</div>
-                        <img className="artist-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
-                        {track.album.images.length ? 
-                        <img className="artist-page--track-img" src={track.album.images[0].url} alt="track image"/>
-                        : <div className="artist-page--track-img"></div> }
-                        <div className="artist-page--track-name">{track.name}</div>
-                        <img className="artist-page--hide-like" src={GrayHeart} alt="gray heart"></img>
-                        <div className="artist-page--track-time">{calcTrackTime(track.duration_ms)}</div>
-                        <img className="artist-page--track-dots" src={MenuDots} alt="menu dots" />
-                    </div>
-                )} */}
             </div>
-            <div onClick={toggleTopTracksShown}>See more</div>
+            <div onClick={toggleTopTracksShown}>{showAllTracks ? <div>Show Less</div> : <div>See more</div>}</div>
         </div>
     )
 }
