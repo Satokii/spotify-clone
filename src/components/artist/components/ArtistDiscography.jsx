@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import getYear from "../../../shared-functions/getYear"
+import GrayCircle from "../../../assets/svgs/main-app/gray-circle.svg"
 
 import "../styles/artist-discography.css"
 
@@ -73,17 +74,18 @@ function ArtistDiscography({ topTracksArr }) {
             </ul>
             <div className="artist--discography-item-list grid">
                 {showDiscoItems.map((item, index) =>
-                    <div className="artist--discography-single-item" key={`${item.name}-${index}`}>
+                    <div className="artist--discography-single-item grid" key={`${item.name}-${index}`}>
                         <div className="artist--discography-single-item-img">
                             {item.album.images.length ? (
                             <img src={item.album.images[0].url} alt={item.name} />
                             ) : (<div></div>
                             )}
-                            <div className="artist--discography-single-item-name">{item.name}</div>
-                            <div>
-                                <div>{getYear(item.album.release_date)}</div>
-                                <div>{item.album.album_type}</div>
-                            </div>
+                        </div>
+                        <div className="artist--discography-single-item-name">{item.name}</div>
+                        <div className="artist--discography-single-item-more-details-container grid">
+                            <div className="artist--discography-single-item-date">{getYear(item.album.release_date)}</div>
+                            <img className="gray-circle" src={GrayCircle} alt="gray circle" />
+                            <div className="artist--discography-single-item-type">{item.album.album_type}</div>
                         </div>
                     </div>
                 )}

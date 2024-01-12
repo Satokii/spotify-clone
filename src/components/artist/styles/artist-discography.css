@@ -2,8 +2,6 @@
     grid-template-rows: 24px 40px 270px;
     gap: 20px;
     padding: 0 25px;
-    justify-content: start;
-    align-items: center;
 }
 
 .artist--discography-header {
@@ -20,6 +18,8 @@
 .artist--discography-filter {
     grid-template-columns: repeat(3, auto);
     gap: 10px;
+    align-items: center;
+    justify-content: start;
 }
 
 .active-artist--discography-filter {
@@ -48,10 +48,58 @@
     gap: 24px;
     overflow-y: hidden;
 }
+
 .artist--discography-single-item {
-    grid-template-rows: 180px 25px 1fr;
+    grid-template-rows: 180px 25px 30px;
     padding: 16px;
     background-color: var(--const-card-bg);
     border-radius: 8px;
     transition: 0.3s;
+}
+
+.artist--discography-single-item:hover {
+    background-color: var(--const-card-hover);
+    cursor: pointer;
+}
+
+/* ITEM IMAGE */
+.artist--discography-single-item-img {
+    object-fit: cover;
+    width: fit-content;
+    height: 150px;
+    justify-self: center;
+    align-self: start;
+}
+
+/* ITEM NAME */
+.artist--discography-single-item-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--const-main-white);
+    overflow: hidden;
+}
+
+/* MORE DETAILS */
+.artist--discography-single-item-more-details-container {
+   grid-template-columns: repeat(3, auto); 
+   gap: 5px;
+   justify-content: start;
+   align-self: start;
+   align-items: center;
+}
+
+.artist--discography-single-item-date {
+    font-size: 15px;
+    color:  var(--const-gray);
+}
+
+.gray-circle {
+    width: 4px;
+    height: 4px;
+}
+
+.artist--discography-single-item-type {
+    font-size: 15px;
+    color:  var(--const-gray);
+    text-transform: capitalize;
 }
