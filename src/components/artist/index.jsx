@@ -22,7 +22,7 @@ function Artist({ token }) {
     // const [copyrights, setCopyrights] = useState([])
     // const [artistAlbums, setArtistAlbums] = useState([])
     // const { data } = usePalette(albumInfo.img)
-    
+
     useEffect(() => {
         sleep(0).then(() => getArtist(token, artistId, setArtistInfo))
     }, [artistId, token])
@@ -44,7 +44,7 @@ function Artist({ token }) {
             <div className="artist-page--sub-container grid">
                 <ArtistControls />
                 <ArtistPopularTracks topTracksArr={topTracksArr} top5TracksArr={top5TracksArr} />
-                <ArtistDiscography />
+                <ArtistDiscography topTracksArr={topTracksArr} />
                 <div>Related Artists</div>
                 <div>Appears on (compilation)</div>
             </div>
