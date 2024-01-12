@@ -4,6 +4,7 @@ import axios from "axios";
 import getYear from "../../../shared-functions/getYear";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
 import scrollToTop from "../../../shared-functions/scrollToTop.js"
+import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
 
 import "../styles/album-more.css"
 
@@ -39,10 +40,13 @@ function AlbumMoreByArtist({ token, artistId, artistInfo, artistAlbums, setArtis
                 {artistAlbums.map(album =>
                     <Link className="more-by-artist--item-container grid" key={album.id} to={`/album/${album.id}/${album.artists[0].id}`} onClick={scrollToTop} >
                         <div className="more-by-artist--album-img">
-                            {album.images.length ? (
-                            <img src={album.images[0].url} alt={album.name} />
-                            ) : (<div></div>
-                            )}
+                            {album.images.length ?
+                            <div className="more-by-artist--album-img-container">
+                              <img src={album.images[0].url} alt={album.name} />
+                              <img className="more-by-artist--play" src={PlayGreen} alt="play button" />
+                            </div>
+                            : <div></div>
+                            }
                         </div>
                         <div className="more-by-artist--album-name">{fixLengthPreviews(album.name)}</div>
                         <div className="more-by-artist--album-date">{getYear(album.release_date)}</div>
