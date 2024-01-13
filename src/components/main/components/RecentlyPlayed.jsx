@@ -88,9 +88,9 @@ function RecentlyPlayed({ token }) {
             {track.track.album.images.length ? <img src={track.track.album.images[0].url} alt={`${track.track.name} image`} /> : <div>No Image</div>}
             <div className="recently-played--item-text grid">
               <p className="recently-played--item-name">{fixLengthPreviews(track.track.name)}</p>
-              <p className="recently-played--item-artist">
+              <Link className="recently-played--item-artist" to={`/artist/${track.track.artists[0].id}`} onClick={scrollToTop}>
                 {fixLengthPreviews(track.track.artists[0].name)}
-              </p>
+              </Link>
             </div>
             </Link>
           </li>
