@@ -22,5 +22,73 @@
 
 /* APPEARS ON ITEM LIST */
 .artist--appears-on-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    gap: 24px;
+    overflow-y: hidden;
+    margin-top: 10px;
+}
 
+/* APPEARS ON SINGLE TRACK */
+.artist--appears-on-single-track {
+    grid-template-rows: 160px 28px 35px;
+    padding: 16px;
+    background-color: var(--const-card-bg);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.artist--appears-on-single-track:hover {
+    background-color: var(--const-card-hover);
+    cursor: pointer;
+}
+
+.artist--appears-on-single-track:hover .artist--appears-on-play {
+    opacity: 1;
+}
+
+/* APPEARS ON IMG */
+.artist--appears-on-img-container {
+    position: relative;
+    place-self: center;
+}
+
+.artist--appears-on-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 9999px;
+    object-fit: cover;
+    justify-self: center;
+    align-self: start;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+}
+
+.artist--appears-on-img img {
+    border-radius: 8px;
+}
+
+.artist--appears-on-play {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 60px;
+    height: 60px;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+/* APPEARS ON TRACK */
+.artist--appears-on-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--const-main-white);
+    overflow: hidden;
+}
+
+/* APPEARS ON EXTRA DETAILS */
+.artist--appears-on-extra-details {
+    grid-template-columns: repeat(3, auto); 
+    gap: 5px;
+    justify-content: start;
+    align-self: start;
+    align-items: center;
 }

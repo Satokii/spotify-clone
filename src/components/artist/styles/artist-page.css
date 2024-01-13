@@ -10,9 +10,7 @@
 .artist-page--sub-container {
     grid-template-rows: 130px 1fr 400px repeat(2, 350px);
     gap: 10px;
-    height: 100vh;
 }
-
 
 .artist-page--show-all {
     color: var(--const-gray);
