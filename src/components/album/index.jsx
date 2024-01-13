@@ -37,7 +37,7 @@ function Album({ token }) {
 
     return (
         <section className="album-page--container grid">
-            <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} />
+            <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} artistId={artistId} />
             <div className="album-page--sub-container grid">
               <AlbumControls />
               <AlbumTracks albumTracksArr={albumTracksArr} albumInfo={albumInfo} copyrights={copyrights} />

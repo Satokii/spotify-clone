@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 import getYear from "../../../shared-functions/getYear";
 import convertMsToTime from "../../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../../shared-functions/albumTimeinMs";
 
 import "../styles/album-banner.css"
 
-function AlbumBanner({ albumInfo, artistInfo, albumTracksArr }) {
+function AlbumBanner({ albumInfo, artistInfo, albumTracksArr, artistId }) {
   return (
     <div className="album-page--banner grid">
       <div className="album-page--banner-img-container">
@@ -29,7 +31,7 @@ function AlbumBanner({ albumInfo, artistInfo, albumTracksArr }) {
               <div></div>
             )}
           </div>
-          <p className="album-overview-artist-name">{artistInfo.name}</p>
+          <Link className="album-overview-artist-name" to={`/artist/${artistId}`} onClick={scrollToTop}>{artistInfo.name}</Link>
           <span className="middot">&middot;</span>
           <p className="album-overview-release-year">
             {" "}
