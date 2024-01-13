@@ -30,7 +30,6 @@ function ArtistAppearsOn({ token, artistId }) {
         }
         getAppearsOnTracks()
     }, [artistId, token])
-    console.log(appearsOnTracks)
 
     return (
         <div className="artist-page--section-container grid">
