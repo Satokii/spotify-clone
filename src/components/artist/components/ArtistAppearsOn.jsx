@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import axios from "axios"
 import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
 import GrayCircle from "../../../assets/svgs/main-app/gray-circle.svg"
 import getYear from "../../../shared-functions/getYear"
-
-import "../styles/artist-appears-on.css"
+import scrollToTop from "../../../shared-functions/scrollToTop"
 
 function ArtistAppearsOn({ token, artistId }) {
 
@@ -30,6 +30,7 @@ function ArtistAppearsOn({ token, artistId }) {
         }
         getAppearsOnTracks()
     }, [artistId, token])
+    console.log(appearsOnTracks)
 
     return (
         <div className="artist-page--section-container grid">
@@ -39,7 +40,7 @@ function ArtistAppearsOn({ token, artistId }) {
             </div>
             <div className="artist--section-list grid">
                 {appearsOnTracks.map((track, index) =>
-                    <div className="artist--section-single-track grid" key={`${track.name}-${index}`} >
+                    <Link className="artist--section-single-track grid" key={`${track.name}-${index}`} to={`/album/${track.id}/${track.artists[0].id}`} onClick={scrollToTop} >
                         <div className="artist--section-img-outer-container">
                             {track.images.length ? 
                             <div className="artist--section-img-container">
@@ -55,7 +56,7 @@ function ArtistAppearsOn({ token, artistId }) {
                             <img className="gray-circle" src={GrayCircle} alt="gray circle" />
                             <div className="artist--section-album-type ">{track.album_type}</div>
                         </div>
-                    </div>
+                    </Link>
                 )}
             </div>
         </div>
