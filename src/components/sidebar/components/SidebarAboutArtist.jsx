@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
+import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
 
 import "../styles/sidebar-about-artist.css"
 
@@ -18,7 +19,7 @@ function SidebarAboutArtist({ token, currentTrack }) {
               }
             );
             setArtistInfo({
-                name: data.name,
+                name: fixLengthPreviews(data.name),
                 followers: (data.followers.total).toLocaleString(),
                 img: data.images[0].url
             })
@@ -30,10 +31,10 @@ function SidebarAboutArtist({ token, currentTrack }) {
         <div className="sidebar--about-artist grid">
             <div className="sidebar--about-artist-header">About the artist</div>
             <img className="sidebar--about-artist-img" src={artistInfo.img} alt="current track artist img" />
-            <div className="sidebar--about-artist-details-container">
-                <div>{artistInfo.name}</div>
-                <div>{`${artistInfo.followers} followers`}</div>
-                <div>follow</div>
+            <div className="sidebar--about-artist-details-container grid">
+                <div className="sidebar--about-artist-name">{artistInfo.name}</div>
+                <div className="sidebar--about-artist-followers">{`${artistInfo.followers} followers`}</div>
+                <div className="sidebar--about-artist-follow">follow</div>
              </div>
         </div>
     )

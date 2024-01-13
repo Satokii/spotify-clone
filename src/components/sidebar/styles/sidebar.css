@@ -1,6 +1,6 @@
 .sidebar {
     grid-area: Sidebar;
-    grid-template-rows: 370px 220px 120px;
+    grid-template-rows: 360px 370px 120px;
     padding: 16px 16px 8px;
     background-color: var(--const-base-bg);
     gap: 10px;

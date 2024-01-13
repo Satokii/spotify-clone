@@ -1,18 +1,17 @@
 .sidebar--about-artist {
-    grid-template-rows: 30px 150px 150px;
+    grid-template-rows: 30px 200px 140px;
 }
 
 /* ABOUT ARTIST HEADER */
 .sidebar--about-artist-header {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 /* ABOUT ARTIST IMG */
 .sidebar--about-artist-img {
-    /* place-self: center; */
     object-fit: cover;
-    height: 150px;
+    height: 200px;
     width: 280px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
@@ -20,8 +19,40 @@
 
 /* ABOUT ARTIST DETAILS CONTAINER */
 .sidebar--about-artist-details-container {
+    grid-template-rows: 30px 40px 30px;
+    /* justify-content: start; */
     background-color: #242424;
     width: 280px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    padding: 16px;
+}
+
+/* ABOUT ARTIST ARTIST NAME */
+.sidebar--about-artist-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ABOUT ARTIST ARTIST FOLLOWERS */
+.sidebar--about-artist-followers {
+    color: var(--const-lighter-gray);
+}
+
+/* ABOUT ARTIST ARTIST FOLLOW */
+.sidebar--about-artist-follow {
+    border: solid 1px var(--const-lighter-gray);
+    align-self: center;
+    justify-self: end;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 15px;
+    border-radius: 9999px;
+}
+
+.sidebar--about-artist-follow:hover {
+    border-color: var(--const-main-white);
+    transform: scale(1.05);
+    cursor: pointer;
 }
