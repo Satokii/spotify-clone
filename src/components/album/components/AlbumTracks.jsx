@@ -10,7 +10,6 @@ import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
 import "../styles/album-tracks.css"
 
 function AlbumTracks({ albumTracksArr, albumInfo, copyrights }) {
-    
     return (
         <div className="album-page--tracks grid">
             <div className="album-page--tracks-headers grid">

@@ -24,7 +24,6 @@ function ArtistAppearsOn({ token, artistId }) {
                 }
               }
             )
-            console.log(data.items)
             const { items } = data
             setAppearsOnTracks(items)
         }

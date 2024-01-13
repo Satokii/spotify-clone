@@ -9,7 +9,6 @@ const getAlbum = async (token, albumId, setAlbumTracksArr, setAlbumInfo, setCopy
         },
       }
     );
-      // console.log(data)
     setAlbumTracksArr(data.tracks.items);
     setCopyrights(data.copyrights)
     setAlbumInfo({
