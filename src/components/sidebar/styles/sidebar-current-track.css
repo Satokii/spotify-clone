@@ -13,7 +13,9 @@
 .sidebar--current-track-name {
     font-size: 26px;
     font-weight: bold;
-    width: fit-content;
+    /* width: fit-content; */
+    max-width: 280px;
+    overflow: hidden;
 }
 
 .sidebar--current-track-name:hover {
