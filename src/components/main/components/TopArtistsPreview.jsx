@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 
 function TopArtistsPreview({ token, showTopArtists }) {
     const [topArtistsPview, setTopArtistsPview] = useState([]);
@@ -28,13 +30,15 @@ function TopArtistsPreview({ token, showTopArtists }) {
         <section className="preview--container grid">
         <ul className="preview--list grid">
           {topArtistsPview.map((artist, index) => 
-              <li className="preview--item grid" key={`${artist.id}-${index}`}>
+            <Link key={`${artist.id}-${index}`} to={`/artist/${artist.id}`} onClick={scrollToTop}>
+              <li className="preview--item grid" >
                   <p className="preview--item-rank">{`${index + 1}.`}</p>
                   {artist.images.length ? <img src={artist.images[0].url} alt={`${artist.name} image`} /> : <div>No Image</div>}
                   <div className="preview--item-text preview-top-artists">
                       <p className="preview--item-name">{fixLengthPreviews(artist.name)}</p>
                   </div>
-              </li>    
+              </li>   
+            </Link> 
           )}
         </ul>
       </section>
