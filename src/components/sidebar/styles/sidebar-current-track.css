@@ -1,7 +1,6 @@
 .sidebar--current-track-container {
     grid-template-rows: 300px 32px 22px;
     line-height: 1;
-    gap: 5px;
 }
 
 /* SIDEBAR CURRENT TRACK IMG */
@@ -11,7 +10,7 @@
 
 /* SIDEBAR CURRENT TRACK NAME */
 .sidebar--current-track-name {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     width: fit-content;
 }

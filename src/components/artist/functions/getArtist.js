@@ -9,12 +9,13 @@ const getArtist = async (token, artistId, setArtistInfo) => {
         },
       }
     );
+    // console.log(data)
     setArtistInfo({
       name: data.name,
       img: data.images[0].url,
       followers: (data.followers.total).toLocaleString()
     });
-  };
+};
 
 export default getArtist
 

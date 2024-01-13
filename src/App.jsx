@@ -216,7 +216,7 @@ function App() {
           </Route>
         </Routes>
         {token ?
-          <Sidebar currentTrack={currentTrack} />
+          <Sidebar token={token} currentTrack={currentTrack} />
           : null
         }
         {token ?

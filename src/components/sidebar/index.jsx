@@ -1,13 +1,14 @@
 import SidebarCurrentTrack from "./components/SidebarCurrentTrack"
+import SidebarAboutArtist from "./components/SidebarAboutArtist"
 
 import "./styles/sidebar.css"
 
-function Sidebar({ currentTrack }) {
+function Sidebar({ token, currentTrack }) {
 
     return (
         <section className="sidebar grid">
             <SidebarCurrentTrack currentTrack={currentTrack} />
-            <div>About Artist</div>
+            <SidebarAboutArtist token={token} currentTrack={currentTrack} />
             <div>New in queue</div>
         </section>
     )

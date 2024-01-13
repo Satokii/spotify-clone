@@ -1,0 +1,27 @@
+.sidebar--about-artist {
+    grid-template-rows: 30px 150px 150px;
+}
+
+/* ABOUT ARTIST HEADER */
+.sidebar--about-artist-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ABOUT ARTIST IMG */
+.sidebar--about-artist-img {
+    /* place-self: center; */
+    object-fit: cover;
+    height: 150px;
+    width: 280px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+/* ABOUT ARTIST DETAILS CONTAINER */
+.sidebar--about-artist-details-container {
+    background-color: #242424;
+    width: 280px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
