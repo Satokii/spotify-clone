@@ -2,10 +2,11 @@
     grid-area: Main;
     grid-template-rows: 70px 280px repeat(2, 420px) 400px;
     background-color: var(--const-base-bg);
-
     padding: 20px 50px 50px;
     gap: 30px;
     overflow-y: scroll;
+    opacity: 0;
+    animation: 0.3s ease 0.8s forwards fade-in;
 }
 
 .main--header {
