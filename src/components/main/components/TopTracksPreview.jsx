@@ -36,7 +36,7 @@ function TopTracksPreview({ token, showTopTracks }) {
                 {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name} image`}/> : <div>No Image</div>}
                 <div className="preview--item-text grid">
                     <p className="preview--item-name">{fixLengthPreviews(track.name)}</p>
-                    <p className="preview--item-artist">{fixLengthPreviews(track.artists[0].name)}</p>
+                    <Link className="preview--item-artist" to={`/artist/${track.artists[0].id}`} onClick={scrollToTop}>{fixLengthPreviews(track.artists[0].name)}</Link>
                 </div>
               </Link>  
             </li>    
