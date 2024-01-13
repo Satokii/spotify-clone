@@ -56,8 +56,6 @@ function Artist({ token }) {
     const { data } = usePalette(artistInfo.img)
     sleep(0).then(() => palletGradientArtist(data))
 
-    console.log(artistId)
-
     return (
         <section className="artist-page--container grid">
             <ArtistBanner artistInfo={artistInfo} />
@@ -66,7 +64,7 @@ function Artist({ token }) {
                 <ArtistPopularTracks topTracksArr={topTracksArr} top5TracksArr={top5TracksArr} />
                 <ArtistDiscography popularReleases={popularReleases} album={album} single={single} />
                 <ArtistSimilarArtists token={token} artistId={artistId} />
-                <ArtistAppearsOn />
+                <ArtistAppearsOn token={token} artistId={artistId} />
             </div>
         </section>
     )
