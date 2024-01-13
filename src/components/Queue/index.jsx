@@ -20,7 +20,7 @@ function Queue({ token, queue, setQueue }) {
                     <Link className="main-playback--queue-item grid" key={`${track.id}-${index}`} to={`/album/${track.album.id}/${track.artists[0].id}`} onClick={scrollToTop}>
                         {track.album.images.length ? <img src={track.album.images[0].url} alt={`${track.name}-image`} /> : <div>No Image</div>}
                         <p className="main-playback--queue-track">{fixLengthQueue(track.name)}</p>
-                        <p className="main-playback--queue-artist">{fixLengthQueue(track.artists[0].name)}</p>
+                        <Link className="main-playback--queue-artist" to={`/artist/${track.artists[0].id}`} onClick={scrollToTop}>{fixLengthQueue(track.artists[0].name)}</Link>
                     </Link>
                 )}
             </div>
