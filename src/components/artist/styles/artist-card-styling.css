@@ -1,35 +1,35 @@
-.artist-page--appears-on  {
+.artist-page--section-container {
     grid-template-rows: 30px 280px;
     gap: 10px;
     padding: 0 25px;
 }
 
-/* APPEARS ON HEADER */
-.artist--appears-on-header-container {
+/* ARTIST SECTION HEADER */
+.artist--section-header-container {
     grid-template-columns: 1fr 100px;
 }
 
-.artist--appears-on-header {
+.artist--section-header {
     font-size: 24px;
     width: fit-content;
 }
 
-.artist--appears-on-header:hover {
+.artist--section-header:hover {
     text-decoration: underline 2px;
     text-underline-offset: 2px;
     cursor: pointer;
 }
 
-/* APPEARS ON ITEM LIST */
-.artist--appears-on-list {
+/* ARTIST SECTION ITEM LIST */
+.artist--section-list {
     grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
     gap: 24px;
     overflow-y: hidden;
     margin-top: 10px;
 }
 
-/* APPEARS ON SINGLE TRACK */
-.artist--appears-on-single-track {
+/* ARTIST SECTION SINGLE TRACK */
+.artist--section-single-track {
     grid-template-rows: 180px 25px 30px;
     padding: 16px;
     background-color: var(--const-card-bg);
@@ -37,17 +37,17 @@
     transition: 0.3s;
 }
 
-.artist--appears-on-single-track:hover {
+.artist--section-single-track:hover {
     background-color: var(--const-card-hover);
     cursor: pointer;
 }
 
-.artist--appears-on-single-track:hover .artist--appears-on-play {
+.artist--section-single-track:hover .artist--section-play {
     opacity: 1;
 }
 
-/* APPEARS ON IMG */
-.artist--appears-on-img-outer-container {
+/* ARTIST SECTION IMG */
+.artist--section-img-outer-container {
     object-fit: cover;
     width: fit-content;
     height: 150px;
@@ -55,16 +55,16 @@
     align-self: start;
 }
 
-.artist--appears-on-img-container {
+.artist--section-img-container {
     position: relative;
     place-self: center;
 }
 
-.artist--appears-on-img {
+.artist--section-img {
     border-radius: 8px;
 }
 
-.artist--appears-on-play {
+.artist--section-play {
     position: absolute;
     bottom: 4px;
     right: 4px;
@@ -75,15 +75,15 @@
 }
 
 /* APPEARS ON TRACK */
-.artist--appears-on-name {
+.artist--section-name {
     font-size: 16px;
     font-weight: bold;
     color: var(--const-main-white);
     overflow: hidden;
 }
 
-/* APPEARS ON EXTRA DETAILS */
-.artist--appears-on-extra-details {
+/* ARTIST SECTION FURTHER CARD DETAILS */
+.artist--section-extra-card-details {
     grid-template-columns: repeat(3, auto); 
     gap: 5px;
     justify-content: start;
@@ -93,6 +93,6 @@
     color: var(--const-gray);
 }
 
-.artist--appears-on-album-type {
+.artist--section-album-type {
     text-transform: capitalize;
 }

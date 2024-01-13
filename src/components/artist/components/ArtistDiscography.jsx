@@ -58,21 +58,21 @@ function ArtistDiscography({ popularReleases, album, single }) {
         if (showDiscoItems === "popular") {
             return (
                 popularReleases.map((item, index) =>
-                <Link className="artist--discography-single-item grid" key={`${item.name}-${index}`} to={`/album/${item.album.id}/${item.artists[0].id}`} onClick={scrollToTop}>
-                    <div className="artist--discography-single-item-img">
+                <Link className="artist--section-single-track grid" key={`${item.name}-${index}`} to={`/album/${item.album.id}/${item.artists[0].id}`} onClick={scrollToTop}>
+                    <div className="artist--section-img-outer-container">
                         {item.album.images.length ? 
-                        <div className="artist--discography-img-container">
-                            <img src={item.album.images[0].url} alt={item.name} />
-                            <img className="artist--discography-play" src={PlayGreen} alt="play button" />
+                        <div className="artist--section-img-container">
+                            <img className="artist--section-img" src={item.album.images[0].url} alt={item.name} />
+                            <img className="artist--section-play" src={PlayGreen} alt="play button" />
                         </div>
                          : <div></div>
                         }
                     </div>
-                    <div className="artist--discography-single-item-name">{item.name}</div>
-                    <div className="artist--discography-single-item-more-details-container grid">
-                        <div className="artist--discography-single-item-date">{getYear(item.album.release_date)}</div>
+                    <div className="artist--section-name">{item.name}</div>
+                    <div className="artist--section-extra-card-details grid">
+                        <div>{getYear(item.album.release_date)}</div>
                         <img className="gray-circle" src={GrayCircle} alt="gray circle" />
-                        <div className="artist--discography-single-item-type">{item.album.album_type}</div>
+                        <div className="artist--section-album-type ">{item.album.album_type}</div>
                     </div>
                 </Link>
                 )
@@ -81,21 +81,21 @@ function ArtistDiscography({ popularReleases, album, single }) {
         else if (showDiscoItems === "albums") {
             return (
                 album.map((item, index) =>
-                <Link className="artist--discography-single-item grid" key={`${item.name}-${index}`} to={`/album/${item.id}/${item.artists[0].id}`} onClick={scrollToTop}>
-                    <div className="artist--discography-single-item-img">
+                <Link className="artist--section-single-track grid" key={`${item.name}-${index}`} to={`/album/${item.id}/${item.artists[0].id}`} onClick={scrollToTop}>
+                    <div className="artist--section-img-outer-container">
                         {item.images.length ?
-                        <div className="artist--discography-img-container">
-                            <img src={item.images[0].url} alt={item.name} />
-                            <img className="artist--discography-play" src={PlayGreen} alt="play button" />
+                        <div className="artist--section-img-container">
+                            <img className="artist--section-img" src={item.images[0].url} alt={item.name} />
+                            <img className="artist--section-play" src={PlayGreen} alt="play button" />
                         </div>
                         : <div></div>
                         }
                     </div>
-                    <div className="artist--discography-single-item-name">{item.name}</div>
-                    <div className="artist--discography-single-item-more-details-container grid">
-                        <div className="artist--discography-single-item-date">{getYear(item.release_date)}</div>
+                    <div className="artist--section-name">{item.name}</div>
+                    <div className="artist--section-extra-card-details grid">
+                        <div>{getYear(item.release_date)}</div>
                         <img className="gray-circle" src={GrayCircle} alt="gray circle" />
-                        <div className="artist--discography-single-item-type">{item.album_type}</div>
+                        <div className="artist--section-album-type ">{item.album_type}</div>
                     </div>
                 </Link>
                 )   
@@ -104,21 +104,21 @@ function ArtistDiscography({ popularReleases, album, single }) {
         else if (showDiscoItems === "singles") {
             return (
                 single.map((item, index) =>
-                <Link className="artist--discography-single-item grid" key={`${item.name}-${index}`} to={`/album/${item.id}/${item.artists[0].id}`} onClick={scrollToTop}>
-                    <div className="artist--discography-single-item-img">
+                <Link className="artist--section-single-track grid" key={`${item.name}-${index}`} to={`/album/${item.id}/${item.artists[0].id}`} onClick={scrollToTop}>
+                    <div className="artist--section-img-outer-container">
                         {item.images.length ?
-                        <div className="artist--discography-img-container">
-                            <img src={item.images[0].url} alt={item.name} />
-                            <img className="artist--discography-play" src={PlayGreen} alt="play button" />
+                        <div className="artist--section-img-container">
+                            <img className="artist--section-img" src={item.images[0].url} alt={item.name} />
+                            <img className="artist--section-play" src={PlayGreen} alt="play button" />
                         </div>
                         : <div></div>
                         }
                     </div>
-                    <div className="artist--discography-single-item-name">{item.name}</div>
-                    <div className="artist--discography-single-item-more-details-container grid">
-                        <div className="artist--discography-single-item-date">{getYear(item.release_date)}</div>
+                    <div className="artist--section-name">{item.name}</div>
+                    <div className="artist--section-extra-card-details grid">
+                        <div>{getYear(item.release_date)}</div>
                         <img className="gray-circle" src={GrayCircle} alt="gray circle" />
-                        <div className="artist--discography-single-item-type">{item.album_type}</div>
+                        <div className="artist--section-album-type ">{item.album_type}</div>
                     </div>
                 </Link>
                 )
@@ -128,8 +128,8 @@ function ArtistDiscography({ popularReleases, album, single }) {
 
     return (
         <div className="artist-page--discography grid">
-            <div className="artist--discography-header-container grid">
-                <h3 className="artist--discography-header">Discography</h3>
+            <div className="artist--section-header-container grid">
+                <h3 className="artist--section-header">Discography</h3>
                 <div className="artist-page--show-all">Show all</div>
             </div>
             <ul className="artist--discography-filter grid">
@@ -137,7 +137,7 @@ function ArtistDiscography({ popularReleases, album, single }) {
                     <li className={filter.className} key={index} onClick={e => toggleDiscoFilter(e)}>{filter.name}</li>
                 )}
             </ul>
-            <div className="artist--discography-item-list grid">
+            <div className="artist--section-list grid">
                 {showFiltered()}
             </div>
         </div>

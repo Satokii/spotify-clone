@@ -15,6 +15,7 @@ import sleep from "../../shared-functions/sleep";
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
 
 import "./styles/artist-page.css"
+import "./styles/artist-card-styling.css"
 import getPopularReleases from "./functions/getPopularReleases";
 import getSingles from "./functions/getSingles";
 

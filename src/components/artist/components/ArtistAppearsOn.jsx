@@ -32,28 +32,28 @@ function ArtistAppearsOn({ token, artistId }) {
     }, [artistId, token])
 
     return (
-        <div className="artist-page--appears-on grid">
-            <div className="artist--appears-on-header-container grid">
-                <h3 className="artist--appears-on-header">Appears On</h3>
+        <div className="artist-page--section-container grid">
+            <div className="artist--section-header-container grid">
+                <h3 className="artist--section-header">Appears On</h3>
                 <div className="artist-page--show-all">Show all</div>
             </div>
-            <div className="artist--appears-on-list grid">
+            <div className="artist--section-list grid">
                 {appearsOnTracks.map((track, index) =>
-                    <div className="artist--appears-on-single-track grid" key={`${track.name}-${index}`} >
-                        <div className="artist--appears-on-img-outer-container">
+                    <div className="artist--section-single-track grid" key={`${track.name}-${index}`} >
+                        <div className="artist--section-img-outer-container">
                             {track.images.length ? 
-                            <div className="artist--appears-on-img-container">
-                                <img className="artist--appears-on-img" src={track.images[0].url} alt="artist image" />
-                                <img className="artist--appears-on-play" src={PlayGreen} alt="play button" />
+                            <div className="artist--section-img-container">
+                                <img className="artist--section-img" src={track.images[0].url} alt="artist image" />
+                                <img className="artist--section-play" src={PlayGreen} alt="play button" />
                             </div>
-                            : <div className="artist--appears-on-img"></div>
+                            : <div></div>
                             }
                         </div>
-                        <div className="artist--appears-on-name">{track.name}</div>
-                        <div className="artist--appears-on-extra-details grid">
+                        <div className="artist--section-name">{track.name}</div>
+                        <div className="artist--section-extra-card-details grid">
                             <div className="artist--appears-on-date">{getYear(track.release_date)}</div>
                             <img className="gray-circle" src={GrayCircle} alt="gray circle" />
-                            <div className="artist--appears-on-album-type">{track.album_type}</div>
+                            <div className="artist--section-album-type ">{track.album_type}</div>
                         </div>
                     </div>
                 )}

@@ -4,22 +4,6 @@
     padding: 0 25px;
 }
 
-/* DISCOGRAPHY HEADER */
-.artist--discography-header-container {
-    grid-template-columns: 1fr 100px;
-}
-
-.artist--discography-header {
-    font-size: 24px;
-    width: fit-content;
-}
-
-.artist--discography-header:hover {
-    text-decoration: underline 2px;
-    text-underline-offset: 2px;
-    cursor: pointer;
-}
-
 /* DISCOGRAPHY FILTER */
 .artist--discography-filter {
     grid-template-columns: repeat(3, auto);
@@ -47,80 +31,4 @@
 .inactive-artist--discography-filter:hover {
     cursor: pointer;
     background-color: var(--album-track-hover);
-}
-
-/* DISCOGRAPHY ITEM LIST */
-.artist--discography-item-list {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
-    gap: 24px;
-    overflow-y: hidden;
-    margin-top: 10px;
-}
-
-.artist--discography-single-item {
-    grid-template-rows: 180px 25px 30px;
-    padding: 16px;
-    background-color: var(--const-card-bg);
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.artist--discography-single-item:hover {
-    background-color: var(--const-card-hover);
-    cursor: pointer;
-}
-
-.artist--discography-single-item:hover .artist--discography-play {
-    opacity: 1;
-}
-
-/* ITEM IMAGE */
-.artist--discography-single-item-img {
-    object-fit: cover;
-    width: fit-content;
-    height: 150px;
-    justify-self: center;
-    align-self: start;
-}
-
-.artist--discography-img-container {
-    position: relative;
-    place-self: center;
-}
-
-.artist--discography-single-item-img img {
-    border-radius: 8px;
-}
-
-.artist--discography-play {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    width: 60px;
-    height: 60px;
-    transition: 0.5s;
-    opacity: 0;
-}
-
-/* ITEM NAME */
-.artist--discography-single-item-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--const-main-white);
-    overflow: hidden;
-}
-
-/* MORE DETAILS */
-.artist--discography-single-item-more-details-container {
-   grid-template-columns: repeat(3, auto); 
-   gap: 5px;
-   justify-content: start;
-   align-self: start;
-   align-items: center;
-   font-size: 15px;
-   color: var(--const-gray);
-}
-
-.artist--discography-single-item-type {
-    text-transform: capitalize;
 }
