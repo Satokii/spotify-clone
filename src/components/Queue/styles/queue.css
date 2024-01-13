@@ -1,6 +1,5 @@
 .main-playback--queue-container {
     grid-template-rows: 40px 1fr;
-    gap: 10px;
     padding: 20px 10px;
 }
 
@@ -29,11 +28,9 @@
     grid-template-rows: 100px auto 20px;
     border-radius: 10px;
     background-color: var(--const-card-bg);
-    justify-items: center;
     align-content: center;
-    text-align: center;
     min-height: 160px;
-    padding: 5px;
+    padding: 16px;
     transition: 0.3s;
 }
 
@@ -44,16 +41,17 @@
 
 .main-playback--queue-item img {
     object-fit: cover;
-    width: 80px;
-    height: 80px;
-    margin: 10px 0;
+    width: 100px;
+    height: 100px;
     border-radius: 100%;
+    justify-self: center;
 }
 
 .main-playback--queue-track {
     font-size: 16px;
     font-weight: bold;
     color: var(--const-main-white);
+    margin-top: 8px;
 }
 
 .main-playback--queue-artist {
