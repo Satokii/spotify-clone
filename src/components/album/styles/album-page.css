@@ -2,10 +2,10 @@
     grid-area: Main;
     background-color: var(--const-base-bg);
     grid-template-rows: 340px 1fr;
-    padding: 0 0 150px;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
     border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .album-page--sub-container {
