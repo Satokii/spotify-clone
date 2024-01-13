@@ -1,10 +1,10 @@
 .container {
     grid-template-areas: 
-        "Header Header"
-        "Navigation Main"
-        "Footer Footer";
+        "Header Header Sidebar"
+        "Navigation Main Sidebar"
+        "Footer Footer Footer";
     grid-template-rows: 100px 1fr 100px;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 150px 1fr 280px;
     height: 100vh;
 }
 
