@@ -7,6 +7,7 @@ import "../styles/sidebar-about-artist.css"
 function SidebarAboutArtist({ token, currentTrack }) {
 
     const [artistInfo, setArtistInfo] = useState({})
+    const [isFollowing, setIsFollowing] = useState(false)
 
     useEffect(() => {
         const sidebarArtistDetails = async () => {
@@ -27,6 +28,11 @@ function SidebarAboutArtist({ token, currentTrack }) {
         sidebarArtistDetails()
     }, [currentTrack.artistId, token])
 
+    const toggleFollowing = () => {
+        if (isFollowing) setIsFollowing(false)
+        else setIsFollowing(true)
+    }
+
     return (
         <div className="sidebar--about-artist grid">
             <div className="sidebar--about-artist-header">About the artist</div>
@@ -34,7 +40,10 @@ function SidebarAboutArtist({ token, currentTrack }) {
             <div className="sidebar--about-artist-details-container grid">
                 <div className="sidebar--about-artist-name">{artistInfo.name}</div>
                 <div className="sidebar--about-artist-followers">{`${artistInfo.followers} followers`}</div>
-                <div className="sidebar--about-artist-follow">follow</div>
+                {isFollowing ?
+                <div className="sidebar--about-artist-follow" onClick={toggleFollowing}>Unfollow</div>
+                : <div className="sidebar--about-artist-follow" onClick={toggleFollowing}>Follow</div>
+                }
              </div>
         </div>
     )
