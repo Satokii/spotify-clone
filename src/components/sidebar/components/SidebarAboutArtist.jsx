@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 import axios from "axios";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
 
@@ -38,7 +40,7 @@ function SidebarAboutArtist({ token, currentTrack }) {
             <div className="sidebar--about-artist-header">About the artist</div>
             <img className="sidebar--about-artist-img" src={artistInfo.img} alt="current track artist img" />
             <div className="sidebar--about-artist-details-container grid">
-                <div className="sidebar--about-artist-name">{artistInfo.name}</div>
+                <Link className="sidebar--about-artist-name" to={`/artist/${currentTrack.artistId}`} onClick={scrollToTop}>{artistInfo.name}</Link>
                 <div className="sidebar--about-artist-followers">{`${artistInfo.followers} followers`}</div>
                 {isFollowing ?
                 <div className="sidebar--about-artist-follow" onClick={toggleFollowing}>Unfollow</div>

@@ -31,6 +31,13 @@
 .sidebar--about-artist-name {
     font-size: 18px;
     font-weight: bold;
+    width: fit-content;
+}
+
+.sidebar--about-artist-name:hover {
+    text-decoration: underline solid 1px;
+    text-underline-offset: 2px;
+    cursor: pointer;
 }
 
 /* ABOUT ARTIST ARTIST FOLLOWERS */
