@@ -1,10 +1,12 @@
+import "../styles/sidebar-current-track.css"
+
 function SidebarCurrentTrack({ currentTrack }) {
 
     return (
-        <div>
-            <img src="" alt="" />
-            <div></div>
-            <div></div>
+        <div className="sidebar--current-track grid">
+            <img src={currentTrack.trackImage} alt="current track img" />
+            <div>{currentTrack.trackName}</div>
+            <div>{currentTrack.trackArtist}</div>
         </div>
     )
 }

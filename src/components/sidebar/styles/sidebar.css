@@ -1,7 +1,7 @@
 .sidebar {
     grid-area: Sidebar;
-    grid-template-rows: 300px 60px 120px;
-    padding: 20px 50px 50px;
+    grid-template-rows: 370px 60px 120px;
+    padding: 16px 16px 8px;
     background-color: var(--const-base-bg);
     gap: 30px;
     overflow-y: scroll;
