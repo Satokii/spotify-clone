@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
+import GrayCircle from "../../../assets/svgs/main-app/gray-circle.svg"
+import getYear from "../../../shared-functions/getYear"
 
 import "../styles/artist-appears-on.css"
 
@@ -38,17 +40,20 @@ function ArtistAppearsOn({ token, artistId }) {
             <div className="artist--appears-on-list grid">
                 {appearsOnTracks.map((track, index) =>
                     <div className="artist--appears-on-single-track grid" key={`${track.name}-${index}`} >
-                        {track.images.length ? 
-                        <div className="artist--appears-on-img-container">
-                            <img className="artist--appears-on-img" src={track.images[0].url} alt="artist image" />
-                            <img className="artist--appears-on-play" src={PlayGreen} alt="play button" />
+                        <div className="artist--appears-on-img-outer-container">
+                            {track.images.length ? 
+                            <div className="artist--appears-on-img-container">
+                                <img className="artist--appears-on-img" src={track.images[0].url} alt="artist image" />
+                                <img className="artist--appears-on-play" src={PlayGreen} alt="play button" />
+                            </div>
+                            : <div className="artist--appears-on-img"></div>
+                            }
                         </div>
-                        : <div className="artist--appears-on-img"></div>
-                        }
                         <div className="artist--appears-on-name">{track.name}</div>
                         <div className="artist--appears-on-extra-details grid">
-                            <div>{track.release_date}</div>
-                            <div>{track.album_type}</div>
+                            <div className="artist--appears-on-date">{getYear(track.release_date)}</div>
+                            <img className="gray-circle" src={GrayCircle} alt="gray circle" />
+                            <div className="artist--appears-on-album-type">{track.album_type}</div>
                         </div>
                     </div>
                 )}

@@ -25,3 +25,8 @@
     text-decoration: underline 1px;
     text-underline-offset: 1.5px;
 }
+
+.gray-circle {
+    width: 4px;
+    height: 4px;
+}

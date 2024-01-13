@@ -1,5 +1,5 @@
 .artist-page--appears-on  {
-    grid-template-rows: 30px 270px;
+    grid-template-rows: 30px 280px;
     gap: 10px;
     padding: 0 25px;
 }
@@ -30,7 +30,7 @@
 
 /* APPEARS ON SINGLE TRACK */
 .artist--appears-on-single-track {
-    grid-template-rows: 160px 28px 35px;
+    grid-template-rows: 180px 25px 30px;
     padding: 16px;
     background-color: var(--const-card-bg);
     border-radius: 8px;
@@ -47,29 +47,27 @@
 }
 
 /* APPEARS ON IMG */
+.artist--appears-on-img-outer-container {
+    object-fit: cover;
+    width: fit-content;
+    height: 150px;
+    justify-self: center;
+    align-self: start;
+}
+
 .artist--appears-on-img-container {
     position: relative;
     place-self: center;
 }
 
 .artist--appears-on-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 9999px;
-    object-fit: cover;
-    justify-self: center;
-    align-self: start;
-    box-shadow: 0 8px 24px rgba(0,0,0,.5);
-}
-
-.artist--appears-on-img img {
     border-radius: 8px;
 }
 
 .artist--appears-on-play {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 4px;
+    right: 4px;
     width: 60px;
     height: 60px;
     transition: 0.5s;
@@ -91,4 +89,10 @@
     justify-content: start;
     align-self: start;
     align-items: center;
+    font-size: 15px;
+    color: var(--const-gray);
+}
+
+.artist--appears-on-album-type {
+    text-transform: capitalize;
 }

@@ -35,13 +35,15 @@ function ArtistSimilarArtists({ token, artistId }) {
             <div className="artist--similar-artists-list grid">
                 {relatedArtists.map((artist, index) =>
                     <Link className="artist--similar-artists-single-artist grid" key={`${artist.name}-${index}`} to={`/artist/${artist.id}`} onClick={scrollToTop}>
-                        {artist.images.length ? 
-                        <div className="artist--similar-artists-img-container">
-                            <img className="artist--similar-artists-img" src={artist.images[0].url} alt="artist image" />
-                            <img className="artist--similar-artists-play" src={PlayGreen} alt="play button" />
+                        <div className="artist--similar-artists-img-outer-container">
+                            {artist.images.length ? 
+                            <div className="artist--similar-artists-img-container">
+                                <img className="artist--similar-artists-img" src={artist.images[0].url} alt="artist image" />
+                                <img className="artist--similar-artists-play" src={PlayGreen} alt="play button" />
+                            </div>
+                            : <div className="artist--similar-artists-img"></div>
+                            }
                         </div>
-                        : <div className="artist--similar-artists-img"></div>
-                        }
                         <div className="artist--similar-artists-name">{artist.name}</div>
                         <div className="artist--similar-artists-type">{artist.type}</div>
                     </Link>

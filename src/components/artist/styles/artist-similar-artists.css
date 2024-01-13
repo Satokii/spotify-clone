@@ -1,5 +1,5 @@
 .artist-page--similar-artists {
-    grid-template-rows: 30px 270px;
+    grid-template-rows: 30px 280px;
     gap: 10px;
     padding: 0 25px;
 }
@@ -38,7 +38,7 @@
 
 /* SIMILAR ARTISTS SINGLE ARTIST */
 .artist--similar-artists-single-artist {
-    grid-template-rows: 160px 28px 35px;
+    grid-template-rows: 170px 25px 40px;
     padding: 16px;
     background-color: var(--const-card-bg);
     border-radius: 8px;
@@ -55,19 +55,21 @@
 }
 
 /* SIMILAR ARTISTS IMG */
+.artist--similar-artists-img-outer-container {
+    object-fit: cover;
+    justify-self: center;
+    align-self: start;
+}
+
 .artist--similar-artists-img-container {
     position: relative;
     place-self: center;
 }
 
 .artist--similar-artists-img {
-    width: 150px;
-    height: 150px;
     border-radius: 9999px;
-    object-fit: cover;
-    justify-self: center;
-    align-self: start;
-    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    height: 160px;
+    min-width: 160px;
 }
 
 .artist--similar-artists-play {

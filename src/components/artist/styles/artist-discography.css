@@ -1,5 +1,5 @@
 .artist-page--discography {
-    grid-template-rows: 30px 40px 290px;
+    grid-template-rows: 30px 40px 280px;
     gap: 10px;
     padding: 0 25px;
 }
@@ -75,18 +75,17 @@
 }
 
 /* ITEM IMAGE */
-.artist--discography-img-container {
-    position: relative;
-    place-self: center;
-}
-
 .artist--discography-single-item-img {
     object-fit: cover;
     width: fit-content;
     height: 150px;
     justify-self: center;
     align-self: start;
-    border-radius: 4px;
+}
+
+.artist--discography-img-container {
+    position: relative;
+    place-self: center;
 }
 
 .artist--discography-single-item-img img {
@@ -118,20 +117,10 @@
    justify-content: start;
    align-self: start;
    align-items: center;
-}
-
-.artist--discography-single-item-date {
-    font-size: 15px;
-    color:  var(--const-gray);
-}
-
-.gray-circle {
-    width: 4px;
-    height: 4px;
+   font-size: 15px;
+   color: var(--const-gray);
 }
 
 .artist--discography-single-item-type {
-    font-size: 15px;
-    color:  var(--const-gray);
     text-transform: capitalize;
 }
