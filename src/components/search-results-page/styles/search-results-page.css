@@ -3,8 +3,9 @@
     grid-template-rows: 60px 1fr;
     gap: 20px;
     background-color: var(--const-base-bg);
-    padding: 20px 10px 150px;
+    padding: 20px 10px;
     height: 100%;
+    overflow-y: scroll;
 }
 
 .search-results--header-container {
