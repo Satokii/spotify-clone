@@ -1,8 +1,4 @@
 /* PREVIEW GENERIC STYLING */
-.preview--container {
-    /* height: fit-content; */
-}
-
 .preview--list {
     grid-template-columns: repeat(auto-fit, 200px);
     grid-auto-flow: column;
@@ -17,9 +13,8 @@
 }
 
 .preview--item {
-    justify-items: center;
     min-width: 200px;
-    min-height: 290px;
+    min-height: 270px;
     padding: 16px;
     border-radius: 8px;
     background-color: var(--const-card-bg);
@@ -33,18 +28,26 @@
 
 .preview--item-rank {
     font-weight: bold;
+    text-align: center;
 }
 
 .preview--item > img {
-    margin: 5px 0;
     object-fit: cover;
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
+    place-self: center;
+}
+
+.preview--item img {
+    border-radius: 8px;
+    margin: 5px 0;
 }
 
 .preview--item-text {
-    text-align: center;
-    justify-items: center;
+    justify-content: start;
+    align-self: start;
+    align-items: center;
+    margin-top: 5px;
 }
 
 .preview--item-name {

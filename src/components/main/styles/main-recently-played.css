@@ -46,9 +46,7 @@
 }
 
 .recently-played--item {
-    justify-items: center;
     min-width: 200px;
-    min-height: 290px;
     padding: 16px;
     border-radius: 8px;
     background-color: var(--const-card-bg);
@@ -63,24 +61,26 @@
 .recently-played--time-since-played {
     font-size: 11px;
     color: var(--const-dull-white);
-    padding: 5px 0;
+    padding-bottom: 10px;
     text-align: center;
 }
 
 .recently-played--item > img {
-    margin: 5px 0;
     object-fit: cover;
     width: 150px;
     height: 150px;
 }
 
-.recently-played--item-text {
-    padding-top: 5px;
+.recently-played--item img {
+    border-radius: 8px;
+    margin: 5px 0;
 }
 
 .recently-played--item-text {
-    text-align: center;
-    justify-items: center;
+    padding-top: 5px;
+    justify-content: start;
+    align-self: start;
+    align-items: center;
 }
 
 .recently-played--item-name {
