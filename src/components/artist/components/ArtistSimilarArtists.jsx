@@ -21,12 +21,11 @@ function ArtistSimilarArtists({ token, artistId }) {
               }
             )
             const { artists } = data
-            console.log(data.artists)
             setRelatedArtists(artists)
         }
         getRelatedArtists()
     }, [artistId, token])
-console.log(relatedArtists)
+
     return (
         <div className="artist-page--similar-artists grid">
             <div className="artist--similar-artists-header-container grid">

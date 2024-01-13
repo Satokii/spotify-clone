@@ -1,0 +1,21 @@
+.artist-page--appears-on  {
+    grid-template-rows: 30px 270px;
+    gap: 10px;
+    padding: 0 25px;
+}
+
+/* APPEARS ON HEADER */
+.artist--appears-on-header-container {
+    grid-template-columns: 1fr 100px;
+}
+
+.artist--appears-on-header {
+    font-size: 24px;
+    width: fit-content;
+}
+
+.artist--appears-on-header:hover {
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}

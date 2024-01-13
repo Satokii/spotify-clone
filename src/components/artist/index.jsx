@@ -10,6 +10,7 @@ import ArtistControls from "./components/ArtistControls";
 import ArtistPopularTracks from "./components/ArtistPopularTracks";
 import ArtistDiscography from "./components/ArtistDiscography";
 import ArtistSimilarArtists from "./components/ArtistSimilarArtists";
+import ArtistAppearsOn from "./components/ArtistAppearsOn";
 import sleep from "../../shared-functions/sleep";
 import palletGradientArtist from "../../ColorThief/paletteGradientArtist";
 
@@ -55,6 +56,8 @@ function Artist({ token }) {
     const { data } = usePalette(artistInfo.img)
     sleep(0).then(() => palletGradientArtist(data))
 
+    console.log(artistId)
+
     return (
         <section className="artist-page--container grid">
             <ArtistBanner artistInfo={artistInfo} />
@@ -63,7 +66,7 @@ function Artist({ token }) {
                 <ArtistPopularTracks topTracksArr={topTracksArr} top5TracksArr={top5TracksArr} />
                 <ArtistDiscography popularReleases={popularReleases} album={album} single={single} />
                 <ArtistSimilarArtists token={token} artistId={artistId} />
-                <div>Appears on (compilation)</div>
+                <ArtistAppearsOn />
             </div>
         </section>
     )

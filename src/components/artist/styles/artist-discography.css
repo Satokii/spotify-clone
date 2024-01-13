@@ -11,6 +11,7 @@
 
 .artist--discography-header {
     font-size: 24px;
+    width: fit-content;
 }
 
 .artist--discography-header:hover {

@@ -11,6 +11,13 @@
 
 .artist--similar-artists-header {
     font-size: 24px;
+    width: fit-content;
+}
+
+.artist--similar-artists-header:hover {
+    text-decoration: underline 2px;
+    text-underline-offset: 2px;
+    cursor: pointer;
 }
 
 .artist--similar-artists-show-all {

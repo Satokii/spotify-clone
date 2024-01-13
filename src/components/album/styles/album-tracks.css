@@ -86,6 +86,7 @@
 /* TRACK NAME */
 .album-page--track-name-container {
     grid-template-rows: repeat(2, auto);
+    gap: 3px;
     align-items: center;
 }
 
