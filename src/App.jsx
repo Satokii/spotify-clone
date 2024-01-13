@@ -6,6 +6,7 @@ import Navigation from "./components/navigation";
 import Main from "./components/main";
 import Album from "./components/album";
 import Artist from "./components/artist";
+import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
@@ -80,7 +81,7 @@ function App() {
       if (!data) setNotPlaying(true);
       else {
         const { item } = data;
-        // console.log(data)
+        console.log(data)
         setCurrentTrack({
           trackId: item.id,
           albumId: item.album.id,
@@ -215,13 +216,17 @@ function App() {
           </Route>
         </Routes>
         {token ?
+          <Sidebar />
+          : null
+        }
+        {token ?
           <Footer
           token={token}
           currentTrack={currentTrack}
           setCurrentTrack={setCurrentTrack}
           setQueue={setQueue}
-        />
-        : null
+          />
+          : null
         }
       </div>
     </>
