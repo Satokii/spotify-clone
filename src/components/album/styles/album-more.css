@@ -2,7 +2,8 @@
     grid-template-rows: 40px 270px;
     padding: 0 25px;
     gap: 24px;
-    margin-bottom: 30px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 /* HEADER CONTAINER */

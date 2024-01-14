@@ -3,6 +3,8 @@
     grid-template-columns: 235px 1fr;
     gap: 20px;
     padding: 70px 25px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 /* ALBUM IMAGE */

@@ -4,12 +4,13 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--almost-black);
+    background: transparent;
   }
   
   ::-webkit-scrollbar-thumb {
     background-color: hsla(0,0%,100%,.3);
-    min-height: 30px
+    min-height: 30px;
+    padding-top: 30px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
