@@ -25,7 +25,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Figtree", sans-serif;
   color: var(--const-main-white);
   background-color: var(--const-base-bg);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 ul,
