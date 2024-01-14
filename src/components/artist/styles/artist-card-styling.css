@@ -4,6 +4,11 @@
     padding: 0 25px;
 }
 
+.artist-page--section-container:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 /* ARTIST SECTION HEADER */
 .artist--section-header-container {
     grid-template-columns: 1fr 100px;
