@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
@@ -104,10 +103,8 @@ function App() {
 
   return (
     <>
-      {/* <div className="container grid"> */}
-      <PanelGroup className="container grid" direction='horizontal' style={{overflow: "visible"}}>
-        <Panel id="main" className="main-panel" style={{overflow: "scroll"}} minSize={75} order={1}>
-        {/* {token ?
+      <div className="container grid">
+        {token ?
           <Header
           token={token}
           setToken={setToken}
@@ -122,17 +119,16 @@ function App() {
           setPlaylistTotal={setPlaylistTotal}
           />
           : null
-        } */}
-        {/* {token ? 
+        }
+        {token ? 
           <Navigation token={token} />
           : null
-        } */}
+        }
         <Routes>
           <Route
             path="/"
             element={
               token ? 
-              // <Panel id="main" minSize={50} order={1}>
                 <Main
                   token={token}
                   queue={queue}
@@ -148,7 +144,6 @@ function App() {
                   showTopArtists={showTopArtists}
                   setShowTopArtists={setShowTopArtists}
                 /> 
-                // </Panel>
                 : <WelcomePage />
             }
           >
@@ -220,12 +215,8 @@ function App() {
           >
           </Route>
         </Routes>
-        </Panel>
-        <PanelResizeHandle style={{border: '1px solid black', width: 20, backgroundColor: 'red'}} />
         {token ?
-        <Panel id="sidebar" minSize={10} order={1}>
           <Sidebar token={token} currentTrack={currentTrack} />
-        </Panel>
           : null
         }
         {token ?
@@ -237,8 +228,7 @@ function App() {
           />
           : null
         }
-      </PanelGroup>
-      {/* </div> */}
+      </div>
     </>
   );
 }

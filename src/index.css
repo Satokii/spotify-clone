@@ -19,13 +19,13 @@ html {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: -apple-system, BlinkMacSystemFont, "Figtree", sans-serif;
   color: var(--const-main-white);
   background-color: var(--const-base-bg);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 ul,
