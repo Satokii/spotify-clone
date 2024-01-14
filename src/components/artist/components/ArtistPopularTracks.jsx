@@ -23,8 +23,10 @@ function ArtistPopularTracks({ topTracksArr, top5TracksArr }) {
                 {(showAllTracks ? 
                     topTracksArr : top5TracksArr).map((track, index) =>
                     <div className="artist-page--single-track grid" key={track.id} tabIndex={1}>
-                        <div className="artist-page--track-number">{index + 1}</div>
-                        <img className="artist-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
+                        <div className="artist-page--track-num-container">
+                            <div className="artist-page--track-number">{index + 1}</div>
+                            <img className="artist-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
+                        </div>
                         {track.album.images.length ? 
                         <img className="artist-page--track-img" src={track.album.images[0].url} alt="track image"/>
                         : <div className="artist-page--track-img"></div> }

@@ -20,8 +20,10 @@ function AlbumTracks({ albumTracksArr, albumInfo, copyrights }) {
             <div className="album-page--tracks-tracks grid">
                 {albumTracksArr.map((track, index) =>
                     <div className="album-page--single-track grid" tabIndex={1} key={track.id}>
-                        <div className="album-page--track-number">{index + 1}</div>
-                        <img className="album-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
+                        <div className="album-page--track-num-container">
+                            <div className="album-page--track-number">{index + 1}</div>
+                            <img className="album-page--hover-play-btn" src={PlayButton} alt="play button" width={20} />
+                        </div>
                         <div className="album-page--track-name-container grid">
                             <div className="album-page--track-name">{track.name}</div>
                             <div className="album-page--artist-sub-container grid">

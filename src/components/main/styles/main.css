@@ -18,7 +18,7 @@
     padding: 20px 50px 50px;
     gap: 30px;
     opacity: 0;
-    animation: 0.3s ease 0.8s forwards fade-in;
+    animation: 0.3s ease 0.5s forwards fade-in;
     visibility: visible;
 }
 

@@ -50,10 +50,15 @@
 }
 
 /* TRACK NUMBER */
+.artist-page--track-num-container {
+    position: relative;
+}
+
 .artist-page--track-number {
     justify-self: center;
     font-size: 18px;
     color: var(--const-gray);
+    position: relative;
 }
 
 .artist-page--hover-play-btn {
@@ -61,6 +66,8 @@
     width: 15px;
     margin-left: 4px;
     position: absolute;
+    top: 5px;
+    right: 5px;
     opacity: 0;
 }
 
