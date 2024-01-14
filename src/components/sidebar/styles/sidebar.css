@@ -1,3 +1,15 @@
+.scrollbar-sidebar {
+    grid-area: Sidebar;
+    overflow-y: scroll;
+    visibility: hidden;
+    transition: 1s all 0.1s ease-out;
+}
+
+.scrollbar-sidebar:hover {
+    visibility: visible;
+}
+
+
 .sidebar {
     grid-area: Sidebar;
     grid-template-rows: 360px 370px 120px;
@@ -8,4 +20,5 @@
     overflow-x: hidden;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
+    visibility: visible;
 }
