@@ -104,7 +104,7 @@ function App() {
   return (
     <>
       <div className="container grid">
-        {token ?
+        {/* {token ?
           <Header
           token={token}
           setToken={setToken}
@@ -119,7 +119,7 @@ function App() {
           setPlaylistTotal={setPlaylistTotal}
           />
           : null
-        }
+        } */}
         {token ? 
           <Navigation token={token} />
           : null
