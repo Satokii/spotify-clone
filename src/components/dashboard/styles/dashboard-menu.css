@@ -2,3 +2,20 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+/* PAGE NAV */
+.main-page-nav-container {
+    grid-template-columns: repeat(2, auto);
+    gap: 16px;
+    justify-content: start;
+    align-content: center;
+}
+
+.main-page-nav--back-arrow {
+    width: 30px;
+    height: 30px;
+}
+
+.main-page-nav--forward-arrow {
+    width: 30px;
+    height: 30px;
+}
