@@ -1,12 +1,24 @@
+.scrollbar-main {
+    grid-area: Main;
+    overflow-y: scroll;
+    visibility: hidden;
+    transition: 1s all 0.1s ease-out;
+}
+
+.scrollbar-main:hover {
+    visibility: visible;
+}
+
 .main {
     grid-area: Main;
     grid-template-rows: 70px 300px repeat(2, 420px) 400px;
+    width: 100%;
     background-color: var(--const-base-bg);
     padding: 20px 50px 50px;
     gap: 30px;
-    overflow-y: scroll;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
+    visibility: visible;
 }
 
 .main--header {

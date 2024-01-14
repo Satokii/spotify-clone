@@ -15,6 +15,7 @@ function Main({ token, queue, setQueue, currentTrack, notPlaying, topTracksDate,
 
 
   return (
+    <div className="scrollbar-main">
     <main className="main grid">
       <h2 className="main--header">My Dashboard</h2>
       <MainPlayback token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} />
@@ -72,6 +73,7 @@ function Main({ token, queue, setQueue, currentTrack, notPlaying, topTracksDate,
       </section>
       <RecentlyPlayed token={token} />
     </main>
+    </div>
   );
 }
 
