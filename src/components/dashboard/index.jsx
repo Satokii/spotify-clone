@@ -1,3 +1,5 @@
+import DashboardMenu from "./components/DashboardMenu"
+
 import "./styles/dashboard.css"
 
 function Dashboard() {
@@ -5,9 +7,9 @@ function Dashboard() {
     return (
         <div className="scrollbar-dashboard">
         <main className="dashboard grid">
-            <section>Top Menu</section>
-            <section>Banner</section>
-            <section>Sub-container content</section>
+            <DashboardMenu />
+            <section className="dashboard--banner grid">Banner</section>
+            <section className="dashboard--sub-container grid">Sub-container content</section>
         </main>
         </div>
     )

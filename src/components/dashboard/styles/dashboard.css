@@ -26,9 +26,11 @@
     border-bottom-right-radius: 8px;
 }
 
+.dashboard--banner {
+
+}
+
 .dashboard--sub-container {
-    grid-template-rows: 130px 1fr 400px repeat(2, 350px);
-    gap: 10px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px
 }
