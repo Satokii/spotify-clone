@@ -1,3 +1,14 @@
+.scrollbar-album {
+    grid-area: Main;
+    overflow-y: scroll;
+    visibility: hidden;
+    transition: 1s all 0.1s ease-out;
+}
+
+.scrollbar-album:hover {
+    visibility: visible;
+}
+
 .album-page--container {
     grid-area: Main;
     background-color: var(--const-base-bg);
@@ -5,7 +16,7 @@
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
     border-radius: 10px;
-    overflow-y: scroll;
+    visibility: visible;
 }
 
 .album-page--sub-container {

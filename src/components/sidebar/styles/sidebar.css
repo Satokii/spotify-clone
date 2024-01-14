@@ -9,14 +9,12 @@
     visibility: visible;
 }
 
-
 .sidebar {
     grid-area: Sidebar;
     grid-template-rows: 360px 370px 120px;
     padding: 16px 16px 8px;
     background-color: var(--const-base-bg);
     gap: 10px;
-    overflow-y: scroll;
     overflow-x: hidden;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;

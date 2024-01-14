@@ -36,6 +36,7 @@ function Album({ token }) {
     sleep(0).then(() => palletGradient(data))
 
     return (
+      <div className="scrollbar-album">
         <section className="album-page--container grid">
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} artistId={artistId} />
             <div className="album-page--sub-container grid">
@@ -44,6 +45,7 @@ function Album({ token }) {
               <AlbumMoreByArtist token={token} artistId={artistId} artistInfo={artistInfo} artistAlbums={artistAlbums} setArtistAlbums={setArtistAlbums} />
             </div>
         </section>
+        </div>
     )
 }
 
