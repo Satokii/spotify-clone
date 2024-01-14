@@ -12,7 +12,7 @@
 .sidebar--about-artist-img {
     object-fit: cover;
     height: 200px;
-    width: 280px;
+    width: 290px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
@@ -21,7 +21,7 @@
 .sidebar--about-artist-details-container {
     grid-template-rows: 25px 50px 30px;
     background-color: #242424;
-    width: 280px;
+    width: 282px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding: 16px;
