@@ -7,6 +7,8 @@
     padding-right: 150px;
     text-align: center;
     font-variant-caps: all-small-caps;
+    opacity: 0;
+    animation: 0.3s ease 1s forwards fade-in;
 }
 
 .welcome-page--header {

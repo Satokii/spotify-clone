@@ -1,11 +1,25 @@
+.scrollbar-artist {
+    grid-area: Main;
+    overflow-y: scroll;
+    visibility: hidden;
+    transition: 1s all 0.1s ease-out;
+    height: 100vh;
+}
+
+.scrollbar-artist:hover {
+    visibility: visible;
+}
+
 .artist-page--container {
     grid-area: Main;
     grid-template-rows: 350px 1fr;
+    height: 100%;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
     border-radius: 10px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     margin-bottom: 20px;
+    visibility: visible;
 }
 
 .artist-page--sub-container {

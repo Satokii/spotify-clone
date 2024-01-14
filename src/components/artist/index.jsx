@@ -58,6 +58,7 @@ function Artist({ token }) {
     sleep(0).then(() => palletGradientArtist(data))
 
     return (
+        <div className="scrollbar-artist">
         <section className="artist-page--container grid">
             <ArtistBanner artistInfo={artistInfo} />
             <div className="artist-page--sub-container grid">
@@ -68,6 +69,7 @@ function Artist({ token }) {
                 <ArtistAppearsOn token={token} artistId={artistId} />
             </div>
         </section>
+        </div>
     )
 }
 
