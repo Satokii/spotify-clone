@@ -38,10 +38,16 @@ function SidebarAboutArtist({ token, currentTrack }) {
     return (
         <div className="sidebar--about-artist grid">
             <div className="sidebar--about-artist-header">About the artist</div>
-            <img className="sidebar--about-artist-img" src={artistInfo.img} alt="current track artist img" />
+            {artistInfo.img ?
+                <img className="sidebar--about-artist-img" src={artistInfo.img} alt="current track artist img" />
+                : <div></div>
+            }
             <div className="sidebar--about-artist-details-container grid">
                 <Link className="sidebar--about-artist-name" to={`/artist/${currentTrack.artistId}`} onClick={scrollToTop}>{artistInfo.name}</Link>
-                <div className="sidebar--about-artist-followers">{`${artistInfo.followers} followers`}</div>
+                {artistInfo.followers ?
+                    <div className="sidebar--about-artist-followers">{`${artistInfo.followers} followers`}</div>
+                    : <div></div>
+                }
                 {isFollowing ?
                 <div className="sidebar--about-artist-follow" onClick={toggleFollowing}>Unfollow</div>
                 : <div className="sidebar--about-artist-follow" onClick={toggleFollowing}>Follow</div>
