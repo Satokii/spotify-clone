@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
+import Dashboard from "./components/dashboard";
 import Main from "./components/main";
 import Album from "./components/album";
 import Artist from "./components/artist";
@@ -125,6 +126,11 @@ function App() {
           : null
         }
         <Routes>
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          >
+          </Route>
           <Route
             path="/"
             element={
