@@ -1,11 +1,11 @@
-.album-page--menu-backing {
+.artist-page--menu-backing {
     position: sticky;
     top: 0;
     background-color: var(--const-base-bg);
     z-index: 1;
 }
 
-.album-page--menu-container {
+.artist-page--menu-container {
     grid-template-columns: repeat(2, auto);
     padding: 0 20px;
     border-top-left-radius: 8px;
@@ -14,26 +14,26 @@
     height: 65px;
 }
 
-.album-page--menu-nav-container {
+.artist-page--menu-nav-container {
     grid-template-columns: repeat(2, auto);
     gap: 16px;
     justify-content: start;
     align-content: center;
 }
 
-.album-page--icons-container {
+.artist-page--icons-container {
     grid-template-columns: repeat(3, auto);
     gap: 10px;
     justify-content: end;
     align-content: center;
 }
 
-.album-page--menu-container img {
+.artist-page--menu-container img {
     width: 32px;
     height: 32px;
     cursor: pointer;
 }
 
-.album-page--menu-container img:hover {
+.artist-page--menu-container img:hover {
     transform: scale(1.15);
 }

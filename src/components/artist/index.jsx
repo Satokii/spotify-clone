@@ -5,6 +5,7 @@ import getArtist from "./functions/getArtist";
 import getArtistTopTracks from "./functions/getArtistTopTracks";
 import getArtistTop5Tracks from "./functions/getArtistTop5Tracks";
 import getAlbums from "./functions/getAlbums";
+import ArtistTopNav from "./components/ArtistTopNav";
 import ArtistBanner from "./components/ArtistBanner";
 import ArtistControls from "./components/ArtistControls";
 import ArtistPopularTracks from "./components/ArtistPopularTracks";
@@ -60,6 +61,7 @@ function Artist({ token }) {
     return (
         <div className="scrollbar-artist">
         <section className="artist-page--container grid">
+            <ArtistTopNav />
             <ArtistBanner artistInfo={artistInfo} />
             <div className="artist-page--sub-container grid">
                 <ArtistControls />
