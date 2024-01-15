@@ -1,10 +1,10 @@
 .album-page--menu-backing {
-    position: sticky;
-    top: 0;
-    background-color: var(--const-base-bg);
+    position: absolute;
+    top: 13px;
+    left: 163px;
+    width: calc(100% - 522px);
     z-index: 1;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    transition: 0.3s 0s ease;
 }
 
 .album-page--menu-container {
@@ -14,6 +14,7 @@
     border-top-right-radius: 8px;
     z-index: 1;
     height: 65px;
+    transition: 0.3s 0s ease-in-out;
 }
 
 .album-page--menu-nav-container {

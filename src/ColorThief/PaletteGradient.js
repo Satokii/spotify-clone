@@ -17,6 +17,7 @@ const  palletGradient = (data) => {
   }
 
   // SETTING BG COLOUR AND GRADIENT OF ALBUM PAGE
+  let navBackgroundBacker = document.querySelector(".album-page--menu-backing")
   let navBackground = document.querySelector(".album-page--menu-container")
   let bannerBackground = document.querySelector(".album-page--banner");
   let albumBackground = document.querySelector(".album-page--sub-container");
@@ -25,7 +26,32 @@ const  palletGradient = (data) => {
   let darkerFoundColour = `${mixedImgColour}55`;
   let evenDarkerFoundColour = `${mixedImgColour}33`;
 
-  navBackground.style.background = `${foundColour}`;
+  // SCROLL EVENT LISTENER TO CHECK DISTANCE PAGE SCROLLED AND 
+    // APPLY BG COLOURS
+    const scrolled = document.querySelector('.scrollbar-album')
+    scrolled.addEventListener('scroll', () => {
+      if (scrolled.scrollTop <= 30) {
+        navBackgroundBacker.style.background = 'transparent'
+        navBackground.style.backgroundColor = 'transparent'
+      }
+      else if (scrolled.scrollTop > 30 && scrolled.scrollTop <= 100) {
+        navBackgroundBacker.style.background = '#12121219'
+        navBackground.style.backgroundColor = `${foundColour}40`
+      }
+      else if (scrolled.scrollTop > 100 && scrolled.scrollTop <= 200) {
+        navBackgroundBacker.style.background = '#1212127e'
+        navBackground.style.backgroundColor = `${foundColour}82`
+      }
+      else if (scrolled.scrollTop > 200 && scrolled.scrollTop <= 300) {
+        navBackgroundBacker.style.background = '#121212af'
+        navBackground.style.backgroundColor = `${foundColour}CC`
+      }
+      else {
+        navBackgroundBacker.style.background = '#121212'
+        navBackground.style.backgroundColor = `${foundColour}`
+      }
+    });
+
   bannerBackground.style.background = `${foundColour}`;
   albumBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 60%)`;
 }

@@ -1,10 +1,8 @@
 .artist-page--menu-backing {
-    /* position: sticky; */
     position: absolute;
     top: 13px;
     left: 163px;
     width: calc(100% - 522px);
-    /* background-color: var(--const-base-bg); */
     z-index: 1;
     transition: 0.3s 0s ease;
 }
