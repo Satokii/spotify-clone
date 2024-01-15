@@ -130,7 +130,7 @@ function App() {
             path="/dashboard"
             element={
             token ?
-            <Dashboard setToken={setToken} />
+            <Dashboard token={token} queue={queue} setQueue={setQueue} setToken={setToken} currentTrack={currentTrack} notPlaying={notPlaying} />
             : null  
             }
           >

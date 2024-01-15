@@ -1,0 +1,13 @@
+.dashboard--banner  {
+    grid-template-rows: 40px 1fr;
+    gap: 8px;
+}
+
+.dashboard--banner-greeting{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.dashboard--banner-player-container {
+    grid-template-columns: minmax(300px, max-content) 1fr
+}
