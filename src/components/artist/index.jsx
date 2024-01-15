@@ -20,7 +20,7 @@ import "./styles/artist-card-styling.css"
 import getPopularReleases from "./functions/getPopularReleases";
 import getSingles from "./functions/getSingles";
 
-function Artist({ token }) {
+function Artist({ token, setToken }) {
 
     const [artistInfo, setArtistInfo] = useState({});
     const { artistId } = useParams()
@@ -61,7 +61,7 @@ function Artist({ token }) {
     return (
         <div className="scrollbar-artist">
         <section className="artist-page--container grid">
-            <ArtistTopNav />
+            <ArtistTopNav setToken={setToken} />
             <ArtistBanner artistInfo={artistInfo} />
             <div className="artist-page--sub-container grid">
                 <ArtistControls />

@@ -15,7 +15,7 @@ import AlbumMoreByArtist from "./components/AlbumMoreByArtist";
 
 import "./styles/album-page.css"
 
-function Album({ token }) {
+function Album({ token, setToken }) {
 
     const [albumInfo, setAlbumInfo] = useState({})
     const [artistInfo, setArtistInfo] = useState({});
@@ -39,7 +39,7 @@ function Album({ token }) {
     return (
       <div className="scrollbar-album">
         <section className="album-page--container grid">
-            <AlbumTopNav />
+            <AlbumTopNav setToken={setToken} />
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} artistId={artistId} />
             <div className="album-page--sub-container grid">
               <AlbumControls />

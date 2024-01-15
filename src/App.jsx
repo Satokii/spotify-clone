@@ -128,7 +128,11 @@ function App() {
         <Routes>
           <Route
             path="/dashboard"
-            element={<Dashboard />}
+            element={
+            token ?
+            <Dashboard setToken={setToken} />
+            : null  
+            }
           >
           </Route>
           <Route
@@ -206,7 +210,7 @@ function App() {
             path="/album/:albumId/:artistId"
             element={
               token ?
-              <Album token={token} />
+              <Album token={token} setToken={setToken} />
               : <WelcomePage />
             }
           >
@@ -215,7 +219,7 @@ function App() {
             path="/artist/:artistId"
             element={
               token ?
-              <Artist token={token} />
+              <Artist token={token} setToken={setToken} />
               : <WelcomePage />
             }
           >
