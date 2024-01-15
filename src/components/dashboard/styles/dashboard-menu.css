@@ -1,5 +1,6 @@
 .main-page--menu {
     grid-template-columns: repeat(2, auto);
+    padding: 0 10px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -13,8 +14,8 @@
 
 /* MAIN PAGE ICONS */
 .main-page--icons-container {
-    grid-template-columns: repeat(2, auto);
-    gap: 16px;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
     justify-content: end;
     align-content: center;
 }
