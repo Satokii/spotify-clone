@@ -1,15 +1,17 @@
 .dashboard--banner  {
     grid-template-rows: 45px 1fr;
-    gap: 8px;
+    gap: 15px;
+    padding: 0 5px;
 }
 
 .dashboard--banner-greeting{
     font-size: 32px;
     font-weight: bold;
+    padding: 0 15px;
 }
 
 .dashboard--banner-player-container {
-    grid-template-columns: minmax(300px, max-content) 1fr;
+    grid-template-columns: 355px 1fr;
     gap: 20px;
     /* background-color: var(--darker-black); */
     /* padding: 0 30px; */

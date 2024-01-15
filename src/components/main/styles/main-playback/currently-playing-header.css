@@ -1,6 +1,7 @@
 .main-playback--cur-playing-header-container {
-    grid-template-columns: 170px auto 130px;
+    grid-template-columns: 170px auto 120px;
     gap: 5px;
+    padding: 0 10px;
     font-variant-caps: all-small-caps;
     position: relative;
 }
