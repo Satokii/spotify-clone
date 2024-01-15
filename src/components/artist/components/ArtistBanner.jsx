@@ -1,3 +1,4 @@
+import ArtistTopNav from "./ArtistTopNav"
 import VerifiedIcon from "../../../assets/svgs/main-app/verified-icon.svg"
 
 import "../styles/artist-banner.css"
@@ -6,6 +7,7 @@ function ArtistBanner({ artistInfo }) {
 
     return (
         <div className="artist-page--banner-container grid" style={{ backgroundImage: `url(${artistInfo.img})`, backgroundPosition: "50% 30%", backgroundRepeat: "no-repeat", backgroundSize: "70%"}}>
+            <ArtistTopNav />
             <div className="artist-banner--verified-container grid">
                 <img className="artist-banner--verified-img" src={VerifiedIcon} alt="verified icon" />
                 <p className="artist-banner--verified-text">Verified Artist</p>

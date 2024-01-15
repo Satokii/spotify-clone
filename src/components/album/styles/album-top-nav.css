@@ -3,6 +3,8 @@
     top: 0;
     background-color: var(--const-base-bg);
     z-index: 1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .album-page--menu-container {
@@ -19,6 +21,7 @@
     gap: 16px;
     justify-content: start;
     align-content: center;
+    color: #12121219;
 }
 
 .album-page--icons-container {

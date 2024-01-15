@@ -61,7 +61,7 @@ function Artist({ token }) {
     return (
         <div className="scrollbar-artist">
         <section className="artist-page--container grid">
-            <ArtistTopNav />
+            {/* <ArtistTopNav /> */}
             <ArtistBanner artistInfo={artistInfo} />
             <div className="artist-page--sub-container grid">
                 <ArtistControls />

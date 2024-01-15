@@ -26,11 +26,25 @@ const palletGradientArtist = (data) => {
     let darkerFoundColour = `${mixedImgColour}50`;
     let evenDarkerFoundColour = `${mixedImgColour}30`;
 
-    const x = document.querySelector('.scrollbar-artist')
-    x.addEventListener('scroll', () => {
-      if (x.scrollTop < 300) {
+    // SCROLL EVENT LISTENER TO CHECK DISTANCE PAGE SCROLLED AND 
+    // APPLY BG COLOURS
+    const scrolled = document.querySelector('.scrollbar-artist')
+    scrolled.addEventListener('scroll', () => {
+      if (scrolled.scrollTop <= 30) {
         navBackgroundBacker.style.background = 'transparent'
         navBackground.style.backgroundColor = 'transparent'
+      }
+      else if (scrolled.scrollTop > 30 && scrolled.scrollTop <= 100) {
+        navBackgroundBacker.style.background = '#12121219'
+        navBackground.style.backgroundColor = `${foundColour}40`
+      }
+      else if (scrolled.scrollTop > 100 && scrolled.scrollTop <= 200) {
+        navBackgroundBacker.style.background = '#1212127e'
+        navBackground.style.backgroundColor = `${foundColour}82`
+      }
+      else if (scrolled.scrollTop > 200 && scrolled.scrollTop <= 300) {
+        navBackgroundBacker.style.background = '#121212af'
+        navBackground.style.backgroundColor = `${foundColour}CC`
       }
       else {
         navBackgroundBacker.style.background = '#121212'
@@ -38,8 +52,6 @@ const palletGradientArtist = (data) => {
       }
     });
 
-    // navBackground.style.backgroundColor = `${foundColour}`;
-    // navBackground.style.backgroundColor = `transparent`;
     bannerBackground.style.backgroundColor = `${foundColour}`;
     artistBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 70%)`
   }
