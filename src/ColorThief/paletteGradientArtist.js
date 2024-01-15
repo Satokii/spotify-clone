@@ -42,7 +42,7 @@ const palletGradientArtist = (data) => {
         navBackgroundBacker.style.background = '#1212127e'
         navBackground.style.backgroundColor = `${foundColour}82`
       }
-      else if (scrolled.scrollTop > 200 && scrolled.scrollTop <= 300) {
+      else if (scrolled.scrollTop > 200 && scrolled.scrollTop <= 350) {
         navBackgroundBacker.style.background = '#121212af'
         navBackground.style.backgroundColor = `${foundColour}CC`
       }

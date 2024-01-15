@@ -12,8 +12,7 @@
 
 .artist-page--container {
     grid-area: Main;
-    /* grid-template-rows: 65px 350px 1fr; */
-    grid-template-rows: 350px 1fr;
+    grid-template-rows: 400px 1fr;
     height: 100%;
     opacity: 0;
     animation: 0.3s ease 0.8s forwards fade-in;
