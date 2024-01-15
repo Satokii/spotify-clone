@@ -3,6 +3,7 @@
     top: 0;
     background-color: var(--const-base-bg);
     z-index: 1;
+    transition: 0.4s 0s ease;
 }
 
 .artist-page--menu-container {
@@ -12,6 +13,7 @@
     border-top-right-radius: 8px;
     z-index: 1;
     height: 65px;
+    transition: 0.3s 0s ease-in-out;
 }
 
 .artist-page--menu-nav-container {

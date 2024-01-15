@@ -15,8 +15,9 @@ const palletGradientArtist = (data) => {
       let padsub = ("0" + sub).slice(-2);
       mixedImgColour += padsub;
     }
-  
+
     // SETTING BG COLOUR AND GRADIENT OF ALBUM PAGE
+    let navBackgroundBacker = document.querySelector(".artist-page--menu-backing")
     let navBackground = document.querySelector(".artist-page--menu-container")
     let bannerBackground = document.querySelector(".artist-page--banner-container");
     let artistBackground = document.querySelector(".artist-page--sub-container");
@@ -25,7 +26,20 @@ const palletGradientArtist = (data) => {
     let darkerFoundColour = `${mixedImgColour}50`;
     let evenDarkerFoundColour = `${mixedImgColour}30`;
 
-    navBackground.style.backgroundColor = `${foundColour}`;
+    const x = document.querySelector('.scrollbar-artist')
+    x.addEventListener('scroll', () => {
+      if (x.scrollTop < 300) {
+        navBackgroundBacker.style.background = 'transparent'
+        navBackground.style.backgroundColor = 'transparent'
+      }
+      else {
+        navBackgroundBacker.style.background = '#121212'
+        navBackground.style.backgroundColor = `${foundColour}`
+      }
+    });
+
+    // navBackground.style.backgroundColor = `${foundColour}`;
+    // navBackground.style.backgroundColor = `transparent`;
     bannerBackground.style.backgroundColor = `${foundColour}`;
     artistBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 70%)`
   }
