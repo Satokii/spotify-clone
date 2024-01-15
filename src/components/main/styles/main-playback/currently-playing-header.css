@@ -1,5 +1,5 @@
 .main-playback--cur-playing-header-container {
-    grid-template-columns: 170px auto 150px;
+    grid-template-columns: 170px auto 130px;
     gap: 5px;
     font-variant-caps: all-small-caps;
     position: relative;
@@ -95,7 +95,7 @@
     color: var(--const-white);
     cursor: pointer;
     margin-right: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .main-playback--cur-playing-header-container button:hover {

@@ -1,5 +1,5 @@
 .dashboard--banner  {
-    grid-template-rows: 40px 1fr;
+    grid-template-rows: 45px 1fr;
     gap: 8px;
 }
 
@@ -9,5 +9,8 @@
 }
 
 .dashboard--banner-player-container {
-    grid-template-columns: minmax(300px, max-content) 1fr
+    grid-template-columns: minmax(300px, max-content) 1fr;
+    gap: 20px;
+    /* background-color: var(--darker-black); */
+    /* padding: 0 30px; */
 }
