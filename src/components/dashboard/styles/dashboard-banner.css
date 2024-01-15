@@ -1,5 +1,6 @@
 .dashboard--banner  {
-    grid-template-rows: 45px auto;
+    grid-template-rows: 45px 182px;
+    align-content: end;
     gap: 15px;
     padding: 0 5px;
 }

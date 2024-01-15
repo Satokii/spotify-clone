@@ -1,8 +1,21 @@
+.main-page--menu-backing {
+    position: absolute;
+    top: 13px;
+    left: 163px;
+    width: calc(100% - 522px);
+    z-index: 1;
+    transition: 0.3s 0s ease;
+}
+
 .main-page--menu {
     grid-template-columns: repeat(2, auto);
-    padding: 0 10px;
+    padding: 0 20px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    z-index: 1;
+    height: 65px;
+    transition: 0.3s 0s ease-in-out;
+    background-color: var(--const-base-red-db);
 }
 /* MAIN PAGE NAV */
 .main-page--nav-container {

@@ -13,6 +13,7 @@ function DashboardMenu({ setToken }) {
     const navigate = useNavigate()
 
     return (
+        <div className="main-page--menu-backing">
         <section className="main-page--menu grid">
             <div className="main-page--nav-container grid">
                 <div onClick={() => navigate(-1)}>
@@ -34,6 +35,7 @@ function DashboardMenu({ setToken }) {
                 </div>
             </div>
         </section>
+        </div>
     )
 }
 
