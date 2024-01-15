@@ -1,6 +1,6 @@
 const fixLengthQueue = (string) => {
-    if (string.length > 13) {
-        return `${string.slice(0, 13)}...`
+    if (string.length > 10) {
+        return `${string.slice(0, 10)}...`
     }
     else return string
 }

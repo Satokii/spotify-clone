@@ -15,6 +15,7 @@ function Queue({ token, queue, setQueue }) {
     return (
         <div className="main-playback--queue-container grid">
             <h3 className="main-playback--queue-header">Next in queue...</h3>
+            <div className="scrollbar--dashboard-queue">
             <div className="main-playback--queue-list grid" >
                 {queue.map((track, index) =>
                     <Link className="main-playback--queue-item grid" key={`${track.id}-${index}`} to={`/album/${track.album.id}/${track.artists[0].id}`} onClick={scrollToTop}>
@@ -23,6 +24,7 @@ function Queue({ token, queue, setQueue }) {
                         <Link className="main-playback--queue-artist" to={`/artist/${track.artists[0].id}`} onClick={scrollToTop}>{fixLengthQueue(track.artists[0].name)}</Link>
                     </Link>
                 )}
+            </div>
             </div>
         </div>
     )

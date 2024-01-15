@@ -11,9 +11,8 @@
 
 .main-playback--cur-playing-item {
     grid-template-columns: 100px 185px;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
-    /* padding-left: 10px; */
     padding: 0 10px;
     margin-bottom: 10px;
 }

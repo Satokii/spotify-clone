@@ -2,7 +2,7 @@
     grid-template-rows: 40px 1fr;
     gap: 10px;
     /* border-right: solid 3px var(--const-green); */
-    background-color: hsla(0,0%,100%,.07);
+    background-color: var(--disco-filter);
     border-radius: 8px;
     padding: 0 10px;
 }

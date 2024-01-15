@@ -1,5 +1,5 @@
 .dashboard--banner  {
-    grid-template-rows: 45px 1fr;
+    grid-template-rows: 45px auto;
     gap: 15px;
     padding: 0 5px;
 }
@@ -13,6 +13,4 @@
 .dashboard--banner-player-container {
     grid-template-columns: 355px 1fr;
     gap: 20px;
-    /* background-color: var(--darker-black); */
-    /* padding: 0 30px; */
 }

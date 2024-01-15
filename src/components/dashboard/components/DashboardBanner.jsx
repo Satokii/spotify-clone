@@ -10,7 +10,7 @@ function DashboardBanner({ token, queue, setQueue, currentTrack, notPlaying }) {
             <div className="dashboard--banner-greeting">Good evening</div>
             <div className="dashboard--banner-player-container grid">
                 <CurrentlyPlaying currentTrack={currentTrack} notPlaying={notPlaying} />
-                {/* <Queue token={token} queue={queue} setQueue={setQueue}/> */}
+                <Queue token={token} queue={queue} setQueue={setQueue}/>
             </div>
         </section>
     )
