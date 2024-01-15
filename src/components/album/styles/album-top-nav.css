@@ -1,0 +1,39 @@
+.album-page--menu-backing {
+    position: sticky;
+    top: 0;
+    background-color: var(--const-base-bg);
+    z-index: 1;
+}
+
+.album-page--menu-container {
+    grid-template-columns: repeat(2, auto);
+    padding: 0 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: 1;
+    height: 65px;
+}
+
+.album-page--menu-nav-container {
+    grid-template-columns: repeat(2, auto);
+    gap: 16px;
+    justify-content: start;
+    align-content: center;
+}
+
+.album-page--icons-container {
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+    justify-content: end;
+    align-content: center;
+}
+
+.album-page--menu-container img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.album-page--menu-container img:hover {
+    transform: scale(1.15);
+}

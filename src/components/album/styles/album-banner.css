@@ -2,9 +2,7 @@
 .album-page--banner {
     grid-template-columns: 235px 1fr;
     gap: 20px;
-    padding: 70px 25px 25px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    padding: 0 25px 25px;
 }
 
 /* ALBUM IMAGE */
@@ -20,7 +18,7 @@
     height: 235px;
     border-radius: 5px;
     transition: 0.3s;
-    box-shadow: 0 4px 60px rgba(0,0,0,.5);
+    box-shadow: 0 4px 30px rgba(0,0,0,.5);
 }
 
 .album-page--img:hover {

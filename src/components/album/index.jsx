@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { usePalette } from "react-palette";
+import AlbumTopNav from "./components/AlbumTopNav";
 import getAlbum from "./functions/getAlbum";
 import getArtist from "../artist/functions/getArtist";
 import sleep from "../../shared-functions/sleep";
@@ -38,6 +39,7 @@ function Album({ token }) {
     return (
       <div className="scrollbar-album">
         <section className="album-page--container grid">
+            <AlbumTopNav />
             <AlbumBanner albumInfo={albumInfo} artistInfo={artistInfo} albumTracksArr={albumTracksArr} artistId={artistId} />
             <div className="album-page--sub-container grid">
               <AlbumControls />

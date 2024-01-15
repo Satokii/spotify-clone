@@ -17,12 +17,15 @@ const  palletGradient = (data) => {
   }
 
   // SETTING BG COLOUR AND GRADIENT OF ALBUM PAGE
+  let navBackground = document.querySelector(".album-page--menu-container")
   let bannerBackground = document.querySelector(".album-page--banner");
   let albumBackground = document.querySelector(".album-page--sub-container");
   let foundColour = `${mixedImgColour}`;
   let darkFoundColour = `${mixedImgColour}70`;
   let darkerFoundColour = `${mixedImgColour}55`;
   let evenDarkerFoundColour = `${mixedImgColour}33`;
+
+  navBackground.style.background = `${foundColour}`;
   bannerBackground.style.background = `${foundColour}`;
   albumBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 60%)`;
 }
