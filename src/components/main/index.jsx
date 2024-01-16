@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import MainPlayback from "./components/main-playback/MainPlayback";
+// import MainPlayback from "./components/main-playback/MainPlayback";
 import TopTracksPreview from "./components/TopTracksPreview";
 import TopArtistsPreview from "./components/TopArtistsPreview";
 import RecentlyPlayed from "./components/RecentlyPlayed";
@@ -18,7 +18,7 @@ function Main({ token, queue, setQueue, currentTrack, notPlaying, topTracksDate,
     <div className="scrollbar-main">
     <main className="main grid">
       <h2 className="main--header">My Dashboard</h2>
-      <MainPlayback token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} />
+      {/* <MainPlayback token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} /> */}
       <section className="top-tracks--container grid">
         <div className="top-tracks--header-container grid">
           <h3 className="top-tracks--header">Top Tracks Preview</h3>

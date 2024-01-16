@@ -1,4 +1,4 @@
-import "../../styles/main-playback/currently-playing-header.css"
+import "../../styles/dashboard-playback/currently-playing-header.css"
 import "../../../../keyframes/currently-playing-ani.css"
 import { useState } from "react"
 

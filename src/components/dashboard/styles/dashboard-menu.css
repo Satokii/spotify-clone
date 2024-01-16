@@ -15,7 +15,6 @@
     z-index: 1;
     height: 65px;
     transition: 0.3s 0s ease-in-out;
-    background-color: var(--const-base-red-db);
 }
 /* MAIN PAGE NAV */
 .main-page--nav-container {

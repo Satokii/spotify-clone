@@ -17,7 +17,7 @@
     height: 100%;
     background-color: var(--const-base-bg);
     background: linear-gradient(var(--const-base-red-db), var(--const-base-bg) 50%);
-    padding: 8px 16px;
+    padding: 8px 20px;
     gap: 30px;
     opacity: 0;
     animation: 0.3s ease 0.5s forwards fade-in;
@@ -26,10 +26,6 @@
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-
-.dashboard--banner {
-
 }
 
 .dashboard--sub-container {

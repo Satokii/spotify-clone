@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import scrollToTop from "../../../../shared-functions/scrollToTop"
-import "../../styles/main-playback/currently-playing-track.css"
+import "../../styles/dashboard-playback/currently-playing-track.css"
 
 function CurrentlyPlayingTrack({ currentTrack, notPlaying, pulse }) {
 

@@ -131,7 +131,7 @@ function App() {
             element={
             token ?
             <Dashboard token={token} queue={queue} setQueue={setQueue} setToken={setToken} currentTrack={currentTrack} notPlaying={notPlaying} />
-            : null  
+            : <WelcomePage /> 
             }
           >
           </Route>

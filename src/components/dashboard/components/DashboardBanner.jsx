@@ -1,4 +1,4 @@
-import CurrentlyPlaying from "../../main/components/main-playback/CurrentlyPlaying"
+import CurrentlyPlaying from "./dashboard-playback/CurrentlyPlaying"
 import Queue from "../../Queue"
 
 import "../styles/dashboard-banner.css"
