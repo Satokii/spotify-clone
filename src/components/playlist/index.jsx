@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { usePalette } from "react-palette";
 import getPlaylist from "./functions/getPlaylist";
@@ -6,6 +5,7 @@ import sleep from "../../shared-functions/sleep";
 import palletGradientPlaylist from "../../ColorThief/paletteGradientPlaylist";
 import PlaylistTopNav from "./components/PlaylistTopNav"
 import PlaylistBanner from "./components/PlaylistBanner";
+import PlaylistControls from "./components/PlaylistControls";
 
 import "./styles/playlist-page.css"
 import { useParams } from "react-router-dom";
@@ -30,7 +30,7 @@ function Playlist({ token, setToken }) {
                 <PlaylistTopNav setToken={setToken} />
                 <PlaylistBanner playlistInfo={playlistInfo} playlistTracks={playlistTracks} />
                 <div className="playlist-page--sub-container grid">
-                    <div className="playlist-page--controls"></div>
+                    <PlaylistControls />
                     <div className="playlist-page--tracks"></div>
                 </div>
             </section>
