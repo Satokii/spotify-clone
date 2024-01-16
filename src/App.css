@@ -14,7 +14,7 @@
         "Navigation Main Sidebar"
         "Footer Footer Footer";
     grid-template-rows: 1fr 100px;
-    grid-template-columns: 150px 1fr 330px;
+    grid-template-columns: 200px 1fr 330px;
     height: 100vh;
     padding: 8px;
 }
