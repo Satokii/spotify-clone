@@ -145,6 +145,8 @@
     grid-template-columns: repeat(auto-fill, auto);
     grid-auto-flow: column;
     gap: 4px;
+    /* width: 200px; */
+    /* overflow: hidden; */
 }
 
 .playlist-page--playlist-name:hover {

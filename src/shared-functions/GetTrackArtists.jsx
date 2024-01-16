@@ -7,9 +7,11 @@ const GetTrackArtists = (track) => {
     else {
         const separated = track.artists.map((artist, index) => {
             if (index === numArtists - 1) return <Link id={artist.id} className="album-page--artist-name" to={`/artist/${artist.id}`} onClick={scrollToTop}>{artist.name}</Link>
-            else return <Link id={artist.id} className="album-page--artist-name" to={`/artist/${artist.id}`} onClick={scrollToTop}>{`${artist.name}, `}</Link>
+            else if (index === 0) return <Link id={artist.id} className="album-page--artist-name" to={`/artist/${artist.id}`} onClick={scrollToTop}>{`${artist.name}, `}</Link>
+            else return <Link id={artist.id} className="album-page--artist-name" to={`/artist/${artist.id}`} onClick={scrollToTop}>{`${artist.name}... `}</Link>
         })
-    return separated
+        if (separated.length > 2) return separated.slice(0, 2)
+        else return separated
     } 
 }
 
