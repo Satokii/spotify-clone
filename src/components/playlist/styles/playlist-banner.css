@@ -1,0 +1,53 @@
+/* BANNER */
+.playlist-page--banner {
+    /* grid-template-columns: 235px 1fr;
+    gap: 20px;
+    padding: 0 25px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px; */
+
+    grid-template-rows: 30px 130px 20px 40px;
+    line-height: normal;
+    align-content: end;
+    align-items: center;
+    height: 100%;
+    padding: 0 25px 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* PLAYLIST INFO */
+.playlist-page--playlist-type {
+    font-size: 14px;
+    text-transform: capitalize;
+    align-self: end;
+}
+
+.playlist-page--playlist-name {
+    font-size:calc(100% + 3vw);
+    /* font-size: 5em; */
+    font-weight: bold;
+    text-shadow: 0px 1px, 1px 0px, 1px 1px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+/* PLAYLIST OVERVIEW */
+.playlist-page--playlist-overview-container {
+    grid-template-columns: repeat(6, auto);
+    align-items: center;
+    justify-content: start;
+    gap: 3px;
+    font-size: 14px;
+}
+
+.album-overview-artist-name {
+    font-weight: bold;
+}
+
+.album-overview-artist-name:hover {
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import PlaylistTopNav from "./components/PlaylistTopNav"
+import PlaylistBanner from "./components/PlaylistBanner";
 
 import "./styles/playlist-page.css"
 
@@ -26,6 +27,7 @@ function Playlist({ token, setToken }) {
                 img: data.images[0].url,
                 description: data.description,
                 followers: data.followers.total,
+                totalTracks: data.tracks.total,
                 type: data.type,
                 isPublic: data.public,
                 owner: data.owner.display_name
@@ -34,12 +36,14 @@ function Playlist({ token, setToken }) {
         getPlaylist()
     }, [token])
 
+    // console.log(playlistInfo)
+    // console.log(playlistTracks)
 
     return (
         <div className="scrollbar-playlist">
             <section className="playlist-page--container grid">
                 <PlaylistTopNav setToken={setToken} />
-                <div className="playlist-page--banner">playlist banner</div>
+                <PlaylistBanner playlistInfo={playlistInfo} playlistTracks={playlistTracks} />
                 <div className="playlist-page--sub-container grid">sub container</div>
             </section>
         </div>

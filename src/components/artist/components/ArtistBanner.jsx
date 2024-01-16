@@ -11,7 +11,7 @@ function ArtistBanner({ artistInfo }) {
                 <p className="artist-banner--verified-text">Verified Artist</p>
             </div>
             <div className="artist-banner--artist-name grid ">{artistInfo.name}</div>
-                <div className="artist-banner--artist-followers">{`${artistInfo.followers} followers`}</div>
+            <div className="artist-banner--artist-followers">{`${artistInfo.followers} followers`}</div>
         </div>
     )
 }
