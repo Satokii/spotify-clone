@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import scrollToTop from "../../../shared-functions/scrollToTop";
-import getYear from "../../../shared-functions/getYear";
 import convertMsToTime from "../../../shared-functions/convertMsToTime";
 import albumTimeinMs from "../../../shared-functions/albumTimeinMs";
 
-// import "../styles/album-banner.css"
 import "../styles/playlist-banner.css"
 
 function PlaylistBanner({ playlistInfo, playlistTracks }) {
   return (
     <div className="playlist-page--banner grid" style={{ backgroundImage: `url(${playlistInfo.img})`, backgroundPosition: "50% 30%", backgroundRepeat: "no-repeat", backgroundSize: "80%"}}>
-        <div className="playlist-page--playlist-type">{playlistInfo.type}</div>
+        {playlistInfo.isPublic ?
+            <div className="playlist-page--playlist-type">{`Public ${playlistInfo.type}`}</div>
+            : <div className="playlist-page--playlist-type">{playlistInfo.type}</div>
+        }
         <div className="playlist-page--playlist-name">{playlistInfo.name}</div>
         <div className="playlist-page--playlist-description">{playlistInfo.description}</div>
         <div className="playlist-page--playlist-overview-container grid">

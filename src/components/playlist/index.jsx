@@ -1,5 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { usePalette } from "react-palette";
+import sleep from "../../shared-functions/sleep";
+import palletGradientPlaylist from "../../ColorThief/paletteGradientPlaylist";
 import PlaylistTopNav from "./components/PlaylistTopNav"
 import PlaylistBanner from "./components/PlaylistBanner";
 
@@ -20,7 +23,7 @@ function Playlist({ token, setToken }) {
                 },
               }
             );
-            console.log(data)
+            // console.log(data)
             setPlaylistTracks(data.tracks.items)
             setPlaylistInfo({
                 name: data.name,
@@ -35,6 +38,9 @@ function Playlist({ token, setToken }) {
         };
         getPlaylist()
     }, [token])
+
+    const { data } = usePalette(playlistInfo.img)
+    sleep(0).then(() => palletGradientPlaylist(data))
 
     // console.log(playlistInfo)
     // console.log(playlistTracks)

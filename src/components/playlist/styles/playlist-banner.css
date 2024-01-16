@@ -1,12 +1,6 @@
 /* BANNER */
 .playlist-page--banner {
-    /* grid-template-columns: 235px 1fr;
-    gap: 20px;
-    padding: 0 25px 25px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px; */
-
-    grid-template-rows: 30px 130px 20px 40px;
+    grid-template-rows: 30px 150px 20px 40px;
     line-height: normal;
     align-content: end;
     align-items: center;
