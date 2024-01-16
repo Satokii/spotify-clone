@@ -47,7 +47,7 @@ function Album({ token, setToken }) {
               <AlbumMoreByArtist token={token} artistId={artistId} artistInfo={artistInfo} artistAlbums={artistAlbums} setArtistAlbums={setArtistAlbums} />
             </div>
         </section>
-        </div>
+      </div>
     )
 }
 
