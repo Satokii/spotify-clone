@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import fixLenthPlistDesc from "../../../shared-functions/fixLengthPlistDesc";
 import scrollToTop from "../../../shared-functions/scrollToTop";
 import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
 
@@ -48,7 +49,7 @@ function DashboardTopFeaturedPlaylists({ token }) {
                             }
                         </div>
                         <div className="top-featured-playlist--name">{playlist.name}</div>
-                        <div className="top-featured-playlist--description">{playlist.description}</div>
+                        <div className="top-featured-playlist--description">{fixLenthPlistDesc(playlist.description)}</div>
                     </Link>
                 )}
             </div>

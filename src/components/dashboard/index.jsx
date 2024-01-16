@@ -12,7 +12,6 @@ function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying 
             <DashboardMenu setToken={setToken} />
             <DashboardBanner token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} />
             <section className="dashboard--sub-container grid">
-                Sub-container content
                 <DashboardTopFeaturedPlaylists token={token} />
             </section>
         </main>
