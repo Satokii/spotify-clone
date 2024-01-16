@@ -226,7 +226,7 @@ function App() {
           >
           </Route>
           <Route
-            path="/playlist"
+            path="/playlist/:playlistId"
             element={
               token ?
               <Playlist token={token} setToken={setToken} />

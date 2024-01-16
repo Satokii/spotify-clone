@@ -7,8 +7,11 @@ import PlaylistTopNav from "./components/PlaylistTopNav"
 import PlaylistBanner from "./components/PlaylistBanner";
 
 import "./styles/playlist-page.css"
+import { useParams } from "react-router-dom";
 
 function Playlist({ token, setToken }) {
+
+    const { playlistId } = useParams()
 
     const [playlistInfo, setPlaylistInfo] = useState({})
     const [playlistTracks, setPlaylistTracks] = useState([])
@@ -16,7 +19,7 @@ function Playlist({ token, setToken }) {
     useEffect(() => {
         const getPlaylist = async () => {
             const { data } = await axios.get(
-              `https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n`,
+              `https://api.spotify.com/v1/playlists/${playlistId}`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,

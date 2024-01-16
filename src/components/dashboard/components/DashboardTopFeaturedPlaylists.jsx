@@ -25,7 +25,7 @@ function DashboardTopFeaturedPlaylists({ token }) {
               }
             );
             setTopPlaylists(data.playlists.items)
-            // console.log(data.playlists.items)
+            console.log(data.playlists.items)
         };
         getTopFeaturedPlaylists()
     }, [token])
@@ -38,7 +38,7 @@ function DashboardTopFeaturedPlaylists({ token }) {
             </div>
             <div className="dashboard--top-featured-playlists-list grid">
             {topPlaylists.map(playlist =>
-                    <Link className="top-featured-playlist--item-container grid" key={playlist.id} to={``} onClick={scrollToTop} >
+                    <Link className="top-featured-playlist--item-container grid" key={playlist.id} to={`/playlist/${playlist.id}`} onClick={scrollToTop} >
                         <div className="top-featured-playlist--img-container">
                             {playlist.images.length ?
                             <div className="top-featured-playlist--img">
