@@ -6,6 +6,7 @@ import palletGradientPlaylist from "../../ColorThief/paletteGradientPlaylist";
 import PlaylistTopNav from "./components/PlaylistTopNav"
 import PlaylistBanner from "./components/PlaylistBanner";
 import PlaylistControls from "./components/PlaylistControls";
+import PlaylistTracks from "./components/PlaylistTracks";
 
 import "./styles/playlist-page.css"
 import { useParams } from "react-router-dom";
@@ -31,7 +32,7 @@ function Playlist({ token, setToken }) {
                 <PlaylistBanner playlistInfo={playlistInfo} playlistTracks={playlistTracks} />
                 <div className="playlist-page--sub-container grid">
                     <PlaylistControls />
-                    <div className="playlist-page--tracks"></div>
+                    <PlaylistTracks playlistTracks={playlistTracks} />
                 </div>
             </section>
         </div>

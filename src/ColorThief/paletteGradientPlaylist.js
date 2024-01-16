@@ -53,7 +53,7 @@ const palletGradientPlaylist = (data) => {
     });
 
     bannerBackground.style.backgroundColor = `${foundColour}`;
-    artistBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 70%)`
+    artistBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 5%, ${evenDarkerFoundColour} 9%, #1a1a1a 11%, #121212 16%)`
   }
   
   export default palletGradientPlaylist;
