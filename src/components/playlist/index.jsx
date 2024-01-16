@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { usePalette } from "react-palette";
+import getPlaylist from "./components/functions/getPlaylist";
 import sleep from "../../shared-functions/sleep";
 import palletGradientPlaylist from "../../ColorThief/paletteGradientPlaylist";
 import PlaylistTopNav from "./components/PlaylistTopNav"
@@ -17,36 +18,11 @@ function Playlist({ token, setToken }) {
     const [playlistTracks, setPlaylistTracks] = useState([])
 
     useEffect(() => {
-        const getPlaylist = async () => {
-            const { data } = await axios.get(
-              `https://api.spotify.com/v1/playlists/${playlistId}`,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
-            );
-            console.log(data)
-            setPlaylistTracks(data.tracks.items)
-            setPlaylistInfo({
-                name: data.name,
-                img: data.images[0].url,
-                description: data.description,
-                followers: data.followers.total,
-                totalTracks: data.tracks.total,
-                type: data.type,
-                isPublic: data.public,
-                owner: data.owner.display_name
-            })
-        };
-        getPlaylist()
+        sleep(0).then(() => getPlaylist(token, playlistId, setPlaylistInfo, setPlaylistTracks))
     }, [playlistId, token])
 
     const { data } = usePalette(playlistInfo.img)
     sleep(0).then(() => palletGradientPlaylist(data))
-
-    // console.log(playlistInfo)
-    // console.log(playlistTracks)
 
     return (
         <div className="scrollbar-playlist">

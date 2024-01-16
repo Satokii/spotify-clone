@@ -1,6 +1,6 @@
 /* BANNER */
 .playlist-page--banner {
-    grid-template-rows: 30px 170px 20px 40px;
+    grid-template-rows: 30px 130px 20px 40px;
     line-height: normal;
     align-content: end;
     align-items: center;
