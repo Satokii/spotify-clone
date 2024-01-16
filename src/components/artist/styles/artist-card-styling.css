@@ -27,7 +27,7 @@
 
 /* ARTIST SECTION ITEM LIST */
 .artist--section-list {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    grid-template-columns: repeat(auto-fit, 180px);
     gap: 24px;
     overflow-y: hidden;
     margin-top: 10px;

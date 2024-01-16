@@ -1,8 +1,8 @@
 .album-page--menu-backing {
     position: absolute;
     top: 13px;
-    left: 163px;
-    width: calc(100% - 522px);
+    left: 293px;
+    width: calc(100% - 652px);
     z-index: 1;
     transition: 0.3s 0s ease;
 }
