@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import convertMsToTime from "../../../shared-functions/convertMsToTime";
-import albumTimeinMs from "../../../shared-functions/albumTimeinMs";
+import playlistTimeinMs from "./functions/playlistTimeinMs";
 
 import "../styles/playlist-banner.css"
 
@@ -18,7 +18,7 @@ function PlaylistBanner({ playlistInfo, playlistTracks }) {
             <span className="middot">&middot;</span>
             <p className="playlist-page--playlist-likes">{`${playlistInfo.followers} likes`}</p>
             <span className="middot">&middot;</span>
-            <p className="playlist-overview-total-tracks"><span className="playlist-overview-song-num">{`${playlistInfo.totalTracks} songs`}</span>{`, ${convertMsToTime(albumTimeinMs(playlistTracks))}`}</p>
+            <p className="playlist-overview-total-tracks"><span className="playlist-overview-song-num">{`${playlistInfo.totalTracks} songs`}</span>{`, ${convertMsToTime(playlistTimeinMs(playlistTracks))}`}</p>
         </div>
     </div>
   );

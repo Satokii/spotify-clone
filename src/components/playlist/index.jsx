@@ -26,7 +26,7 @@ function Playlist({ token, setToken }) {
                 },
               }
             );
-            // console.log(data)
+            console.log(data)
             setPlaylistTracks(data.tracks.items)
             setPlaylistInfo({
                 name: data.name,
@@ -40,7 +40,7 @@ function Playlist({ token, setToken }) {
             })
         };
         getPlaylist()
-    }, [token])
+    }, [playlistId, token])
 
     const { data } = usePalette(playlistInfo.img)
     sleep(0).then(() => palletGradientPlaylist(data))
