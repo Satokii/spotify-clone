@@ -48,6 +48,7 @@
     grid-template-columns: repeat(auto-fit, 180px);
     gap: 24px;
     overflow-y: hidden;
+    justify-content: center;
 }
 
 /* SINGLE PLAYLIST CONTAINER */
