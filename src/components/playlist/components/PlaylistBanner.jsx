@@ -16,9 +16,9 @@ function PlaylistBanner({ playlistInfo, playlistTracks }) {
         <div className="playlist-page--playlist-overview-container grid">
             <p className="playlist-page--playlist-owner">{playlistInfo.owner}</p>
             <span className="middot">&middot;</span>
-            <p>{`${playlistInfo.followers} likes`}</p>
+            <p className="playlist-page--playlist-likes">{`${playlistInfo.followers} likes`}</p>
             <span className="middot">&middot;</span>
-            <p className="playlist-overview-total-tracks">{`${playlistInfo.totalTracks} songs, ${convertMsToTime(albumTimeinMs(playlistTracks))}`}</p>
+            <p className="playlist-overview-total-tracks"><span className="playlist-overview-song-num">{`${playlistInfo.totalTracks} songs`}</span>{`, ${convertMsToTime(albumTimeinMs(playlistTracks))}`}</p>
         </div>
     </div>
   );
