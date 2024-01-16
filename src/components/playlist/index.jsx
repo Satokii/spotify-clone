@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { usePalette } from "react-palette";
-import getPlaylist from "./components/functions/getPlaylist";
+import getPlaylist from "./functions/getPlaylist";
 import sleep from "../../shared-functions/sleep";
 import palletGradientPlaylist from "../../ColorThief/paletteGradientPlaylist";
 import PlaylistTopNav from "./components/PlaylistTopNav"
@@ -29,7 +29,10 @@ function Playlist({ token, setToken }) {
             <section className="playlist-page--container grid">
                 <PlaylistTopNav setToken={setToken} />
                 <PlaylistBanner playlistInfo={playlistInfo} playlistTracks={playlistTracks} />
-                <div className="playlist-page--sub-container grid">sub container</div>
+                <div className="playlist-page--sub-container grid">
+                    <div className="playlist-page--controls"></div>
+                    <div className="playlist-page--tracks"></div>
+                </div>
             </section>
         </div>
     )

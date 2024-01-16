@@ -15,7 +15,7 @@ const getPlaylist = async (token, playlistId, setPlaylistInfo, setPlaylistTracks
         name: data.name,
         img: data.images[0].url,
         description: data.description,
-        followers: data.followers.total,
+        followers: (data.followers.total).toLocaleString(),
         totalTracks: data.tracks.total,
         type: data.type,
         isPublic: data.public,
