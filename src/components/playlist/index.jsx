@@ -24,17 +24,7 @@ function Playlist({ token, setToken }) {
 
     const { data } = usePalette(playlistInfo.img)
     sleep(0).then(() => palletGradientPlaylist(data))
-
-    const x = playlistTracks.map(track => {
-        // const y = track.track.artists
-        for (let i = 0; i < track.track.artists.length; i++) {
-            // if ( i === 2) break
-            return track.track.artists[i]
-        }
-        // return y
-    })
-    // console.log(x)
-
+    
     return (
         <div className="scrollbar-playlist">
             <section className="playlist-page--container grid">

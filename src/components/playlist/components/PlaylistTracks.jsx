@@ -3,10 +3,11 @@ import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
-import formatDate from "../../../shared-functions/formatDate"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
 import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch"
+import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews"
+import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 
 import "../styles/playlist-tracks.css"
 
@@ -40,6 +41,8 @@ function PlaylistTracks({ playlistTracks }) {
                                 </div>
                             </div>
                         </div>
+                        <div className="playlist-page--album-name">{fixLengthPreviews(track.track.album.name)}</div>
+                        <div className="playlist-page--date-added">{formatDateShortMths(track.added_at)}</div>
                         <img className="playlist-page--hide-like" src={GrayHeart} alt="gray heart"></img>
                         <div className="playlist-page--track-time">{calcTrackTime(track.track.duration_ms)}</div>
                         <img className="playlist-page--track-dots" src={MenuDots} alt="menu dots" />

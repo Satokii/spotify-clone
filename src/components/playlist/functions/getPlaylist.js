@@ -9,7 +9,7 @@ const getPlaylist = async (token, playlistId, setPlaylistInfo, setPlaylistTracks
         },
       }
     );
-    // console.log(data)
+    console.log(data)
     setPlaylistTracks(data.tracks.items)
     setPlaylistInfo({
         name: data.name,
