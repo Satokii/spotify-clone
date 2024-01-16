@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import Logout from "../../../Logout"
+import sleep from "../../../shared-functions/sleep"
+import scrollFade from "../functions/scrollFade"
 import BackArrow from "../../../assets/svgs/main-app/back-arrow.svg"
 import ForwardArrow from "../../../assets/svgs/main-app/forward-arrow.svg"
 import ProfileIcon from "../../../assets/svgs/main-app/profile-icon.svg"
@@ -11,6 +13,8 @@ import "../styles/dashboard-menu.css"
 function DashboardMenu({ setToken }) {
 
     const navigate = useNavigate()
+
+    sleep(0).then(() => scrollFade())
 
     return (
         <div className="main-page--menu-backing">
