@@ -34,7 +34,7 @@
 
 .main-playback--queue-item {
     grid-template-rows: repeat(3, auto);
-    grid-template-rows: 60px 28px 20px;
+    grid-template-rows: 70px 20px 20px;
     border-radius: 10px;
     background-color: var(--const-card-bg);
     align-items: start;
@@ -54,13 +54,14 @@
     height: 60px;
     border-radius: 100%;
     justify-self: center;
+    align-self: center;
 }
 
 .main-playback--queue-track {
     font-size: 13px;
     font-weight: bold;
     color: var(--const-main-white);
-    margin-top: 8px;
+    margin-top: 2px;
 }
 
 .main-playback--queue-artist {
