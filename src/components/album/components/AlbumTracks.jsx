@@ -5,7 +5,7 @@ import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import formatDate from "../../../shared-functions/formatDate"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
-import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
+import GetAlbumTrackArtists from "../../../shared-functions/getAlbumTrackArtists"
 
 import "../styles/album-tracks.css"
 
@@ -29,7 +29,7 @@ function AlbumTracks({ albumTracksArr, albumInfo, copyrights }) {
                             <div className="album-page--artist-sub-container grid">
                                 <div className="album-page--explicit-container grid">{track.explicit ? <><p className="album-page--explicit-track">E</p></> : null}</div>
                                 <div className="album-page--artist-name-container grid">
-                                    {GetTrackArtists(track)}
+                                    {GetAlbumTrackArtists(track)}
                                 </div>
                             </div>
                         </div>
