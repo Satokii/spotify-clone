@@ -23,7 +23,7 @@ function NavMainLinks() {
             name: "Search",
             className: "navigation--inactive-nav-link",
             isActive: false,
-            navigate: "/search"
+            navigate: "/search-results"
         },
         {
             name: "Top Played",
@@ -36,6 +36,8 @@ function NavMainLinks() {
     const [activeNavImg, setActiveNavImg] = useState('Home')
     const [activeNavLink, setActiveNavLink] = useState(INITIAL_NAV_LINK_STATE)
 
+    // when nav link clicked, update activeNavLink state to highlight
+    // active link
     const toggleActiveNav = (e) => {
         const updatedNav = activeNavLink.map(nav => {
             if (nav.name === e.target.innerText) {
@@ -48,10 +50,64 @@ function NavMainLinks() {
         setActiveNavLink(updatedNav)
     }
 
+    // useEffect fires every time activeNavLink updates
     useEffect(() => {
         const activeNav = activeNavLink.find(nav => nav.isActive === true)
-        setActiveNavImg(activeNav.name)
+        if (!activeNav) setActiveNavImg("")
+        else setActiveNavImg(activeNav.name)
     }, [activeNavLink])
+
+    // function to check the url pathname to dynamically update nav link
+    // styling. when pages other than nav links are clicked, links are 
+    // inactive with no styling. if user navigateswith forward/back
+    // buttons, returning to a direct nav page will apply styling
+    const checkPageChange  = () => {
+        const checkPathname = window.location.pathname
+        if (checkPathname === "/") {
+            const updatedNav = activeNavLink.map(nav => {
+                if (nav.name === "Home") {
+                    return { ...nav, isActive: true, className: "navigation--active-nav-link"}
+                }
+                else {
+                    return { ...nav, isActive: false, className: "navigation--inactive-nav-link"}
+                }
+            })
+            setActiveNavLink(updatedNav)
+        }
+        if (checkPathname === "/search-results") {
+            const updatedNav = activeNavLink.map(nav => {
+                if (nav.name === "search") {
+                    return { ...nav, isActive: true, className: "navigation--active-nav-link"}
+                }
+                else {
+                    return { ...nav, isActive: false, className: "navigation--inactive-nav-link"}
+                }
+            })
+            setActiveNavLink(updatedNav)
+        }
+        if (checkPathname === "/top-played") {
+            const updatedNav = activeNavLink.map(nav => {
+                if (nav.name === "Top Played") {
+                    return { ...nav, isActive: true, className: "navigation--active-nav-link"}
+                    }
+                else {
+                    return { ...nav, isActive: false, className: "navigation--inactive-nav-link"}
+                }
+            })
+            setActiveNavLink(updatedNav)
+        }
+        if (checkPathname != "/" && checkPathname != "/search-results" && checkPathname != "/top-played") {
+            const updatedNav = activeNavLink.map(nav => {
+                    return { ...nav, isActive: false, className: "navigation--inactive-nav-link"}
+            })
+            setActiveNavLink(updatedNav)
+        }
+    }
+
+    // use effect to run checkPageChange function to apply the above effects
+    useEffect(() => {
+        window.onpopstate = checkPageChange()
+    }, [])
 
     return (
         <div className='navigation--main-links-container grid'>

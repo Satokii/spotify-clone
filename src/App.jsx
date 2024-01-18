@@ -136,6 +136,10 @@ function App() {
             }
           >
           </Route>
+          <Route
+          path="top-played">
+
+          </Route>
           {/* <Route
             path="/"
             element={
