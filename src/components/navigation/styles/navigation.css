@@ -1,13 +1,16 @@
-.navigation-container {
+.navigation--container {
     grid-area: Navigation;
-    background-color: var(--darker-black);
+    grid-template-rows: 120px 56px 1fr;
+    background-color: var(--const-base-bg);
     /* height: 100%; */
     min-width: 150px;
     overflow-y: hidden;
-    position: fixed;
-    top: 100px;
-    left: 0;
-    bottom: 100px;
+    /* position: fixed; */
+    margin: 5px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .nav-list {
