@@ -203,3 +203,17 @@
     filter: var(--filter-hover-white);
     transform: scale(1.05);
 }
+
+@media screen and (min-width: 1600px) {
+/* TRACKS HEADERS */
+.playlist-page--tracks-headers {
+    grid-template-columns: 20px auto 300px 270px 90px;
+    /* grid-template-columns: 20px auto 170px 160px 90px; */
+}
+
+/* TRACKS */
+.playlist-page--single-track {
+    grid-template-columns: 20px 40px auto 300px 100px 150px 40px 20px;
+    /* grid-template-columns: 20px 40px auto 170px 90px 50px 40px 20px; */
+}
+}
