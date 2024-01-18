@@ -8,8 +8,10 @@ function Navigation({ token }) {
     return (
         <section className="navigation--container grid">
             <NavMainLinks />
-            <NavLibraryHeader />
-            <div className='navigation--playlists'></div>
+            <div className='navigation--library-container grid'>
+                <NavLibraryHeader />
+                <div className='navigation--playlists'></div>
+            </div>
         </section>
     )
 }
