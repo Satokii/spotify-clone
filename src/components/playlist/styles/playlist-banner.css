@@ -1,10 +1,16 @@
 /* BANNER */
 .playlist-page--banner {
+    height: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.playlist-page--banner-filter {
     grid-template-rows: 30px 130px 20px 40px;
     line-height: normal;
     align-content: end;
     align-items: center;
-    height: 100%;
+    backdrop-filter: brightness(70%);
     padding: 0 25px 25px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -25,6 +31,7 @@
     letter-spacing: 1px;
     margin-bottom: 20px;
     margin-top: 10px;
+    /* filter: brightness(200%); */
 }
 
 .playlist-page--playlist-description {
