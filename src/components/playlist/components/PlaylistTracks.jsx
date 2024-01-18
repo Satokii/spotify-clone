@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import scrollToTop from "../../../shared-functions/scrollToTop"
 import TimeIcon from "../../../assets/svgs/main-app/time.svg"
 import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
@@ -12,6 +14,7 @@ import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 import "../styles/playlist-tracks.css"
 
 function PlaylistTracks({ playlistTracks }) {
+    console.log(playlistTracks)
     return (
         <div className="playlist-page--tracks grid">
             <div className="playlist-page--tracks-headers grid">
@@ -33,7 +36,7 @@ function PlaylistTracks({ playlistTracks }) {
                             : <div></div>
                         }
                         <div className="playlist-page--track-name-container grid">
-                            <div className="playlist-page--track-name">{fixLengthSearch(track.track.name)}</div>
+                            <Link className="playlist-page--track-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixLengthSearch(track.track.name)}</Link>
                             <div className="playlist-page--playlist-sub-container grid">
                                 <div className="playlist-page--explicit-container grid">{track.track.explicit ? <><p className="playlist-page--explicit-track">E</p></> : null}</div>
                                 <div className="playlist-page--playlist-name-container grid">
@@ -41,7 +44,7 @@ function PlaylistTracks({ playlistTracks }) {
                                 </div>
                             </div>
                         </div>
-                        <div className="playlist-page--album-name">{fixLengthPreviews(track.track.album.name)}</div>
+                        <Link className="playlist-page--album-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixLengthPreviews(track.track.album.name)}</Link>
                         <div className="playlist-page--date-added">{formatDateShortMths(track.added_at)}</div>
                         <img className="playlist-page--hide-like" src={GrayHeart} alt="gray heart"></img>
                         <div className="playlist-page--track-time">{calcTrackTime(track.track.duration_ms)}</div>

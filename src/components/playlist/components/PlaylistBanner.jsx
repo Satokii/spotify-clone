@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
 import convertMsToTime from "../../../shared-functions/convertMsToTime";
 import playlistTimeinMs from "../functions/playlistTimeinMs";
 
 import "../styles/playlist-banner.css"
 
 function PlaylistBanner({ playlistInfo, playlistTracks }) {
-  console.log(playlistInfo)
   return (
     <div className="playlist-page--banner grid" style={{ backgroundImage: `url(${playlistInfo.img})`, backgroundPosition: "50% 30%", backgroundRepeat: "no-repeat", backgroundSize: "80%"}}>
       <div className="playlist-page--banner-filter grid">
