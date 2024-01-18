@@ -137,8 +137,9 @@ function App() {
           >
           </Route>
           <Route
-          path="top-played">
-
+            path="top-played"
+            // TODO: Add element component
+          >
           </Route>
           {/* <Route
             path="/"

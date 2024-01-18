@@ -1,0 +1,21 @@
+.navigation--library-header {
+    grid-template-columns: 30px 1fr 40px;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+/* LIBRARY ICON */
+.navigation--library-header-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* CREATE PLAYLIST */
+.navigation--library-create-playlist-btn {
+    place-content: center;
+}
+
+.navigation--library-header-plus-icon {
+    width: 30px;
+    height: 30px;
+}

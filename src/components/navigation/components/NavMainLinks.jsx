@@ -7,7 +7,6 @@ import SearchInactive from "../../../assets/svgs/main-app/search-inactive.svg"
 import TopPlayedActive from "../../../assets/svgs/main-app/top-played-active.svg"
 import TopPlayedInactive from "../../../assets/svgs/main-app/top-played-inactive.svg"
 
-
 import "../styles/nav-main-links.css"
 
 function NavMainLinks() {
