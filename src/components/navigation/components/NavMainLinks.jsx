@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import HomeActive from "../../../assets/svgs/main-app/home-active.svg"
 import HomeInactive from "../../../assets/svgs/main-app/home-inactive.svg"
 import SearchActive from "../../../assets/svgs/main-app/search-active.svg"
@@ -17,16 +17,19 @@ function NavMainLinks() {
             name: "Home",
             className: "navigation--active-nav-link",
             isActive: true,
+            navigate: "/"
         },
         {
             name: "Search",
             className: "navigation--inactive-nav-link",
             isActive: false,
+            navigate: "/search"
         },
         {
             name: "Top Played",
             className: "navigation--inactive-nav-link",
             isActive: false,
+            navigate: "top-played"
         }
     ]
 
@@ -68,8 +71,10 @@ function NavMainLinks() {
                     <li 
                     key={`${nav.name}-${index}`} 
                     className={nav.className} 
-                    onClickCapture={e => toggleActiveNav(e)}>
+                    onClick={e => toggleActiveNav(e)}>
+                        <Link to={nav.navigate}>
                         {nav.name}
+                        </Link>
                     </li>
                 ))}
             </ul>
