@@ -15,17 +15,17 @@ function NavMainLinks() {
     const INITIAL_NAV_LINK_STATE = [
         {
             name: "Home",
-            className: "active-nav-link",
+            className: "navigation--active-nav-link",
             isActive: true,
         },
         {
             name: "Search",
-            className: "inactive-nav-link",
+            className: "navigation--inactive-nav-link",
             isActive: false,
         },
         {
             name: "Top Played",
-            className: "inactive-nav-link",
+            className: "navigation--inactive-nav-link",
             isActive: false,
         }
     ]
@@ -36,10 +36,10 @@ function NavMainLinks() {
     const toggleActiveNav = (e) => {
         const updatedNav = activeNavLink.map(nav => {
             if (nav.name === e.target.innerText) {
-                return { ...nav, isActive: true}
+                return { ...nav, isActive: true, className: "navigation--active-nav-link"}
             }
             else {
-                return { ...nav, isActive: false}
+                return { ...nav, isActive: false, className: "navigation--inactive-nav-link"}
             }
         })
         setActiveNavLink(updatedNav)
@@ -52,15 +52,6 @@ function NavMainLinks() {
 
     return (
         <div className='navigation--main-links-container grid'>
-            {/* <li className="navigation--main-links-home">
-                {homeActive ?
-                <img className="navigation--main-links-home-icon-active" src={HomeActive} alt="home icon active" />
-                : <img src={HomeInactive} alt="home icon inactive" />
-                }
-                <div>Home</div>
-            </li>
-            <li>Search</li>
-            <li>Most Played</li> */}
             <ul className="navigation--main-links-icons-container grid">
                 <li className="navigation--main-links-home-icons">
                     {activeNavImg === "Home" ? <img src={HomeActive} alt="home icon active" /> : <img src={HomeInactive} alt="home icon inactive" /> }
@@ -74,7 +65,10 @@ function NavMainLinks() {
             </ul>
             <ul className="navigation--main-links-text-container grid">
                 {activeNavLink.map((nav, index) => (
-                    <li key={`${nav.name}-${index}`} onClickCapture={e => toggleActiveNav(e)}>
+                    <li 
+                    key={`${nav.name}-${index}`} 
+                    className={nav.className} 
+                    onClickCapture={e => toggleActiveNav(e)}>
                         {nav.name}
                     </li>
                 ))}
