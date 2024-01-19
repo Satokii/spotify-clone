@@ -35,15 +35,15 @@ function NavLibraryFilter() {
 
     return (
         <div className='navigation--library-filter-container grid'>
-            <div className="navigation--library-filter-none-container grid" onClick={() => resetPlaylistFilter()}>
-                <img className="navigation--library-filter-none-icon" src={CrossGray} alt="cross icon" />
-            </div>
+
             {libraryFilter.map((filter, index) => (
                 <div className={filter.className} key={`${filter.name}-${index}`} onClick={e => toggleActiveLibraryFilter(e)}>
                     {filter.name}
                 </div>
             ))}
-
+            <div className="navigation--library-filter-none-container grid" onClick={() => resetPlaylistFilter()}>
+                <img className="navigation--library-filter-none-icon" src={CrossGray} alt="cross icon" />
+            </div>
         </div>
     )
 }
