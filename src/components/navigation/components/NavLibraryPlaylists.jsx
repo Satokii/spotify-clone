@@ -1,7 +1,8 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
+import LikedSongsImg from "../../../assets/images/liked-songs-img.png"
 
 import "../styles/nav-library-playlists.css"
-import { useEffect, useState } from "react";
 
 function NavLibraryPlaylists({ token }) {
 
@@ -25,15 +26,15 @@ function NavLibraryPlaylists({ token }) {
     }, [token])
 
     return (
-        <div className='navigation--playlists-container'>
-            <div className='navigation--playlists-scrollbar'>
-                <ul className="navigation--playlists-list">
-                    <li className="navigation--playlists-liked-container">
-                        <img src="" alt="" />
-                        <div>Liked Songs</div>
-                        <div>Playlist</div>
-                        <span className="middot">&middot;</span>
-                        <div>{`${likeSongsLibrary.numTracks} songs`}</div>
+        <div className='navigation--playlists-scrollbar'>
+            <div className='navigation--playlists-container'>
+                <ul className="navigation--playlists-list grid">
+                    <li className="navigation--playlists-liked-container grid" tabIndex={1}>
+                        <img className="navigation--playlists-liked-img" src={LikedSongsImg} alt="liked songs img" />
+                        <div className="navigation--playlists-liked-text-container grid">
+                            <div className="navigation--playlists-liked-header">Liked Songs</div>
+                            <div className="navigation--playlists-liked-details ">Playlist &bull; {`${likeSongsLibrary.numTracks}`} songs</div>
+                        </div>
                     </li>
                 </ul>
             </div>

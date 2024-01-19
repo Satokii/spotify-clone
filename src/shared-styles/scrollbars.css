@@ -1,6 +1,7 @@
 ::-webkit-scrollbar {
     -webkit-appearance: auto;
     width: 16px;
+    margin: 0;
   }
   
   ::-webkit-scrollbar-track {
