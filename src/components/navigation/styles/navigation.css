@@ -1,6 +1,6 @@
 .navigation--container {
     grid-area: Navigation;
-    grid-template-rows: 150px 56px;
+    grid-template-rows: 150px 1fr;
     gap: 10px;
     /* height: 100%; */
     min-width: 150px;

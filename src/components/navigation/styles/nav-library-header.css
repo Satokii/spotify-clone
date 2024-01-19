@@ -3,11 +3,8 @@
     gap: 20px;
     align-items: center;
     padding: 8px 12px;
-    background-color: var(--const-base-bg);
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
 }
 
 /* LIBRARY HEADER ICON */
@@ -33,7 +30,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .navigation--library-create-playlist-btn:hover {
