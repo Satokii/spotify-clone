@@ -1,6 +1,6 @@
 .navigation--library-filter-container {
     grid-template-columns: repeat(3, auto);
-    gap: 5px;
+    gap: 8px;
     justify-content: start;
     align-items: center;
     padding: 8px 12px;
@@ -29,7 +29,17 @@
 }
 
 /* FILTER HEADERS */
-.navigation--library-filter-playlists, .navigation--library-filter-albums {
+.navigation--active-library-filter {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background-color: var(--const-main-white);
+    color: var(--const-black);
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.navigation--inactive-library-filter {
     padding: 6px 12px;
     border-radius: 9999px;
     background-color: var(--disco-filter);
@@ -38,6 +48,6 @@
     transition: 0.2s;
 }
 
-.navigation--library-filter-playlists:hover, .navigation--library-filter-albums:hover {
+.navigation--inactive-library-filter:hover {
     background-color: var(--album-track-hover);
 }
