@@ -31,6 +31,10 @@
     font-weight: bold;
 }
 
+.navigation--main-links-text-container > li:hover {
+    color: var(--const-main-white);
+}
+
 .navigation--active-nav-link {
     color: var(--const-main-white);
 }

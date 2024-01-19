@@ -2,10 +2,7 @@
     grid-area: Navigation;
     grid-template-rows: 150px 1fr;
     gap: 10px;
-    /* height: 100%; */
     overflow: hidden;
-    /* overflow-y: scroll; */
-    /* position: fixed; */
     margin: 5px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
