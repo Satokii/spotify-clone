@@ -14,7 +14,7 @@
 }
 
 .navigation--library-container {
-    grid-template-rows: 56px 1fr;
+    grid-template-rows: 56px 48px 1fr;
     background-color: var(--const-base-bg);
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;

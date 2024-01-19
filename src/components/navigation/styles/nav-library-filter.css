@@ -1,0 +1,8 @@
+.navigation--library-filter-container {
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 12px;
+}
+
