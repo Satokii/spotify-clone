@@ -2,7 +2,7 @@ function Authorisation() {
   const CLIENT_ID = "04e1410dfac14d27968c7ef88c68d41c";
   const REDIRECT_URI = "http://localhost:5173/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-  const SCOPE = "user-top-read user-read-recently-played user-read-currently-playing user-read-playback-state user-modify-playback-state user-library-read";
+  const SCOPE = "user-top-read user-read-recently-played user-read-currently-playing user-read-playback-state user-modify-playback-state user-library-read playlist-read-private";
   const RESPONSE_TYPE = "token";
   const SHOW_DIALOG = true;
 

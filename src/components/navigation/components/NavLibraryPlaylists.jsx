@@ -7,6 +7,7 @@ import "../styles/nav-library-playlists.css"
 function NavLibraryPlaylists({ token }) {
 
     const [likeSongsLibrary, setLikedSongsLibrary] = useState({})
+    const [playlistItemsLibrary, setPlaylistItemsLibrary] = useState([])
 
     useEffect(() => {
         const getLikedSongsLibrary = async () => {
@@ -24,6 +25,22 @@ function NavLibraryPlaylists({ token }) {
         };
         getLikedSongsLibrary()
     }, [token])
+
+    useEffect(() => {
+      const getPlaylistItems = async () => {
+          const { data } = await axios.get(
+            `https://api.spotify.com/v1/me/playlists`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          console.log(data.items)
+            // setPlaylistItemsLibrary(data)
+      };
+      getPlaylistItems()
+  }, [token])
 
     return (
         <div className='navigation--playlists-scrollbar'>
