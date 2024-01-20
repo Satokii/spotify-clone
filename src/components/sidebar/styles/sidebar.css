@@ -11,7 +11,6 @@
 }
 
 .scrollbar-sidebar {
-    grid-area: Sidebar;
     overflow-y: scroll;
     visibility: hidden;
     transition: 1s all 0.1s ease-out;
@@ -22,7 +21,6 @@
 }
 
 .sidebar {
-    grid-area: Sidebar;
     grid-template-rows: 360px 370px 120px;
     padding: 30px 16px 16px;
     gap: 10px;

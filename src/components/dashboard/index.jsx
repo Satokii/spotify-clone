@@ -8,7 +8,7 @@ function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying 
 
     return (
         <div className="dashboard-outer-container grid">
-            <div className="scrollbar-dashboard grid">
+            <div className="scrollbar-dashboard">
                 <main className="dashboard grid">
                     <DashboardMenu setToken={setToken} />
                     <DashboardBanner token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} />
