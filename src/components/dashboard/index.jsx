@@ -7,7 +7,8 @@ import "./styles/dashboard.css"
 function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying }) {
 
     return (
-        <div className="scrollbar-dashboard">
+        <div className="dashboard-outer-container grid">
+        <div className="scrollbar-dashboard grid">
         <main className="dashboard grid">
             <DashboardMenu setToken={setToken} />
             <DashboardBanner token={token} queue={queue} setQueue={setQueue} currentTrack={currentTrack} notPlaying={notPlaying} />
@@ -15,6 +16,7 @@ function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying 
                 <DashboardTopFeaturedPlaylists token={token} />
             </section>
         </main>
+        </div>
         </div>
     )
 }
