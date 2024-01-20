@@ -9,8 +9,7 @@
 
 .main-page--menu {
     grid-template-columns: repeat(2, auto);
-    padding-left: 26px;
-    padding-right: 26px;
+    padding: 0 26px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     z-index: 1;

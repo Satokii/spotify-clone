@@ -1,9 +1,20 @@
+.sidebar-outer-container {
+    grid-area: Sidebar;
+    overflow: hidden;
+    background-color: var(--const-base-bg);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 5px;
+    padding-right: 3px;
+}
+
 .scrollbar-sidebar {
     grid-area: Sidebar;
     overflow-y: scroll;
     visibility: hidden;
     transition: 1s all 0.1s ease-out;
-    margin: 5px;
 }
 
 .scrollbar-sidebar:hover {
@@ -13,8 +24,7 @@
 .sidebar {
     grid-area: Sidebar;
     grid-template-rows: 360px 370px 120px;
-    padding: 16px;
-    background-color: var(--const-base-bg);
+    padding: 30px 16px 16px;
     gap: 10px;
     overflow-x: hidden;
     opacity: 0;

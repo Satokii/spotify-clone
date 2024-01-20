@@ -6,12 +6,14 @@ import "./styles/sidebar.css"
 function Sidebar({ token, currentTrack }) {
 
     return (
-        <div className="scrollbar-sidebar">
-        <section className="sidebar grid">
-            <SidebarCurrentTrack currentTrack={currentTrack} />
-            <SidebarAboutArtist token={token} currentTrack={currentTrack} />
-            <div>Next in queue</div>
-        </section>
+        <div className="sidebar-outer-container grid">
+            <div className="scrollbar-sidebar">
+                <section className="sidebar grid">
+                    <SidebarCurrentTrack currentTrack={currentTrack} />
+                    <SidebarAboutArtist token={token} currentTrack={currentTrack} />
+                    <div>Next in queue</div>
+                </section>
+            </div>
         </div>
     )
 }
