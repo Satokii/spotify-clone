@@ -34,10 +34,12 @@ function NavLibraryPlaylists({ token }) {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
+              params: {
+                limit: 50
+              }
             }
           );
-          console.log(data.items)
-            // setPlaylistItemsLibrary(data)
+            setPlaylistItemsLibrary(data.items)
       };
       getPlaylistItems()
   }, [token])
@@ -46,13 +48,24 @@ function NavLibraryPlaylists({ token }) {
         <div className='navigation--playlists-scrollbar'>
             <div className='navigation--playlists-container'>
                 <ul className="navigation--playlists-list grid">
-                    <li className="navigation--playlists-liked-container grid" tabIndex={1}>
-                        <img className="navigation--playlists-liked-img" src={LikedSongsImg} alt="liked songs img" />
-                        <div className="navigation--playlists-liked-text-container grid">
-                            <div className="navigation--playlists-liked-header">Liked Songs</div>
-                            <div className="navigation--playlists-liked-details ">Playlist &bull; {`${likeSongsLibrary.numTracks}`} songs</div>
+                    <li className="navigation--playlists-item-container grid" tabIndex={1}>
+                        <img className="navigation--playlists-item-img" src={LikedSongsImg} alt="liked songs img" />
+                        <div className="navigation--playlists-item-text-container grid">
+                            <div className="navigation--playlists-item-header">Liked Songs</div>
+                            <div className="navigation--playlists-item-details ">Playlist &bull; {`${likeSongsLibrary.numTracks}`} songs</div>
                         </div>
                     </li>
+                    {playlistItemsLibrary.map((playlist, index) =>
+                      <li key={`${playlist.id}-${index}`} className="navigation--playlists-item-container grid" tabIndex={1}>
+                        {playlist.images.length ? 
+                        <img className="navigation--playlists-item-img" src={playlist.images[0].url} alt="playlist songs img" />
+                        : <div></div> }
+                        <div className="navigation--playlists-item-text-container grid">
+                            <div className="navigation--playlists-item-header">{playlist.name}</div>
+                            <div className="navigation--playlists-item-details "><span className="navigation--playlists-item-capitalise">{playlist.type}</span> &bull; {`${playlist.owner.display_name}`}</div>
+                        </div>
+                  </li>
+                    )}
                 </ul>
             </div>
         </div>
