@@ -8,6 +8,7 @@ import Main from "./components/main";
 import Album from "./components/album";
 import Artist from "./components/artist";
 import Playlist from "./components/playlist";
+import LikedSongs from "./components/liked-songs";
 import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
@@ -235,6 +236,15 @@ function App() {
             element={
               token ?
               <Playlist token={token} setToken={setToken} />
+              : <WelcomePage />
+            }
+          >
+          </Route>
+          <Route
+            path="/liked-songs"
+            element={
+              token ?
+              <LikedSongs />
               : <WelcomePage />
             }
           >
