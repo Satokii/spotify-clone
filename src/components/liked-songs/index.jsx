@@ -6,6 +6,7 @@ import paletteGradientLikedSongs from "../../ColorThief/paletteGradientLikedSong
 import LikedSongsImg from "../../assets/images/liked-songs-img.png"
 import LikedSongsTopNav from "./components/LikedSongsTopNav"
 import LikedSongsBanner from "./components/LikedSongsBanner";
+import LikedSongsControls from "./components/LikedSongsControls";
 
 import "./styles/liked-songs.css"
 
@@ -40,7 +41,7 @@ function LikedSongs({ token, setToken }) {
             <LikedSongsTopNav setToken={setToken} />
             <LikedSongsBanner likedSongsInfo={likedSongsInfo} />
             <div className="liked-songs--sub-container grid">
-                <div>controls</div>
+                <LikedSongsControls />
                 <div>tracks</div>
             </div>
         </section>
