@@ -27,6 +27,7 @@ import "./shared-styles/back-button.css"
 import "./shared-styles/middot.css"
 import "./keyframes/fade-in.css"
 import "./keyframes/text-transform.css"
+import UserPlaylist from "./components/user-playlist";
 
 function App() {
   const [token, setToken] = useState("");
@@ -245,6 +246,15 @@ function App() {
             element={
               token ?
               <LikedSongs token={token} setToken={setToken} />
+              : <WelcomePage />
+            }
+          >
+          </Route>
+          <Route
+            path="/user-playlist/:playlistId"
+            element={
+              token ?
+              <UserPlaylist token={token} setToken={setToken} />
               : <WelcomePage />
             }
           >
