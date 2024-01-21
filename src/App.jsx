@@ -244,7 +244,7 @@ function App() {
             path="/liked-songs"
             element={
               token ?
-              <LikedSongs />
+              <LikedSongs token={token} setToken={setToken} />
               : <WelcomePage />
             }
           >
