@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import scrollToTop from "../../../shared-functions/scrollToTop"
 import TimeIcon from "../../../assets/svgs/main-app/time.svg"
-import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"

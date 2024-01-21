@@ -26,7 +26,6 @@ function LikedSongs({ token, setToken }) {
                 },
               }
             );
-            console.log(data)
             setLikedSongsInfo({trackNum: data.total})
             setLikedSongs(data.items)
         };

@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 import LikedSongsImg from "../../../assets/images/liked-songs-img.png"
 
 import "../styles/nav-library-playlists.css"
@@ -48,12 +50,14 @@ function NavLibraryPlaylists({ token }) {
         <div className='navigation--playlists-scrollbar'>
             <div className='navigation--playlists-container'>
                 <ul className="navigation--playlists-list grid">
-                    <li className="navigation--playlists-item-container grid" tabIndex={1}>
-                        <img className="navigation--playlists-item-img" src={LikedSongsImg} alt="liked songs img" />
-                        <div className="navigation--playlists-item-text-container grid">
-                            <div className="navigation--playlists-item-header">Liked Songs</div>
-                            <div className="navigation--playlists-item-details ">Playlist &bull; {`${likeSongsLibrary.numTracks}`} songs</div>
-                        </div>
+                    <li tabIndex={1}>
+                      <Link className="navigation--playlists-item-container grid" to={"/liked-songs"} onClick={scrollToTop}>
+                          <img className="navigation--playlists-item-img" src={LikedSongsImg} alt="liked songs img" />
+                          <div className="navigation--playlists-item-text-container grid">
+                              <div className="navigation--playlists-item-header">Liked Songs</div>
+                              <div className="navigation--playlists-item-details ">Playlist &bull; {`${likeSongsLibrary.numTracks}`} songs</div>
+                          </div>
+                        </Link>
                     </li>
                     {playlistItemsLibrary.map((playlist, index) =>
                       <li key={`${playlist.id}-${index}`} className="navigation--playlists-item-container grid" tabIndex={1}>
