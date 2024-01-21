@@ -1,12 +1,12 @@
-.playlist-page--tracks {
+.liked-songs--tracks {
     grid-template-rows: 35px 1fr auto;
     gap: 20px;
     padding: 0 25px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 /* TRACKS HEADERS */
-.playlist-page--tracks-headers {
+.liked-songs--tracks-headers {
     grid-template-columns: 20px auto 170px 160px 90px;
     gap: 20px;
     align-items: center;
@@ -16,34 +16,34 @@
     border-bottom: solid 1px var(--const-gray-faint);
 }
 
-.tracks-header--number {
+.liked-tracks-header--number {
     justify-self: end;
     font-size: 17px;
     position: relative;
 }
 
-.tracks-header--title {
+.liked-tracks-header--title {
     justify-self: start;
     padding-left: 7px;
 }
 
-.tracks-header--date-added{
+.liked-tracks-header--date-added{
     justify-self: start;
 }
 
-.tracks-header--time {
+.liked-tracks-header--time {
     height: 18px;
     width: 18px;
     justify-self: start;
 }
 
 /* TRACKS */
-.playlist-page--tracks-tracks {
+.liked-songs--tracks-tracks {
     grid-auto-flow: row;
     line-height: 1.3;
 }
 
-.playlist-page--single-track {
+.liked-songs--single-track {
     grid-template-columns: 20px 40px auto 170px 90px 50px 40px 20px;
     gap: 20px;
     height: 56px;
@@ -54,39 +54,39 @@
 }
 
 /* TRACK HOVER AND FOCUS EFFECTS */
-.playlist-page--single-track:hover {
+.liked-songs--single-track:hover {
     background-color: var(--album-track-hover);
 }
 
-.playlist-page--single-track:hover .playlist-page--track-number, .playlist-page--single-track:focus .playlist-page--track-number {
+.liked-songs--single-track:hover .liked-songs--track-number, .liked-songs--single-track:focus .liked-songs--track-number {
     opacity: 0;
 }
 
-.playlist-page--single-track:hover div, .playlist-page--single-track:focus div {
+.liked-songs--single-track:hover div, .liked-songs--single-track:focus div {
     color: var(--const-main-white);
 }
 
-.playlist-page--single-track:focus {
+.liked-songs--single-track:focus {
     background-color: var(--album-track-focus);
     outline: 0;
 }
 
-.playlist-page--single-track:hover img, .playlist-page--single-track:focus img {
+.liked-songs--single-track:hover img, .liked-songs--single-track:focus img {
     opacity: 1;
 }
 
 /* TRACK NUMBER */
-.playlist-page--track-num-container {
+.liked-songs--track-num-container {
     position: relative;
 }
 
-.playlist-page--track-number {
+.liked-songs--track-number {
     justify-self: center;
     font-size: 18px;
     color: var(--const-gray);
 }
 
-.playlist-page--hover-play-btn {
+.liked-songs--hover-play-btn {
     height: 15px;
     width: 15px;
     margin-left: 4px;
@@ -97,42 +97,42 @@
 }
 
 /* TRACK IMAGE */
-.playlist-page--track-img {
+.liked-songs--track-img {
     width: 40px;
     height: 40px;
     border-radius: 5px;
 }
 
 /* TRACK NAME */
-.playlist-page--track-name-container {
+.liked-songs--track-name-container {
     grid-template-rows: repeat(2, auto);
     gap: 3px;
     align-items: center;
 }
 
-.playlist-page--track-name {
+.liked-songs--track-name {
     font-size: 16px;
     line-height: 1.4;
     width: fit-content;
 }
 
-.playlist-page--track-name:hover {
+.liked-songs--track-name:hover {
     text-decoration: underline;
     text-underline-offset: 1.7px;
     cursor: pointer;
 }
 
 /* TRACK ARTISTS */
-.playlist-page--playlist-sub-container {
+.liked-songs--playlist-sub-container {
     grid-template-columns: auto 1fr;
     justify-items: start;
 }
 
-.playlist-page--explicit-container {
+.liked-songs--explicit-container {
     align-items: start;
 }
 
-.playlist-page--explicit-track {
+.liked-songs--explicit-track {
     font-size: 9px;
     height: fit-content;
     color: var(--darker-black);
@@ -142,19 +142,19 @@
     margin-right: 7px;
 }
 
-.playlist-page--playlist-name-container {
+.liked-songs--playlist-name-container {
     grid-template-columns: repeat(auto-fill, auto);
     grid-auto-flow: column;
     gap: 4px;
 }
 
 /* ALBUM NAME */
-.playlist-page--album-name {
+.liked-songs--album-name {
     color: var(--const-gray);
     width: fit-content;
 }
 
-.playlist-page--album-name:hover {
+.liked-songs--album-name:hover {
     color: var(--const-main-white);
     text-decoration: underline;
     text-underline-offset: 1.7px;
@@ -162,14 +162,14 @@
 }
 
 /* DATE ADDED */
-.playlist-page--date-added {
+.liked-songs--date-added {
     font-size: 14px;
     color: var(--const-gray);
     width: fit-content;
 }
 
 /* TRACK LIKE */
-.playlist-page--hide-like {
+.liked-songs--like {
     opacity: 0;
     width: 20px;
     height: 20px;
@@ -177,19 +177,19 @@
     justify-self: center;
 }
 
-.playlist-page--hide-like:hover {
+.liked-songs--hide-like:hover {
     filter: var(--filter-hover-white);
     transform: scale(1.05);
 }
 
 /* TRACK TIME */
-.playlist-page--track-time {
+.liked-songs--track-time {
     color: var(--const-gray);
     font-size: 14px;
 }
 
 /* TRACK MENU DOTS */
-.playlist-page--track-dots {
+.liked-songs--track-dots {
     opacity: 0;
     width: 20px;
     height: 20px;
@@ -197,19 +197,19 @@
     justify-self: end;
 }
 
-.playlist-page--track-dots:hover {
+.liked-songs--track-dots:hover {
     filter: var(--filter-hover-white);
     transform: scale(1.05);
 }
 
 @media screen and (min-width: 1600px) {
-    /* TRACKS HEADERS */
-    .playlist-page--tracks-headers {
-        grid-template-columns: 20px auto 300px 270px 90px;
-    }
+/* TRACKS HEADERS */
+.liked-songs--tracks-headers {
+    grid-template-columns: 20px auto 300px 270px 90px;
+}
 
-    /* TRACKS */
-    .playlist-page--single-track {
-        grid-template-columns: 20px 40px auto 300px 100px 150px 40px 20px;
-    }
+/* TRACKS */
+.liked-songs--single-track {
+    grid-template-columns: 20px 40px auto 300px 100px 150px 40px 20px;
+}
 }

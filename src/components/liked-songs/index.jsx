@@ -7,6 +7,7 @@ import LikedSongsImg from "../../assets/images/liked-songs-img.png"
 import LikedSongsTopNav from "./components/LikedSongsTopNav"
 import LikedSongsBanner from "./components/LikedSongsBanner";
 import LikedSongsControls from "./components/LikedSongsControls";
+import LikedSongsTracks from "./components/LikedSongsTracks";
 
 import "./styles/liked-songs.css"
 
@@ -42,7 +43,7 @@ function LikedSongs({ token, setToken }) {
             <LikedSongsBanner likedSongsInfo={likedSongsInfo} />
             <div className="liked-songs--sub-container grid">
                 <LikedSongsControls />
-                <div>tracks</div>
+                <LikedSongsTracks likedSongs={likedSongs} />
             </div>
         </section>
         </div>

@@ -14,7 +14,7 @@ import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 import "../styles/playlist-tracks.css"
 
 function PlaylistTracks({ playlistTracks }) {
-    console.log(playlistTracks)
+
     return (
         <div className="playlist-page--tracks grid">
             <div className="playlist-page--tracks-headers grid">
