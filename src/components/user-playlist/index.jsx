@@ -30,10 +30,12 @@ function UserPlaylist({ token, setToken }) {
                 }
               }
             )
+            console.log(data)
             setUserPlaylistInfo({
                 owner: data.owner.display_name,
                 name: data.name,
                 img: data.images[0].url,
+                description: data.description,
                 numSongs: data.tracks.total,
                 isPublic: data.public
             })

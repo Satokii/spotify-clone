@@ -24,6 +24,7 @@ function UserPlaylistBanner({ userPlaylistInfo, userPlaylistTracks }) {
             : <div className="user-playlist--playlist-type">Private Playlist</div>
         }
         <p className="user-playlist--playlist-name">{userPlaylistInfo.name}</p>
+        <p className="user-playlist--playlist-description">{userPlaylistInfo.description}</p>
         <div className="user-playlist--playlist-overview-container grid">
           <p className="user-playlist-overview-owner-name">{userPlaylistInfo.owner}</p>
           <span className="middot">&middot;</span>
