@@ -20,7 +20,7 @@ function UserPlaylist({ token, setToken }) {
     useEffect(() => {
         const getUserPlaylistInfo = async () => {
             const { data } = await axios.get(
-              `https://api.spotify.com/v1/playlists/79r17ACpIf9hxSqtJOIESy`,
+              `https://api.spotify.com/v1/playlists/${playlistId}`,
               {
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -39,10 +39,10 @@ function UserPlaylist({ token, setToken }) {
             })
         };
         getUserPlaylistInfo()
-    }, [token])
+    }, [playlistId, token])
 
     useEffect(() => {
-    let playlistURL = `https://api.spotify.com/v1/playlists/79r17ACpIf9hxSqtJOIESy/tracks`
+    let playlistURL = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`
     let userPlaylistSongs = []
     let combinedPlaylistSongs = []
         const getUserPlaylistTracks = async () => {
@@ -69,7 +69,7 @@ function UserPlaylist({ token, setToken }) {
             setUserPlaylistTracks(combinedPlaylistSongs)
         };
         getUserPlaylistTracks()
-    }, [token])
+    }, [playlistId, token])
 
     const { data } = usePalette(userPlaylistInfo.img)
     useEffect(() => {

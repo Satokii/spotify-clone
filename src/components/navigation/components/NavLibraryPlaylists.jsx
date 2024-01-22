@@ -45,7 +45,7 @@ function NavLibraryPlaylists({ token }) {
       };
       getPlaylistItems()
   }, [token])
-// console.log(playlistItemsLibrary)
+
     return (
         <div className='navigation--playlists-scrollbar'>
             <div className='navigation--playlists-container'>
@@ -60,8 +60,8 @@ function NavLibraryPlaylists({ token }) {
                         </Link>
                     </li>
                     {playlistItemsLibrary.map((playlist, index) =>
-                      <li key={`${playlist.id}-${index}`} className="navigation--playlists-item-container grid" tabIndex={1}>
-                        <Link to={`/playlist/${playlist.id}`}>
+                      <li key={`${playlist.id}-${index}`} tabIndex={1}>
+                        <Link className="navigation--playlists-item-container grid" to={`/user-playlist/${playlist.id}`} onClick={scrollToTop}>
                           {playlist.images.length ? 
                           <img className="navigation--playlists-item-img" src={playlist.images[0].url} alt="playlist songs img" />
                           : <div></div> }
