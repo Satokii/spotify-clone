@@ -48,7 +48,7 @@ const paletteGradientUserPlaylist = (data) => {
     });
   
     bannerBackground.style.background = `${foundColour}`;
-    albumBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 42%, #121212 60%)`;  
+    albumBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 32%, #121212 50%)`;  
 }
 
 export default paletteGradientUserPlaylist

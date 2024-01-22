@@ -6,6 +6,7 @@ import paletteGradientUserPlaylist from "../../ColorThief/paletteGradientUserPla
 import UserPlaylistTopNav from "./components/UserPlaylistTopNav"
 import UserPlaylistBanner from "./components/UserPlaylistBanner"
 import UserPlaylistControls from "./components/UserPlaylistControls"
+import UserPlaylistTracks from "./components/UserPlaylistTracks"
 
 import "./styles/user-playlist.css"
 
@@ -81,7 +82,7 @@ function UserPlaylist({ token, setToken }) {
             <UserPlaylistBanner userPlaylistInfo={userPlaylistInfo} userPlaylistTracks={userPlaylistTracks} />
             <div className="user-playlist--sub-container grid">
                 <UserPlaylistControls />
-                <div>tracks</div>
+                <UserPlaylistTracks userPlaylistTracks={userPlaylistTracks} />
             </div>
         </section>
         </div>
