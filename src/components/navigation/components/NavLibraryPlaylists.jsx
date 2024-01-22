@@ -58,6 +58,13 @@ function NavLibraryPlaylists({ token }) {
       getPlaylistItems()
   }, [token])
 
+  const fixLengthPlaylist = (string) => {
+    if (string.length > 19) {
+        return `${string.slice(0, 19)}...`
+    }
+    else return string
+}
+
     return (
         <div className='navigation--playlists-scrollbar'>
             <div className='navigation--playlists-container'>
@@ -78,7 +85,7 @@ function NavLibraryPlaylists({ token }) {
                           <img className="navigation--playlists-item-img" src={playlist.images[0].url} alt="playlist songs img" />
                           : <div></div> }
                           <div className="navigation--playlists-item-text-container grid">
-                              <div className="navigation--playlists-item-header">{playlist.name}</div>
+                              <div className="navigation--playlists-item-header">{fixLengthPlaylist(playlist.name)}</div>
                               <div className="navigation--playlists-item-details "><span className="navigation--playlists-item-capitalise">{playlist.type}</span> &bull; {`${playlist.owner.display_name}`}</div>
                           </div>
                         </Link>
