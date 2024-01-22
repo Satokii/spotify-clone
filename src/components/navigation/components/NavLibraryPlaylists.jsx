@@ -29,9 +29,11 @@ function NavLibraryPlaylists({ token }) {
     }, [token])
 
     useEffect(() => {
+      let playlistURL = `https://api.spotify.com/v1/me/playlists`
+      let allPlaylists = []
+      let combinedPlaylists = []
       const getPlaylistItems = async () => {
-          const { data } = await axios.get(
-            `https://api.spotify.com/v1/me/playlists`,
+          const { data } = await axios.get(playlistURL,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -41,7 +43,17 @@ function NavLibraryPlaylists({ token }) {
               }
             }
           );
-            setPlaylistItemsLibrary(data.items)
+          allPlaylists.push(data.items)
+          if (data.next !== null) {
+              playlistURL = data.next
+              getPlaylistItems()
+          }
+          else {
+              allPlaylists.forEach(array => {
+                  combinedPlaylists = combinedPlaylists.concat(array)
+              })
+          }
+          setPlaylistItemsLibrary(combinedPlaylists)
       };
       getPlaylistItems()
   }, [token])

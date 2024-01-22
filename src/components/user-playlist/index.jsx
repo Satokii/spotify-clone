@@ -42,9 +42,9 @@ function UserPlaylist({ token, setToken }) {
     }, [playlistId, token])
 
     useEffect(() => {
-    let playlistURL = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`
-    let userPlaylistSongs = []
-    let combinedPlaylistSongs = []
+        let playlistURL = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`
+        let userPlaylistSongs = []
+        let combinedPlaylistSongs = []
         const getUserPlaylistTracks = async () => {
             const { data } = await axios.get(playlistURL,
               {

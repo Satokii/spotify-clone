@@ -1,14 +1,27 @@
 const paletteGradientUserPlaylist = (data) => {
-    const imgColour = data.lightVibrant
-
+    const lightImgColour = data.vibrant;
+    const darkImgColour = data.lightMuted
+    let mixedImgColour = "#";
+  
+    for (let i = 0; i < 3; i++) {
+      let sub1 = lightImgColour.substring(1 + 2 * i, 3 + 2 * i);
+      let sub2 = darkImgColour.substring(1 + 2 * i, 3 + 2 * i);
+      let v1 = parseInt(sub1, 16);
+      let v2 = parseInt(sub2, 16);
+      let v = Math.floor((v1 + v2) / 2);
+      let sub = v.toString(16).toUpperCase();
+      let padsub = ("0" + sub).slice(-2);
+      mixedImgColour += padsub;
+    }
+  
     let navBackgroundBacker = document.querySelector(".user-playlist--menu-backing")
     let navBackground = document.querySelector(".user-playlist--menu-container")
     let bannerBackground = document.querySelector(".user-playlist--banner");
     let albumBackground = document.querySelector(".user-playlist--sub-container");
-    let foundColour = `${imgColour}`;
-    let darkFoundColour = `${imgColour}70`;
-    let darkerFoundColour = `${imgColour}55`;
-    let evenDarkerFoundColour = `${imgColour}33`;
+    let foundColour = `${mixedImgColour}`;
+    let darkFoundColour = `${mixedImgColour}70`;
+    let darkerFoundColour = `${mixedImgColour}55`;
+    let evenDarkerFoundColour = `${mixedImgColour}33`;
   
     const scrolled = document.querySelector('.scrollbar-user-playlist')
     scrolled.addEventListener('scroll', () => {
@@ -35,7 +48,7 @@ const paletteGradientUserPlaylist = (data) => {
     });
   
     bannerBackground.style.background = `${foundColour}`;
-    albumBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 5%, ${evenDarkerFoundColour} 10%, #1a1a1a 20%, #121212 30%)`;  
+    albumBackground.style.background = `linear-gradient(${darkFoundColour}, ${darkerFoundColour} 10%, ${evenDarkerFoundColour} 20%, #1a1a1a 32%, #121212 50%)`;  
 }
 
 export default paletteGradientUserPlaylist
