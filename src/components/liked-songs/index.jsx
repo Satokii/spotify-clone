@@ -33,7 +33,9 @@ function LikedSongs({ token, setToken }) {
     }, [token])
 
     const { data } = usePalette(LikedSongsImg)
-    sleep(0).then(() => paletteGradientLikedSongs(data))
+    useEffect(() => {
+        sleep(0).then(() => paletteGradientLikedSongs(data))
+    }, [data])
 
     return (
         <div className="scrollbar-liked-songs">

@@ -56,7 +56,9 @@ function Artist({ token, setToken }) {
     }, [artistId, token])
     
     const { data } = usePalette(artistInfo.img)
-    sleep(0).then(() => palletGradientArtist(data))
+    useEffect(() => {
+        sleep(0).then(() => palletGradientArtist(data))
+    }, [data])
 
     return (
         <div className="scrollbar-artist">

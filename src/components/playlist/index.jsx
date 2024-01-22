@@ -23,7 +23,9 @@ function Playlist({ token, setToken }) {
     }, [playlistId, token])
 
     const { data } = usePalette(playlistInfo.img)
-    sleep(0).then(() => palletGradientPlaylist(data))
+    useEffect(() => {
+        sleep(0).then(() => palletGradientPlaylist(data))
+    }, [data])
     
     return (
         <div className="scrollbar-playlist">
