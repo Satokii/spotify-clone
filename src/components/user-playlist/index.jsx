@@ -9,11 +9,13 @@ import UserPlaylistControls from "./components/UserPlaylistControls"
 import UserPlaylistTracks from "./components/UserPlaylistTracks"
 
 import "./styles/user-playlist.css"
+import { useParams } from "react-router-dom"
 
 function UserPlaylist({ token, setToken }) {
 
     const [userPlaylistInfo, setUserPlaylistInfo] = useState({})
     const [userPlaylistTracks, setUserPlaylistTracks] = useState([])
+    const { playlistId } = useParams()
 
     useEffect(() => {
         const getUserPlaylistInfo = async () => {
@@ -28,7 +30,6 @@ function UserPlaylist({ token, setToken }) {
                 }
               }
             )
-            console.log(data)
             setUserPlaylistInfo({
                 owner: data.owner.display_name,
                 name: data.name,

@@ -45,7 +45,7 @@ function NavLibraryPlaylists({ token }) {
       };
       getPlaylistItems()
   }, [token])
-
+// console.log(playlistItemsLibrary)
     return (
         <div className='navigation--playlists-scrollbar'>
             <div className='navigation--playlists-container'>
@@ -61,14 +61,16 @@ function NavLibraryPlaylists({ token }) {
                     </li>
                     {playlistItemsLibrary.map((playlist, index) =>
                       <li key={`${playlist.id}-${index}`} className="navigation--playlists-item-container grid" tabIndex={1}>
-                        {playlist.images.length ? 
-                        <img className="navigation--playlists-item-img" src={playlist.images[0].url} alt="playlist songs img" />
-                        : <div></div> }
-                        <div className="navigation--playlists-item-text-container grid">
-                            <div className="navigation--playlists-item-header">{playlist.name}</div>
-                            <div className="navigation--playlists-item-details "><span className="navigation--playlists-item-capitalise">{playlist.type}</span> &bull; {`${playlist.owner.display_name}`}</div>
-                        </div>
-                  </li>
+                        <Link to={`/playlist/${playlist.id}`}>
+                          {playlist.images.length ? 
+                          <img className="navigation--playlists-item-img" src={playlist.images[0].url} alt="playlist songs img" />
+                          : <div></div> }
+                          <div className="navigation--playlists-item-text-container grid">
+                              <div className="navigation--playlists-item-header">{playlist.name}</div>
+                              <div className="navigation--playlists-item-details "><span className="navigation--playlists-item-capitalise">{playlist.type}</span> &bull; {`${playlist.owner.display_name}`}</div>
+                          </div>
+                        </Link>
+                      </li>
                     )}
                 </ul>
             </div>
