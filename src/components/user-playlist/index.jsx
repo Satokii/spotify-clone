@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { usePalette } from "react-palette";
-import sleep from "../../shared-functions/sleep";
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { usePalette } from "react-palette"
+import sleep from "../../shared-functions/sleep"
 import paletteGradientUserPlaylist from "../../ColorThief/paletteGradientUserPlaylist"
 import UserPlaylistTopNav from "./components/UserPlaylistTopNav"
-import UserPlaylistBanner from "./components/UserPlaylistBanner";
+import UserPlaylistBanner from "./components/UserPlaylistBanner"
+import UserPlaylistControls from "./components/UserPlaylistControls"
 
 import "./styles/user-playlist.css"
 
@@ -79,7 +80,7 @@ function UserPlaylist({ token, setToken }) {
             <UserPlaylistTopNav setToken={setToken} />
             <UserPlaylistBanner userPlaylistInfo={userPlaylistInfo} userPlaylistTracks={userPlaylistTracks} />
             <div className="user-playlist--sub-container grid">
-                <div>controls</div>
+                <UserPlaylistControls />
                 <div>tracks</div>
             </div>
         </section>
