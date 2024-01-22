@@ -1,45 +1,35 @@
-import getYear from "../../../shared-functions/getYear";
 import convertMsToTime from "../../../shared-functions/convertMsToTime";
-import albumTimeinMs from "../../../shared-functions/albumTimeinMs";
+import playlistTimeinMs from "../../playlist/functions/playlistTimeinMs";
 
-// import "../styles/album-banner.css"
+import "../styles/user-playlist-banner.css"
 
-function UserPlaylistBanner({ userPlaylistTracks }) {
+function UserPlaylistBanner({ userPlaylistInfo, userPlaylistTracks }) {
 
   return (
-    <div className="album-page--banner grid">
-      <div className="album-page--banner-img-container">
-        {albumInfo.img ? (
+    <div className="user-playlist--banner grid">
+      <div className="user-playlist--banner-img-container">
+        {userPlaylistInfo.img ? (
           <img
-            className="album-page--img"
-            src={albumInfo.img}
-            alt={`${albumInfo.name}-image`}
+            className="user-playlist--img"
+            src={userPlaylistInfo.img}
+            alt={`${userPlaylistInfo.name}-image`}
           />
         ) : (
-          <div className="album-page--img-none"></div>
+          <div className="user-playlist--img-none"></div>
         )}
       </div>
-      <div className="album-page--banner-info-container grid">
-        <p className="album-page--album-type">{albumInfo.type}</p>
-        <p className="album-page--album-name">{albumInfo.name}</p>
-        <div className="album-page--album-overview-container grid">
-          <div className="album-overview-artist-img-container">
-            {artistInfo.img ? (
-              <img src={artistInfo.img} alt={`${artistInfo.name}-image`} />
-            ) : (
-              <div></div>
-            )}
-          </div>
-          <p className="album-overview-artist-name">{artistInfo.name}</p>
+      <div className="user-playlist--banner-info-container grid">
+        {userPlaylistInfo.isPublic ?
+            <div className="playlist-page--playlist-type">Public Playlist</div>
+            : <div className="playlist-page--playlist-type">Private Playlist</div>
+        }
+        <p className="user-playlist--playlist-name">{userPlaylistInfo.name}</p>
+        <div className="user-playlist--playlist-overview-container grid">
+          <p className="user-playlist-overview-owner-name">{userPlaylistInfo.owner}</p>
           <span className="middot">&middot;</span>
-          <p className="album-overview-release-year">
-            {" "}
-            {getYear(albumInfo.releaseDate)}{" "}
-          </p>
-          <span className="middot">&middot;</span>
-          <p className="album-overview-total-tracks">{`${
-            albumInfo.totalTracks
-          } songs, ${convertMsToTime(albumTimeinMs(albumTracksArr))}`}</p>
+          <p className="user-playlist-overview-total-tracks">{`${
+            userPlaylistInfo.numSongs
+          } songs, ${convertMsToTime(playlistTimeinMs(userPlaylistTracks))}`}</p>
         </div>
       </div>
     </div>

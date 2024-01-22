@@ -24,7 +24,7 @@ function UserPlaylist({ token, setToken }) {
                 }
               }
             )
-            // console.log(data)
+            console.log(data)
             setUserPlaylistInfo({
                 owner: data.owner.display_name,
                 name: data.name,
