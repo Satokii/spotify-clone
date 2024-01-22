@@ -20,8 +20,8 @@ function UserPlaylistBanner({ userPlaylistInfo, userPlaylistTracks }) {
       </div>
       <div className="user-playlist--banner-info-container grid">
         {userPlaylistInfo.isPublic ?
-            <div className="playlist-page--playlist-type">Public Playlist</div>
-            : <div className="playlist-page--playlist-type">Private Playlist</div>
+            <div className="user-playlist--playlist-type">Public Playlist</div>
+            : <div className="user-playlist--playlist-type">Private Playlist</div>
         }
         <p className="user-playlist--playlist-name">{userPlaylistInfo.name}</p>
         <div className="user-playlist--playlist-overview-container grid">

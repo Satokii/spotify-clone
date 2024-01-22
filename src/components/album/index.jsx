@@ -34,7 +34,9 @@ function Album({ token, setToken }) {
     }, [artistId, token]);
 
     // sleep(0).then(() => dynamicGradient(albumInfo))
-    sleep(0).then(() => palletGradient(data))
+    useEffect(() => {
+      sleep(0).then(() => palletGradient(data))
+    }, [data])
 
     return (
       <div className="scrollbar-album">

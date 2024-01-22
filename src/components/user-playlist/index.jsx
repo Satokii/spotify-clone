@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { usePalette } from "react-palette";
+import sleep from "../../shared-functions/sleep";
+import paletteGradientUserPlaylist from "../../ColorThief/paletteGradientUserPlaylist"
 import UserPlaylistTopNav from "./components/UserPlaylistTopNav"
+import UserPlaylistBanner from "./components/UserPlaylistBanner";
 
 import "./styles/user-playlist.css"
-import UserPlaylistBanner from "./components/UserPlaylistBanner";
 
 function UserPlaylist({ token, setToken }) {
 
@@ -66,12 +68,16 @@ function UserPlaylist({ token, setToken }) {
         getUserPlaylistTracks()
     }, [token])
 
+    const { data } = usePalette(userPlaylistInfo.img)
+    useEffect(() => {
+        sleep(0).then(() => paletteGradientUserPlaylist(data))
+    }, [data])
+
     return (
         <div className="scrollbar-user-playlist">
         <section className="user-playlist--container grid">
             <UserPlaylistTopNav setToken={setToken} />
             <UserPlaylistBanner userPlaylistInfo={userPlaylistInfo} userPlaylistTracks={userPlaylistTracks} />
-            <div>banner</div>
             <div className="user-playlist--sub-container grid">
                 <div>controls</div>
                 <div>tracks</div>
