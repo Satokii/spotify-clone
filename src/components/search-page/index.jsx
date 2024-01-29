@@ -1,5 +1,6 @@
 import SearchPageTopNav from "./components/SearchPageTopNav"
 import SearchBar from "./components/SearchBar"
+import SearchPageBrowse from "./components/SearchPageBrowse"
 
 import './styles/search-page.css'
 
@@ -11,6 +12,7 @@ function SearchPage({ token, setToken }) {
                 <section className="search-page-container grid">
                     <SearchPageTopNav setToken={setToken} />
                     <SearchBar token={token} />
+                    <SearchPageBrowse />
                 </section>
             </div>
         </div>
