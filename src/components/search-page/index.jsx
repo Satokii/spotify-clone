@@ -1,7 +1,13 @@
 function SearchPage() {
 
     return (
-        <section></section>
+        <div className="search-page--outer-container grid">
+            <div className="scrollbar-search-page">
+                <section className="search-page-container grid">
+                    
+                </section>
+            </div>
+        </div>
     )
 }
 
