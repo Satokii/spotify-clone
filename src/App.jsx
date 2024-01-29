@@ -263,7 +263,7 @@ function App() {
           </Route>
         </Routes>
         {token ?
-          <Sidebar token={token} currentTrack={currentTrack} />
+          <Sidebar token={token} currentTrack={currentTrack} currentTrackArtists={currentTrackArtists} />
           : null
         }
         {token ?

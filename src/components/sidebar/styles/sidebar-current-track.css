@@ -29,7 +29,7 @@
 
 /* SIDEBAR CURRENT TRACK ARTIST */
 .sidebar--current-track-artist {
-    font-size: 16px;
+    font-size: 15px;
     color: var(--const-gray);
     width: fit-content;
 }
