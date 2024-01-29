@@ -10,6 +10,7 @@ function NavLibraryPlaylists({ token }) {
 
     const [likeSongsLibrary, setLikedSongsLibrary] = useState({})
     const [playlistItemsLibrary, setPlaylistItemsLibrary] = useState([])
+    const [albumItemsLibrary, setAlbumItemsLibrary] = useState([])
 
     useEffect(() => {
         const getLikedSongsLibrary = async () => {
@@ -58,12 +59,42 @@ function NavLibraryPlaylists({ token }) {
       getPlaylistItems()
   }, [token])
 
+  useEffect(() => {
+    let albumURL = `https://api.spotify.com/v1/me/albums`
+    let allAlbums = []
+    let combinedAlbums = []
+    const getAlbums = async () => {
+        const { data } = await axios.get(albumURL,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            params: {
+              limit: 50
+            }
+          }
+        );
+        allAlbums.push(data.items)
+          if (data.next !== null) {
+              albumURL = data.next
+              getAlbums()
+          }
+          else {
+              allAlbums.forEach(array => {
+                  combinedAlbums = combinedAlbums.concat(array)
+              })
+          }
+          setAlbumItemsLibrary(combinedAlbums)
+    };
+    getAlbums()
+}, [token])
+
   const fixLengthPlaylist = (string) => {
     if (string.length > 19) {
         return `${string.slice(0, 19)}...`
     }
     else return string
-}
+  }
 
     return (
         <div className='navigation--playlists-scrollbar'>
