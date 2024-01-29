@@ -24,6 +24,7 @@
 }
 
 .search-page-container {
+    grid-template-rows: 100px 1fr;
     padding: 8px 0 40px 20px;
     visibility: visible;
     border-top-left-radius: 8px;

@@ -33,15 +33,18 @@ function SearchBar({ token }) {
     };
 
     return (
-        <section className="searchbar--container grid">
-            <form className="searchbar--form grid" onSubmit={e => getSearchResult(e)}>
-                <input 
-                    type="text"
-                    placeholder="Search: Song, Artist, etc."
-                    onChange={e => setSearchQuery(e.target.value)}
-                />
-                <button className="search" type="reset"></button>
-            </form>
+        <section className="searchbar grid">
+            <h2>Search:</h2>
+            <div className="searchbar--container">
+                <form className="searchbar--form grid" onSubmit={e => getSearchResult(e)}>
+                    <input 
+                        type="text"
+                        placeholder="Search: Song, Artist, etc."
+                        onChange={e => setSearchQuery(e.target.value)}
+                    />
+                    <button className="search" type="reset"></button>
+                </form>
+            </div>
         </section>
     )
 }
