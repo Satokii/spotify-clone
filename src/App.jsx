@@ -199,7 +199,7 @@ function App() {
           >
           </Route>
           <Route
-            path="/search-results"
+            path="/search"
             element={
               token ?
               <SearchResultsPage

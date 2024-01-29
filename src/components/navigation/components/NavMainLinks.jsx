@@ -22,7 +22,7 @@ function NavMainLinks() {
             name: "Search",
             className: "navigation--inactive-nav-link",
             isActive: false,
-            navigate: "/search-results"
+            navigate: "/search"
         },
         {
             name: "Top Played",
@@ -73,7 +73,7 @@ function NavMainLinks() {
             })
             setActiveNavLink(updatedNav)
         }
-        if (checkPathname === "/search-results") {
+        if (checkPathname === "/search") {
             const updatedNav = activeNavLink.map(nav => {
                 if (nav.name === "search") {
                     return { ...nav, isActive: true, className: "navigation--active-nav-link"}
@@ -95,7 +95,7 @@ function NavMainLinks() {
             })
             setActiveNavLink(updatedNav)
         }
-        if (checkPathname != "/" && checkPathname != "/search-results" && checkPathname != "/top-played") {
+        if (checkPathname != "/" && checkPathname != "/search" && checkPathname != "/top-played") {
             const updatedNav = activeNavLink.map(nav => {
                     return { ...nav, isActive: false, className: "navigation--inactive-nav-link"}
             })
