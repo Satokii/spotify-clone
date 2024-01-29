@@ -203,7 +203,7 @@ function App() {
             path="/search"
             element={
               token ?
-              <SearchPage />
+              <SearchPage setToken={setToken} />
               : <WelcomePage />
             }
           >
