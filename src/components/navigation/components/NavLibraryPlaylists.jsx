@@ -6,7 +6,7 @@ import LikedSongsImg from "../../../assets/images/liked-songs-img.png"
 
 import "../styles/nav-library-playlists.css"
 
-function NavLibraryPlaylists({ token }) {
+function NavLibraryPlaylists({ token, showFilter }) {
 
     const [likeSongsLibrary, setLikedSongsLibrary] = useState({})
     const [playlistItemsLibrary, setPlaylistItemsLibrary] = useState([])
@@ -99,7 +99,9 @@ function NavLibraryPlaylists({ token }) {
     return (
         <div className='navigation--playlists-scrollbar'>
             <div className='navigation--playlists-container'>
-                <ul className="navigation--playlists-list grid">
+                <ul className="navigation--playlists-list grid">   
+                    {showFilter === 'Playlists' ?
+                    <>
                     <li tabIndex={1}>
                       <Link className="navigation--playlists-item-container grid" to={"/liked-songs"} onClick={scrollToTop}>
                           <img className="navigation--playlists-item-img" src={LikedSongsImg} alt="liked songs img" />
@@ -122,6 +124,9 @@ function NavLibraryPlaylists({ token }) {
                         </Link>
                       </li>
                     )}
+                    </>
+                    :
+                    <>
                     {albumItemsLibrary.map((album, index) =>
                       <li key={`${album.album.id}-${index}`} tabIndex={1}>
                         <Link className="navigation--playlists-item-container grid" to={`/album/${album.album.id}/${album.album.artists[0].id}`} onClick={scrollToTop}>
@@ -135,6 +140,8 @@ function NavLibraryPlaylists({ token }) {
                         </Link>
                       </li>
                     )}
+                    </>
+                    }
                 </ul>
             </div>
         </div>

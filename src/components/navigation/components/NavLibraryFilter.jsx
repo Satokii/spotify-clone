@@ -3,13 +3,14 @@ import { useState } from "react"
 
 import "../styles/nav-library-filter.css"
 
-function NavLibraryFilter() {
+function NavLibraryFilter({ setShowFilter }) {
 
     const INITIAL_NAV_FILTER_STATE = [
         {
             name: "Playlists",
             className: "navigation--inactive-library-filter",
-        },{
+        },
+        {
             name: "Albums",
             className: "navigation--inactive-library-filter",
         }
@@ -18,6 +19,12 @@ function NavLibraryFilter() {
     const [libraryFilter, setLibraryFilter] = useState(INITIAL_NAV_FILTER_STATE)
 
     const toggleActiveLibraryFilter = (e) => {
+        if (e.target.innerText === 'Playlists') {
+            setShowFilter('Playlists')
+        }
+        if (e.target.innerText === 'Albums') {
+            setShowFilter('Albums')
+        }
         const updatedFilter = libraryFilter.map(filter => {
             if (filter.name === e.target.innerText) {
                 return { ...filter, className: "navigation--active-library-filter"}
@@ -29,9 +36,10 @@ function NavLibraryFilter() {
         setLibraryFilter(updatedFilter)
     }
 
-    const resetPlaylistFilter = () => [
+    const resetPlaylistFilter = () => {
+        setShowFilter('Playlists')
         setLibraryFilter(INITIAL_NAV_FILTER_STATE)
-    ]
+    }
 
     return (
         <div className='navigation--library-filter-container grid'>
