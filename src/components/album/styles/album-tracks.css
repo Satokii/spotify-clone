@@ -180,7 +180,6 @@
 
 /* RELEASE DATE AND COPYRIGHTS */
 .album-page--date-copyright-container {
-    /* padding: 0 20px; */
     margin-top: 10px;
     color: var(--const-gray);
     line-height: 1.4;

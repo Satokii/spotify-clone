@@ -70,6 +70,7 @@ function App() {
 
   // FETCH CURRENTLY PLAYING TRACK
   const [currentTrack, setCurrentTrack] = useState(CURRENT_TRACK_INITIAL_STATE);
+  const [currentTrackArtists, setCurrentTrackArtists] = useState([])
   const [notPlaying, setNotPlaying] = useState(null);
 
   useEffect(() => {
@@ -86,6 +87,7 @@ function App() {
       else {
         const { item } = data;
         // console.log(data)
+        setCurrentTrackArtists(item.artists)
         setCurrentTrack({
           trackId: item.id,
           albumId: item.album.id,
@@ -268,6 +270,7 @@ function App() {
           <Footer
           token={token}
           currentTrack={currentTrack}
+          currentTrackArtists={currentTrackArtists}
           setCurrentTrack={setCurrentTrack}
           setQueue={setQueue}
           />

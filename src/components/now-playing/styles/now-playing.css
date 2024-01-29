@@ -14,7 +14,8 @@
 }
 
 .now-playing--text-container {
-width: 100%;
+    width: 100%;
+    line-height: 1.3;
 }
 
 .now-playing--track-name-container {
