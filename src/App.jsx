@@ -13,6 +13,7 @@ import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
+import SearchPage from "./components/search-page";
 import SearchResultsPage from "./components/search-results-page";
 import axios from "axios";
 import CURRENT_TRACK_INITIAL_STATE from "./initial-states/CURRENT_TRACK_INITIAL_STATE";
@@ -200,6 +201,15 @@ function App() {
           </Route>
           <Route
             path="/search"
+            element={
+              token ?
+              <SearchPage />
+              : <WelcomePage />
+            }
+          >
+          </Route>
+          <Route
+            path="/search-results"
             element={
               token ?
               <SearchResultsPage
