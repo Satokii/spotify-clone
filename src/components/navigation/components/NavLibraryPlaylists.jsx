@@ -122,6 +122,19 @@ function NavLibraryPlaylists({ token }) {
                         </Link>
                       </li>
                     )}
+                    {albumItemsLibrary.map((album, index) =>
+                      <li key={`${album.album.id}-${index}`} tabIndex={1}>
+                        <Link className="navigation--playlists-item-container grid" to={`/album/${album.album.id}/${album.album.artists[0].id}`} onClick={scrollToTop}>
+                          {album.album.images.length ? 
+                          <img className="navigation--playlists-item-img" src={album.album.images[0].url} alt="playlist songs img" />
+                          : <div></div> }
+                          <div className="navigation--playlists-item-text-container grid">
+                              <div className="navigation--playlists-item-header">{fixLengthPlaylist(album.album.name)}</div>
+                              <div className="navigation--playlists-item-details "><span className="navigation--playlists-item-capitalise">{album.album.type}</span> &bull; {`${album.album.artists[0].name}`}</div>
+                          </div>
+                        </Link>
+                      </li>
+                    )}
                 </ul>
             </div>
         </div>
