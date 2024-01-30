@@ -34,8 +34,7 @@ function SearchBar({ token }) {
 
     return (
         <section className="searchbar grid">
-            <h2>Search:</h2>
-            <div className="searchbar--container">
+            {/* <div className="searchbar--container"> */}
                 <form className="searchbar--form grid" onSubmit={e => getSearchResult(e)}>
                     <input 
                         type="text"
@@ -44,7 +43,7 @@ function SearchBar({ token }) {
                     />
                     <button className="search" type="reset"></button>
                 </form>
-            </div>
+            {/* </div> */}
         </section>
     )
 }
