@@ -15,4 +15,24 @@
 .search-results-tracks--item {
     grid-template-columns: 40px 1fr 50px;
     gap: 10px;
+    align-items: center;
+}
+
+.search-results-tracks--item > img {
+    border-radius: 4px;
+}
+
+.search-results-tracks--item-text-container {
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+}
+
+.search-results-tracks--item-artist {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-results-tracks--item-name {
+    font-size: 14px;
+    color: var(--const-lighter-gray);
 }
