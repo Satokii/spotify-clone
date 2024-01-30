@@ -1,0 +1,15 @@
+.search-results-tracks--container {
+    grid-template-rows: 30px 1fr;
+}
+
+.search-results-tracks--header {
+    font-size: 24px;
+}
+
+.search-results-tracks--list {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.search-results-tracks--item {
+    grid-template-columns: 40px 1fr 50px;
+}
