@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SearchPageTopNav from "./components/SearchPageTopNav"
 import SearchPageBrowse from "./components/SearchPageBrowse"
+import SearchResultsPage from "../search-results-page";
 
 import './styles/search-page.css'
 
@@ -21,6 +22,16 @@ function SearchPage({ token, setToken }) {
                 <section className="search-page-container grid">
                     <SearchPageTopNav token={token} setToken={setToken} />
                     <SearchPageBrowse />
+                    <SearchResultsPage
+                trackResults={trackResults}
+                trackTotal={trackTotal}
+                artistResults={artistResults}
+                artistTotal={artistTotal}
+                albumResults={albumResults}
+                albumTotal={albumTotal}
+                playlistResults={playlistResults}
+                playlistTotal={playlistTotal}
+              />
                 </section>
             </div>
         </div>

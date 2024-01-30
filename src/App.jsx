@@ -208,7 +208,7 @@ function App() {
             }
           >
           </Route>
-          <Route
+          {/* <Route
             path="/search-results"
             element={
               token ?
@@ -225,7 +225,7 @@ function App() {
               : <WelcomePage />
             }
           >
-          </Route>
+          </Route> */}
           <Route
             path="/album/:albumId/:artistId"
             element={
