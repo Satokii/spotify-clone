@@ -2,12 +2,12 @@ import SearchPageNavContent from "./SearchPageNavContent"
 
 import "../styles/search-page-top-nav.css"
 
-function SearchPageTopNav({ token, setToken }) {
+function SearchPageTopNav({ token, setToken, setTrackResults }) {
 
     return (
         <div className="search-page--menu-backing">
             <section className="search-page--menu-container grid">
-                <SearchPageNavContent token={token} setToken={setToken} />
+                <SearchPageNavContent token={token} setToken={setToken} setTrackResults={setTrackResults} />
             </section>
         </div>
     )

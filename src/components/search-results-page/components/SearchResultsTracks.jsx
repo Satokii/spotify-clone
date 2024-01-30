@@ -5,7 +5,7 @@ function SearchResultsTracks({ trackTotal, trackResults }) {
 
   return (
     <div className="search-results--category-container grid">
-      <h3 className="search-results--category-subheader ">Tracks</h3>
+      <h3 className="search-results--category-subheader ">Songs</h3>
       <p className="search-results--category-num-results">{`(Total results: ${trackTotal})`}</p>
       <ul className="search-results--category-list grid">
         {trackResults.map((track, index) => (
