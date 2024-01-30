@@ -18,7 +18,7 @@ function SearchBar({ token, setTrackResults }) {
           params: {
             q: searchQuery,
             type: "track,artist,album,playlist",
-            limit: 10
+            limit: 8
           },
         }
       );
