@@ -11,7 +11,7 @@ function SearchPage({ token, setToken }) {
             <div className="scrollbar-search-page">
                 <section className="search-page-container grid">
                     <SearchPageTopNav setToken={setToken} />
-                    <SearchBar token={token} />
+                    {/* <SearchBar token={token} /> */}
                     <SearchPageBrowse />
                 </section>
             </div>
