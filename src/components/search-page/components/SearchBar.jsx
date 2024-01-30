@@ -22,7 +22,7 @@ function SearchBar({ token, setTrackResults }) {
           },
         }
       );
-      console.log(data)
+      // console.log(data)
         // setTrackTotal(data.tracks.total)
         setTrackResults(data.tracks.items)
         // setArtistTotal(data.artists.total)
