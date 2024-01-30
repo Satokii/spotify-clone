@@ -37,7 +37,6 @@ function SearchBar({ token }) {
             <form className="searchbar--form grid" onSubmit={e => getSearchResult(e)}>
                 <input 
                     type="text"
-                    // placeholder="Search: Song, Artist, etc."
                     placeholder="What do you want to listen to?"
                     onChange={e => setSearchQuery(e.target.value)}
                 />

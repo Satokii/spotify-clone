@@ -10,7 +10,7 @@ import SearchBar from "./SearchBar"
 import "../../main-nav/styles/main-nav.css"
 import "../styles/search-page-nav-content.css"
 
-function SearchPageNavContent() {
+function SearchPageNavContent({ token, setToken }) {
     const navigate = useNavigate()
 
     return (
@@ -23,7 +23,7 @@ function SearchPageNavContent() {
                 <img src={ForwardArrow} alt="forward arrow" />
             </div>
         </div>
-        <SearchBar />
+        <SearchBar token={token} />
         <div className="search-page-nav--icons-container grid">
             <div>
                 <img className="search-page-nav--notification-bell" src={NotificationBell} alt="notification bell" />
