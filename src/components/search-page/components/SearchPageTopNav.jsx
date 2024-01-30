@@ -1,5 +1,7 @@
 import SearchPageNavContent from "./SearchPageNavContent"
 
+import "../styles/search-page-top-nav.css"
+
 function SearchPageTopNav({ setToken }) {
 
     return (

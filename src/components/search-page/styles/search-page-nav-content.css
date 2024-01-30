@@ -1,5 +1,5 @@
 .search-page-nav--container {
-    grid-template-columns: auto 300px auto;
+    grid-template-columns: repeat(2, auto);
     gap: 16px;
     justify-content: start;
     align-content: center;

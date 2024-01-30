@@ -1,26 +1,19 @@
 .searchbar {
-    height: 50px;
+    height: 42px;
+    width: 301px;
     align-items: center;
-    /* position: absolute; */
-    /* margin-left: 10px; */
-    /* top: 22px; */
-    /* left: 400px; */
-    width: 300px;
-    border: solid 1px white;
+    position: relative;
+    align-self: center;
+    border: solid 1px var(--const-lighter-gray);
     border-radius: 9999px;
+    background-color: var(--const-gray-faint);
   }
-  
-  /* .searchbar--container {
-    position: absolute;
-    left: 110px;
-    top: 20px;
-  } */
 
   .searchbar--form input {
     position: absolute;
     height: 40px;
     width: 0px;
-    top: 5px;
+    top: 0;
     left: 0;
     padding: 0 20px 0 50px;
     font-size: 16px;
@@ -71,7 +64,7 @@
     width: 40px;
     text-indent: -10000px;
     position: absolute;
-    top: 5px;
+    top: 0;
     left: 0;
     z-index: 2;
     cursor: pointer;
@@ -82,7 +75,7 @@
     content: "";
     position: absolute;
     margin: auto;
-    top: 12px;
+    top: 15px;
     right: 0;
     bottom: 0;
     left: 12px;
@@ -96,7 +89,7 @@
     content: "";
     position: absolute;
     margin: auto;
-    top: -5px;
+    top: -3px;
     right: 0;
     bottom: 0;
     left: -4px;
