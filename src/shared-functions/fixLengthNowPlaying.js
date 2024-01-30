@@ -1,6 +1,6 @@
 const fixLengthNowPlaying = (string) => {
-    if (string.length > 21) {
-        return `${string.slice(0, 21)}...`
+    if (string.length > 60) {
+        return `${string.slice(0, 60)}...`
     }
     else return string
 }
