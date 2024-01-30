@@ -20,7 +20,7 @@ function SearchPage({ token, setToken }) {
         <div className="search-page--outer-container grid">
             <div className="scrollbar-search-page">
                 <section className="search-page-container grid">
-                    <SearchPageTopNav token={token} setToken={setToken} setTrackResults={setTrackResults} />
+                    <SearchPageTopNav token={token} setToken={setToken} setTrackResults={setTrackResults} setArtistResults={setArtistResults} />
                     <SearchPageBrowse />
                     <SearchResultsPage
                         trackResults={trackResults}
