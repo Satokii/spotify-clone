@@ -8,7 +8,7 @@ import calcTrackTime from "../../../shared-functions/calcTrackTime";
 
 import "../styles/search-results-tracks.css"
 
-function SearchResultsTracks({ trackTotal, trackResults }) {
+function SearchResultsTracks({ trackResults }) {
 
   return (
     <div className="search-results-tracks--container grid">

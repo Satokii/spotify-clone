@@ -1,10 +1,9 @@
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
 
-function SearchResultsArtists({ artistTotal, artistResults }) {
+function SearchResultsArtists({ artistResults }) {
   return (
-    <div className="search-results--category-container grid">
-      <h3 className="search-results--category-subheader ">Artists</h3>
-      <p className="search-results--category-num-results">{`(Total results: ${artistTotal})`}</p>
+    <div className="search-results-artists--container grid">
+      <h3 className="search-results-artists-header">Artists</h3>
       <ul className="search-results--category-list grid">
         {artistResults.map((artist, index) => (
           <li

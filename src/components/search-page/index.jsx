@@ -8,9 +8,7 @@ import './styles/search-page.css'
 function SearchPage({ token, setToken }) {
 
     const [trackResults, setTrackResults] = useState([]);
-    // const [trackTotal, setTrackTotal] = useState(0);
     const [artistResults, setArtistResults] = useState([]);
-    // const [artistTotal, setArtistTotal] = useState(0);
     const [albumResults, setAlbumResults] = useState([]);
     // const [albumTotal, setAlbumTotal] = useState(0);
     const [playlistResults, setPlaylistResults] = useState([]);
@@ -24,9 +22,7 @@ function SearchPage({ token, setToken }) {
                     <SearchPageBrowse />
                     <SearchResultsPage
                         trackResults={trackResults}
-                        // trackTotal={trackTotal}
                         artistResults={artistResults}
-                        // artistTotal={artistTotal}
                         albumResults={albumResults}
                         // albumTotal={albumTotal}
                         playlistResults={playlistResults}
