@@ -9,7 +9,7 @@
 }
 
 .search-page--menu-container {
-    grid-template-columns: 100px 300px auto;
+    grid-template-columns: 110px 300px auto;
     padding: 0 20px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
