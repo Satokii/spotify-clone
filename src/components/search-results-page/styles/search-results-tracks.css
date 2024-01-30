@@ -12,33 +12,38 @@
     gap: 10px;
 }
 
-.search-results-tracks--item {
+.search-results-tracks--track {
     grid-template-columns: 40px 1fr 50px;
     gap: 10px;
     align-items: center;
 }
 
-.search-results-tracks--item > img {
+.search-results-tracks--track > img {
     border-radius: 4px;
 }
 
-.search-results-tracks--item-text-container {
+.search-results-tracks--track-text-container {
     grid-template-rows: repeat(2, auto);
     align-items: center;
 }
 
-.search-results-tracks--item-name {
+.search-results-tracks--track-name {
     font-size: 16px;
     font-weight: bold;
     width: fit-content;
 }
 
-.search-results-tracks--item-name:hover  {
+.search-results-tracks--track-name:hover  {
     text-decoration: underline 1.5px;
     text-underline-offset: 2px;
 }
 
-.search-results-tracks--item-artist {
+.search-results-tracks--track-artist {
     font-size: 14px;
     color: var(--const-lighter-gray);
+}
+
+.search-results-tracks--track-time {
+    color: var(--const-lighter-gray);
+    font-size: 14px;
 }
