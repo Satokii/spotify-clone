@@ -8,6 +8,7 @@
     border-bottom-right-radius: 8px;
     margin: 5px;
     padding-right: 3px;
+    padding-top: 65px;
     opacity: 0;
     animation: 0.3s ease 0.5s forwards fade-in;
 }
