@@ -23,14 +23,14 @@ function SearchBar({ token }) {
         }
       );
       console.log(data)
-        // setTrackTotal(data.tracks.total)
-        // setTrackResults(data.tracks.items)
-        // setArtistTotal(data.artists.total)
-        // setArtistResults(data.artists.items)
-        // setAlbumTotal(data.albums.total)
-        // setAlbumResults(data.albums.items)
-        // setPlaylistTotal(data.playlists.total)
-        // setPlaylistResults(data.playlists.items)
+        setTrackTotal(data.tracks.total)
+        setTrackResults(data.tracks.items)
+        setArtistTotal(data.artists.total)
+        setArtistResults(data.artists.items)
+        setAlbumTotal(data.albums.total)
+        setAlbumResults(data.albums.items)
+        setPlaylistTotal(data.playlists.total)
+        setPlaylistResults(data.playlists.items)
     };
 
     return (
