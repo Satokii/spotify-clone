@@ -8,13 +8,14 @@ import LogOutBtn from "../../../assets/svgs/main-app/log-out.svg"
 import SearchBar from "./SearchBar"
 
 import "../../main-nav/styles/main-nav.css"
+import "../styles/search-page-nav-content.css"
 
 function SearchPageNavContent() {
     const navigate = useNavigate()
 
     return (
         <>
-        <div className="main-nav--container grid">
+        <div className="search-page-nav--container grid">
             <div onClick={() => navigate(-1)}>
                 <img src={BackArrow} alt="back arrow" />
             </div>
@@ -23,15 +24,15 @@ function SearchPageNavContent() {
             </div>
         </div>
         <SearchBar />
-        <div className="main-nav--icons-container grid">
+        <div className="search-page-nav--icons-container grid">
             <div>
-                <img className="main-nav--notification-bell" src={NotificationBell} alt="notification bell" />
+                <img className="search-page-nav--notification-bell" src={NotificationBell} alt="notification bell" />
             </div>
             <div>
-                <img className="main-nav--profile" src={ProfileIcon} alt="profile icon" />
+                <img className="search-page-nav--profile" src={ProfileIcon} alt="profile icon" />
             </div>
             <div onClick={() => Logout(setToken)}>
-                <img className="main-nav--log-out" src={LogOutBtn} alt="log out button" />
+                <img className="search-page-nav--log-out" src={LogOutBtn} alt="log out button" />
             </div>
         </div>
         </>
