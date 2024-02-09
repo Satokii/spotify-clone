@@ -5,13 +5,12 @@ import GrayHeart from "../../../assets/svgs/main-app/heart-gray.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
-import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
+import GetSearchTrackArtists from "../../../shared-functions/GetSearchTrackArtists"
 import fixPlaylistAlbumName from "../../../shared-functions/fixPlaylistAlbumName"
-fixPlaylistTrackName
 import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
+import fixPlaylistTrackName from "../../../shared-functions/fixPlaylistTrackName"
 
 import "../styles/user-playlist-tracks.css"
-import fixPlaylistTrackName from "../../../shared-functions/fixPlaylistTrackName"
 
 function UserPlaylistTracks({ userPlaylistTracks }) {
 
@@ -40,7 +39,7 @@ function UserPlaylistTracks({ userPlaylistTracks }) {
                             <div className="user-playlist--playlist-sub-container grid">
                                 <div className="user-playlist--explicit-container grid">{track.track.explicit ? <><p className="user-playlist--explicit-track">E</p></> : null}</div>
                                 <div className="user-playlist--playlist-name-container grid">
-                                    {GetTrackArtists(track.track)}
+                                    {GetSearchTrackArtists(track.track)}
                                 </div>
                             </div>
                         </div>

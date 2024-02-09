@@ -5,7 +5,7 @@ import GreenHeart from "../../../assets/svgs/main-app/heart-green.svg"
 import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
-import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
+import GetSearchTrackArtists from "../../../shared-functions/GetSearchTrackArtists"
 import fixPlaylistAlbumName from "../../../shared-functions/fixPlaylistAlbumName"
 import fixPlaylistTrackName from "../../../shared-functions/fixPlaylistTrackName"
 import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
@@ -39,7 +39,7 @@ function LikedSongsTracks({ likedSongs }) {
                             <div className="liked-songs--playlist-sub-container grid">
                                 <div className="liked-songs--explicit-container grid">{track.track.explicit ? <><p className="liked-songs--explicit-track">E</p></> : null}</div>
                                 <div className="liked-songs--playlist-name-container grid">
-                                    {GetTrackArtists(track.track)}
+                                    {GetSearchTrackArtists(track.track)}
                                 </div>
                             </div>
                         </div>
