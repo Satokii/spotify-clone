@@ -6,11 +6,12 @@ import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
 import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
-import fixLengthSearch from "../../../shared-functions/fixedLengthSearch"
-import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews"
+import fixPlaylistAlbumName from "../../../shared-functions/fixPlaylistAlbumName"
+fixPlaylistTrackName
 import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 
 import "../styles/user-playlist-tracks.css"
+import fixPlaylistTrackName from "../../../shared-functions/fixPlaylistTrackName"
 
 function UserPlaylistTracks({ userPlaylistTracks }) {
 
@@ -35,7 +36,7 @@ function UserPlaylistTracks({ userPlaylistTracks }) {
                             : <div></div>
                         }
                         <div className="user-playlist--track-name-container grid">
-                            <Link className="user-playlist--track-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixLengthSearch(track.track.name)}</Link>
+                            <Link className="user-playlist--track-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixPlaylistTrackName(track.track.name)}</Link>
                             <div className="user-playlist--playlist-sub-container grid">
                                 <div className="user-playlist--explicit-container grid">{track.track.explicit ? <><p className="user-playlist--explicit-track">E</p></> : null}</div>
                                 <div className="user-playlist--playlist-name-container grid">
@@ -43,7 +44,7 @@ function UserPlaylistTracks({ userPlaylistTracks }) {
                                 </div>
                             </div>
                         </div>
-                        <Link className="user-playlist--album-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixLengthPreviews(track.track.album.name)}</Link>
+                        <Link className="user-playlist--album-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixPlaylistAlbumName(track.track.album.name)}</Link>
                         <div className="user-playlist--date-added">{formatDateShortMths(track.added_at)}</div>
                         <img className="user-playlist--hide-like" src={GrayHeart} alt="gray heart"></img>
                         <div className="user-playlist--track-time">{calcTrackTime(track.track.duration_ms)}</div>

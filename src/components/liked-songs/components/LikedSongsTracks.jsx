@@ -8,6 +8,7 @@ import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
 import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch"
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews"
+import fixPlaylistAlbumName from "../../../shared-functions/fixPlaylistAlbumName"
 import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 
 import "../styles/liked-songs-tracks.css"
@@ -43,7 +44,7 @@ function LikedSongsTracks({ likedSongs }) {
                                 </div>
                             </div>
                         </div>
-                        <Link className="liked-songs--album-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixLengthPreviews(track.track.album.name)}</Link>
+                        <Link className="liked-songs--album-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixPlaylistAlbumName(track.track.album.name)}</Link>
                         <div className="liked-songs--date-added">{formatDateShortMths(track.added_at)}</div>
                         <img className="liked-songs--like" src={GreenHeart} alt="green heart"></img>
                         <div className="liked-songs--track-time">{calcTrackTime(track.track.duration_ms)}</div>
