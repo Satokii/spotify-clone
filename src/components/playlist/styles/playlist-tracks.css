@@ -7,7 +7,7 @@
 
 /* TRACKS HEADERS */
 .playlist-page--tracks-headers {
-    grid-template-columns: 20px auto 205px 170px 75px;
+    grid-template-columns: 20px auto 255px 165px 75px;
     gap: 10px;
     align-items: center;
     padding: 0 12px;
@@ -44,12 +44,12 @@
 }
 
 .playlist-page--single-track {
-    grid-template-columns: 20px 40px auto 210px 100px 50px 40px 20px;
+    grid-template-columns: 30px 40px auto 260px 100px 50px 40px 20px;
     gap: 10px;
     height: 56px;
     border: solid 1px transparent;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 20px 0 10px;
     border-radius: 4px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .playlist-page--track-number {
-    justify-self: center;
+    text-align: center;
     font-size: 18px;
     color: var(--const-gray);
 }
@@ -208,6 +208,6 @@
     }
 
     .playlist-page--single-track {
-        grid-template-columns: 20px 40px auto 300px 150px 100px 60px 20px;
+        grid-template-columns: 30px 40px auto 300px 150px 100px 60px 20px;
     }
 }
