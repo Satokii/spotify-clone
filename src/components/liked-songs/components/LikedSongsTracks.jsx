@@ -6,9 +6,8 @@ import MenuDots from "../../../assets/svgs/main-app/menu-dots.svg"
 import calcTrackTime from "../../../shared-functions/calcTrackTime"
 import PlayButton from "../../../assets/svgs/main-app/play-triangle.svg"
 import GetTrackArtists from "../../../shared-functions/GetTrackArtists"
-import fixLengthSearch from "../../../shared-functions/fixedLengthSearch"
-import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews"
 import fixPlaylistAlbumName from "../../../shared-functions/fixPlaylistAlbumName"
+import fixPlaylistTrackName from "../../../shared-functions/fixPlaylistTrackName"
 import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 
 import "../styles/liked-songs-tracks.css"
@@ -36,7 +35,7 @@ function LikedSongsTracks({ likedSongs }) {
                             : <div></div>
                         }
                         <div className="liked-songs--track-name-container grid">
-                            <Link className="liked-songs--track-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixLengthSearch(track.track.name)}</Link>
+                            <Link className="liked-songs--track-name" to={`/album/${track.track.album.id}/${track.track.artists[0].id}`} onClick={scrollToTop}>{fixPlaylistTrackName(track.track.name)}</Link>
                             <div className="liked-songs--playlist-sub-container grid">
                                 <div className="liked-songs--explicit-container grid">{track.track.explicit ? <><p className="liked-songs--explicit-track">E</p></> : null}</div>
                                 <div className="liked-songs--playlist-name-container grid">

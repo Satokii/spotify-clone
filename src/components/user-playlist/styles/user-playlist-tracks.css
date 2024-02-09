@@ -203,12 +203,10 @@
 }
 
 @media screen and (min-width: 2000px) {
-/* TRACKS HEADERS */
 .user-playlist--tracks-headers {
     grid-template-columns: 20px auto 300px 265px 95px;
 }
 
-/* TRACKS */
 .user-playlist--single-track {
     grid-template-columns: 30px 40px auto 300px 150px 100px 60px 20px;
 }
