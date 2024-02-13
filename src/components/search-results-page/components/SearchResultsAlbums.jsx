@@ -1,12 +1,11 @@
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
 import formatDate from "../../../shared-functions/formatDate";
 
-function SearchResultsAlbums({ albumResults, albumTotal }) {
+function SearchResultsAlbums({ albumResults }) {
 
   return (
     <div className="search-results--category-container grid">
       <h3 className="search-results--category-subheader ">Albums</h3>
-      <p className="search-results--category-num-results">{`(Total results: ${albumTotal})`}</p>
       <ul className="search-results--category-list grid">
         {albumResults.map((album, index) => (
           <li

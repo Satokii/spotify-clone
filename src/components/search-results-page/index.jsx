@@ -5,14 +5,14 @@ import SearchResultsPlaylists from "./components/SearchResultsPlaylists"
 
 import "./styles/search-results-page.css"
 
-function SearchResultsPage({ trackResults, artistResults, albumResults, albumTotal, playlistResults, playlistTotal }) {
+function SearchResultsPage({ trackResults, artistResults, albumResults, playlistResults }) {
     
     return (
         <section className="search-results--container grid">
             <SearchResultsTracks trackResults={trackResults} />
             <SearchResultsArtists artistResults={artistResults} />
-            <SearchResultsAlbums albumResults={albumResults} albumTotal={albumTotal} />
-            <SearchResultsPlaylists playlistResults={playlistResults} playlistTotal={playlistTotal} />
+            <SearchResultsAlbums albumResults={albumResults} />
+            <SearchResultsPlaylists playlistResults={playlistResults} />
         </section>
     )
 }
