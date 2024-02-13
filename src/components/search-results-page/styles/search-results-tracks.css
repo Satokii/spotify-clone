@@ -1,6 +1,7 @@
 .search-results-tracks--container {
     grid-template-rows: 30px auto;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .search-results-tracks--header {
