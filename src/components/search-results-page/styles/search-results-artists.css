@@ -1,16 +1,16 @@
-.search-results-artists--container {
+.search-results-card--container {
     grid-template-rows: 30px 280px;
     gap: 10px;
     margin-top: 20px;
 }
 
 /* HEADER */
-.search-results-artists-header {
+.search-results-card-header {
     font-size: 24px;
 }
 
 /* ARTIST LIST */
-.search-results-artists--list {
+.search-results-card--list {
     grid-template-columns: repeat(auto-fit, 180px);
     gap: 22px;
     overflow-y: hidden;
@@ -18,7 +18,7 @@
 }
 
 /* SINGLE ARTIST */
-.search-results-artists--single-artist {
+.search-results-card--single {
     grid-template-rows: 180px 25px 30px;
     padding: 16px;
     background-color: var(--const-card-bg);
@@ -26,17 +26,17 @@
     transition: 0.3s;
 }
 
-.search-results-artists--single-artist:hover {
+.search-results-card--single:hover {
     background-color: var(--const-card-hover);
     cursor: pointer;
 }
 
-.search-results-artists--single-artist:hover .search-results-artists--play {
+.search-results-card--single:hover .search-results-card--play {
     opacity: 1;
 }
 
 /* IMG */
-.search-results-artists--img-outer-container {
+.search-results-card--img-outer-container {
     object-fit: cover;
     width: fit-content;
     height: 150px;
@@ -44,19 +44,19 @@
     align-self: start;
 }
 
-.search-results-artists--img-container {
+.search-results-card--img-container {
     position: relative;
     place-self: center;
 }
 
-.search-results--artists-img {
+.search-results--card-img {
     border-radius: 9999px;
     height: 150px;
     min-width: 150px;
 }
 
 /* PLAY BTN */
-.search-results-artists--play {
+.search-results-card--play {
     position: absolute;
     bottom: 4px;
     right: 4px;
@@ -67,14 +67,14 @@
 }
 
 /* TEXT */
-.search-results--artists-name {
+.search-results--card-name {
     font-size: 16px;
     font-weight: bold;
     color: var(--const-main-white);
     overflow: hidden;
 }
 
-.search-results--artists-type {
+.search-results--card-type {
     font-size: 15px;
     color: var(--const-gray);
 }

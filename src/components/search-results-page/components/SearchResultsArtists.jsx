@@ -7,27 +7,27 @@ import "../styles/search-results-artists.css"
 
 function SearchResultsArtists({ artistResults }) {
   return (
-    <div className="search-results-artists--container grid">
-      <h3 className="search-results-artists-header">Artists</h3>
-      <ul className="search-results-artists--list grid">
+    <div className="search-results-card--container grid">
+      <h3 className="search-results-card-header">Artists</h3>
+      <ul className="search-results-card--list grid">
         {artistResults.map((artist, index) => (
           <Link
-            className="search-results-artists--single-artist grid"
+            className="search-results-card--single grid"
             key={`${artist.id}-${index}`}
             to={`/artist/${artist.id}`} 
             onClick={scrollToTop}
           >
-            <div className="search-results-artists--img-outer-container">
+            <div className="search-results-card--img-outer-container">
                 {artist.images.length ? 
-                  <div className="search-results-artists--img-container">
-                      <img className="search-results--artists-img" src={artist.images[0].url} alt="artist image" />
-                        <img className="search-results-artists--play" src={PlayGreen} alt="play button" />
+                  <div className="search-results-card--img-container">
+                      <img className="search-results--card-img" src={artist.images[0].url} alt="artist image" />
+                        <img className="search-results-card--play" src={PlayGreen} alt="play button" />
                       </div>
-                : <div className="search-results--artists-img"></div>
+                : <div className="search-results--card-img"></div>
                 }
             </div>
-            <p className="search-results--artists-name">{fixLengthSearch(artist.name)}</p>
-            <p className="search-results--artists-type">Artist</p>
+            <p className="search-results--card-name">{fixLengthSearch(artist.name)}</p>
+            <p className="search-results--card-type">Artist</p>
           </Link>
         ))}
       </ul>
