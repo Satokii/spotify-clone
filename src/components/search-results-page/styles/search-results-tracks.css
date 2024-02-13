@@ -18,6 +18,12 @@
     gap: 10px;
     align-items: center;
     padding: 0 8px;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+.search-results-tracks--track:hover {
+    background-color: var(--const-card-hover);
 }
 
 .search-results-tracks--track > img {
