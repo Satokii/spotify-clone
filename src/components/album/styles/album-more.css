@@ -44,7 +44,7 @@
 /* ALBUM LIST */
 .more-by-artist--album-list  {
     grid-template-columns: repeat(auto-fit, 180px);
-    gap: 24px;
+    gap: 22px;
     overflow-y: hidden;
 }
 
