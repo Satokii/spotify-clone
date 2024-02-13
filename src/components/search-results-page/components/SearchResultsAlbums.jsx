@@ -1,25 +1,51 @@
+import { Link } from "react-router-dom";
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
-import formatDate from "../../../shared-functions/formatDate";
+import fixLengthPlaylistAlbum from "../../../shared-functions/fixLengthSearchAlbum";
+import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
+import scrollToTop from "../../../shared-functions/scrollToTop";
+import getYear from "../../../shared-functions/getYear";
 
 function SearchResultsAlbums({ albumResults }) {
 
   return (
-    <div className="search-results--category-container grid">
-      <h3 className="search-results--category-subheader ">Albums</h3>
-      <ul className="search-results--category-list grid">
-        {albumResults.map((album, index) => (
-          <li
-            className="search-results--category-item grid"
-            key={`${album.id}-${index}`}
-          >
-            <p className="search-results--category-text-bold">{fixLengthSearch(album.name)}</p>
-            <p className="search-results--category-text">{fixLengthSearch(album.artists[0].name)}</p>
-            {album.images.length ? <img src={album.images[0].url} alt={`${album.name} image`} /> : <div>No Image</div>}
-            <p className="search-results--category-text-other">{`Released: ${formatDate(album.release_date)}`}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="search-results-card--container grid">
+        <h3 className="search-results-card-header">Albums</h3>
+        <ul className="search-results-card--list grid">
+          {albumResults.map((album, index) => (
+            <Link
+              className="search-results-card--single grid"
+              key={`${album.id}-${index}`}
+              to={`/album/${album.id}/${album.artists[0].id}`}
+              onClick={scrollToTop}
+            >
+              <div className="search-results-card--img-outer-container">
+                {album.images.length ? (
+                  <div className="search-results-card--img-container">
+                    <img
+                      className="search-results--card-img"
+                      src={album.images[0].url}
+                      alt="album image"
+                    />
+                    <img
+                      className="search-results-card--play"
+                      src={PlayGreen}
+                      alt="play button"
+                    />
+                  </div>
+                ) : (
+                  <div className="search-results--card-img"></div>
+                )}
+              </div>
+              <p className="search-results--card-name">
+                {fixLengthSearch(album.name)}
+              </p>
+              <p className="search-results--card-type">
+                {<span>{getYear(album.release_date)}</span>} &bull; {fixLengthPlaylistAlbum(album.artists[0].name)}
+              </p>
+            </Link>
+          ))}
+        </ul>
+      </div>
   );
 }
 
