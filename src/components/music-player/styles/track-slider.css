@@ -1,10 +1,10 @@
-
 /* PLAYER SLIDER */
 .song-progress-bar-container {
     grid-template-columns: 30px 500px 30px;
     gap: 10px;
     justify-content: center;
     align-content: start;
+    align-items: end;
 }
 
 .slide-container {
@@ -55,4 +55,5 @@
 .song-start, .song-end {
   font-size: 12px;
   color: var(--const-gray);
+  margin-bottom: 2px;
 }
