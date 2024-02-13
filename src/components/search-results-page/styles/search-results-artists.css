@@ -1,6 +1,7 @@
 .search-results-artists--container {
-    grid-template-rows: 30px auto;
+    grid-template-rows: 30px 280px;
     gap: 10px;
+    margin-top: 20px;
 }
 
 /* HEADER */
