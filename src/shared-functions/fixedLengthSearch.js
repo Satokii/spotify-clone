@@ -1,6 +1,6 @@
 const fixLengthSearch = (string) => {
-    if (string.length > 25) {
-        return `${string.slice(0, 26)}...`
+    if (string.length > 15) {
+        return `${string.slice(0, 15)}...`
     }
     else return string
 }

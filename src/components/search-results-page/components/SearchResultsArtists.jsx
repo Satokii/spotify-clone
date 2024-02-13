@@ -8,23 +8,23 @@ function SearchResultsArtists({ artistResults }) {
   return (
     <div className="search-results-artists--container grid">
       <h3 className="search-results-artists-header">Artists</h3>
-      <ul className="artist--section-list grid">
+      <ul className="search-results-artists--list grid">
         {artistResults.map((artist, index) => (
           <li
-            className="artist--section-single-track grid"
+            className="search-results-artists--single-artist grid"
             key={`${artist.id}-${index}`}
           >
-            <div className="artist--section-img-outer-container">
+            <div className="search-results-artists--img-outer-container">
                 {artist.images.length ? 
-                  <div className="artist--section-img-container">
+                  <div className="search-results-artists--img-container">
                       <img className="search-results--artists-img" src={artist.images[0].url} alt="artist image" />
-                        <img className="artist--section-play" src={PlayGreen} alt="play button" />
+                        <img className="search-results-artists--play" src={PlayGreen} alt="play button" />
                       </div>
                 : <div className="search-results--artists-img"></div>
                 }
             </div>
-            <p className="search-results--category-text-bold">{fixLengthSearch(artist.name)}</p>
-            <p>artist</p>
+            <p className="search-results--artists-name">{fixLengthSearch(artist.name)}</p>
+            <p className="search-results--artists-type">Artist</p>
           </li>
         ))}
       </ul>
