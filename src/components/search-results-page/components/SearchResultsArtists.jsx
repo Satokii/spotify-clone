@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
 import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
-
 
 import "../styles/search-results-artists.css"
 
@@ -10,9 +11,11 @@ function SearchResultsArtists({ artistResults }) {
       <h3 className="search-results-artists-header">Artists</h3>
       <ul className="search-results-artists--list grid">
         {artistResults.map((artist, index) => (
-          <li
+          <Link
             className="search-results-artists--single-artist grid"
             key={`${artist.id}-${index}`}
+            to={`/artist/${artist.id}`} 
+            onClick={scrollToTop}
           >
             <div className="search-results-artists--img-outer-container">
                 {artist.images.length ? 
@@ -25,7 +28,7 @@ function SearchResultsArtists({ artistResults }) {
             </div>
             <p className="search-results--artists-name">{fixLengthSearch(artist.name)}</p>
             <p className="search-results--artists-type">Artist</p>
-          </li>
+          </Link>
         ))}
       </ul>
     </div>
