@@ -3,8 +3,6 @@ import scrollToTop from "../../../shared-functions/scrollToTop";
 import fixLengthSearch from "../../../shared-functions/fixedLengthSearch";
 import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
 
-import "../styles/search-results-artists.css"
-
 function SearchResultsArtists({ artistResults }) {
   return (
     <div className="search-results-card--container grid">

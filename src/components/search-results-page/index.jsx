@@ -4,6 +4,7 @@ import SearchResultsAlbums from "./components/SearchResultsAlbums"
 import SearchResultsPlaylists from "./components/SearchResultsPlaylists"
 
 import "./styles/search-results-page.css"
+import './styles/search-results-generic.css'
 
 function SearchResultsPage({ trackResults, artistResults, albumResults, playlistResults }) {
     
