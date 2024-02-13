@@ -10,9 +10,7 @@ function SearchPage({ token, setToken }) {
     const [trackResults, setTrackResults] = useState([]);
     const [artistResults, setArtistResults] = useState([]);
     const [albumResults, setAlbumResults] = useState([]);
-    // const [albumTotal, setAlbumTotal] = useState(0);
     const [playlistResults, setPlaylistResults] = useState([]);
-    // const [playlistTotal, setPlaylistTotal] = useState(0);
 
     return (
         <div className="search-page--outer-container grid">
@@ -24,9 +22,7 @@ function SearchPage({ token, setToken }) {
                         trackResults={trackResults}
                         artistResults={artistResults}
                         albumResults={albumResults}
-                        // albumTotal={albumTotal}
                         playlistResults={playlistResults}
-                        // playlistTotal={playlistTotal}
                     />
                 </section>
             </div>
