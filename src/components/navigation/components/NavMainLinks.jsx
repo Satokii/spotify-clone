@@ -28,7 +28,7 @@ function NavMainLinks() {
             name: "Top Played",
             className: "navigation--inactive-nav-link",
             isActive: false,
-            navigate: "top-played"
+            navigate: "/top-played"
         }
     ]
 
