@@ -20,7 +20,6 @@ function DashboardRock({ token }) {
               }
             );
             setNewRock(data.playlists.items)
-              console.log(data.playlists.items)
         };
         getTopFeaturedPlaylists()
     }, [token])
