@@ -18,6 +18,7 @@
     overflow-y: hidden;
     visibility: hidden;
     transition: 1s all 0.1s ease-out;
+    align-items: center;
 }
 
 .main-playback--queue-container:hover .scrollbar--dashboard-queue {
