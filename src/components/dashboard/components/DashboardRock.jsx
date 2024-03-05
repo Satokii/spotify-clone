@@ -15,20 +15,21 @@ function DashboardRock({ token }) {
                   Authorization: `Bearer ${token}`,
                 },
                 params: {
-                    limit: 10
+                    limit: 6
                 }
               }
             );
             setNewRock(data.playlists.items)
+              console.log(data.playlists.items)
         };
         getTopFeaturedPlaylists()
     }, [token])
 
     return (
-      <div className="dashboard--top-featured-playlists grid">
-      <div className="dashboard--top-featured-playlists-header-container grid">
-          <div className="dashboard--top-featured-playlists-header">Rock</div>
-          <div className="dashboard--top-featured-playlists-show-all">Show all</div>
+      <div className="dashboard--playlist-container grid">
+      <div className="dashboard--playlist-header-container grid">
+          <div className="dashboard--playlist-header">Rock</div>
+          <div className="dashboard--playlist-show-all">Show all</div>
       </div>
       <DashboardCardTemplate itemArr={newRock} />
   </div>

@@ -5,20 +5,20 @@ import fixLenthPlistDesc from "../../../shared-functions/fixLengthPlistDesc";
 
 function DashboardCardTemplate({ itemArr }) {
   return (
-    <div className="dashboard--top-featured-playlists-list grid">
+    <div className="dashboard-playlist-list grid">
       {itemArr.map((playlist) => (
         <Link
-          className="top-featured-playlist--item-container grid"
+          className="dashboard-playlist-list--item-container grid"
           key={playlist.id}
           to={`/playlist/${playlist.id}`}
           onClick={scrollToTop}
         >
-          <div className="top-featured-playlist--img-container">
+          <div className="dashboard-playlist-list--img-container">
             {playlist.images.length ? (
-              <div className="top-featured-playlist--img">
+              <div className="dashboard-playlist-list--img">
                 <img src={playlist.images[0].url} alt={playlist.name} />
                 <img
-                  className="top-featured-playlist--play"
+                  className="dashboard-playlist-list--play"
                   src={PlayGreen}
                   alt="play button"
                 />
@@ -27,8 +27,8 @@ function DashboardCardTemplate({ itemArr }) {
               <div></div>
             )}
           </div>
-          <div className="top-featured-playlist--name">{playlist.name}</div>
-          <div className="top-featured-playlist--description">
+          <div className="dashboard-playlist-list--name">{playlist.name}</div>
+          <div className="dashboard-playlist-list--description">
             {fixLenthPlistDesc(playlist.description)}
           </div>
         </Link>

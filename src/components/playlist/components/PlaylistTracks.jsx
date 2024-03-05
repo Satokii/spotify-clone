@@ -14,6 +14,7 @@ import formatDateShortMths from "../../../shared-functions/formatDateShortMths"
 import "../styles/playlist-tracks.css"
 
 function PlaylistTracks({ playlistTracks }) {
+    const filteredTracks = playlistTracks.filter(track => track.track !== null)
 
     return (
         <div className="playlist-page--tracks grid">
@@ -25,7 +26,7 @@ function PlaylistTracks({ playlistTracks }) {
                 <img className="tracks-header--time" src={TimeIcon} alt="time icon" />
             </div>
             <div className="playlist-page--tracks-tracks grid">
-                {playlistTracks.map((track, index) =>
+                {filteredTracks.map((track, index) =>
                     <div className="playlist-page--single-track grid" tabIndex={1} key={track.track.id}>
                         <div className="playlist-page--track-num-container">
                             <div className="playlist-page--track-number">{index + 1}</div>
