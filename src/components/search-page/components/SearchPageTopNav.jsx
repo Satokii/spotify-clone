@@ -2,7 +2,7 @@ import SearchPageNavContent from "./SearchPageNavContent"
 
 import "../styles/search-page-top-nav.css"
 
-function SearchPageTopNav({ token, setToken, setTrackResults, setArtistResults, setAlbumResults,setPlaylistResults }) {
+function SearchPageTopNav({ token, setToken, setTrackResults, setArtistResults, setAlbumResults, setPlaylistResults }) {
 
     return (
         <div className="search-page--menu-backing">

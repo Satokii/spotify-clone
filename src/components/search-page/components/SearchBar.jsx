@@ -22,7 +22,6 @@ function SearchBar({ token, setTrackResults, setArtistResults, setAlbumResults, 
           },
         }
       );
-      console.log(data)
         setTrackResults(data.tracks.items)
         setArtistResults(data.artists.items)
         setAlbumResults(data.albums.items)

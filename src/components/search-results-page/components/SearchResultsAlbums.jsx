@@ -22,7 +22,7 @@ function SearchResultsAlbums({ albumResults }) {
                 {album.images.length ? (
                   <div className="search-results-card--img-container">
                     <img
-                      className="search-results--card-img"
+                      className="search-results--card-img-sq"
                       src={album.images[0].url}
                       alt="album image"
                     />
@@ -33,7 +33,7 @@ function SearchResultsAlbums({ albumResults }) {
                     />
                   </div>
                 ) : (
-                  <div className="search-results--card-img"></div>
+                  <div className="search-results--card-img-sq"></div>
                 )}
               </div>
               <p className="search-results--card-name">
