@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import fixLenthPlistDesc from "../../../shared-functions/fixLengthPlistDesc";
 import scrollToTop from "../../../shared-functions/scrollToTop";
 import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
+import DashboardCardTemplate from "./DashboardCardTemplate";
 
 import "../styles/dashboard-top-playlists.css"
 
@@ -35,23 +36,7 @@ function DashboardTopFeaturedPlaylists({ token }) {
                 <div className="dashboard--top-featured-playlists-header">Featured Playlists Where You Are</div>
                 <div className="dashboard--top-featured-playlists-show-all">Show all</div>
             </div>
-            <div className="dashboard--top-featured-playlists-list grid">
-            {topPlaylists.map(playlist =>
-                    <Link className="top-featured-playlist--item-container grid" key={playlist.id} to={`/playlist/${playlist.id}`} onClick={scrollToTop} >
-                        <div className="top-featured-playlist--img-container">
-                            {playlist.images.length ?
-                            <div className="top-featured-playlist--img">
-                              <img src={playlist.images[0].url} alt={playlist.name} />
-                              <img className="top-featured-playlist--play" src={PlayGreen} alt="play button" />
-                            </div>
-                            : <div></div>
-                            }
-                        </div>
-                        <div className="top-featured-playlist--name">{playlist.name}</div>
-                        <div className="top-featured-playlist--description">{fixLenthPlistDesc(playlist.description)}</div>
-                    </Link>
-                )}
-            </div>
+            <DashboardCardTemplate itemArr={topPlaylists} />
         </div>
     )
 }

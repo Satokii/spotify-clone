@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import scrollToTop from "../../../shared-functions/scrollToTop";
-import PlayGreen from "../../../assets/svgs/main-app/main-play-btn.svg"
-import fixLenthPlistDesc from "../../../shared-functions/fixLengthPlistDesc";
 import DashboardCardTemplate from "./DashboardCardTemplate";
 
 function DashboardRock({ token }) {
