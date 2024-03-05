@@ -1,6 +1,6 @@
 const fixPlaylistTrackName = (string) => {
-    if (string.length > 43) {
-        return `${string.slice(0, 43)}...`
+    if (string.length > 16) {
+        return `${string.slice(0, 16)}...`
     }
     else return string
 }
