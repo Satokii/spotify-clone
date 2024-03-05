@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import '../styles/searchbar.css'
 
-function SearchBar({ token, setTrackResults, setArtistResults, setAlbumResults }) {
+function SearchBar({ token, setTrackResults, setArtistResults, setAlbumResults, setPlaylistResults }) {
 
     const [searchQuery, setSearchQuery] = useState("")
 
@@ -22,11 +22,11 @@ function SearchBar({ token, setTrackResults, setArtistResults, setAlbumResults }
           },
         }
       );
-      // console.log(data)
+      console.log(data)
         setTrackResults(data.tracks.items)
         setArtistResults(data.artists.items)
         setAlbumResults(data.albums.items)
-        // setPlaylistResults(data.playlists.items)
+        setPlaylistResults(data.playlists.items)
     };
 
     return (
