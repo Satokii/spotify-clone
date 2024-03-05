@@ -23,7 +23,7 @@
 }
 
 .search-results-tracks--track:hover {
-    background-color: var(--const-card-hover);
+    background-color: var(--album-track-hover);
 }
 
 .search-results-tracks--track > img {
