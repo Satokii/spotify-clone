@@ -25,7 +25,6 @@ function DashboardTopFeaturedPlaylists({ token }) {
               }
             );
             setTopPlaylists(data.playlists.items)
-            // console.log(data.playlists.items)
         };
         getTopFeaturedPlaylists()
     }, [token])
