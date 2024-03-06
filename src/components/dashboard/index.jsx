@@ -1,9 +1,10 @@
 import DashboardMenu from "./components/DashboardMenu"
 import DashboardBanner from "./components/DashboardBanner"
-import DashboardTopFeaturedPlaylists from "./components/DashboardTopFeaturedPlaylists"
-import DashboardRock from "./components/DashboardRock"
+import DashboardTopFeaturedPlaylists from "./components/dashboard-playlist-categories/DashboardTopFeaturedPlaylists"
+import DashboardRock from "./components/dashboard-playlist-categories/DashboardRock"
 
 import "./styles/dashboard.css"
+import "./styles/dashboard-playlists.css"
 
 function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying }) {
 

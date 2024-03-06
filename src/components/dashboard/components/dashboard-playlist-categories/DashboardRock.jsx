@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DashboardCardTemplate from "./DashboardCardTemplate";
+import DashboardCardTemplate from "../DashboardCardTemplate";
 
 function DashboardRock({ token }) {
 

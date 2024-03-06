@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import DashboardCardTemplate from "./DashboardCardTemplate";
-
-import "../styles/dashboard-playlists.css"
+import DashboardCardTemplate from "../DashboardCardTemplate";
 
 function DashboardTopFeaturedPlaylists({ token }) {
 
