@@ -28,7 +28,11 @@ function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying 
         {
             category: "party",
             title: "Party}"
-        }
+        },
+        {
+            category: "kpop",
+            title: "K-Pop"
+        },
     ]
 
     return (
