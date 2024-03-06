@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import "../styles/sidebar-next-in-queue.css"
 import noteIcon from "../../../assets/svgs/main-app/queue-note.svg"
-import SidebarTrackArtists from "../functions/SidebarTrackArtists";
+import SidebarNextInQueueArtists from "../functions/SidebarNextInQueueArtists";
 
 function SidebarNextInQueue({ token }) {
 
@@ -45,7 +45,7 @@ function SidebarNextInQueue({ token }) {
                 }
                 <div>
                     <p>{nextInQueue.title}</p>
-                    <p className="sidebar--queue-artists">{SidebarTrackArtists(nextInQueueArtists)}</p>
+                    <p className="sidebar--queue-artists">{SidebarNextInQueueArtists(nextInQueueArtists)}</p>
                 </div>
             </div>
         </div>
