@@ -4,7 +4,7 @@ import DashboardCardTemplate from "../DashboardCardTemplate";
 
 function DashboardRock({ token }) {
 
-    const [newRock, setNewRock] = useState([])
+    const [rock, setRock] = useState([])
 
     useEffect(() => {
         const getTopFeaturedPlaylists = async () => {
@@ -19,13 +19,13 @@ function DashboardRock({ token }) {
                 }
               }
             );
-            setNewRock(data.playlists.items)
+            setRock(data.playlists.items)
         };
         getTopFeaturedPlaylists()
     }, [token])
 
     return (
-      <DashboardCardTemplate title="Rock" itemArr={newRock} />
+      <DashboardCardTemplate title="Rock" itemArr={rock} />
     )
 }
 

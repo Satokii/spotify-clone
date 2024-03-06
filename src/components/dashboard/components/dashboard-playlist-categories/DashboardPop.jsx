@@ -1,6 +1,29 @@
-function DashboardPop() {
+import { useEffect, useState } from "react";
+import axios from "axios";
+import DashboardCardTemplate from "../DashboardCardTemplate";
+
+function DashboardPop({ token }) {
+    const [pop, setPop] = useState([])
+
+    useEffect(() => {
+        const getTopFeaturedPlaylists = async () => {
+            const { data } = await axios.get(
+              `https://api.spotify.com/v1/browse/categories/pop/playlists`,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+                params: {
+                    limit: 12
+                }
+              }
+            );
+            setPop(data.playlists.items)
+        };
+        getTopFeaturedPlaylists()
+    }, [token])
     return (
-        <section></section>
+        <DashboardCardTemplate title="Pop" itemArr={pop} />
     )
 }
 
