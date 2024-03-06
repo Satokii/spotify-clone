@@ -33,6 +33,10 @@ function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying 
             category: "kpop",
             title: "K-Pop"
         },
+        {
+            category: "indie",
+            title: "Indie"
+        },
     ]
 
     return (
