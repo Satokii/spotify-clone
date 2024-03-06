@@ -7,7 +7,7 @@ function DashboardRock({ token }) {
     const [rock, setRock] = useState([])
 
     useEffect(() => {
-        const getTopFeaturedPlaylists = async () => {
+        const getRockPlaylists = async () => {
             const { data } = await axios.get(
               `https://api.spotify.com/v1/browse/categories/rock/playlists`,
               {
@@ -21,7 +21,7 @@ function DashboardRock({ token }) {
             );
             setRock(data.playlists.items)
         };
-        getTopFeaturedPlaylists()
+        getRockPlaylists()
     }, [token])
 
     return (

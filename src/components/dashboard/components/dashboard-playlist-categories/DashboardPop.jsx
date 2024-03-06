@@ -6,7 +6,7 @@ function DashboardPop({ token }) {
     const [pop, setPop] = useState([])
 
     useEffect(() => {
-        const getTopFeaturedPlaylists = async () => {
+        const getPopPlaylists = async () => {
             const { data } = await axios.get(
               `https://api.spotify.com/v1/browse/categories/pop/playlists`,
               {
@@ -20,7 +20,7 @@ function DashboardPop({ token }) {
             );
             setPop(data.playlists.items)
         };
-        getTopFeaturedPlaylists()
+        getPopPlaylists()
     }, [token])
     return (
         <DashboardCardTemplate title="Pop" itemArr={pop} />
