@@ -42,5 +42,9 @@ export const playlistCategories = [
     {
         category: "classical",
         title: "Classical"
+    },
+    {
+        category: "anime",
+        title: "Anime"
     }
 ]
