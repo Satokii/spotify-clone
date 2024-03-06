@@ -23,7 +23,6 @@ function SidebarNextInQueue({ token }) {
             }
             );
             const { queue } = data
-            console.log(queue[0])
             setNextInQueueArtists(queue[0].artists)
             setNextInQueue({
                 albumId: queue[0].album.id,

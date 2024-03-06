@@ -20,7 +20,7 @@
 }
 
 .sidebar {
-    grid-template-rows: 360px 370px 130px;
+    grid-template-rows: 360px 370px 125px;
     padding: 30px 16px 16px;
     gap: 10px;
     overflow-x: hidden;
