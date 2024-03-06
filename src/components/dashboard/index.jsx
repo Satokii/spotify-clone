@@ -1,5 +1,6 @@
 import DashboardMenu from "./components/DashboardMenu"
 import DashboardBanner from "./components/DashboardBanner"
+import { playlistCategories } from "./playlistCategories"
 import DashboardTopFeaturedPlaylists from "./components/DashboardTopFeaturedPlaylists"
 import RenderDashboardPlaylists from "./components/RenderDashboardPlaylists"
 
@@ -7,45 +8,6 @@ import "./styles/dashboard.css"
 import "./styles/dashboard-playlists.css"
 
 function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying }) {
-
-    const playlistCategories = [
-        {
-            category: "pop",
-            title: "Pop"
-        },
-        {
-            category: "rock",
-            title: "Rock"
-        },
-        {
-            category: "hiphop",
-            title: "Hip-Hop"
-        },
-        {
-            category: "mood",
-            title: "Mood"
-        },
-        {
-            category: "party",
-            title: "Party}"
-        },
-        {
-            category: "kpop",
-            title: "K-Pop"
-        },
-        {
-            category: "indie",
-            title: "Indie"
-        },
-        {
-            category: "throwback",
-            title: "Throwback"
-        },
-        {
-            category: "0JQ5DAqbMKFEZPnFQSFB1T",
-            title: "R&B"
-        }
-    ]
 
     return (
         <div className="dashboard-outer-container grid">
