@@ -17,7 +17,7 @@ function DashboardTopFeaturedPlaylists({ token }) {
                   Authorization: `Bearer ${token}`,
                 },
                 params: {
-                    limit: 6
+                    limit: 12
                 }
               }
             );

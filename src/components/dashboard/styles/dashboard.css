@@ -35,7 +35,7 @@
 }
 
 .dashboard--sub-container {
-    grid-template-rows: repeat(auto-fit, 320px);
+    grid-template-rows: repeat(auto-fit, auto);
     gap: 20px;
     padding: 0 5px;
     border-bottom-left-radius: 8px;

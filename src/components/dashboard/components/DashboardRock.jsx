@@ -15,7 +15,7 @@ function DashboardRock({ token }) {
                   Authorization: `Bearer ${token}`,
                 },
                 params: {
-                    limit: 6
+                    limit: 12
                 }
               }
             );
