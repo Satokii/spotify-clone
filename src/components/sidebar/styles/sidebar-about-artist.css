@@ -20,7 +20,7 @@
 /* ABOUT ARTIST DETAILS CONTAINER */
 .sidebar--about-artist-details-container {
     grid-template-rows: 25px 50px 30px;
-    background-color: #242424;
+    background-color: var(--const-sidebar-gray);
     width: 282px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

@@ -2,10 +2,10 @@ import "../styles/sidebar-next-in-queue.css"
 
 function SidebarNextInQueue() {
     return (
-        <div className="sidebar--queue-container">
-            <div>
-                <p>Next in queue</p>
-                <p>Open queue</p>
+        <div className="sidebar--queue-container grid">
+            <div className="sidebar--queue-headers grid">
+                <p className="sidebar--queue-title">Next in queue</p>
+                <p className="sidebar--queue-open-queue">Open queue</p>
             </div>
             <div>
                 <img src="" alt="" />
