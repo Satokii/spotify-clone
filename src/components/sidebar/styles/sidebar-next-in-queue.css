@@ -1,5 +1,5 @@
 .sidebar--queue-container {
-    grid-template-rows: 22px 65px;
+    grid-template-rows: 24px auto;
     gap: 10px;
     padding: 16px;
     border-radius: 8px;
@@ -10,6 +10,7 @@
 .sidebar--queue-headers {
     grid-template-columns: repeat(2, auto);
     gap: 10px;
+    align-items: center;
     font-weight: bold;
     letter-spacing: 0.7px;
 }
@@ -22,4 +23,16 @@
     color: var(--const-lighter-gray);
     font-size: 14px;
     justify-self: end;
+}
+
+/* TRACK DETAILS */
+.sidebar--queue-track-details-container {
+    grid-template-columns: 16px 46px auto;
+    gap: 12px;
+    align-items: center;
+}
+
+.sidebar--queue-note-icon {
+    width: 16px;
+    height: 16px;
 }
