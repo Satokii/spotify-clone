@@ -1,11 +1,13 @@
+import { useEffect, useState } from "react"
 import axios from "axios";
 import "../styles/sidebar-next-in-queue.css"
 import noteIcon from "../../../assets/svgs/main-app/queue-note.svg"
-import { useEffect, useState } from "react";
+import SidebarTrackArtists from "../functions/SidebarTrackArtists";
 
 function SidebarNextInQueue({ token }) {
 
     const [nextInQueue, setNextInQueue] = useState({})
+    const [nextInQueueArtists, setNextInQueueArtists] = useState([])
 
     useEffect(() => {
         const getNextInQueue = async () => {
@@ -17,11 +19,13 @@ function SidebarNextInQueue({ token }) {
                 }
             }
             );
+            const { queue } = data
+            setNextInQueueArtists(queue[0].artists)
             setNextInQueue({
-                id: data.queue[0].id,
-                img: data.queue[0].album.images[0].url,
-                title: data.queue[0].name,
-                artist: data.queue[0].artists[0].name
+                trackId: queue[0].id,
+                img: queue[0].album.images[0].url,
+                title: queue[0].name,
+                artist: queue[0].artists[0].name
             })
         };
         getNextInQueue()
@@ -37,11 +41,11 @@ function SidebarNextInQueue({ token }) {
                 <img className="sidebar--queue-note-icon" src={noteIcon} alt="note icon" />
                 {nextInQueue.img ?
                     <img className="sidebar--queue-img" src={nextInQueue.img} alt="sidebar queue img" />
-                    : <div>Play a song on Spotify</div>
+                    : <div></div>
                 }
                 <div>
-                    <p>track title</p>
-                    <p>artist</p>
+                    <p>{nextInQueue.title}</p>
+                    <p className="sidebar--queue-artists">{SidebarTrackArtists(nextInQueueArtists)}</p>
                 </div>
             </div>
         </div>
