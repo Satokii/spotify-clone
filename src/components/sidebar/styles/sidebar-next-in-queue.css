@@ -15,10 +15,6 @@
     letter-spacing: 0.7px;
 }
 
-.sidebar--queue-title {
-    font-weight: bold;
-}
-
 .sidebar--queue-open-queue {
     color: var(--const-lighter-gray);
     font-size: 14px;
@@ -27,14 +23,22 @@
 
 /* TRACK DETAILS */
 .sidebar--queue-track-details-container {
-    grid-template-columns: 16px 46px auto;
+    grid-template-columns: 16px 50px auto;
     gap: 12px;
     align-items: center;
+    padding: 8px 0;
 }
 
 .sidebar--queue-note-icon {
     width: 16px;
     height: 16px;
+}
+
+.sidebar--queue-img {
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+    place-self: center;
 }
 
 .sidebar--queue-artists {

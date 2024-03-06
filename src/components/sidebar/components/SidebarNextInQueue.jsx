@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../styles/sidebar-next-in-queue.css"
 import noteIcon from "../../../assets/svgs/main-app/queue-note.svg"
 import SidebarNextInQueueArtists from "../functions/SidebarNextInQueueArtists";
 import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
+import scrollToTop from "../../../shared-functions/scrollToTop";
 
 function SidebarNextInQueue({ token }) {
 
@@ -21,9 +23,11 @@ function SidebarNextInQueue({ token }) {
             }
             );
             const { queue } = data
+            console.log(queue[0])
             setNextInQueueArtists(queue[0].artists)
             setNextInQueue({
-                trackId: queue[0].id,
+                albumId: queue[0].album.id,
+                artistId: queue[0].artists[0].id,
                 img: queue[0].album.images[0].url,
                 title: fixLengthPreviews(queue[0].name),
                 artist: queue[0].artists[0].name
@@ -45,7 +49,7 @@ function SidebarNextInQueue({ token }) {
                     : <div></div>
                 }
                 <div>
-                    <p>{nextInQueue.title}</p>
+                    <Link className="sidebar--queue-track-name" to={`/album/${nextInQueue.albumId}/${nextInQueue.artistId}`} onClick={scrollToTop}>{nextInQueue.title}</Link>
                     <p className="sidebar--queue-artists">{SidebarNextInQueueArtists(nextInQueueArtists)}</p>
                 </div>
             </div>
