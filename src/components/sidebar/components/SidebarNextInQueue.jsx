@@ -1,3 +1,5 @@
+import "../styles/sidebar-next-in-queue.css"
+
 function SidebarNextInQueue() {
     return (
         <div className="sidebar--queue-container">
