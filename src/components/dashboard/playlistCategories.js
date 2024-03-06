@@ -34,5 +34,9 @@ export const playlistCategories = [
     {
         category: "0JQ5DAqbMKFEZPnFQSFB1T",
         title: "R&B"
+    },
+    {
+        category: "jazz",
+        title: "Jazz"
     }
 ]
