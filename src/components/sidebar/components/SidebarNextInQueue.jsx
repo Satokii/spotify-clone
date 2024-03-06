@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/sidebar-next-in-queue.css"
 import noteIcon from "../../../assets/svgs/main-app/queue-note.svg"
 import SidebarNextInQueueArtists from "../functions/SidebarNextInQueueArtists";
+import fixLengthPreviews from "../../../shared-functions/fixLengthPreviews";
 
 function SidebarNextInQueue({ token }) {
 
@@ -24,7 +25,7 @@ function SidebarNextInQueue({ token }) {
             setNextInQueue({
                 trackId: queue[0].id,
                 img: queue[0].album.images[0].url,
-                title: queue[0].name,
+                title: fixLengthPreviews(queue[0].name),
                 artist: queue[0].artists[0].name
             })
         };
