@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import DashboardCardTemplate from "../DashboardCardTemplate";
+import getDashboardPlaylists from "../../functions/getDashboardPlaylists";
 
 function DashboardRock({ token }) {
 
@@ -8,17 +8,7 @@ function DashboardRock({ token }) {
 
     useEffect(() => {
         const getRockPlaylists = async () => {
-            const { data } = await axios.get(
-              `https://api.spotify.com/v1/browse/categories/rock/playlists`,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-                params: {
-                    limit: 12
-                }
-              }
-            );
+            const data = await getDashboardPlaylists(token, "rock")
             setRock(data.playlists.items)
         };
         getRockPlaylists()
