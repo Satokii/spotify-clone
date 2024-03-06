@@ -27,13 +27,7 @@ function DashboardTopFeaturedPlaylists({ token }) {
     }, [token])
 
     return (
-        <div className="dashboard--playlist-container grid">
-            <div className="dashboard--playlist-header-container grid">
-                <div className="dashboard--playlist-header">Featured Playlists Where You Are</div>
-                <div className="dashboard--playlist-show-all">Show all</div>
-            </div>
-            <DashboardCardTemplate itemArr={topPlaylists} />
-        </div>
+        <DashboardCardTemplate title="Featured Playlists Where You Are" itemArr={topPlaylists} />
     )
 }
 

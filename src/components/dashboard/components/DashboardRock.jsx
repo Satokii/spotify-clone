@@ -25,13 +25,7 @@ function DashboardRock({ token }) {
     }, [token])
 
     return (
-      <div className="dashboard--playlist-container grid">
-      <div className="dashboard--playlist-header-container grid">
-          <div className="dashboard--playlist-header">Rock</div>
-          <div className="dashboard--playlist-show-all">Show all</div>
-      </div>
-      <DashboardCardTemplate itemArr={newRock} />
-  </div>
+      <DashboardCardTemplate title="Rock" itemArr={newRock} />
     )
 }
 
