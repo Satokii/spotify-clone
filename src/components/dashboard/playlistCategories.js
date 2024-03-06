@@ -38,5 +38,9 @@ export const playlistCategories = [
     {
         category: "jazz",
         title: "Jazz"
+    },
+    {
+        category: "classical",
+        title: "Classical"
     }
 ]
