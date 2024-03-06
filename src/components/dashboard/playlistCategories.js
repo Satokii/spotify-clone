@@ -17,7 +17,7 @@ export const playlistCategories = [
     },
     {
         category: "party",
-        title: "Party}"
+        title: "Party"
     },
     {
         category: "kpop",
