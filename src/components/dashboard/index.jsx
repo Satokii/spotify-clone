@@ -37,6 +37,14 @@ function Dashboard({ token, queue, setQueue, setToken, currentTrack, notPlaying 
             category: "indie",
             title: "Indie"
         },
+        {
+            category: "throwback",
+            title: "Throwback"
+        },
+        {
+            category: "0JQ5DAqbMKFEZPnFQSFB1T",
+            title: "R&B"
+        }
     ]
 
     return (
