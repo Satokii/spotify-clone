@@ -1,4 +1,5 @@
 import "../styles/sidebar-next-in-queue.css"
+import noteIcon from "../../../assets/svgs/main-app/queue-note.svg"
 
 function SidebarNextInQueue() {
     return (
@@ -8,7 +9,7 @@ function SidebarNextInQueue() {
                 <p className="sidebar--queue-open-queue">Open queue</p>
             </div>
             <div>
-                <img src="" alt="" />
+                <img src={noteIcon} alt="note icon" />
                 <img src="" alt="" />
                 <div>
                     <p>track title</p>
