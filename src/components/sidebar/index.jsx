@@ -12,7 +12,7 @@ function Sidebar({ token, currentTrack, currentTrackArtists }) {
                 <section className="sidebar grid">
                     <SidebarCurrentTrack currentTrack={currentTrack} currentTrackArtists={currentTrackArtists} />
                     <SidebarAboutArtist token={token} currentTrack={currentTrack} />
-                    <SidebarNextInQueue />
+                    <SidebarNextInQueue token={token} />
                 </section>
             </div>
         </div>
