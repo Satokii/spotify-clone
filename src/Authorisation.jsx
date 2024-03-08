@@ -1,10 +1,10 @@
 function Authorisation() {
-  const CLIENT_ID = "04e1410dfac14d27968c7ef88c68d41c";
-  const REDIRECT_URI = "http://localhost:5173/";
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-  const SCOPE = "user-top-read user-read-recently-played user-read-currently-playing user-read-playback-state user-modify-playback-state user-library-read playlist-read-private";
-  const RESPONSE_TYPE = "token";
-  const SHOW_DIALOG = true;
+  const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
+  const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI
+  const AUTH_ENDPOINT = import.meta.env.VITE_AUTH_ENDPOINT
+  const SCOPE = import.meta.env.VITE_SCOPE
+  const RESPONSE_TYPE = import.meta.env.VITE_RESPONSE_TYPE
+  const SHOW_DIALOG = import.meta.env.VITE_SHOW_DIALOG
 
   return (
     <a
