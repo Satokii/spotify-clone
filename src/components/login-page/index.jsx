@@ -6,25 +6,31 @@ function LoginPage() {
     const navigate = useNavigate()
     const [user, setUser] = useState({ username: '', password: '' });
 
+    const handleLogin = async (e) => {
+        e.preventDefault();
 
-    const handleLogin = async () => {
-        const { data } = await axios.post(`http://localhost:4000/login`,
-        {
-            username: 'User',
-            password: 'Password123'
-        },
-        {
-            headers: { 'Content-Type': 'application/json' },
-        }
-        );
-            console.log(data)
+        try {
+            const { data } = await axios.post(`http://localhost:4000/login`,
+            {
+                username: user.username,
+                password: user.password
+            },
+            {
+                headers: { 'Content-Type': 'application/json' },
+            }
+            );
 
-        if (!data.token) {
-          throw new Error(data.error)
+            if (!data.token) {
+            throw new Error(data.error)
+            }
+        
+            localStorage.setItem("login-token", data.token)
+            navigate('/spotify-login')
+            setUser({ username: '', password: '' })
         }
-    
-        localStorage.setItem("login-token", data.token)
-        navigate('/spotify-login')
+        catch (err) {
+            console.log(err.response.data.error)
+        }
     }
 
     const handleChange = (e) => {
