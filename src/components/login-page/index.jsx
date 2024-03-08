@@ -1,6 +1,8 @@
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+    const navigate = useNavigate()
 
     const handleLogin = async () => {
         const { data } = await axios.post(`http://localhost:4000/login`,
@@ -19,6 +21,7 @@ function LoginPage() {
         }
     
         localStorage.setItem("login-token", data.token)
+        navigate('/spotify-login')
     }
 
     return (

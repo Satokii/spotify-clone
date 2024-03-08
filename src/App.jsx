@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
+import LoginPage from "./components/login-page";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
@@ -137,7 +138,14 @@ function App() {
             element={
             token ?
             <Dashboard token={token} queue={queue} setQueue={setQueue} setToken={setToken} currentTrack={currentTrack} notPlaying={notPlaying} />
-            : <WelcomePage /> 
+            : <LoginPage /> 
+            }
+          >
+          </Route>
+          <Route
+            path="/spotify-login"
+            element={
+              <WelcomePage />
             }
           >
           </Route>
