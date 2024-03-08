@@ -8,6 +8,7 @@ import Main from "./components/main";
 import Album from "./components/album";
 import Artist from "./components/artist";
 import Playlist from "./components/playlist";
+import UserPlaylist from "./components/user-playlist";
 import LikedSongs from "./components/liked-songs";
 import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
@@ -28,7 +29,6 @@ import "./shared-styles/back-button.css"
 import "./shared-styles/middot.css"
 import "./keyframes/fade-in.css"
 import "./keyframes/text-transform.css"
-import UserPlaylist from "./components/user-playlist";
 
 function App() {
   const [token, setToken] = useState("");
