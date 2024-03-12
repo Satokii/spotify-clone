@@ -70,6 +70,7 @@ function LoginPage() {
                     </form>
                     {loginMessage && <p className="login-page--error-message">{loginMessage}</p>}
                 </div>
+                <p className="login-page--copyright">&#169; 2024 Codeify</p>
             </div>
         </section>
     )

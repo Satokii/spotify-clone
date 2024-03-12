@@ -131,3 +131,10 @@ input[type="submit"]:active {
 .login-page--error-message {
     font-size: 18px;
 }
+
+.login-page--copyright {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    font-size: 14px;
+}
