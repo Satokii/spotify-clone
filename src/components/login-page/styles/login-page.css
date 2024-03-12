@@ -8,6 +8,8 @@
   gap: 2px;
   flex-wrap: wrap;
   overflow: hidden;
+  opacity: 0;
+  animation: 0.3s ease 1s forwards fade-in;
 }
 
 .login-page--subcontainer {
