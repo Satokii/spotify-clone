@@ -2,6 +2,8 @@ import axios from "axios"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import './styles/login-page.css'
+
 function LoginPage() {
     const navigate = useNavigate()
     const [user, setUser] = useState({ username: '', password: '' });
@@ -44,7 +46,7 @@ function LoginPage() {
     };
 
     return (
-        <section>
+        <section className="login-page-container grid">
             <form onSubmit={handleLogin}>
                 <input type="text" name="username" placeholder="Username" value={user.username} onChange={handleChange} />
                 <input type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} />
