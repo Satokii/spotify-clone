@@ -10,7 +10,7 @@ function Authorisation() {
     <a
       href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=${SHOW_DIALOG}`}
     >
-      Login to Spotify
+      Log in here
     </a>
   );
 }

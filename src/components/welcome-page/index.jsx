@@ -5,10 +5,9 @@ function WelcomePage() {
 
     return (
         <section className="welcome-page--container grid">
-            <h2 className="welcome-page--header">Welcome to Spoti-facts</h2>
             <div className="welcome-page--text">
-                <p className="welcome-page--logged-out-text">You are currently logged out</p>
-                <p>Please <span className="welcome-page--login-link"><Authorisation /></span> to continue</p>
+                <p className="welcome-page--logged-out-text">You are currently logged out of Spotify</p>
+                <p><span className="welcome-page--login-link"><Authorisation /></span><br />to connect Codeify to your Spotify account.</p>
             </div>
         </section>
     )
