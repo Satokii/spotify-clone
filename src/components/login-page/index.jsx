@@ -46,13 +46,30 @@ function LoginPage() {
     };
 
     return (
-        <section className="login-page-container grid">
-            <form onSubmit={handleLogin}>
-                <input type="text" name="username" placeholder="Username" value={user.username} onChange={handleChange} />
-                <input type="password" name="password" placeholder="Password" value={user.password} onChange={handleChange} />
-                <button type="submit">Click here to log in</button>
-            </form>  
-            {loginMessage && <p>{loginMessage}</p>}
+        <section className="login-page--container">
+            <div className="login-page--subcontainer"> 
+                <div className="login-page--content"> 
+                    <h2 className="login-page--header">Sign In</h2> 
+                    <form className="login-page--login-form" onSubmit={handleLogin}> 
+                        <div className="login-page--login-form-input-container"> 
+                            <input className="login-page--login-form-input" type="text" name="username" value={user.username} onChange={handleChange} required />
+                            <i>Username</i>
+                        </div>
+                        <div className="login-page--login-form-input-container"> 
+                            <input className="login-page--login-form-input" type="password" name="password" value={user.password} onChange={handleChange} required />
+                            <i>Password</i>
+                        </div>
+                        <div className="login-page--links">
+                            <a className="login-page--forgot-password" href="#">Forgot Password</a>
+                            <a className="login-page--signup" href="#">Signup</a> 
+                        </div>
+                        <div className="login-page--login-form-input-container"> 
+                            <input className="login-page--login-form-input" type="submit" value="Login" />
+                        </div>
+                    </form>
+                </div>
+                {loginMessage && <p className="login-page--error-message">{loginMessage}</p>}
+            </div> 
         </section>
     )
 }
