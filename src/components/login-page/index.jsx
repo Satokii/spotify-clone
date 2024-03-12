@@ -47,7 +47,7 @@ function LoginPage() {
 
     return (
         <section className="login-page--container">
-            <div className="login-page--subcontainer"> 
+            <div className="login-page--subcontainer">
                 <div className="login-page--content"> 
                     <h2 className="login-page--header">Sign In</h2> 
                     <form className="login-page--login-form" onSubmit={handleLogin}> 
@@ -67,9 +67,9 @@ function LoginPage() {
                             <input className="login-page--login-form-input" type="submit" value="Login" />
                         </div>
                     </form>
+                    {loginMessage && <p className="login-page--error-message">{loginMessage}</p>}
                 </div>
-                {loginMessage && <p className="login-page--error-message">{loginMessage}</p>}
-            </div> 
+            </div>
         </section>
     )
 }
