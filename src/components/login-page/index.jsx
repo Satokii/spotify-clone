@@ -49,6 +49,7 @@ function LoginPage() {
         <section className="login-page--container">
             <div className="login-page--subcontainer">
                 <div className="login-page--content"> 
+                    <h2>Welcome to Codeify</h2> 
                     <h2 className="login-page--header">Sign In</h2> 
                     <form className="login-page--login-form" onSubmit={handleLogin}> 
                         <div className="login-page--login-form-input-container"> 

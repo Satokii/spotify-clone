@@ -13,7 +13,7 @@
 .login-page--subcontainer {
   position: absolute;
   width: 400px;
-  height: 540px;
+  height: 530px;
   background-color: var(--const-card-bg);
   z-index: 1000;
   display: flex;
