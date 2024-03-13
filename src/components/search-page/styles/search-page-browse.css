@@ -8,3 +8,8 @@
 .search-page-browse--header {
     font-size: 24px;
 }
+
+.search-page-browse--genre-container {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 24px;
+}
