@@ -16,7 +16,7 @@ export const genres = [
         title: "Party"
     },
     {
-        genre: "",
+        genre: "0JQ5DAqbMKFHOzuVTgTizF",
         title: "Dance/Electronic"
     },
     {
@@ -24,19 +24,19 @@ export const genres = [
         title: "Workout"
     },
     {
-        genre: "",
+        genre: "equal",
         title: "Equal"
     },
     {
-        genre: "",
+        genre: "0JQ5DAqbMKFIRybaNTYXXy",
         title: "In the car"
     },
     {
-        genre: "",
+        genre: "alternative",
         title: "Alternative"
     },
     {
-        genre: "",
+        genre: "frequency",
         title: "Frequency"
     },
     {
@@ -56,15 +56,15 @@ export const genres = [
         title: "Throwback"
     },
     {
-        genre: "",
+        genre: "disney",
         title: "Disney"
     },
     {
-        genre: "",
+        genre: "radar",
         title: "Radar"
     },
     {
-        genre: "",
+        genre: "country",
         title: "Country"
     },
     {
@@ -72,11 +72,11 @@ export const genres = [
         title: "K-Pop"
     },
     {
-        genre: "",
+        genre: "chill",
         title: "Chill"
     },
     {
-        genre: "",
+        genre: "sleep",
         title: "Sleep"
     },
     {
@@ -92,7 +92,7 @@ export const genres = [
         title: "Anime"
     },
     {
-        genre: "",
+        genre: "metal",
         title: "Metal"
     },
     
