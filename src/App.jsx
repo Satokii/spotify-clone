@@ -44,16 +44,6 @@ function App() {
     // TOP ARTISTS STATES
     const [topArtistsDate, setTopArtistsDate] = useState(ARTISTS_INITIAL_STATE);
     const [showTopArtists, setShowTopArtists] = useState("long_term");
-  
-    // HEADER SEARCH STATES
-    const [trackResults, setTrackResults] = useState([]);
-    const [trackTotal, setTrackTotal] = useState(0);
-    const [artistResults, setArtistResults] = useState([]);
-    const [artistTotal, setArtistTotal] = useState(0);
-    const [albumResults, setAlbumResults] = useState([]);
-    const [albumTotal, setAlbumTotal] = useState(0);
-    const [playlistResults, setPlaylistResults] = useState([]);
-    const [playlistTotal, setPlaylistTotal] = useState(0);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -112,22 +102,6 @@ function App() {
   return (
     <>
       <div className="container grid">
-        {/* {token ?
-          <Header
-          token={token}
-          setToken={setToken}
-          trackResults={trackResults}
-          setTrackResults={setTrackResults}
-          setTrackTotal={setTrackTotal}
-          setArtistResults={setArtistResults}
-          setArtistTotal={setArtistTotal}
-          setAlbumResults={setAlbumResults}
-          setAlbumTotal={setAlbumTotal}
-          setPlaylistResults={setPlaylistResults}
-          setPlaylistTotal={setPlaylistTotal}
-          />
-          : null
-        } */}
         {token ? 
           <Navigation token={token} />
           : null
