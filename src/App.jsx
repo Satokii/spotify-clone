@@ -15,7 +15,6 @@ import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
 import SearchPage from "./components/search-page";
-import SearchResultsPage from "./components/search-results-page";
 import axios from "axios";
 import CURRENT_TRACK_INITIAL_STATE from "./initial-states/CURRENT_TRACK_INITIAL_STATE";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
@@ -189,24 +188,6 @@ function App() {
             }
           >
           </Route>
-          {/* <Route
-            path="/search-results"
-            element={
-              token ?
-              <SearchResultsPage
-                trackResults={trackResults}
-                trackTotal={trackTotal}
-                artistResults={artistResults}
-                artistTotal={artistTotal}
-                albumResults={albumResults}
-                albumTotal={albumTotal}
-                playlistResults={playlistResults}
-                playlistTotal={playlistTotal}
-              />
-              : <WelcomePage />
-            }
-          >
-          </Route> */}
           <Route
             path="/album/:albumId/:artistId"
             element={
