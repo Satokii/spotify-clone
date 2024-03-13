@@ -62,7 +62,7 @@ function LoginPage() {
                         </div>
                         <div className="login-page--links">
                             <a className="login-page--forgot-password" href="#">Forgot Password</a>
-                            <a className="login-page--signup" href="#">Signup</a> 
+                            <a className="login-page--signup" href="#">Sign up today</a> 
                         </div>
                         <div className="login-page--login-form-input-container"> 
                             <input className="login-page--login-form-input" type="submit" value="Login" />
