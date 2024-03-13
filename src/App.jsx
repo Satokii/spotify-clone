@@ -4,7 +4,6 @@ import LoginPage from "./components/login-page";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
-import Main from "./components/main";
 import Album from "./components/album";
 import Artist from "./components/artist";
 import Playlist from "./components/playlist";
@@ -126,29 +125,6 @@ function App() {
             // TODO: Add element component
           >
           </Route>
-          {/* <Route
-            path="/"
-            element={
-              token ? 
-                <Main
-                  token={token}
-                  queue={queue}
-                  setQueue={setQueue}
-                  currentTrack={currentTrack}
-                  notPlaying={notPlaying}
-                  topTracksDate={topTracksDate}
-                  setTopTracksDate={setTopTracksDate}
-                  showTopTracks={showTopTracks}
-                  setShowTopTracks={setShowTopTracks}
-                  topArtistsDate={topArtistsDate}
-                  setTopArtistsDate={setTopArtistsDate}
-                  showTopArtists={showTopArtists}
-                  setShowTopArtists={setShowTopArtists}
-                /> 
-                : <WelcomePage />
-            }
-          >
-          </Route> */}
           <Route
             path="/top-tracks"
             element={ 
