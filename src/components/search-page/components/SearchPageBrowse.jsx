@@ -10,7 +10,7 @@ function SearchPageBrowse() {
                 {genres.map((genre, index) => (
                     <div className='browse--genre-item' key={`${genre.title}-${index}`} style={{ backgroundColor: genre.background}}>
                         <h3 className='browse--genre-item-header'>{genre.title}</h3>
-                        <div></div>
+                        <img className='browse--genre-item-img' src="https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768" alt={`${genre.genre}-img`} />
                     </div>
                 ))}
             </section>
