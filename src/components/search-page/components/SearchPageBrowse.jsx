@@ -9,7 +9,7 @@ function SearchPageBrowse() {
             <section className='search-page-browse--genre-container grid'>
                 {genres.map((genre, index) => (
                     <div className='browse--genre-item' key={`${genre.title}-${index}`} style={{ backgroundColor: genre.background}}>
-                        <h3>{genre.title}</h3>
+                        <h3 className='browse--genre-item-header'>{genre.title}</h3>
                         <div></div>
                     </div>
                 ))}

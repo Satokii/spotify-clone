@@ -11,11 +11,16 @@
 
 .search-page-browse--genre-container {
     grid-template-columns: repeat(auto-fit, 190px);
-    justify-content: center;
     gap: 24px;
 }
 
 .browse--genre-item {
     min-height: 190px;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.browse--genre-item-header {
+    font-size: 24px;
+    padding: 16px 20px;
 }
