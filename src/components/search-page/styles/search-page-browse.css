@@ -10,6 +10,6 @@
 }
 
 .search-page-browse--genre-container {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 200px));
     gap: 24px;
 }
