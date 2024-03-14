@@ -10,6 +10,12 @@
 }
 
 .search-page-browse--genre-container {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 200px));
+    grid-template-columns: repeat(auto-fit, 190px);
+    justify-content: center;
     gap: 24px;
+}
+
+.browse--genre-item {
+    min-height: 190px;
+    border-radius: 8px;
 }
