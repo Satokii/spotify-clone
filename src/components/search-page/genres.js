@@ -1,99 +1,123 @@
 export const genres = [
     {
         genre: "pop",
-        title: "Pop"
+        title: "Pop",
+        background: "rgb(20, 138, 8)"
     },
     {
         genre: "mood",
-        title: "Mood"
+        title: "Mood",
+        background: "rgb(225, 17, 140)"
     },
     {
         genre: "hiphop",
-        title: "Hip-Hop"
+        title: "Hip-Hop",
+        background: "rgb(80, 55, 80)"
     },
     {
         genre: "party",
-        title: "Party"
+        title: "Party",
+        background: "rgb(83, 122, 161)"
     },
     {
         genre: "0JQ5DAqbMKFHOzuVTgTizF",
-        title: "Dance/Electronic"
+        title: "Dance/Electronic",
+        background: "rgb(216, 64, 0)"
     },
     {
         genre: "workout",
-        title: "Workout"
+        title: "Workout",
+        background: "rgb(119, 119, 119)"
     },
     {
         genre: "equal",
-        title: "Equal"
+        title: "Equal",
+        background: "rgb(5, 105, 82)"
     },
     {
         genre: "0JQ5DAqbMKFIRybaNTYXXy",
-        title: "In the car"
+        title: "In the car",
+        background: "rgb(45, 70, 185)"
     },
     {
         genre: "alternative",
-        title: "Alternative"
+        title: "Alternative",
+        background: "rgb(30, 50, 100)"
     },
     {
         genre: "frequency",
-        title: "Frequency"
+        title: "Frequency",
+        background: "rgb(13, 115, 236)"
     },
     {
         genre: "indie",
-        title: "Indie"
+        title: "Indie",
+        background: "rgb(71, 125, 149)"
     },
     {
         genre: "rock",
-        title: "Rock"
+        title: "Rock",
+        background: "rgb(225, 51, 0)"
     },
     {
         genre: "0JQ5DAqbMKFEZPnFQSFB1T",
-        title: "R&B"
+        title: "R&B",
+        background: "rgb(186, 93, 7)"
     },
     {
         genre: "throwback",
-        title: "Throwback"
+        title: "Throwback",
+        background: "rgb(141, 103, 171)"
     },
     {
         genre: "disney",
-        title: "Disney"
+        title: "Disney",
+        background: "rgb(13, 115, 236)"
     },
     {
         genre: "radar",
-        title: "Radar"
+        title: "Radar",
+        background: "rgb(165, 103, 82)"
     },
     {
         genre: "country",
-        title: "Country"
+        title: "Country",
+        background: "rgb(216, 64, 0)"
     },
     {
         genre: "kpop",
-        title: "K-Pop"
+        title: "K-Pop",
+        background: "rgb(20, 138, 8)"
     },
     {
         genre: "chill",
-        title: "Chill"
+        title: "Chill",
+        background: "rgb(216, 64, 0)"
     },
     {
         genre: "sleep",
-        title: "Sleep"
+        title: "Sleep",
+        background: "rgb(30, 50, 100)"
     },
     {
         genre: "jazz",
-        title: "Jazz"
+        title: "Jazz",
+        background: "rgb(119, 119, 119)"
     },
     {
         genre: "classical",
-        title: "Classical"
+        title: "Classical",
+        background: "rgb(125, 75, 50)"
     },
     {
         genre: "anime",
-        title: "Anime"
+        title: "Anime",
+        background: "rgb(228, 29, 99)"
     },
     {
         genre: "metal",
-        title: "Metal"
+        title: "Metal",
+        background: "rgb(233, 20, 41)"
     },
     
 ]
