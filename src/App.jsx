@@ -136,7 +136,7 @@ function App() {
                 showTopTracks={showTopTracks}
                 setShowTopTracks={setShowTopTracks}
               />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -151,7 +151,7 @@ function App() {
                 showTopArtists={showTopArtists}
                 setShowTopArtists={setShowTopArtists}
               /> 
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -160,7 +160,7 @@ function App() {
             element={
               token ?
               <SearchPage token={token} setToken={setToken} />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -169,7 +169,7 @@ function App() {
             element={
               token ?
               <Album token={token} setToken={setToken} />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -178,7 +178,7 @@ function App() {
             element={
               token ?
               <Artist token={token} setToken={setToken} />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -187,7 +187,7 @@ function App() {
             element={
               token ?
               <Playlist token={token} setToken={setToken} />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -196,7 +196,7 @@ function App() {
             element={
               token ?
               <LikedSongs token={token} setToken={setToken} />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
@@ -205,7 +205,7 @@ function App() {
             element={
               token ?
               <UserPlaylist token={token} setToken={setToken} />
-              : <WelcomePage />
+              : <LoginPage />
             }
           >
           </Route>
