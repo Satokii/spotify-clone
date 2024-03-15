@@ -15,7 +15,7 @@ import Footer from "./components/footer";
 import TopTracksPage from "./components/full-top-results/top-tracks-page";
 import TopArtistsPage from "./components/full-top-results/top-artists-page";
 import SearchPage from "./components/search-page";
-import TopPlayed from "./components/top-played";
+import TrackTally from "./components/track-tally";
 import axios from "axios";
 import CURRENT_TRACK_INITIAL_STATE from "./initial-states/CURRENT_TRACK_INITIAL_STATE";
 import TRACKS_INITIAL_STATE from "./initial-states/TRACKS-INITIAL-STATE";
@@ -146,7 +146,7 @@ function App() {
             path="top-played"
             element={
               token ?
-              <TopPlayed />
+              <TrackTally />
               :<LoginPage />
             }
           >

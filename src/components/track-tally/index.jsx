@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-function TopPlayed() {
+function TrackTally() {
 
     const [tracks, setTracks] = useState([])
 
@@ -31,4 +31,4 @@ function TopPlayed() {
     )
 }
 
-export default TopPlayed
+export default TrackTally
