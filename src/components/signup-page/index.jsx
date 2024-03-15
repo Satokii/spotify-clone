@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignupPage() {
-
+    const navigate = useNavigate()
     const [user, setUser] = useState({ username: '', password: '' });
 
 
@@ -37,8 +38,7 @@ function SignupPage() {
                             <i>Password</i>
                         </div>
                         <div className="login-page--links">
-                            <a className="login-page--forgot-password" href="#">Forgot Password</a>
-                            <a className="login-page--signup" href="#">Sign up today</a> 
+                            <p className="login-page--signup" onClick={() => navigate('/')}>Already have an account? Sign in</p> 
                         </div>
                         <div className="login-page--login-form-input-container"> 
                             <input className="login-page--login-form-input" type="submit" value="Login" />
