@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import TrackTallyTopNav from "./components/TrackTallyTopNav"
 import './styles/track-tally.css'
 
-function TrackTally() {
+function TrackTally({ setToken }) {
 
     const [tracks, setTracks] = useState([])
 
@@ -23,6 +24,7 @@ function TrackTally() {
         <div className="track-tally--outer-container">
             <div className="track-tally--scrollbar">
                 <section className="track-tally--container">
+                    <TrackTallyTopNav setToken={setToken} />
                     <h2>What you've been listening to</h2>
                         {tracks.map((track, index) => 
                             <div key={`${track.id}-${index}`}>

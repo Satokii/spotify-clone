@@ -146,7 +146,7 @@ function App() {
             path="top-played"
             element={
               token ?
-              <TrackTally />
+              <TrackTally setToken={setToken} />
               :<LoginPage />
             }
           >
