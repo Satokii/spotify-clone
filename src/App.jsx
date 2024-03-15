@@ -92,10 +92,25 @@ function App() {
         });
       }
     };
-    setInterval(() => {
+    // setInterval(() => {
       getCurrentTrack();
-    }, 1000);
+    // }, 1000);
   }, [ token]);
+
+  useEffect(() => {
+    const addTrackTally = async () => {
+      await axios.post(`http://localhost:4000/tracks`,
+      {
+          track_id: currentTrack.trackId,
+          track_name: currentTrack.trackName
+      },
+      {
+          headers: { 'Content-Type': 'application/json' },
+      }
+      )
+    }
+    addTrackTally()
+  }, [currentTrack.trackId, currentTrack.trackName])
 
   return (
     <>
