@@ -144,7 +144,11 @@ function App() {
           </Route>
           <Route
             path="top-played"
-            // TODO: Add element component
+            element={
+              token ?
+              <TopPlayed />
+              :<LoginPage />
+            }
           >
           </Route>
           <Route
