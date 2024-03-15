@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import LoginPage from "./components/login-page";
+import SignupPage from "./components/signup-page";
 import WelcomePage from "./components/welcome-page";
 import Navigation from "./components/navigation";
 import Dashboard from "./components/dashboard";
@@ -91,9 +92,9 @@ function App() {
         });
       }
     };
-    // setInterval(() => {
+    setInterval(() => {
       getCurrentTrack();
-    // }, 1000);
+    }, 1000);
   }, [ token]);
 
   return (
@@ -118,6 +119,11 @@ function App() {
             element={
               <WelcomePage />
             }
+          >
+          </Route>
+          <Route
+            path="/sign-up"
+            element={<SignupPage />}
           >
           </Route>
           <Route
