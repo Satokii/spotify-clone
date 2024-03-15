@@ -25,6 +25,7 @@ function TrackTally({ setToken }) {
             <div className="track-tally--scrollbar">
                 <section className="track-tally--container">
                     <TrackTallyTopNav setToken={setToken} />
+                    <div className="track-tally--sub-container">
                     <h2>What you've been listening to</h2>
                         {tracks.map((track, index) => 
                             <div key={`${track.id}-${index}`}>
@@ -32,6 +33,8 @@ function TrackTally({ setToken }) {
                                 <p>{track.tally}</p>
                             </div>
                         )}
+                    </div>
+                    
                 </section>
             </div>
         </div>
