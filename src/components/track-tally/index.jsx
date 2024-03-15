@@ -21,20 +21,25 @@ function TrackTally({ setToken }) {
     console.log('tracks', tracks)
 
     return (
-        <div className="track-tally--outer-container">
+        <div className="track-tally--outer-container grid">
             <div className="track-tally--scrollbar">
-                <section className="track-tally--container">
+                <section className="track-tally--container grid">
                     <TrackTallyTopNav setToken={setToken} />
-                    <div className="track-tally--sub-container">
-                    <h2>What you've been listening to</h2>
-                        {tracks.map((track, index) => 
-                            <div key={`${track.id}-${index}`}>
-                                <p>{track.track_name}</p>
-                                <p>{track.tally}</p>
+                    <div className="track-tally--sub-container grid">
+                        <h2>What you've been listening to</h2>
+                        <div className="track-tally--all-tracks grid">
+                            <div className="track-tally--track-headers grid">
+                                <p>Track</p>
+                                <p>Number of Plays</p>
                             </div>
-                        )}
+                            {tracks.map((track, index) => 
+                                <div className="track-tally--track grid" key={`${track.id}-${index}`}>
+                                    <p>{track.track_name}</p>
+                                    <p>{track.tally}</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
-                    
                 </section>
             </div>
         </div>

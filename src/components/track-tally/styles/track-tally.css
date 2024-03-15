@@ -1,7 +1,7 @@
 .track-tally--outer-container {
     grid-area: Main;
     overflow: hidden;
-    background: linear-gradient(var(--const-green), var(--const-base-bg) 40%);
+    background: linear-gradient(var(--const-green), var(--const-base-bg) 30%);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -15,6 +15,7 @@
 
 .track-tally--scrollbar {
     overflow-y: scroll;
+    overflow-x: hidden;
     visibility: hidden;
     transition: 1s all 0.1s ease-out;
 }
@@ -24,7 +25,6 @@
 }
 
 .track-tally--container {
-    grid-template-rows: 200px 1fr;
     padding: 8px 0 40px 20px;
     gap: 30px;
     visibility: visible;
@@ -35,9 +35,25 @@
 }
 
 .track-tally--sub-container {
-    grid-template-rows: repeat(auto-fit, auto);
+    grid-template-rows: 60px 1fr;
     gap: 20px;
     padding: 0 5px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px
+}
+
+.track-tally--all-tracks {
+    grid-template-rows: repeat(auto-fill, 30px);
+}
+
+.track-tally--track-headers {
+    grid-template-columns: 500px auto;
+    border-bottom: solid 2px white;
+    font-size: 20px;
+}
+
+.track-tally--track {
+    grid-template-columns: 500px auto;
+    padding: 5px;
+    /* border-bottom: solid 1px white; */
 }
