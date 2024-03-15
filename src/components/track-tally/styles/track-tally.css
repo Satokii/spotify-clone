@@ -1,0 +1,35 @@
+.track-tally--outer-container {
+    grid-area: Main;
+    overflow: hidden;
+    background: linear-gradient(var(--const-green), var(--const-base-bg) 40%);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 5px;
+    padding-right: 3px;
+    padding-top: 65px;
+    opacity: 0;
+    animation: 0.3s ease 0.5s forwards fade-in;
+}
+
+.track-tally--scrollbar {
+    overflow-y: scroll;
+    visibility: hidden;
+    transition: 1s all 0.1s ease-out;
+}
+
+.track-tally--scrollbar:hover {
+    visibility: visible;
+}
+
+.track-tally--container {
+    grid-template-rows: 200px 1fr;
+    padding: 8px 0 40px 20px;
+    gap: 30px;
+    visibility: visible;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import './styles/track-tally.css'
 
 function TrackTally() {
 
@@ -19,15 +20,19 @@ function TrackTally() {
     console.log('tracks', tracks)
 
     return (
-        <section>
-            <h2>What you've been listening to</h2>
-                {tracks.map((track, index) => 
-                    <div key={`${track.id}-${index}`}>
-                        <p>{track.track_name}</p>
-                        <p>{track.tally}</p>
-                    </div>
-                )}
-        </section>
+        <div className="track-tally--outer-container">
+            <div className="track-tally--scrollbar">
+                <section className="track-tally--container">
+                    <h2>What you've been listening to</h2>
+                        {tracks.map((track, index) => 
+                            <div key={`${track.id}-${index}`}>
+                                <p>{track.track_name}</p>
+                                <p>{track.tally}</p>
+                            </div>
+                        )}
+                </section>
+            </div>
+        </div>
     )
 }
 
