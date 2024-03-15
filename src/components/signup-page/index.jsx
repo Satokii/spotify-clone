@@ -1,15 +1,31 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function SignupPage() {
     const navigate = useNavigate()
     const [user, setUser] = useState({ username: '', password: '' });
-
+    const [signupMessage, setSignupMessage] = useState('')
 
     const handleSignup = async (e) => {
         e.preventDefault();
 
-        console.log('signup')
+        try {
+            await axios.post(`http://localhost:4000/sign-up`,
+                {
+                    username: user.username,
+                    password: user.password
+                },
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                }
+            );
+            navigate('/')
+            setUser({ username: '', password: '' })
+        }
+        catch (err) {
+            setSignupMessage(err.response.data.error)
+        }
     }
 
     const handleChange = (e) => {
@@ -20,7 +36,6 @@ function SignupPage() {
             [name]: value
         });
     };
-
 
     return (
         <section className="login-page--container">
@@ -44,6 +59,7 @@ function SignupPage() {
                             <input className="login-page--login-form-input" type="submit" value="Login" />
                         </div>
                     </form>
+                    {signupMessage && <p className="login-page--error-message">{signupMessage}</p>}
                 </div>
                 <p className="login-page--copyright">&#169; 2024 Codeify</p>
             </div>
