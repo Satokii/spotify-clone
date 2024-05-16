@@ -25,3 +25,9 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 
 #### Sign In Page
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/78a7730b-87e2-42cb-9c01-f6adb66ffb39 width = 90% >
+
+<br/>
+
+#### Sign Up Page
+<img src = https://github.com/Satokii/spotify-clone/assets/125318469/4eed6fca-a84e-4f07-987e-97cd5641fdce width = 90%>
+
