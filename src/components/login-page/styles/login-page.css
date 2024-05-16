@@ -98,6 +98,7 @@
 
 .login-page--forgot-password:hover {
     transform: scale(1.02);
+    cursor: pointer;
   }
 
 .login-page--signup {
@@ -108,6 +109,7 @@
 .login-page--signup:hover {
     color: var(--const-green-hover);
     transform: scale(1.02);
+    cursor: pointer;
 }
 
 .login-page--login-form-input-container input[type="submit"] {

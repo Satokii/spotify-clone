@@ -35,7 +35,7 @@
 }
 
 .track-tally--sub-container {
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 50px 1fr;
     gap: 20px;
     padding: 0 5px;
     border-bottom-left-radius: 8px;

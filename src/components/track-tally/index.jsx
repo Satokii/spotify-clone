@@ -18,7 +18,6 @@ function TrackTally({ setToken }) {
         }
         getTrackData()
     }, [])
-    console.log('tracks', tracks)
 
     return (
         <div className="track-tally--outer-container grid">
