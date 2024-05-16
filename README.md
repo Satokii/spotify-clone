@@ -21,5 +21,7 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 - Dynamic background colours based on album artwork
 - See a record of the number of plays of each track
 
-### Image References
-![image](https://github.com/Satokii/spotify-clone/assets/125318469/78a7730b-87e2-42cb-9c01-f6adb66ffb39)
+### Image Gallery
+
+#### Sign In Page
+<img src = https://github.com/Satokii/spotify-clone/assets/125318469/78a7730b-87e2-42cb-9c01-f6adb66ffb39 width = 90% >
