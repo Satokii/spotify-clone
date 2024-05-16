@@ -35,3 +35,7 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/8926d672-a15b-4116-8df4-5f89894a902f width = 90%>
 <br/>
 
+#### Artist Page
+<video src = https://github.com/Satokii/spotify-clone/assets/125318469/bbcf3332-2193-4bb2-abc6-7316d154521a width = 90%>
+<br/>
+
