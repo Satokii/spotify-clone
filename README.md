@@ -46,3 +46,7 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 #### Spotify Created Playlist
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/ce793188-542a-411a-8617-95b4977341af width = 90% >
 <br/>
+
+#### User Playlist
+<img src = https://github.com/Satokii/spotify-clone/assets/125318469/36f77eb9-4f5d-4422-9191-63426a688d3d width = 90% >
+<br/>
