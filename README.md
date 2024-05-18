@@ -40,7 +40,7 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 <br/>
 
 #### Artist Page
-<img src = https://github.com/Satokii/spotify-clone/assets/125318469/03362374-8dcc-4902-bda0-ee6ea9e72555 width = 90%>
+<img src = https://github.com/Satokii/spotify-clone/assets/125318469/8a0d2563-b1b3-4c11-ad8d-e5c56b41fa96 width = 90%>
 <br/>
 
 #### Album Page
@@ -54,3 +54,4 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 #### User Playlist
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/36f77eb9-4f5d-4422-9191-63426a688d3d width = 90% >
 <br/>
+
