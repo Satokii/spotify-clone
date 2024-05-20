@@ -16,6 +16,7 @@ To view the server repo [click here](https://github.com/Satokii/spoti-server)
 - Change volume with slider
 - View the next 20 songs in the queue
 - Search for any artist/track/album/playlist
+- View Spotify created playlists by genre on the Dashboard homepage
 - View any artist/track/album/playlist and associated details
 - View all saved playlists
 - Dynamic background colours based on album artwork
