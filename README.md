@@ -21,40 +21,40 @@ To view the server repo, [click here](https://github.com/Satokii/spoti-server)
 - Dynamic background colours based on album artwork
 - See a record of the number of plays of each track
 
-### Image Gallery
+## Image Gallery
 
-#### Sign In Page
+### Sign In Page
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/78a7730b-87e2-42cb-9c01-f6adb66ffb39 width = 90% >
 <br/>
 
-#### Sign Up Page
+### Sign Up Page
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/4eed6fca-a84e-4f07-987e-97cd5641fdce width = 90%>
 <br/>
 
-#### Dashboard
+### Dashboard
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/8926d672-a15b-4116-8df4-5f89894a902f width = 90%>
 <br/>
 
-#### Playback and Sliders
+### Playback and Sliders
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/b42186a2-bfcc-46cf-a37b-9c82118a0924 width = 90% >
 <br/>
 
-#### Artist Page
+### Artist Page
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/8a0d2563-b1b3-4c11-ad8d-e5c56b41fa96 width = 90%>
 <br/>
 
-#### Album Page
+### Album Page
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/45de5bdc-cb9f-48cc-a83c-bee1202aa65b width = 90%>
 <br/>
 
-#### Spotify Created Playlist
+### Spotify Created Playlist
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/ce793188-542a-411a-8617-95b4977341af width = 90% >
 <br/>
 
-#### User Playlist
+### User Playlist
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/36f77eb9-4f5d-4422-9191-63426a688d3d width = 90% >
 <br/>
 
-#### Search
+### Search
 <img src = https://github.com/Satokii/spotify-clone/assets/125318469/ae4c7416-fc0f-42ab-a745-a2626fdede5f width = 90% >
 <br/>
