@@ -2,9 +2,9 @@
 
 ## Description
 
-Welcome to Codeify, a full-stack Spotify clone app I am currently working on making use of the Spotify Web API. I was inspired to create this application out of my appreciation for the official Spotify app's UI and UX. As someone who uses Spotify on an almost daily basis, the overall experience is well refined and enjoyable. As such, I decided to create my own version which stays truthful to the design but implements a few subtle extras to add my own flair.
+Welcome to Codeify, a full-stack Spotify clone app I am currently working which makes use of the Spotify Web API. I was inspired to create this application out of my appreciation for the official Spotify app's UI and UX. As I use Spotify on an almost daily basis, having an app which is well refined and easy to use makes the whole user experience more enjoyable and keeps me coming back. As such, I decided to create my own version which stays truthful to the design but implements a few subtle extras to add my own flair.
 
-To view the server repo, [click here](https://github.com/Satokii/spoti-server)
+To view the server repo [click here](https://github.com/Satokii/spoti-server)
 
 ## Features
 
